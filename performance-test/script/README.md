@@ -70,6 +70,10 @@
 
 현재 토큰 선택 방식은 `grinder.threadNumber % TOKEN_POOL.size()`다. 여러 process·Agent에서 계정을 완전히 분리해야 하는 본 시험 전에는 Agent/process/thread shard 기반 배정으로 교체한다.
 
+## 반복 실행
+
+nGrinder UI에서 테스트를 최초 1회 등록·검증한 뒤 저장소 루트에서 `./run_test.sh <TEST_ID> [반복횟수] [실행간격초]`로 반복 실행한다. 예: `./run_test.sh 97 5 120`. 여기서 `TEST_ID`는 Controller가 발급한 성능 테스트 ID이며 위 표의 `GTest ID`와는 다르다.
+
 ## 협업 규칙
 
 1. 스크립트는 `script/<도메인>/`에 추가하며 작성자 이름으로 상위 폴더를 만들지 않는다.
