@@ -1,0 +1,5 @@
+testId,testName,scriptName,vusers,connectionReset,runCountPerUser,status,tests,errors,meanTestTimeMs,tps,peakTps,runtime,scriptRevision
+255,local-H2-seed1000-RoommateBoardListGetTest-VUser1-20260928-204308,RoommateBoardListGetTest.groovy,1,False,5,FINISHED,5,0,1984.6,0.62,1.0,00:00:13,34
+256,local-H2-seed1000-RoommateBoardListGetTest-VUser2-20260928-204344,RoommateBoardListGetTest.groovy,2,False,5,FINISHED,10,0,2118.6,1.22,2.0,00:00:13,34
+257,local-H2-seed1000-CalendarCategoryGetTest-VUser1-20260928-204414,CalendarCategoryGetTest.groovy,1,False,5,FINISHED,5,0,45.4,2.5,0.0,00:00:05,34
+258,local-H2-seed1000-CalendarCategoryGetTest-VUser2-20260928-204428,CalendarCategoryGetTest.groovy,2,False,5,FINISHED,10,0,18.7,5.0,0.0,00:00:04,34

@@ -1,0 +1,18 @@
+{
+  "startedAtUtc": "2026-09-28T12:04:49.5754498+00:00",
+  "backendHealth": "UP",
+  "boardTotal": 1002,
+  "seedRecordsPerEntity": 1000,
+  "prometheusJob": "KnockIn",
+  "prometheusScrapeIntervalSeconds": 5,
+  "script": "RoommateBoardListGetTest.groovy",
+  "connectionReset": false,
+  "plannedVusers": [
+    1,
+    5,
+    10
+  ],
+  "plannedRepetitions": 3,
+  "iterationsPerVuser": 100,
+  "warmupIterations": 20
+}

@@ -1,5 +1,7 @@
 # APM & Load Testing Environment
 
+성능 테스트 스크립트·설정·실행 도구·측정 레포트의 관리 기준은 이 저장소다. [산출물 인덱스](./performance-test/README.md)에서 현재 파일과 실행 절차를 확인한다.
+
 로컬 개발 환경에서 **Prometheus**, **Grafana**, 그리고 **nGrinder**를 활용하여 Application Performance Monitoring(APM) 및 부하 테스트(Load Testing)를 수행할 수 있도록 재구성한 환경입니다.
 
 ---

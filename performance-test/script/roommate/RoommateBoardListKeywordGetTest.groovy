@@ -1,5 +1,4 @@
 import static net.grinder.script.Grinder.grinder
-
 import net.grinder.script.GTest
 import net.grinder.scriptengine.groovy.junit.GrinderRunner
 import net.grinder.scriptengine.groovy.junit.annotation.BeforeProcess
@@ -10,9 +9,9 @@ import org.junit.runner.RunWith
 import org.ngrinder.http.HTTPRequest
 import org.ngrinder.http.HTTPRequestControl
 
-/** Upload this script and both resources/ files to the same nGrinder script folder. */
+/** Anonymous keyword is the control; authenticated keyword also inserts search history. */
 @RunWith(GrinderRunner)
-class RoommateBoardListGetTest {
+class RoommateBoardListKeywordGetTest {
     static Class supportType
     static Map settings
     static HTTPRequest request
@@ -20,13 +19,13 @@ class RoommateBoardListGetTest {
 
     @BeforeProcess
     static void beforeProcess() {
-        supportType = new GroovyClassLoader(RoommateBoardListGetTest.class.classLoader)
+        supportType = new GroovyClassLoader(RoommateBoardListKeywordGetTest.class.classLoader)
                 .parseClass(new File("resources/RoommateBoardListSupport.txt"))
-        settings = supportType.loadSettings(false, grinder)
+        settings = supportType.loadSettings(true, grinder)
         HTTPRequestControl.setConnectionTimeout(settings.connectTimeoutMs as int)
         HTTPRequestControl.setSocketTimeout(settings.socketTimeoutMs as int)
         request = new HTTPRequest()
-        new GTest(4101, "GET /roommate/boards " + settings.profileId).record(request)
+        new GTest(4104, "GET /roommate/boards " + settings.profileId).record(request)
     }
 
     @BeforeThread

@@ -1,0 +1,118 @@
+[
+  {
+    "test_id": 34,
+    "zip": "62dbb23e4b8e--log.zip",
+    "entry": "62dbb23e4b8e-0.log",
+    "dated_error_count": 105,
+    "first_error": "2026-09-21 10:25:19,005 ERROR java.net.ConnectException: Connection refused",
+    "last_error": "2026-09-21 10:25:21,372 ERROR java.net.ConnectException: Connection refused",
+    "exception_types": [
+      "java.net.ConnectException: Connection refused"
+    ],
+    "connection_reset_property": true,
+    "heap_1g_each": true,
+    "summary": [
+      "2026-09-21 10:25:21,304 INFO  finished 170 runs",
+      "2026-09-21 10:25:21,340 INFO  finished 167 runs",
+      "2026-09-21 10:25:21,350 INFO  finished 170 runs",
+      "2026-09-21 10:25:21,360 INFO  finished 168 runs",
+      "2026-09-21 10:25:21,365 INFO  finished 167 runs",
+      "2026-09-21 10:25:21,366 INFO  finished 174 runs",
+      "2026-09-21 10:25:21,371 INFO  finished 168 runs",
+      "2026-09-21 10:25:21,371 INFO  finished 157 runs",
+      "2026-09-21 10:25:21,372 INFO  finished 167 runs",
+      "2026-09-21 10:25:21,372 INFO  finished 168 runs",
+      "Test 2001    1571         105          306.78       192.59       30.88        133.00       4106.58      0            0.00         283.23       306.35        \"GET /terms\"",
+      "Totals       1571         105          306.78       192.59       30.88        133.00       4106.58      0            0.00         283.23       306.35       ",
+      "  Tests resulting in error only contribute to the Errors column.          ",
+      "  are marked with () and not included in the totals.                      "
+    ]
+  },
+  {
+    "test_id": 34,
+    "zip": "f41822f38b39--log.zip",
+    "entry": "f41822f38b39-0.log",
+    "dated_error_count": 99,
+    "first_error": "2026-09-21 10:25:19,030 ERROR java.net.ConnectException: Connection refused",
+    "last_error": "2026-09-21 10:25:21,394 ERROR java.net.ConnectException: Connection refused",
+    "exception_types": [
+      "java.net.ConnectException: Connection refused"
+    ],
+    "connection_reset_property": true,
+    "heap_1g_each": true,
+    "summary": [
+      "2026-09-21 10:25:21,307 INFO  finished 170 runs",
+      "2026-09-21 10:25:21,351 INFO  finished 163 runs",
+      "2026-09-21 10:25:21,351 INFO  finished 171 runs",
+      "2026-09-21 10:25:21,352 INFO  finished 168 runs",
+      "2026-09-21 10:25:21,362 INFO  finished 175 runs",
+      "2026-09-21 10:25:21,362 INFO  finished 170 runs",
+      "2026-09-21 10:25:21,364 INFO  finished 163 runs",
+      "2026-09-21 10:25:21,369 INFO  finished 166 runs",
+      "2026-09-21 10:25:21,380 INFO  finished 162 runs",
+      "2026-09-21 10:25:21,394 INFO  finished 167 runs",
+      "Test 2001    1576         99           312.94       195.83       30.19        133.00       4015.48      0            0.00         288.56       312.48        \"GET /terms\"",
+      "Totals       1576         99           312.94       195.83       30.19        133.00       4015.48      0            0.00         288.56       312.48       ",
+      "  Tests resulting in error only contribute to the Errors column.          ",
+      "  are marked with () and not included in the totals.                      "
+    ]
+  },
+  {
+    "test_id": 36,
+    "zip": "62dbb23e4b8e--log.zip",
+    "entry": "62dbb23e4b8e-0.log",
+    "dated_error_count": 747,
+    "first_error": "2026-09-21 10:34:06,333 ERROR java.net.ConnectException: Connection refused",
+    "last_error": "2026-09-21 10:34:28,390 ERROR java.net.ConnectException: Connection refused",
+    "exception_types": [
+      "java.net.ConnectException: Connection refused"
+    ],
+    "connection_reset_property": true,
+    "heap_1g_each": true,
+    "summary": [
+      "2026-09-21 10:34:28,391 INFO  finished 106 runs",
+      "2026-09-21 10:34:28,400 INFO  finished 108 runs",
+      "2026-09-21 10:34:28,426 INFO  finished 109 runs",
+      "2026-09-21 10:34:28,427 INFO  finished 113 runs",
+      "2026-09-21 10:34:28,439 INFO  finished 107 runs",
+      "2026-09-21 10:34:28,484 INFO  finished 107 runs",
+      "2026-09-21 10:34:28,504 INFO  finished 106 runs",
+      "2026-09-21 10:34:28,517 INFO  finished 105 runs",
+      "2026-09-21 10:34:28,546 INFO  finished 111 runs",
+      "2026-09-21 10:34:28,548 INFO  finished 102 runs",
+      "Test 2001    327          747          333.76       163.00       10.16        133.00       1351.20      0            0.00         304.14       331.76        \"GET /terms\"",
+      "Totals       327          747          333.76       163.00       10.16        133.00       1351.20      0            0.00         304.14       331.76       ",
+      "  Tests resulting in error only contribute to the Errors column.          ",
+      "  are marked with () and not included in the totals.                      "
+    ]
+  },
+  {
+    "test_id": 36,
+    "zip": "f41822f38b39--log.zip",
+    "entry": "f41822f38b39-0.log",
+    "dated_error_count": 747,
+    "first_error": "2026-09-21 10:34:06,266 ERROR java.net.ConnectException: Connection refused",
+    "last_error": "2026-09-21 10:34:28,374 ERROR java.net.ConnectException: Connection refused",
+    "exception_types": [
+      "java.net.ConnectException: Connection refused"
+    ],
+    "connection_reset_property": true,
+    "heap_1g_each": true,
+    "summary": [
+      "2026-09-21 10:34:28,344 INFO  finished 110 runs",
+      "2026-09-21 10:34:28,364 INFO  finished 113 runs",
+      "2026-09-21 10:34:28,375 INFO  finished 112 runs",
+      "2026-09-21 10:34:28,384 INFO  finished 114 runs",
+      "2026-09-21 10:34:28,425 INFO  finished 113 runs",
+      "2026-09-21 10:34:28,429 INFO  finished 115 runs",
+      "2026-09-21 10:34:28,482 INFO  finished 113 runs",
+      "2026-09-21 10:34:28,502 INFO  finished 120 runs",
+      "2026-09-21 10:34:28,519 INFO  finished 116 runs",
+      "2026-09-21 10:34:28,546 INFO  finished 115 runs",
+      "Test 2001    394          747          293.45       167.81       12.01        133.00       1597.77      0            0.00         259.88       291.85        \"GET /terms\"",
+      "Totals       394          747          293.45       167.81       12.01        133.00       1597.77      0            0.00         259.88       291.85       ",
+      "  Tests resulting in error only contribute to the Errors column.          ",
+      "  are marked with () and not included in the totals.                      "
+    ]
+  }
+]

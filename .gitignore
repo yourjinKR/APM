@@ -1,2 +1,6 @@
 # nGrinder runtime volume data
 ngrinder-controller-data/
+
+# Python analysis/test caches
+__pycache__/
+*.py[cod]

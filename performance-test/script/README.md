@@ -2,7 +2,7 @@
 
 `performance-test/script`에서 관리하는 실행 가능한 nGrinder 스크립트의 협업 인덱스다. 스크립트는 작성자별 폴더가 아니라 **도메인 폴더**에 배치하고, 추가·이동·삭제할 때 이 문서의 해당 표를 같은 변경에서 갱신한다.
 
-- 최종 갱신: 2026-09-23
+- 최종 갱신: 2026-09-30 — 목록·검색 측정 산출물 APM 통합
 - 기준 환경: nGrinder Controller/Agent `3.5.9-p1`, The Grinder `3.9.1`, Groovy `3.0.5`, JDK `11`
 - 공통 대상 주소: `http://host.docker.internal:8080`
 - 현재 범위: 조회 REST API
@@ -12,13 +12,15 @@
 
 - **런타임 검증 완료**: Controller의 `/script/api/validate`에서 초기화, 1회 HTTP 실행, 통계 종료까지 스크립트 예외 없이 완료했다.
 - **계약 검증 완료**: 정상 토큰과 정상 fixture를 사용해 기대 HTTP 상태와 응답 계약까지 확인했다.
-- 현재 16개 스크립트는 placeholder 토큰으로 런타임 검증했으므로 실제 API 응답은 `401 TOKEN_INVALID`였다. 즉, nGrinder 호환성과 HTTP 호출 경로는 확인했지만 정상 데이터의 `200` 계약은 아직 검증 전이다.
+- 2026-09-23 최초 16개 스크립트는 placeholder 토큰으로 런타임 검증했다. 이후 정상 fixture로 수행한 기록은 [측정 결과](../results/2026-09-28-read-seed-selection/report.md)를 참조한다.
+- 2026-09-30 갱신한 목록·검색 스크립트는 실제 Agent 라이브러리의 오프라인 검증을 통과했다. 이 버전의 Controller 배포·정상 fixture 계약 smoke는 실행 전 수행한다.
 
 ## 룸메이트 게시글
 
 | 시나리오 | 메서드 | 라우터 | GTest ID | 스크립트 경로 | 작성자 | 인증·fixture | 조회 부작용 | 검증 상태 |
 |---|---|---|---:|---|---|---|---|---|
-| S01 · 게시글 첫 페이지 조회 | GET | `/roommate/boards?page=0&size=20&sort=createdAt,DESC` | 4101 | [`script/roommate/RoommateBoardListGetTest.groovy`](./roommate/RoommateBoardListGetTest.groovy) | `yourjin` | JWT 사용. 라우터는 익명 허용. `KEYWORD` 선택 설정 | 로그인 상태에서 `KEYWORD` 사용 시 검색 이력 INSERT | 런타임 검증 완료 |
+| S01 · 게시글 기본·필터·페이지 조회 | GET | `/roommate/boards` | 4101 | [RoommateBoardListGetTest.groovy](./roommate/RoommateBoardListGetTest.groovy) | `yourjin` | JSON 프로필, 익명/인증 선택, 실측 fixture | 검색어 없음 | 갱신본 오프라인 검증 완료 |
+| S01 · 게시글 검색 조회 | GET | `/roommate/boards?keyword=...` | 4104 | [RoommateBoardListKeywordGetTest.groovy](./roommate/RoommateBoardListKeywordGetTest.groovy) | 미지정 | JSON 프로필, 익명 대조군/인증 검색, Agent 토큰 | 인증 검색마다 검색 이력 INSERT | 오프라인 검증 완료 |
 | S01 · 게시글 상세 조회 | GET | `/roommate/boards/{boardId}` | 4102 | [`script/roommate/RoommateBoardDetailGetTest.groovy`](./roommate/RoommateBoardDetailGetTest.groovy) | `yourjin` | JWT, 공개·미삭제 `BOARD_ID_POOL` | 요청마다 조회수 UPDATE | 런타임 검증 완료 |
 | S12 준비 · 게시글 편집 폼 조회 | GET | `/roommate/boards/{boardId}/edit` | 4103 | [`script/roommate/RoommateBoardEditFormGetTest.groovy`](./roommate/RoommateBoardEditFormGetTest.groovy) | `yourjin` | JWT, 토큰 사용자가 작성한 `OWNED_BOARD_ID_POOL` | 없음 | 런타임 검증 완료 |
 
@@ -60,7 +62,11 @@
 |---|---|---|---:|---|---|---|---|---|
 | S12 준비 · 내가 쓴 게시글 조회 | GET | `/users/me/boards?page=0&size=20&sort=createdAt,DESC` | 3020 | [`script/user/UserBoardsGetTest.groovy`](./user/UserBoardsGetTest.groovy) | `yourjin` | JWT, 게시글 작성 이력이 있는 사용자 권장 | 없음 | 런타임 검증 완료 |
 
-## 실행 전 설정
+## 게시글 목록·검색 설정
+
+목록·검색 두 스크립트는 [전용 실행 가이드](../docs/roommate-board-list-testing.md)를 따른다. `roommate/resources/roommate-board-list.json`에서 대상 주소·runId·프로필·fixture를 관리하고 인증 토큰은 Agent 환경/로컬 파일로 제공한다. 공통 txt 리소스도 함께 배포한다. GTest 4102는 기존 상세 조회이며 새 검색은 4104다.
+
+## 나머지 조회 스크립트 실행 전 설정
 
 1. `targetHost`를 Agent에서 접근 가능한 백엔드 주소로 변경한다.
 2. `TOKEN_POOL`의 `TOKEN_USER_*`를 실제 access token으로 교체한다. `Bearer ` 접두사는 넣지 않는다.
@@ -68,9 +74,15 @@
 4. 월·일 캘린더 스크립트는 데이터가 존재하는 `YEAR`, `MONTH`, `DAY`로 변경한다.
 5. 스크립트별 1 VU, 1회 실행에서 `200`과 응답 계약을 확인한 후 부하를 올리고 검증 상태를 **계약 검증 완료**로 변경한다.
 
-현재 토큰 선택 방식은 `grinder.threadNumber % TOKEN_POOL.size()`다. 여러 process·Agent에서 계정을 완전히 분리해야 하는 본 시험 전에는 Agent/process/thread shard 기반 배정으로 교체한다.
+목록·검색을 제외한 기존 조회 스크립트의 토큰 선택 방식은 `grinder.threadNumber % TOKEN_POOL.size()`다. 여러 process·Agent에서 계정을 완전히 분리해야 하는 본 시험 전에는 Agent/process/thread shard 기반 배정으로 교체한다.
 
-## 반복 실행
+## 실행·집계 도구
+
+- [단계별 VUser 실행기](../tools/run-ngrinder-load-stages.sh): 등록된 스크립트를 순차 실행하고 결과를 `performance-test/results/`에 저장한다.
+- [H2 시드별 조회 실행기](../tools/run-read-sequential.ps1): 빌드 시 `-BackendProject`를 명시하거나 `-JarPath`를 사용한다.
+- [개별 요청 집계기](../tools/summarize-roommate-board-samples.py): 목록·검색 CSV의 p95/p99와 오류·누락을 집계한다.
+
+## 기존 테스트 ID 반복 실행
 
 nGrinder UI에서 테스트를 최초 1회 등록·검증한 뒤 저장소 루트에서 `./run_test.sh <TEST_ID> [반복횟수] [실행간격초]`로 반복 실행한다. 예: `./run_test.sh 97 5 120`. 여기서 `TEST_ID`는 Controller가 발급한 성능 테스트 ID이며 위 표의 `GTest ID`와는 다르다.
 

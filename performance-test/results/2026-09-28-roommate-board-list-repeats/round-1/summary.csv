@@ -1,0 +1,3 @@
+testId,testName,scriptName,vusers,connectionReset,runCountPerUser,status,tests,errors,meanTestTimeMs,tps,peakTps,runtime,scriptRevision
+260,local-H2-seed1000-repeat-r1-RoommateBoardListGetTest-VUser1-20260928-210703,RoommateBoardListGetTest.groovy,1,False,100,FINISHED,100,0,1688.7,0.6,1.0,00:02:52,34
+261,local-H2-seed1000-repeat-r1-RoommateBoardListGetTest-VUser5-20260928-211034,RoommateBoardListGetTest.groovy,5,False,100,STOP_BY_ERROR,304,129,3887.21,0.81,2.5,00:06:23,34

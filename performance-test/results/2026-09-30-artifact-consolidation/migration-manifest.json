@@ -1,0 +1,527 @@
+[
+  {
+    "source": "apm-environment.md",
+    "destination": "docs\\apm-environment.md",
+    "sha256BeforePathUpdates": "F443E79BC95EC1AEF92237E10B600B52F7829313D38F1F36147D91EACDED5914"
+  },
+  {
+    "source": "load-test-journal.md",
+    "destination": "docs\\load-test-journal.md",
+    "sha256BeforePathUpdates": "86BD748FFD46C9123E843D42CC02C43DDCCD44990B5F4BDB4F7C1AAE59266F49"
+  },
+  {
+    "source": "README.md",
+    "destination": "docs\\plan.md",
+    "sha256BeforePathUpdates": "9A1D825B372025CCC8656AB3BBF70A5150D2926FB4D846C54AF61CECE5C1F282"
+  },
+  {
+    "source": "roommate-board-list-testing.md",
+    "destination": "docs\\roommate-board-list-testing.md",
+    "sha256BeforePathUpdates": "1C032BC1D1AD641E6E0F1C279D459B42549C8128E4EA9514E5F9F411169FBFB6"
+  },
+  {
+    "source": "scenarios.md",
+    "destination": "docs\\scenarios.md",
+    "sha256BeforePathUpdates": "5B6D3137AB3180CC865C3D230C2AFA7B0DA7EBCC40560C3257EDFCE4C6323965"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\agent-evidence.json",
+    "destination": "results\\2026-09-21-terms-investigation\\agent-evidence.json",
+    "sha256BeforePathUpdates": "350D4D4DF349C8E2730D8332A090712316A2A99C014EF8B7E68C2DAAA4A74D17"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\controller-evidence.log",
+    "destination": "results\\2026-09-21-terms-investigation\\controller-evidence.log",
+    "sha256BeforePathUpdates": "06AF78F6DCB28763ACF3E0439679F852C37F86AA230352E3C59D96D0E45B972C"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\prometheus-window.json",
+    "destination": "results\\2026-09-21-terms-investigation\\prometheus-window.json",
+    "sha256BeforePathUpdates": "1086E8DC247A62325898DFC1D7DF9A98C5BB2098F7F06A0F00C8C063F88611C1"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\report.md",
+    "destination": "results\\2026-09-21-terms-investigation\\report.md",
+    "sha256BeforePathUpdates": "1E0B12CE46566534B6E0E0E6428B5F59D70E49E5843545AE689EEC1203194007"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\run-summary.json",
+    "destination": "results\\2026-09-21-terms-investigation\\run-summary.json",
+    "sha256BeforePathUpdates": "7E4A6978D6422C132DE20D01BE9D775AC36B7302A144CA47445B125EBF722CCC"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\windows-port-config.json",
+    "destination": "results\\2026-09-21-terms-investigation\\windows-port-config.json",
+    "sha256BeforePathUpdates": "B5650775E4957457F985C64059F3D99EF5E5F645AB61373623C1E3F432920E13"
+  },
+  {
+    "source": "results\\2026-09-21-terms-investigation\\windows-tcpip-events.json",
+    "destination": "results\\2026-09-21-terms-investigation\\windows-tcpip-events.json",
+    "sha256BeforePathUpdates": "F2D559BA835404C76CAB3F7B1FCE6BF8B7CF65EF2135084DFB9BFB2506088B0A"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.csv",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.csv",
+    "sha256BeforePathUpdates": "87435DB44E1F3EA04C918BBC41A8601EDF529C9A69A04DCA3B6C4394570C431A"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.json",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.json",
+    "sha256BeforePathUpdates": "B92ED4D7F8C4FF5BEB5C4F2AD606BFDDBBA47BC0A0202C5108865DDB4C8108E9"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190109.md",
+    "sha256BeforePathUpdates": "4F12BF510D9756398583DECF17BA4AEEC5616F46E3C1A8977C1A5877071778EF"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.csv",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.csv",
+    "sha256BeforePathUpdates": "A6207DBEE4F3EFBF873C1C02668221E5340EB5BE9534CDF9FCB0F1E0F150C53F"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.json",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.json",
+    "sha256BeforePathUpdates": "5FD4AEB2F1C0E5E2384D79B135A076CDC1782AE8BFEEF6C3796D9A8E82153693"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-190554.md",
+    "sha256BeforePathUpdates": "4E2D99D30748094E352182DFC3203437136C5AD456399BF583522494FFE4EA1E"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.csv",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.csv",
+    "sha256BeforePathUpdates": "1C4AE9FC454242671EE9A61FA67808E8381BDB89BCFA8CEE5CB567C54760C709"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.json",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.json",
+    "sha256BeforePathUpdates": "143CD84CE2634648AE09455CD336A3765F958467FA5E00916EB56DA450B3D36F"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191109.md",
+    "sha256BeforePathUpdates": "7EE086A01A9F160CC4398BEA9CF035FB3DBA5406ADF479383E4689B40880FF37"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.csv",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.csv",
+    "sha256BeforePathUpdates": "CFE8328AD4AF87051E5039D9E0F93BF0A3B2067B35F1F1AB9BDEFC0385C004FC"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.json",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.json",
+    "sha256BeforePathUpdates": "6D56063A99D5A94348427FDC39E2ADC852586B9D8C78B4AFF783208C56346418"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191519.md",
+    "sha256BeforePathUpdates": "7806015C2C2C87208DB4A68CD5AFC1F1E23680B662904655FAABCDAFE24B7137"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.csv",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.csv",
+    "sha256BeforePathUpdates": "854F117F670688471EED71B6DDCEC4B1261A0164E104994408AEC2A9AF1E1C84"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.json",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.json",
+    "sha256BeforePathUpdates": "A7F845827E286B5BF862E8EA88C26312B40BE95CB58C413BC069700E38509D0A"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\read-sequential-20260928-191914.md",
+    "sha256BeforePathUpdates": "0F6B01310C14DE3E60A2F4BB492609093EFF2C91C4C073EBF719829162E1648E"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\report.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\report.md",
+    "sha256BeforePathUpdates": "E127AC60A005557D4FE773337586399A4F97F900ADB7ACCCF8E6B30D3FF18ECF"
+  },
+  {
+    "source": "results\\2026-09-28-read-seed-selection\\script-smoke.md",
+    "destination": "results\\2026-09-28-read-seed-selection\\script-smoke.md",
+    "sha256BeforePathUpdates": "52558718EBC377569D080F789A9206AEECA272A1FC55C71B24E4B93D21E78235"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\report.md",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\report.md",
+    "sha256BeforePathUpdates": "97BAE20497E78EB46574702EE6DB0EE7A053E50AF7A1C30BCC20448775B3ACA3"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\summary.csv",
+    "sha256BeforePathUpdates": "787F96D1F85EC3A29D31DC9C1B0852596309C06AF13864A69C6CE10AC005D1EF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\VUser1-250.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\VUser1-250.json",
+    "sha256BeforePathUpdates": "24B466E2115B1D98BA870FD7449509D6D6060177D6751D172BD204BB96B04A12"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\VUser10-252.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\VUser10-252.json",
+    "sha256BeforePathUpdates": "ACF6C2EE03577403A7B9B947C6E927F91B3E3EE29928FE21AAB185C6142854FF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\VUser15-254.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\VUser15-254.json",
+    "sha256BeforePathUpdates": "61B7AAF3FC2035D1BE2CF25661063F8CA179E5652C29640FF5D4441A76246BF3"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\VUser20-253.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\VUser20-253.json",
+    "sha256BeforePathUpdates": "2084EE75176FB0D61A9B6D1037CF3FCD59A71CE902EAAF74A9988E4C03C3E8BF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\VUser5-251.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\VUser5-251.json",
+    "sha256BeforePathUpdates": "D9BD0F00B66A736EEAF1AA820CC21F54469E686EB6E0879BDFC67C683B33DA90"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-255.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-255.json",
+    "sha256BeforePathUpdates": "05CA41F761FB505369E9583E2ADB52A82984E686B1F5F6D29B92F27E1382BBB7"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-256.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-256.json",
+    "sha256BeforePathUpdates": "B62766F18C40B506F72FE00073F77C73AEC636A55418D1606414A66ACCE646A2"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-257.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-257.json",
+    "sha256BeforePathUpdates": "45E1DC0152E08677106057489BC6337C4F34B83CFE267C2C6D83435DFE71C01E"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-258.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\basic-report-258.json",
+    "sha256BeforePathUpdates": "21B82FF6EADDBE7C56A05EC172629C68CD22E1AE263007D15374A4C0EA960EFD"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-255.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-255.json",
+    "sha256BeforePathUpdates": "6F056535ED9EFDA989BACE1B90571C3F75C8948BCDDA375793A7D094FC9CEA1A"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-256.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-256.json",
+    "sha256BeforePathUpdates": "72329D20C90F1C596D5F02A9389BD54E2D6C51CCE437D4821B85903D3587E62A"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-257.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-257.json",
+    "sha256BeforePathUpdates": "C4BBB2EA07DB5C34DA8CE83D7B23FDC5E1A360C9CF6186AA32D002D540BF6F0B"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-258.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\created-258.json",
+    "sha256BeforePathUpdates": "E5A22ECDD36E8B47558BBD5B1DD2B622A4DECD10E74304F43D93ECFD4F894B00"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\manifest.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\manifest.json",
+    "sha256BeforePathUpdates": "F8B31B16344C951B6C7C12F19F016674A73CBA2AE19266325E01C50301A13146"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\summary.csv",
+    "sha256BeforePathUpdates": "594812ABAD2516220461F98FB4A840B32A47CEBB8D0DD58EC62858548E3F2334"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-255.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-255.json",
+    "sha256BeforePathUpdates": "5E40081D53A7759B28A89CEB33A66D5A77802EC439FBBCCA5205E44D4EF35407"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-256.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-256.json",
+    "sha256BeforePathUpdates": "DA22520D0C1643943209CAC0292CEB642A01D4BDE7D4ECBE7367A1DDD1B9542F"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-257.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-257.json",
+    "sha256BeforePathUpdates": "10B614ED4088462E2A637B6DA1D62CA6EFD1FCC2EEE89CDEA3EEC13819C1B3B8"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-258.json",
+    "destination": "results\\2026-09-28-roommate-board-list-load\\bash-validation\\test-258.json",
+    "sha256BeforePathUpdates": "EF8C3D440A2F20197D1E3ACE6785021579F24358D9C2EA2927A0DD37581ECCED"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\agent-container-map.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\agent-container-map.json",
+    "sha256BeforePathUpdates": "57D99D77D187033D80CD0E20DECAEC0F2C46717F452B59C8A92111B3D82C0459"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\agent-stats.psv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\agent-stats.psv",
+    "sha256BeforePathUpdates": "82014B82E7821687858194CF41480FF5929ECC1653750BCF0F5574810F13CA66"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\analysis.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\analysis.csv",
+    "sha256BeforePathUpdates": "6EEB418C4AA347E5589B33FFEBB7613F9DDA9AB6CDAD98FF6447121F4C81BCB0"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\analysis.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\analysis.json",
+    "sha256BeforePathUpdates": "9A93BDAA3DFBE0351888FC12F401432E1D111CD026459AC43AE1534AB0D3EBB0"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\analyze.py",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\analyze.py",
+    "sha256BeforePathUpdates": "5DC31F84EA7744E81018927AD5FB20FC6EB9A7DA98359C476663BBCC0B2D6F18"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\prometheus-samples.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\prometheus-samples.json",
+    "sha256BeforePathUpdates": "1CCD03B50D3DA1B0653BA1BB405C402B5886008AA295B3D9498B4A4E030CEF74"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\report.md",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\report.md",
+    "sha256BeforePathUpdates": "55387F66467C14C4A24AB6974B52B22026170306263AE0E40B6457D06FC44EC0"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-exit-codes.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-exit-codes.csv",
+    "sha256BeforePathUpdates": "EFA5B243CC732D94967262EA7F84E5CAF4E4AB328D797E402CFC9EEEA48DF6EC"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\study-config.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\study-config.json",
+    "sha256BeforePathUpdates": "124FF6FF0DBF368D527D002B79481BAFBEC548908AC2CFD0C650A2914449F862"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\basic-report-260.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\basic-report-260.json",
+    "sha256BeforePathUpdates": "B5F639EF25EFA06C1902EAA9579B7959F8EF4B3C50A3C49AF56AACA9CE6EBBE2"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\basic-report-261.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\basic-report-261.json",
+    "sha256BeforePathUpdates": "76A91D142EEADF799E76CC298231C3E676912B9B860ACA33DF1384BAE001079E"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\created-260.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\created-260.json",
+    "sha256BeforePathUpdates": "4D7FC2AD992813D22E06FCAF791DEFE2432BA0F238A1D0C9401504DA4A7EEB25"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\created-261.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\created-261.json",
+    "sha256BeforePathUpdates": "C1981FB0332FAEFC403F87CAE3A1AE1577CA64782A709FC360C069D4CD19FDEC"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\intervals-260.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\intervals-260.csv",
+    "sha256BeforePathUpdates": "55B06C22EAD0C7AE93361624B15014F62E7FFCE5D2A977FB69A0C00C1EF37B11"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\intervals-261.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\intervals-261.csv",
+    "sha256BeforePathUpdates": "17C263E80CD0B1F5AE5452598FC07F17245EDE870B64A24A1718AF932639E6CF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\manifest.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\manifest.json",
+    "sha256BeforePathUpdates": "253A60F913DA0D74BF9FB4508BC504815AF3E1D9D30945E8C88A30E44D836B01"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\summary.csv",
+    "sha256BeforePathUpdates": "15CB4D2AE0CB31584E5236E7FDDF59688FA311C769E9E2EF911FF850E44D15D2"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\test-260.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\test-260.json",
+    "sha256BeforePathUpdates": "C01C0FEDD3DC4635062B7F95098D8EEC838DB03F8F24F51FFA10A8070DAE5A78"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\test-261.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-1\\test-261.json",
+    "sha256BeforePathUpdates": "E673639CFC835C49640153416FB65574D491199102F6A1DAFD01628521C9A2BF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\agent-log-263.zip",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\agent-log-263.zip",
+    "sha256BeforePathUpdates": "03B00198436724D12FC032091540E9D4A4EC84721ADB8C225442434509B1EA3B"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\basic-report-262.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\basic-report-262.json",
+    "sha256BeforePathUpdates": "DFACAAE138EAEDAEDF0C68A9D769ADC7F613E59BDDCFBCD43AA65274D98D1698"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\basic-report-263.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\basic-report-263.json",
+    "sha256BeforePathUpdates": "A7E9088968BCC874CB59B883D48B3A9511BB6605F1B3A8551EF08FB736500CF5"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\created-262.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\created-262.json",
+    "sha256BeforePathUpdates": "B414425BA8B5E645282D0D5B97A0B2D420B53553897DF4E8DEBD92EF2910251E"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\created-263.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\created-263.json",
+    "sha256BeforePathUpdates": "F5C8F286B4B9184610CFF60E08DE2A5DB4F1D10539A7E4CC5F381C9C3D3CE58E"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\intervals-262.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\intervals-262.csv",
+    "sha256BeforePathUpdates": "B7F7C09035F6191133369914A97E0FDB2129D2EA57D26DF291CDAFF495F5F2E7"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\intervals-263.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\intervals-263.csv",
+    "sha256BeforePathUpdates": "498573DB74E8E34E330C4317252A1C85B531485BC91BFEF79E98EA8BD89D83BA"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\manifest.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\manifest.json",
+    "sha256BeforePathUpdates": "F9CF66E1B0E44139BE903E91A13982D7C933C00F873D854D85496EEEC2666ADF"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\summary.csv",
+    "sha256BeforePathUpdates": "DCF7836569FD30ED97D3C68C694F54D4D8A2EF46C28C072EA212AE55B6885327"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\test-262.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\test-262.json",
+    "sha256BeforePathUpdates": "DA8A28CB19200AEEDFC05D5D69FE9AAC496601431F427102092696C73504D1FC"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\test-263.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-2\\test-263.json",
+    "sha256BeforePathUpdates": "130E0E2F073D34FED90C2906D66CF3E1A6A8774552555331657685969E138174"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\basic-report-264.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\basic-report-264.json",
+    "sha256BeforePathUpdates": "48F176FCB608181894374E724BB6BC663987ED3A955054695CD45EBD39FBF632"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\basic-report-265.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\basic-report-265.json",
+    "sha256BeforePathUpdates": "60D51DA3A1CC1C44D71BB770A36E67FB5A3A196B3DE9707E76613CA474017889"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\created-264.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\created-264.json",
+    "sha256BeforePathUpdates": "966DD6FA941AA99639F181BEDA85F6A08CC058A3CCD0E77185E1AD2C2BCCA24C"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\created-265.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\created-265.json",
+    "sha256BeforePathUpdates": "7E4B32CB3F997D9BE9AA419D85D4537C7E5ED98AD31D1FE0701E3FF8CDB04A69"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\intervals-264.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\intervals-264.csv",
+    "sha256BeforePathUpdates": "FFC1BB1060288015F0D54FBF7BB05635893C71B97093AD4060F070BAA005C346"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\intervals-265.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\intervals-265.csv",
+    "sha256BeforePathUpdates": "D48158F6051EC8C68763BE1553156F3083894F688DA9868DECDAD6CA75A5AFB7"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\manifest.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\manifest.json",
+    "sha256BeforePathUpdates": "B575DAEC9925F24AC82AF817E87A8EE621D059A6A8984F772FBCFD038283968C"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\summary.csv",
+    "sha256BeforePathUpdates": "A9292E40C64D92B11EBEA88D3456447629BECB53AE96D9886AEFFAF38F3FF291"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\test-264.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\test-264.json",
+    "sha256BeforePathUpdates": "3C9D42A418D5BFCD16F796897DB0E01BE2D7F139C8B727AA171D3B7D53E1F977"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\test-265.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\round-3\\test-265.json",
+    "sha256BeforePathUpdates": "77C61E8272421DF33F0CB95414D8C8A5980D8D5FA37363E79C8BD7348414562A"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\basic-report-259.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\basic-report-259.json",
+    "sha256BeforePathUpdates": "92671DB7C6FC42C303A5A691FF694C3379EA9281EE83FCA1C1CDA8F1125BD0AC"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\created-259.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\created-259.json",
+    "sha256BeforePathUpdates": "EDD4393D9F200FFCD2650707D5E6D724CD40624FEE0C4F6B5388EFCC5302BA2D"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\intervals-259.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\intervals-259.csv",
+    "sha256BeforePathUpdates": "9E1A588E52818A21B5433AE8D8E1426D528F758EC9C4A9C1425BA3703632BF09"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\manifest.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\manifest.json",
+    "sha256BeforePathUpdates": "8A1F5DB88EC8C23DB8CAF991809B4CEDA9BA6A94D1CE0CF154C950F329E6315F"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\summary.csv",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\summary.csv",
+    "sha256BeforePathUpdates": "72EAF933E1A641F8CDADC7A2CB80D9C31741F4D1589C82B6C03CD616F67731DB"
+  },
+  {
+    "source": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\test-259.json",
+    "destination": "results\\2026-09-28-roommate-board-list-repeats\\warmup\\test-259.json",
+    "sha256BeforePathUpdates": "FC43C52CE74125F3973865AF8A0AE43413E76364FCD093682B358F493E79E09F"
+  },
+  {
+    "source": "scripts\\RoommateBoardListGetTest.groovy",
+    "destination": "script\\roommate\\RoommateBoardListGetTest.groovy",
+    "sha256BeforePathUpdates": "AAB87E5C1A44982D380F8E917E4FD28A1BC9E85F7C8C902B5D767701741C3F1E"
+  },
+  {
+    "source": "scripts\\RoommateBoardListKeywordGetTest.groovy",
+    "destination": "script\\roommate\\RoommateBoardListKeywordGetTest.groovy",
+    "sha256BeforePathUpdates": "2E2E9F88E17A26119B33A9FA05B92B3EC9401A28FF1AABF508084586E4DCFF2D"
+  },
+  {
+    "source": "scripts\\run-ngrinder-load-stages.sh",
+    "destination": "tools\\run-ngrinder-load-stages.sh",
+    "sha256BeforePathUpdates": "FCC48874CEDD542F78E87B0B623662C14BF832B6C3738B1B039A424EFFD72E67"
+  },
+  {
+    "source": "scripts\\run-read-sequential.ps1",
+    "destination": "tools\\run-read-sequential.ps1",
+    "sha256BeforePathUpdates": "4F64EE2FF96EAAFA22FED9BE7524D2F61D37800FAD5F7B1484144F6DC55A4F4B"
+  },
+  {
+    "source": "scripts\\summarize-roommate-board-samples.py",
+    "destination": "tools\\summarize-roommate-board-samples.py",
+    "sha256BeforePathUpdates": "19D83001554A2C8620D6E6A540D2DE988752A7D5AC7D350E98BDD19D289ECCA3"
+  },
+  {
+    "source": "scripts\\resources\\roommate-board-list.json",
+    "destination": "script\\roommate\\resources\\roommate-board-list.json",
+    "sha256BeforePathUpdates": "44F4FEA8469159255397F65F91D13358E04F698755DF6FDFA1083AF43BB2B3D8"
+  },
+  {
+    "source": "scripts\\resources\\RoommateBoardListSupport.txt",
+    "destination": "script\\roommate\\resources\\RoommateBoardListSupport.txt",
+    "sha256BeforePathUpdates": "013E01931FF7E04560B8503BE6A8A1F105F323ECBF5A3C48EC9821B1505321F8"
+  },
+  {
+    "source": "scripts\\tests\\roommate-board-support-smoke.groovy",
+    "destination": "tools\\tests\\roommate-board-support-smoke.groovy",
+    "sha256BeforePathUpdates": "5CB76C66300023DE8001B70B5F95B3003B02F8DB3418AE044D3D54A60DCE8551"
+  },
+  {
+    "source": "scripts\\tests\\test_roommate_board_samples.py",
+    "destination": "tools\\tests\\test_roommate_board_samples.py",
+    "sha256BeforePathUpdates": "8595E3072E597E3F42CAB0FDDABD8F8ECA345B4ECD8110CD00DBBA90B2F49A0A"
+  }
+]

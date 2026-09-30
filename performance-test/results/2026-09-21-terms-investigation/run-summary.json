@@ -1,0 +1,80 @@
+[
+  {
+    "test_id": 34,
+    "first_sample_utc": "2026-09-21 10:24:32",
+    "last_sample_utc": "2026-09-21 10:25:20",
+    "samples": 25,
+    "success": 15805.0,
+    "errors": 561.0,
+    "error_percent": 3.427838201148723,
+    "successful_mean_ms": 310.4374999683645,
+    "successful_mean_connect_ms": 285.29750344827585,
+    "connect_percent": 91.90175268044275,
+    "response_errors": 0.0
+  },
+  {
+    "test_id": 35,
+    "first_sample_utc": "2026-09-21 10:32:28",
+    "last_sample_utc": "2026-09-21 10:33:15",
+    "samples": 24,
+    "success": 12609.0,
+    "errors": 0.0,
+    "error_percent": 0.0,
+    "successful_mean_ms": 383.64045404076455,
+    "successful_mean_connect_ms": 356.7129465461179,
+    "connect_percent": 92.98105629606376,
+    "response_errors": 0.0
+  },
+  {
+    "test_id": 36,
+    "first_sample_utc": "2026-09-21 10:33:58",
+    "last_sample_utc": "2026-09-21 10:34:27",
+    "samples": 15,
+    "success": 3159.0,
+    "errors": 7375.0,
+    "error_percent": 70.01139168407063,
+    "successful_mean_ms": 316.47841057296614,
+    "successful_mean_connect_ms": 286.0390664767332,
+    "connect_percent": 90.38185763094415,
+    "response_errors": 0.0
+  },
+  {
+    "test_id": 37,
+    "first_sample_utc": "2026-09-21 10:35:25",
+    "last_sample_utc": "2026-09-21 10:36:12",
+    "samples": 24,
+    "success": 9745.0,
+    "errors": 0.0,
+    "error_percent": 0.0,
+    "successful_mean_ms": 495.945987993843,
+    "successful_mean_connect_ms": 465.22314828116976,
+    "connect_percent": 93.80520450685556,
+    "response_errors": 0.0
+  },
+  {
+    "test_id": 38,
+    "first_sample_utc": "2026-09-21 10:37:01",
+    "last_sample_utc": "2026-09-21 10:37:50",
+    "samples": 25,
+    "success": 7301.0,
+    "errors": 0.0,
+    "error_percent": 0.0,
+    "successful_mean_ms": 675.9204658265992,
+    "successful_mean_connect_ms": 641.1592854403507,
+    "connect_percent": 94.85720848180884,
+    "response_errors": 0.0
+  },
+  {
+    "test_id": 39,
+    "first_sample_utc": "2026-09-21 10:38:36",
+    "last_sample_utc": "2026-09-21 10:39:23",
+    "samples": 24,
+    "success": 9946.0,
+    "errors": 0.0,
+    "error_percent": 0.0,
+    "successful_mean_ms": 492.5564192640258,
+    "successful_mean_connect_ms": 445.6671749447013,
+    "connect_percent": 90.480431787005,
+    "response_errors": 0.0
+  }
+]

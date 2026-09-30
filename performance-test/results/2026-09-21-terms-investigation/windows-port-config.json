@@ -1,0 +1,10 @@
+{
+  "captured_at": "2026-09-21T19:52:35.9976140+09:00",
+  "ipv4_dynamic_tcp_start": 49152,
+  "ipv4_dynamic_tcp_count": 16384,
+  "ipv6_dynamic_tcp_start": 49152,
+  "ipv6_dynamic_tcp_count": 16384,
+  "TcpTimedWaitDelay_override": null,
+  "MaxUserPort_override": null,
+  "notes": "Read-only netsh show and Tcpip Parameters inspection; no configuration changes."
+}

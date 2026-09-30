@@ -1,0 +1,20 @@
+{
+  "startedAtUtc": "2026-09-28T12:05:31.856677+00:00",
+  "environment": "local-H2-seed1000-warmup",
+  "controllerUrl": "http://localhost",
+  "healthUrl": "http://localhost:8080/actuator/health",
+  "targetHost": "host.docker.internal",
+  "agents": 1,
+  "processesPerAgent": 1,
+  "iterationsPerVUser": 20,
+  "vusers": [
+    1
+  ],
+  "scripts": [
+    "RoommateBoardListGetTest.groovy"
+  ],
+  "failurePolicy": "stop-suite",
+  "connectionReset": false,
+  "ignoreTooManyError": false,
+  "rampUp": false
+}
