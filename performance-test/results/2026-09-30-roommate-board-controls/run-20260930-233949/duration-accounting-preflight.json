@@ -1,0 +1,203 @@
+[
+  {
+    "label": "fixture-list-anonymous-vu1-r1",
+    "phase": "fixture",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 353,
+    "configRevision": 94,
+    "status": "FINISHED",
+    "durationSeconds": null,
+    "expectedRequests": 3,
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 145.0,
+    "startTime": 1790779358156,
+    "finishTime": 1790779363872,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-2"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 145.65,
+    "p95Ms": 385.541,
+    "p99Ms": 385.541,
+    "passed": true
+  },
+  {
+    "label": "fixture-list-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "list-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 354,
+    "configRevision": 95,
+    "status": "FINISHED",
+    "durationSeconds": null,
+    "expectedRequests": 3,
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 302.33,
+    "startTime": 1790779374274,
+    "finishTime": 1790779379946,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-2"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 303.32800000000003,
+    "p95Ms": 404.634,
+    "p99Ms": 404.634,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-frequent-anonymous-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-frequent-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 355,
+    "configRevision": 96,
+    "status": "FINISHED",
+    "durationSeconds": null,
+    "expectedRequests": 3,
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 55.0,
+    "startTime": 1790779390193,
+    "finishTime": 1790779395008,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-2"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 55.821666666666665,
+    "p95Ms": 118.798,
+    "p99Ms": 118.798,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-frequent-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 356,
+    "configRevision": 97,
+    "status": "FINISHED",
+    "durationSeconds": null,
+    "expectedRequests": 3,
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 278.67,
+    "startTime": 1790779407769,
+    "finishTime": 1790779413079,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1008,
+      "newTestRows": 3
+    },
+    "historyDelta": 3,
+    "expectedHistoryDelta": 3,
+    "sampleAgents": [
+      "apm-ngrinder-agent-2"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 279.2146666666667,
+    "p95Ms": 314.208,
+    "p99Ms": 314.208,
+    "passed": true
+  },
+  {
+    "label": "duration-check-list-anonymous-vu1-r1",
+    "phase": "duration-check",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": null,
+    "testId": 357,
+    "configRevision": 98,
+    "status": "FINISHED",
+    "durationSeconds": 15,
+    "expectedRequests": 1086,
+    "successes": 1086,
+    "errors": 0,
+    "controllerTps": 90.11,
+    "controllerMeanMs": 10.58,
+    "startTime": 1790779424946,
+    "finishTime": 1790779440153,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-2"
+    ],
+    "sampleComplete": false,
+    "sampleRequests": 1100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 10.563653636363636,
+    "p95Ms": 15.694,
+    "p99Ms": 20.953,
+    "passed": false,
+    "sampleSpanSeconds": 12.6223779296875
+  }
+]

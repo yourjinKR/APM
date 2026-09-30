@@ -1,0 +1,75 @@
+{
+  "profile": "search-frequent-authenticated",
+  "requests": 10,
+  "httpMeanMs": 364.77394001558423,
+  "httpDurationsMs": [
+    463.5609000688419,
+    354.6433000592515,
+    384.9958999780938,
+    364.6268000593409,
+    349.39549991395324,
+    349.91649992298335,
+    365.04930001683533,
+    329.70760005991906,
+    347.1588999964297,
+    338.6847000801936
+  ],
+  "historyDelta": 10,
+  "statements": [
+    {
+      "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "executions": 10,
+      "totalMs": 1849.7134999999998,
+      "meanMs": 184.97134999999997
+    },
+    {
+      "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+      "executions": 10,
+      "totalMs": 1699.0325000000003,
+      "meanMs": 169.90325
+    },
+    {
+      "sql": "insert into search (created_at,keyword,member_id,id) values (?,?,?,default)",
+      "executions": 10,
+      "totalMs": 0.2309,
+      "meanMs": 0.02309
+    },
+    {
+      "sql": "COMMIT",
+      "executions": 40,
+      "totalMs": 0.173,
+      "meanMs": 0.004325
+    },
+    {
+      "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+      "executions": 10,
+      "totalMs": 0.04630000000000001,
+      "meanMs": 0.0046300000000000004
+    },
+    {
+      "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+      "executions": 20,
+      "totalMs": 0.04469999999999999,
+      "meanMs": 0.0022349999999999996
+    },
+    {
+      "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+      "executions": 10,
+      "totalMs": 0.019099999999999978,
+      "meanMs": 0.0019099999999999979
+    },
+    {
+      "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+      "executions": 10,
+      "totalMs": 0.015299999999999994,
+      "meanMs": 0.0015299999999999995
+    },
+    {
+      "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+      "executions": 10,
+      "totalMs": 0.010299999999999976,
+      "meanMs": 0.0010299999999999975
+    }
+  ],
+  "sqlTotalMs": 3549.2856
+}

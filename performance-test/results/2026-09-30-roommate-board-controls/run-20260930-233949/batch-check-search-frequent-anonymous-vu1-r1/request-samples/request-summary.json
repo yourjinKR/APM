@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-233949-batch-check-search-frequent-anonymous-vu1-r1-test_364",
+  "profile": "search-frequent-anonymous",
+  "configSha256": "1feecb85db30d4affa5b398d1e920bbd2428d57834e3ded6a704fb413fc4c665",
+  "sampleComplete": true,
+  "expectedRequests": 4,
+  "requests": 4,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 4,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 23.76475,
+  "successP50Ms": 10.769,
+  "successP95Ms": 62.54,
+  "successP99Ms": 62.54,
+  "observedAllP95Ms": 62.54,
+  "sampleSpanSeconds": 0.131076904296875,
+  "sampleSuccessRps": 30.516436297125487,
+  "inputs": {
+    "0": 4
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

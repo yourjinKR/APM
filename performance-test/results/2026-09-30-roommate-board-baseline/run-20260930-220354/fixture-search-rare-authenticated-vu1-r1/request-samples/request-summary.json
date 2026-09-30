@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-search-rare-authenticated-vu1-r1-test_307",
+  "profile": "search-rare-authenticated",
+  "configSha256": "017ac0761f14679573df8ce6844019a14ecd1a9703b4086ba4043d190d8cfba6",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 468.59100000000007,
+  "successP50Ms": 473.429,
+  "successP95Ms": 634.738,
+  "successP99Ms": 634.738,
+  "observedAllP95Ms": 634.738,
+  "sampleSpanSeconds": 1.42960595703125,
+  "sampleSuccessRps": 2.0984803436534802,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+    "profileId": "search-combined-authenticated",
+    "profile": {
+        "auth": "authenticated",
+        "inputs": [
+            {
+                "keyword": "\ubd80\ud558 \ud14c\uc2a4\ud2b8 \uac8c\uc2dc\uae00",
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "regionIds": [
+                        19
+                    ],
+                    "roomTypeIds": [
+                        1
+                    ],
+                    "minDeposit": 300,
+                    "maxDeposit": 600
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "regionFragments": [
+                        "\uc5ed\uc0bc\ub3d9"
+                    ],
+                    "roomTypeNames": [
+                        "\uc6d0\ub8f8"
+                    ],
+                    "totalElements": 4
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-search-combined-authenticated-vu1-r1-test_309",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": true,
+    "configSha256": "96c01e2c218d9004661a97242e528f82043907dd52c4dfe11d4a7e44fe74e48b",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774436885
+}

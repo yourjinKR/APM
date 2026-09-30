@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-filter-room-type-vu1-r1-test_296",
+  "profile": "filter-room-type",
+  "configSha256": "9719e36e0a9a5ac75c1a321a3c2498f9101d80a3a2a649b54f380d076205214e",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 95.78966666666668,
+  "successP50Ms": 84.02,
+  "successP95Ms": 161.366,
+  "successP99Ms": 161.366,
+  "observedAllP95Ms": 161.366,
+  "sampleSpanSeconds": 0.32598291015625,
+  "sampleSuccessRps": 9.202936431735152,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

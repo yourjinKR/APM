@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-filter-gender-vu1-r1-test_298,filter-gender,0,0,0,0,0,1790774207167,187.989,200,true,,12329
+run-20260930-220354-fixture-filter-gender-vu1-r1-test_298,filter-gender,0,0,0,1,0,1790774207393,62.699,200,true,,12329
+run-20260930-220354-fixture-filter-gender-vu1-r1-test_298,filter-gender,0,0,0,2,0,1790774207467,84.495,200,true,,12329

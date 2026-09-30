@@ -1,0 +1,51 @@
+{
+    "profileId": "smoke",
+    "profile": {
+        "auth": "authenticated",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "regionIds": [
+                        1,
+                        2
+                    ],
+                    "roomTypeIds": [
+                        3
+                    ],
+                    "gender": "MALE",
+                    "minDeposit": 300,
+                    "maxDeposit": 600,
+                    "minMounthRent": 30,
+                    "maxMounthRent": 50,
+                    "likedOnly": true
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "regionFragments": [
+                        "\uc11c\uc6b8"
+                    ],
+                    "roomTypeNames": [
+                        "\uc6d0\ub8f8"
+                    ]
+                },
+                "keyword": "\ubd80\ud558 \ud14c\uc2a4\ud2b8"
+            }
+        ]
+    },
+    "runId": "offline-smoke",
+    "baseUrl": "http://unused.invalid",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-board-controls-offline-run-20260930-233949/output",
+    "keywordMode": true,
+    "configSha256": "offline-test",
+    "agent": 1,
+    "process": 1,
+    "processes": 2,
+    "threads": 1,
+    "startedAtEpochMs": 1790786098383,
+    "sampleSchemaVersion": 2
+}

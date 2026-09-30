@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-list-anonymous-vu1-r1-test_293,list-anonymous,0,0,0,0,0,1790774099572,1493.931,200,true,,12376
+run-20260930-220354-fixture-list-anonymous-vu1-r1-test_293,list-anonymous,0,0,0,1,0,1790774101096,165.631,200,true,,12376
+run-20260930-220354-fixture-list-anonymous-vu1-r1-test_293,list-anonymous,0,0,0,2,0,1790774101267,78.149,200,true,,12376

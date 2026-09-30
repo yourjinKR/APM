@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-233949-fixture-list-authenticated-vu1-r1-test_354",
+  "profile": "list-authenticated",
+  "configSha256": "861e8d063257261276ecde48b14e901acd7931a82e89cf6eaf23c74cb5ad855e",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 303.32800000000003,
+  "successP50Ms": 258.528,
+  "successP95Ms": 404.634,
+  "successP99Ms": 404.634,
+  "observedAllP95Ms": 404.634,
+  "sampleSpanSeconds": 0.932822021484375,
+  "sampleSuccessRps": 3.216047574891274,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

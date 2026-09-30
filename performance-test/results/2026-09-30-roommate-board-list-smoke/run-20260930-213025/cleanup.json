@@ -1,0 +1,13 @@
+{
+  "verifiedAtUtc": "2026-09-30T12:51:29.488487+00:00",
+  "temporaryTokenFileAbsentOnAgents": [
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "controllerConfigRestoredToCanonicalTemplate": true,
+  "controllerConfigRevision": 42,
+  "controllerRunningTests": 0
+}

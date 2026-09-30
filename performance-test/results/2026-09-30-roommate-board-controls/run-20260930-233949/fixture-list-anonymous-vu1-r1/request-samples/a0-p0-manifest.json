@@ -1,0 +1,31 @@
+{
+    "profileId": "list-anonymous",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "totalElements": 1002
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-233949-fixture-list-anonymous-vu1-r1-test_353",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "2c2f922734cefa201a71c35733449b0fdd6d943601d374a65e72231dd2a678d6",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790779360522
+}

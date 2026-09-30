@@ -1,0 +1,15 @@
+{
+  "testId": 366,
+  "execution": "R; controllerRuns6841; requestsPerIteration3",
+  "expectedRequests": 20523,
+  "controllerSuccesses": 7033,
+  "controllerErrors": 0,
+  "csvRequests": 7116,
+  "csvErrors": 1,
+  "csvFailure": "ShutdownException",
+  "sampleSpanSeconds": 59.17923388671875,
+  "interpretation": "Controller uses reported test count to terminate the run; multiple recorded GETs per script iteration trigger early termination. Small four-request preflights were insufficient to expose this. Reverted batching before all comparable runs.",
+  "originalControllerSourceAvailableAtCollection": false,
+  "sourceCollectionObservation": "Requested files in perftest/0_999/366/dist were absent after finish. Created/config/sample files remain available.",
+  "controlScriptSource": "measurement-source/"
+}

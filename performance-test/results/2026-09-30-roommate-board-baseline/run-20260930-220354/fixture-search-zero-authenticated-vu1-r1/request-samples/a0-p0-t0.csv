@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-search-zero-authenticated-vu1-r1-test_308,search-zero-authenticated,0,0,0,0,0,1790774417626,657.094,200,true,,352
+run-20260930-220354-fixture-search-zero-authenticated-vu1-r1-test_308,search-zero-authenticated,0,0,0,1,0,1790774418303,435.990,200,true,,352
+run-20260930-220354-fixture-search-zero-authenticated-vu1-r1-test_308,search-zero-authenticated,0,0,0,2,0,1790774418741,430.368,200,true,,352

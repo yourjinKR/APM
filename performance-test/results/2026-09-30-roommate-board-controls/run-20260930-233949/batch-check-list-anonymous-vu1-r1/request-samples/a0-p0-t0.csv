@@ -1,0 +1,5 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-233949-batch-check-list-anonymous-vu1-r1-test_362,list-anonymous,0,0,0,0,0,1790780406748,65.809,200,true,,12361
+run-20260930-233949-batch-check-list-anonymous-vu1-r1-test_362,list-anonymous,0,0,0,1,0,1790780406835,9.894,200,true,,12361
+run-20260930-233949-batch-check-list-anonymous-vu1-r1-test_362,list-anonymous,0,0,0,2,0,1790780406848,10.962,200,true,,12361
+run-20260930-233949-batch-check-list-anonymous-vu1-r1-test_362,list-anonymous,0,0,0,3,0,1790780406863,12.775,200,true,,12361

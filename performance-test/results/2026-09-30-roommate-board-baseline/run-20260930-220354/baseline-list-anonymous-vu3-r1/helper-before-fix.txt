@@ -1,0 +1,220 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
+import java.time.LocalDateTime
+import org.apache.hc.core5.http.message.BasicHeader
+import org.apache.hc.core5.http.message.BasicNameValuePair
+
+/** Shared resource, loaded once per JVM. No login or probe HTTP calls during measurement. */
+class RoommateBoardListSupport {
+    static final Set QUERY_KEYS = ['page', 'size', 'sort', 'regionIds', 'roomTypeIds',
+            'gender', 'minDeposit', 'maxDeposit', 'minMounthRent', 'maxMounthRent', 'likedOnly'] as Set
+    final Map settings
+    final def context
+    final List headers
+    final BufferedWriter samples
+    final int userSlot
+    long iteration = 0
+
+    static void require(boolean condition, String message) {
+        if (!condition) throw new IllegalArgumentException(message)
+    }
+
+    static Map loadSettings(boolean keywordMode, def context = null) {
+        File file = new File(System.getenv('ROOMMATE_BOARD_CONFIG') ?: 'resources/roommate-board-list.json')
+        Map config = new JsonSlurper().parse(file, 'UTF-8') as Map
+        String profileId = System.getenv('ROOMMATE_BOARD_PROFILE') ?:
+                config[keywordMode ? 'activeKeywordProfile' : 'activeReadProfile']
+        require(profileId ==~ /[A-Za-z0-9_-]+/, 'Use a safe, nonempty profile ID')
+        require(config.profiles[profileId] instanceof Map, 'Unknown profile ID')
+        Map profile = config.profiles[profileId]
+        require(profile.auth in ['anonymous', 'authenticated'], 'Invalid auth mode')
+        List inputs = profile.inputs
+        require(inputs && inputs.every { it instanceof Map }, 'Profile needs inputs')
+        inputs.each { input ->
+            require(input.query instanceof Map && input.expect instanceof Map, 'Each input needs query and expect')
+            Map query = input.query
+            require(QUERY_KEYS.containsAll(query.keySet()), 'Unsupported query parameter (check MounthRent spelling)')
+            require(query.page instanceof Integer && query.page >= 0, 'page must be nonnegative')
+            require(query.size instanceof Integer && query.size > 0, 'size must be positive')
+            require(query.sort ==~ /(createdAt|hits),(ASC|DESC)/, 'Unsupported sort')
+            ['regionIds', 'roomTypeIds'].each { key ->
+                if (query.containsKey(key)) require(query[key] instanceof List && query[key] &&
+                        query[key].every { it instanceof Number && it > 0 }, key + ' needs real fixture IDs')
+            }
+            if (query.regionIds) require(input.expect.regionFragments &&
+                    input.expect.regionFragments.every { it instanceof String && it.trim() }, 'Set expected regionFragments')
+            if (query.roomTypeIds) require(input.expect.roomTypeNames &&
+                    input.expect.roomTypeNames.every { it instanceof String && it.trim() }, 'Set expected roomTypeNames')
+            if (query.containsKey('gender')) require(query.gender in ['MALE', 'FEMALE'], 'Invalid gender')
+            if (query.containsKey('likedOnly')) require(query.likedOnly instanceof Boolean, 'likedOnly must be boolean')
+            require(!query.likedOnly || profile.auth == 'authenticated', 'likedOnly requires authentication')
+            ['minDeposit', 'maxDeposit', 'minMounthRent', 'maxMounthRent'].each { key ->
+                if (query.containsKey(key)) require(query[key] instanceof Integer && query[key] >= 0, key + ' must be nonnegative')
+            }
+            [['minDeposit', 'maxDeposit'], ['minMounthRent', 'maxMounthRent']].each { pair ->
+                if (query.containsKey(pair[0]) && query.containsKey(pair[1]))
+                    require(query[pair[0]] <= query[pair[1]], 'Invalid budget range')
+            }
+            require(input.expect.minTotalElements instanceof Integer && input.expect.minTotalElements >= 0,
+                    'Set minTotalElements from a verified fixture')
+            if (input.expect.containsKey('totalElements')) require(input.expect.totalElements instanceof Number &&
+                    input.expect.totalElements >= input.expect.minTotalElements, 'Invalid expected totalElements')
+            if (input.expect.minTotalElements == 0)
+                require(input.expect.totalElements == 0, 'Empty-result input must explicitly expect totalElements=0')
+            if (keywordMode) require(input.keyword instanceof String && input.keyword.trim() &&
+                    input.keyword.trim().length() <= 100, 'Search needs a nonblank keyword of at most 100 characters')
+            else require(!input.containsKey('keyword'), 'Use KeywordGetTest for keyword requests')
+        }
+        String runId = System.getenv('ROOMMATE_BOARD_RUN_ID') ?: config.runId
+        require(runId ==~ /[A-Za-z0-9_-]+/ && runId != 'CHANGE-ME', 'Set a unique runId before each test')
+        if (context != null) {
+            String testId = context.properties.getProperty('grinder.test.id')
+            require(testId ==~ /[A-Za-z0-9_-]+/, 'Controller test ID is required for unique sample directories')
+            runId += '-' + testId
+        }
+        require(config.baseUrl ==~ /https?:\/\/[^\s?#]+/, 'Set an Agent-accessible baseUrl')
+        require(config.connectTimeoutMs instanceof Integer && config.connectTimeoutMs > 0, 'Invalid connect timeout')
+        require(config.socketTimeoutMs instanceof Integer && config.socketTimeoutMs > 0, 'Invalid socket timeout')
+        require((System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir) instanceof String &&
+                (System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir).trim(), 'Set outputDir')
+        List tokens = []
+        if (profile.auth == 'authenticated') {
+            String supplied = System.getenv('ROOMMATE_BOARD_TOKENS')
+            if (supplied) tokens = supplied.split(',', -1).collect { it.trim() }
+            else {
+                String tokenFile = System.getenv('ROOMMATE_BOARD_TOKEN_FILE') ?: config.tokenFile
+                require(tokenFile?.trim() as boolean, 'Set Agent ROOMMATE_BOARD_TOKENS, ROOMMATE_BOARD_TOKEN_FILE or config.tokenFile')
+                tokens = new File(tokenFile).readLines('UTF-8').collect { it.trim() }
+            }
+            require(tokens && tokens.every { it && !it.startsWith('Bearer ') && !it.startsWith('TOKEN_') }, 'Invalid token pool')
+            require(tokens.toSet().size() == tokens.size(), 'Use distinct tokens for distinct members')
+        }
+        String hash = MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString()
+        return [profileId: profileId, profile: profile, runId: runId, baseUrl: config.baseUrl.replaceAll('/+$', ''),
+                connectTimeoutMs: config.connectTimeoutMs, socketTimeoutMs: config.socketTimeoutMs,
+                outputDir: System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir,
+                keywordMode: keywordMode, configSha256: hash, tokens: tokens]
+    }
+
+    RoommateBoardListSupport(Map settings, def context) {
+        this.settings = settings
+        this.context = context
+        int agent = context.agentNumber
+        int processSlot = context.processNumber - context.firstProcessNumber
+        int processes = context.properties.getInt('grinder.processes', 1)
+        int threads = context.properties.getInt('grinder.threads', 1)
+        require(agent >= 0 && processSlot >= 0 && processSlot < processes, 'Run through a Controller without process ramp-up')
+        userSlot = (agent * processes + processSlot) * threads + context.threadNumber
+        headers = [new BasicHeader('Accept', 'application/json')]
+        if (settings.profile.auth == 'authenticated') {
+            require(settings.tokens.size() > userSlot, 'Token pool too small for Agent/process/thread slot; no token reuse')
+            headers.add(new BasicHeader('Authorization', 'Bearer ' + settings.tokens[userSlot]))
+        }
+        File directory = new File(settings.outputDir as String, settings.runId as String)
+        require(directory.isDirectory() || directory.mkdirs(), 'Cannot create sample directory')
+        String stem = "a${agent}-p${processSlot}-t${context.threadNumber}"
+        File sampleFile = new File(directory, stem + '.csv')
+        require(sampleFile.createNewFile(), 'Sample file already exists; use a new runId')
+        samples = sampleFile.newWriter('UTF-8')
+        samples.write('runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes\n')
+        samples.flush()
+        if (context.threadNumber == 0) {
+            Map metadata = settings.findAll { key, value -> key != 'tokens' }
+            metadata = metadata + [agent: agent, process: processSlot, processes: processes, threads: threads,
+                    startedAtEpochMs: System.currentTimeMillis()]
+            new File(directory, "a${agent}-p${processSlot}-manifest.json").setText(JsonOutput.prettyPrint(JsonOutput.toJson(metadata)), 'UTF-8')
+        }
+    }
+
+    void execute(def request) {
+        int index = ((iteration + userSlot) % settings.profile.inputs.size()) as int
+        Map input = settings.profile.inputs[index]
+        List params = []
+        input.query.each { key, value ->
+            (value instanceof List ? value : [value]).each { item ->
+                params.add(new BasicNameValuePair(key as String, item.toString()))
+            }
+        }
+        if (settings.keywordMode) params.add(new BasicNameValuePair('keyword', input.keyword))
+        long startedAt = System.currentTimeMillis()
+        long start = System.nanoTime()
+        double elapsedMs = 0
+        int status = 0
+        int bytes = 0
+        String failure = ''
+        boolean success = false
+        try {
+            def response = request.GET(settings.baseUrl + '/roommate/boards', params, headers)
+            elapsedMs = (System.nanoTime() - start) / 1_000_000d
+            status = response.statusCode
+            bytes = response.bodyBytes.length
+            if (status != 200) failure = 'http_' + status
+            else {
+                try {
+                    Map body = new JsonSlurper().parseText(response.getBodyText(StandardCharsets.UTF_8)) as Map
+                    validateResponse(body, input)
+                    success = true
+                } catch (Exception | AssertionError invalid) {
+                    failure = 'response_validation'
+                }
+            }
+        } catch (Exception transport) {
+            elapsedMs = (System.nanoTime() - start) / 1_000_000d
+            failure = transport.class.simpleName
+        } finally {
+            if (!success) context.statistics.forLastTest.success = false
+            samples.write([settings.runId, settings.profileId, context.agentNumber,
+                    context.processNumber - context.firstProcessNumber, context.threadNumber,
+                    iteration, index, startedAt, String.format(Locale.ROOT, '%.3f', elapsedMs),
+                    status, success, failure, bytes].join(',') + '\n')
+            iteration++
+            if (iteration % 100 == 0) samples.flush()
+        }
+    }
+
+    static void validateResponse(Map body, Map input) {
+        require(body.status == 200 && body.error == null, 'Invalid envelope')
+        Map page = body.data as Map
+        Map query = input.query
+        Map expect = input.expect
+        require(page.content instanceof List && page.totalElements instanceof Number, 'Invalid page')
+        List rows = page.content
+        require(page.number == query.page && page.size == query.size, 'Wrong page or size')
+        require(rows.size() <= query.size && page.totalElements >= expect.minTotalElements, 'Invalid content/count')
+        if (expect.containsKey('totalElements')) require(page.totalElements == expect.totalElements, 'Wrong exact count')
+        require(expect.totalElements == 0 ? rows.isEmpty() : !rows.isEmpty(), 'Unexpected empty/nonempty page')
+        if (rows) require(page.totalElements >= (query.page as long) * query.size + rows.size(), 'Count contradicts page content')
+        require(rows.every { it.id instanceof Number } && rows*.id.toSet().size() == rows.size(), 'Invalid/duplicate IDs')
+        rows.each { row ->
+            if (query.gender) require(row.gender == query.gender, 'Gender filter missing')
+            if (query.likedOnly) require(row.interested == true, 'Liked filter missing')
+            [['minDeposit', 'deposit', true], ['maxDeposit', 'deposit', false],
+             ['minMounthRent', 'monthlyRent', true], ['maxMounthRent', 'monthlyRent', false]].each { rule ->
+                if (query.containsKey(rule[0])) require(row[rule[1]] instanceof Number &&
+                        (rule[2] ? row[rule[1]] >= query[rule[0]] : row[rule[1]] <= query[rule[0]]), 'Budget filter missing')
+            }
+            if (expect.regionFragments) require(expect.regionFragments.any { row.regionFullName?.contains(it) }, 'Region filter missing')
+            if (expect.roomTypeNames) require(row.roomTypes instanceof List &&
+                    row.roomTypes.any { it in expect.roomTypeNames }, 'Room type filter missing')
+            if (input.keyword) {
+                String keyword = input.keyword.trim().toLowerCase(Locale.ROOT)
+                List text = [row.title, row.regionFullName] + (row.roomTypes ?: [])
+                require(text.any { it?.toLowerCase(Locale.ROOT)?.contains(keyword) }, 'Keyword filter missing')
+            }
+            require(!(row.id in (expect.excludedIds ?: [])), 'Excluded fixture returned')
+        }
+        require((expect.requiredIds ?: []).every { it in rows*.id }, 'Required fixture missing')
+        List sort = query.sort.split(',') as List
+        for (int i = 1; i < rows.size(); i++) {
+            def previous = sort[0] == 'createdAt' ? LocalDateTime.parse(rows[i - 1].createdAt) : rows[i - 1].hits
+            def current = sort[0] == 'createdAt' ? LocalDateTime.parse(rows[i].createdAt) : rows[i].hits
+            int compared = previous <=> current
+            require(sort[1] == 'DESC' ? compared >= 0 : compared <= 0, 'Invalid ordering')
+            if (compared == 0) require(rows[i - 1].id > rows[i].id, 'Invalid ID tie-break ordering')
+        }
+    }
+
+    void close() { samples.close() }
+}

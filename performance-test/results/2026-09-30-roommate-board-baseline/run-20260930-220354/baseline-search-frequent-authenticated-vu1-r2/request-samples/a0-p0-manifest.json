@@ -1,0 +1,32 @@
+{
+    "profileId": "search-frequent-authenticated",
+    "profile": {
+        "auth": "authenticated",
+        "inputs": [
+            {
+                "keyword": "\ubd80\ud558 \ud14c\uc2a4\ud2b8 \uac8c\uc2dc\uae00",
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "totalElements": 1000
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-baseline-search-frequent-authenticated-vu1-r2-test_315",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": true,
+    "configSha256": "d8ac2658b142c2588619570e530071f4061ca7482e6679039ce9cb498e3b7e45",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774706262
+}

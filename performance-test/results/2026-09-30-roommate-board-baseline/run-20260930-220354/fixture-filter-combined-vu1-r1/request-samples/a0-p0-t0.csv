@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-filter-combined-vu1-r1-test_299,filter-combined,0,0,0,0,0,1790774228657,135.069,200,true,,2717
+run-20260930-220354-fixture-filter-combined-vu1-r1-test_299,filter-combined,0,0,0,1,0,1790774228817,33.083,200,true,,2717
+run-20260930-220354-fixture-filter-combined-vu1-r1-test_299,filter-combined,0,0,0,2,0,1790774228852,28.907,200,true,,2717

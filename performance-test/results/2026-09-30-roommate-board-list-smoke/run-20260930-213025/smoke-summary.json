@@ -1,0 +1,82 @@
+[
+  {
+    "profile": "list-anonymous",
+    "testId": 289,
+    "configRevision": 38,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "searchBefore": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "searchAfter": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "expectedHistoryDelta": 0,
+    "historyDelta": 0,
+    "passed": true,
+    "samplesComplete": true
+  },
+  {
+    "profile": "list-authenticated",
+    "testId": 290,
+    "configRevision": 39,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "searchBefore": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "searchAfter": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "expectedHistoryDelta": 0,
+    "historyDelta": 0,
+    "passed": true,
+    "samplesComplete": true
+  },
+  {
+    "profile": "search-frequent-anonymous",
+    "testId": 291,
+    "configRevision": 40,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "searchBefore": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "searchAfter": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "expectedHistoryDelta": 0,
+    "historyDelta": 0,
+    "passed": true,
+    "samplesComplete": true
+  },
+  {
+    "profile": "search-frequent-authenticated",
+    "testId": 292,
+    "configRevision": 41,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "searchBefore": {
+      "total": 1005,
+      "keyword": 0
+    },
+    "searchAfter": {
+      "total": 1008,
+      "keyword": 3
+    },
+    "expectedHistoryDelta": 3,
+    "historyDelta": 3,
+    "passed": true,
+    "samplesComplete": true
+  }
+]

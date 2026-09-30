@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-concurrency-check-search-frequent-authenticated-vu3-r1-retry1-test_320,search-frequent-authenticated,0,0,1,0,0,1790775338478,1019.358,200,true,,12376
+run-20260930-220354-concurrency-check-search-frequent-authenticated-vu3-r1-retry1-test_320,search-frequent-authenticated,0,0,1,1,0,1790775339556,1081.965,200,true,,12376
+run-20260930-220354-concurrency-check-search-frequent-authenticated-vu3-r1-retry1-test_320,search-frequent-authenticated,0,0,1,2,0,1790775340647,1341.247,200,true,,12376

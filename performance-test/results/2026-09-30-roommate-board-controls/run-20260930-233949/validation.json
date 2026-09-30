@@ -1,0 +1,65 @@
+{
+  "offlineGroovy": "Passed compilation/filters/sharding/wrapped cause/message-token exclusion on Agent Java11 actual libraries",
+  "offlineSampleSummary": {
+    "runId": "offline-smoke",
+    "profile": "smoke",
+    "configSha256": "offline-test",
+    "sampleComplete": true,
+    "expectedRequests": 3,
+    "requests": 3,
+    "expectedWorkers": 1,
+    "workers": 1,
+    "successes": 1,
+    "errors": 2,
+    "errorRatePercent": 66.66666666666667,
+    "failures": {
+      "SocketTimeoutException": 1,
+      "ExecutionException": 1
+    },
+    "transportFailureRoots": {
+      "SocketTimeoutException": 2
+    },
+    "transportFailuresWithoutRoot": 0,
+    "successMeanMs": 0.097,
+    "successP50Ms": 0.097,
+    "successP95Ms": 0.097,
+    "successP99Ms": 0.097,
+    "observedAllP95Ms": 1.707,
+    "sampleSpanSeconds": 0.0291630859375,
+    "sampleSuccessRps": 34.28992398620366,
+    "inputs": {
+      "0": 3
+    },
+    "notes": [
+      "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+      "Timeout durations are censored observations, not completed server response times.",
+      "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+      "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+    ]
+  },
+  "pythonSampleTests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "sourceAST": {
+    "run-roommate-board-baseline.py": true,
+    "summarize-roommate-board-controls.py": true,
+    "diagnose-roommate-board-sql.py": true,
+    "summarize-roommate-board-sql.py": true,
+    "probe-roommate-board-block-sql.py": true
+  },
+  "finalChecks": {
+    "mainRuns": 12,
+    "mainRequests": 174285,
+    "mainErrors": 5,
+    "historyDelta": 3081,
+    "windowSuccessfulRequests": 98202,
+    "sqlPrototypeShapes": 4,
+    "memberComparisons": 16,
+    "localReportLinksChecked": 54,
+    "jwtFilesScanned": 287,
+    "cleanupChecks": true,
+    "snapshotHashesMatch": true
+  },
+  "offlineMockTransportErrorsExpected": 2
+}

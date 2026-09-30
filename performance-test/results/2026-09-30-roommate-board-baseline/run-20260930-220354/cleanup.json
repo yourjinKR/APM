@@ -1,0 +1,13 @@
+{
+  "agentTokenFileAbsent": {
+    "apm-ngrinder-agent-2": true,
+    "apm-ngrinder-agent-5": true,
+    "apm-ngrinder-agent-1": true,
+    "apm-ngrinder-agent-3": true,
+    "apm-ngrinder-agent-4": true
+  },
+  "controllerConfigRestored": true,
+  "reverifiedAtUtc": "2026-09-30T14:19:03.305241+00:00",
+  "controllerRunningTests": 0,
+  "controllerConfigRevision": 90
+}

@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-filter-budget-vu1-r1-test_297,filter-budget,0,0,0,0,0,1790774183679,130.389,200,true,,12352
+run-20260930-220354-fixture-filter-budget-vu1-r1-test_297,filter-budget,0,0,0,1,0,1790774183861,37.738,200,true,,12352
+run-20260930-220354-fixture-filter-budget-vu1-r1-test_297,filter-budget,0,0,0,2,0,1790774183905,38.454,200,true,,12352

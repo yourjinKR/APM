@@ -1,0 +1,21 @@
+{
+  "cooldownSeconds": 15,
+  "vusers": [
+    1,
+    3,
+    5
+  ],
+  "profiles": [
+    "list-anonymous",
+    "search-frequent-authenticated"
+  ],
+  "requestsPerVu": 100,
+  "stopOnFailure": true,
+  "datasetReset": "Preserve SEARCH ID <= initial floor; remove only new test-member history between cases",
+  "fixtureRequests": 3,
+  "telemetryPollSeconds": 10,
+  "note": "Exploratory baseline; JVM and nGrinder share one host; 100 samples at 1 VU is insufficient for stable p99 or capacity/SLO certification",
+  "warmupRequests": 30,
+  "repetitions": 3,
+  "runnerSha256": "A1B983E2A40EBEEDD00FA6A34D487EDC573046E69EE37C8E9BCAAAFADEC10AAA"
+}

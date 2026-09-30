@@ -2,7 +2,7 @@
 
 `performance-test/script`에서 관리하는 실행 가능한 nGrinder 스크립트의 협업 인덱스다. 스크립트는 작성자별 폴더가 아니라 **도메인 폴더**에 배치하고, 추가·이동·삭제할 때 이 문서의 해당 표를 같은 변경에서 갱신한다.
 
-- 최종 갱신: 2026-09-30 — 목록·검색 측정 산출물 APM 통합
+- 최종 갱신: 2026-09-30 — 목록·검색 실제 Controller 계약 smoke 통과
 - 기준 환경: nGrinder Controller/Agent `3.5.9-p1`, The Grinder `3.9.1`, Groovy `3.0.5`, JDK `11`
 - 공통 대상 주소: `http://host.docker.internal:8080`
 - 현재 범위: 조회 REST API
@@ -13,14 +13,14 @@
 - **런타임 검증 완료**: Controller의 `/script/api/validate`에서 초기화, 1회 HTTP 실행, 통계 종료까지 스크립트 예외 없이 완료했다.
 - **계약 검증 완료**: 정상 토큰과 정상 fixture를 사용해 기대 HTTP 상태와 응답 계약까지 확인했다.
 - 2026-09-23 최초 16개 스크립트는 placeholder 토큰으로 런타임 검증했다. 이후 정상 fixture로 수행한 기록은 [측정 결과](../results/2026-09-28-read-seed-selection/report.md)를 참조한다.
-- 2026-09-30 갱신한 목록·검색 스크립트는 실제 Agent 라이브러리의 오프라인 검증을 통과했다. 이 버전의 Controller 배포·정상 fixture 계약 smoke는 실행 전 수행한다.
+- 2026-09-30 갱신한 목록·검색 스크립트는 실제 Agent 라이브러리 오프라인 검증과 Controller 계약 smoke를 통과했다. 기본 조회/빈번 검색 × 익명/인증 네 조건에서 각각 3회 요청과 검색 이력 증분을 확인했다. [결과](../results/2026-09-30-roommate-board-list-smoke/report.md). 이후 H2 fixture에서 17개 프로필의 실제 계약 검증과 반복 기준선을 수행했다. [후속 측정](../results/2026-09-30-roommate-board-baseline/report.md). 다른 snapshot은 별도 검증이 필요하다.
 
 ## 룸메이트 게시글
 
 | 시나리오 | 메서드 | 라우터 | GTest ID | 스크립트 경로 | 작성자 | 인증·fixture | 조회 부작용 | 검증 상태 |
 |---|---|---|---:|---|---|---|---|---|
-| S01 · 게시글 기본·필터·페이지 조회 | GET | `/roommate/boards` | 4101 | [RoommateBoardListGetTest.groovy](./roommate/RoommateBoardListGetTest.groovy) | `yourjin` | JSON 프로필, 익명/인증 선택, 실측 fixture | 검색어 없음 | 갱신본 오프라인 검증 완료 |
-| S01 · 게시글 검색 조회 | GET | `/roommate/boards?keyword=...` | 4104 | [RoommateBoardListKeywordGetTest.groovy](./roommate/RoommateBoardListKeywordGetTest.groovy) | 미지정 | JSON 프로필, 익명 대조군/인증 검색, Agent 토큰 | 인증 검색마다 검색 이력 INSERT | 오프라인 검증 완료 |
+| S01 · 게시글 기본·필터·페이지 조회 | GET | `/roommate/boards` | 4101 | [RoommateBoardListGetTest.groovy](./roommate/RoommateBoardListGetTest.groovy) | `yourjin` | JSON 프로필, 익명/인증 선택, 실측 fixture | 검색어 없음 | H2 fixture의 12개 조회 프로필 계약 검증 완료 |
+| S01 · 게시글 검색 조회 | GET | `/roommate/boards?keyword=...` | 4104 | [RoommateBoardListKeywordGetTest.groovy](./roommate/RoommateBoardListKeywordGetTest.groovy) | 미지정 | JSON 프로필, 익명 대조군/인증 검색, Agent 토큰 | 인증 검색마다 검색 이력 INSERT | H2 fixture의 5개 검색 프로필 계약 검증 완료 |
 | S01 · 게시글 상세 조회 | GET | `/roommate/boards/{boardId}` | 4102 | [`script/roommate/RoommateBoardDetailGetTest.groovy`](./roommate/RoommateBoardDetailGetTest.groovy) | `yourjin` | JWT, 공개·미삭제 `BOARD_ID_POOL` | 요청마다 조회수 UPDATE | 런타임 검증 완료 |
 | S12 준비 · 게시글 편집 폼 조회 | GET | `/roommate/boards/{boardId}/edit` | 4103 | [`script/roommate/RoommateBoardEditFormGetTest.groovy`](./roommate/RoommateBoardEditFormGetTest.groovy) | `yourjin` | JWT, 토큰 사용자가 작성한 `OWNED_BOARD_ID_POOL` | 없음 | 런타임 검증 완료 |
 

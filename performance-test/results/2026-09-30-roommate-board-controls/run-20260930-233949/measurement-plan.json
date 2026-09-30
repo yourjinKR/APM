@@ -1,0 +1,24 @@
+{
+  "mode": "controls",
+  "rotateOrder": true,
+  "durationSeconds": 180,
+  "sampleExpectation": "VU * completed iterations == Controller successes+errors == CSV count; keyword authenticated history delta == requests",
+  "cooldownSeconds": 15,
+  "repetitions": 3,
+  "vusers": 1,
+  "profiles": [
+    "list-anonymous",
+    "list-authenticated",
+    "search-frequent-anonymous",
+    "search-frequent-authenticated"
+  ],
+  "runnerSha256": "d19ad82a5bf14a404bf2db660168791648ef3d602b831dd8a9994294f862db1e",
+  "sqlDiagnostics": "after all controls; query statistics and SQL logging disabled during baseline",
+  "executionThreshold": "R; complete count, calibrated to >=180s observed request span",
+  "steadyWindow": "140s fixed window [first request start +30s, +170s], requests must complete within window",
+  "durationPreflightExclusion": "Test357: Controller1086 vs CSV1100; not a valid measurement; preserve evidence",
+  "actualWarmup": "100 complete requests per path; short attempts recorded separately; first30s excluded from comparisons",
+  "controllerMaxRunCount": "Temporarily 1000000 via local admin API, restored to original 10000 and original content after suite",
+  "additionalExclusion": "Test366: batching triggered Controller request threshold early; reverted script batching; preserve original files",
+  "errorPolicy": "All failures retained. Initial test368 stopped on two transport errors. After comparing server counters and resources, same1VU independent controls resume; no VU escalation. Sample/Controller/history mismatch or incomplete termination still stops suite. A completed measurement can contain errors; passed remains false."
+}

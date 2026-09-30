@@ -1,0 +1,32 @@
+{
+    "profileId": "search-zero-authenticated",
+    "profile": {
+        "auth": "authenticated",
+        "inputs": [
+            {
+                "keyword": "__knockin_perf_no_match_20260930__",
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "expect": {
+                    "minTotalElements": 0,
+                    "totalElements": 0
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-search-zero-authenticated-vu1-r1-test_308",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": true,
+    "configSha256": "30962a7a9a738f623f0e773c5978924608e2a2558f9753b637af35f636d25149",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774417540
+}

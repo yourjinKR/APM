@@ -1,0 +1,5 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-233949-batch-check-list-authenticated-vu1-r1-test_363,list-authenticated,0,0,0,0,0,1790780424708,288.683,200,true,,12361
+run-20260930-233949-batch-check-list-authenticated-vu1-r1-test_363,list-authenticated,0,0,0,1,0,1790780425016,220.321,200,true,,12361
+run-20260930-233949-batch-check-list-authenticated-vu1-r1-test_363,list-authenticated,0,0,0,2,0,1790780425240,221.544,200,true,,12361
+run-20260930-233949-batch-check-list-authenticated-vu1-r1-test_363,list-authenticated,0,0,0,3,0,1790780425464,219.467,200,true,,12361

@@ -1,0 +1,32 @@
+{
+    "profileId": "liked-authenticated",
+    "profile": {
+        "auth": "authenticated",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "likedOnly": true
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "totalElements": 1
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-liked-authenticated-vu1-r1-test_300",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "dc062fb07c412d2b53ed760de1b81d0ac1ec3334f194c5026b23b4e0acc3f779",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774246760
+}

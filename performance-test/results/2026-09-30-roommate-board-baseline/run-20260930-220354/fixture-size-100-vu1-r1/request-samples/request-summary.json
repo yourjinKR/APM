@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-size-100-vu1-r1-test_303",
+  "profile": "size-100",
+  "configSha256": "d47fd45ac0fec4ad94d146c8be50c480da2120b362e315add687c07461175487",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 80.30633333333334,
+  "successP50Ms": 78.382,
+  "successP95Ms": 111.202,
+  "successP99Ms": 111.202,
+  "observedAllP95Ms": 111.202,
+  "sampleSpanSeconds": 0.3003349609375,
+  "sampleSuccessRps": 9.988847088049477,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

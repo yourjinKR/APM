@@ -1,0 +1,9 @@
+{
+  "helper": {
+    "path": "resources/RoommateBoardListSupport.txt",
+    "revision": 140,
+    "sha256": "44f5b02c0fc788c08decad15480d39f7ba998d142ba3048e99d8e78ec7f0b963"
+  },
+  "reason": "Only after all measurements: schema2 collects root exception class without message; actual measurements used schema1 snapshot",
+  "scriptBodiesChanged": false
+}

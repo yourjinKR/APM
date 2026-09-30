@@ -55,7 +55,7 @@
 5. 지역/방 유형의 `[null]`을 실제 ID로, `regionFragments`/`roomTypeNames`를 실제 이름으로 채운다. 미완성 fixture는 요청 전에 실패한다. 예산 단위는 API와 DB의 단위로 확인한다.
 6. 측정 전 1 VU·1~3회로 count·필터·회원별 결과를 확인한다. `expect.totalElements`, `requiredIds`, `excludedIds`를 추가하면 고정 snapshot의 count·노출/제외까지 확인할 수 있다. `minTotalElements`만으로 필터 적용의 완전한 정합성을 증명할 수는 없다.
 
-인증 토큰은 **Agent 프로세스 환경**의 `ROOMMATE_BOARD_TOKENS`(쉼표 구분) 또는 `ROOMMATE_BOARD_TOKEN_FILE`(Agent 로컬 절대 경로, 한 줄 한 토큰)로 제공한다. Controller 호스트의 shell 변수만 설정해도 Agent에 자동 전달되는 것은 아니다. 파일/환경 변경은 worker가 실제로 읽는지 확인한다. 토큰·서명 키를 저장소나 결과 파일에 넣지 않는다.
+인증 토큰은 **Agent 프로세스 환경**의 `ROOMMATE_BOARD_TOKENS`(쉼표 구분) 또는 `ROOMMATE_BOARD_TOKEN_FILE`(Agent 로컬 절대 경로, 한 줄 한 토큰)로 제공한다. Agent 환경 변수를 변경하기 어려우면 배포할 JSON의 `tokenFile`에 Agent 로컬 절대 경로를 지정할 수 있다. 환경 변수 경로가 우선한다. Controller 호스트의 shell 변수만 설정해도 Agent에 자동 전달되는 것은 아니다. 파일/환경 변경은 worker가 실제로 읽는지 확인한다. 토큰·서명 키를 저장소나 결과 파일에 넣지 않는다.
 
 모든 Agent에 동일한 전체 토큰 목록과 같은 정렬을 제공한다. slot은 `(agentNumber × processes + processSlot) × threads + threadNumber`이며 `processSlot=processNumber-firstProcessNumber`다. modulo 재사용 없이 slot마다 다른 토큰을 배정한다. 토큰 수가 부족하면 실패한다. Agent 번호가 불연속이면 최대 slot까지 준비한다. **토큰 문자열이 서로 달라도 같은 회원일 수 있으므로 사전 발급 단계에서 member ID 중복을 확인한다.** [Grinder ScriptContext](https://grinder.sourceforge.net/g3/script-javadoc/net/grinder/script/Grinder.ScriptContext.html)
 
@@ -125,4 +125,51 @@ GROUP BY member_id, keyword;
 
 ## 이번 검증 범위
 
-기존 `ngrinder/agent:3.5.9-p1` 컨테이너의 Java 11·실제 Groovy/nGrinder/HTTP 라이브러리에서 두 스크립트와 공통 코드를 컴파일하고 오프라인 smoke를 통과했다. 필터/한글 keyword 전달, 응답 검증, Agent/process별 토큰 slot, timeout 실패 표시, CSV 및 토큰 비노출을 확인했다. Python 집계기 테스트 4개(개별 p95/p99, 누락, 중복, 오류 분리)도 통과했다. 백엔드 호출·Controller 테스트 등록·부하 재실행은 수행하지 않았다. 배포한 snapshot/토큰에 대한 1 VU smoke는 실제 실행 전에 필요하다.
+기존 `ngrinder/agent:3.5.9-p1` 컨테이너의 Java 11·실제 Groovy/nGrinder/HTTP 라이브러리에서 두 스크립트와 공통 코드를 컴파일하고 오프라인 smoke를 통과했다. 필터/한글 keyword 전달, 응답 검증, Agent/process별 토큰 slot, timeout 실패 표시, CSV 및 토큰 비노출을 확인했다. Python 집계기 테스트 4개(개별 p95/p99, 누락, 중복, 오류 분리)도 통과했다. 이후 현재 소스의 H2 seed1000 서버로 실제 Controller 테스트 289~292를 수행했다. 기본 조회/빈번 검색 × 익명/인증 네 조건에서 각각 1 VU·3회 요청이 성공했고 CSV 누락/오류 0건, 인증 검색 이력 증가 3건을 확인했다. [실제 smoke 결과](../results/2026-09-30-roommate-board-list-smoke/report.md). 다른 snapshot/토큰 및 나머지 프로필은 실행 전 1 VU 검증을 수행한다. 이 smoke 단계에서는 기준선 부하 시험과 백엔드 최적화를 수행하지 않았다. 이후 기준선 실행과 장시간 대조 측정은 아래 기록에서 확인한다.
+
+
+## 2026-09-30 탐색 기준선 실행기
+
+전용 로컬 H2 seed1000 서버에서는 APM의 `tools/run-roommate-board-baseline.py`를 사용한다. 백엔드는 `test` 프로필, 시드 1,000, SQL 로그 비활성화 상태로 별도 기동하고 같은 JAR 경로를 지정한다. 실행기는 Controller/백엔드 주소를 로컬 주소로 고정한다. DB에서 필터 fixture와 기대 count를 확인하고 관심 관계 한 건을 준비한다. 검색 이력은 시험 회원의 신규 행만 정리하며 시드 행을 유지한다. 초기 identity sequence를 되돌리지는 않는다. Controller 설정은 종료 시 APM 템플릿으로 복원하고 임시 토큰 파일을 제거한다. 백엔드는 실행기를 호출한 측에서 종료한다.
+
+```powershell
+python -B performance-test/tools/run-roommate-board-baseline.py --output-directory performance-test/results/<측정일-주제>/<새-runId> --jar C:/dev/workspace/KnockIn/back/11th-1team-BE/build/libs/KnockIn-0.0.1-SNAPSHOT.jar
+python -B performance-test/tools/summarize-roommate-board-baseline.py performance-test/results/<측정일-주제>/<runId>
+```
+
+기본 계획은 17개 프로필의 1 VU·3회 계약 검증, 기본 익명 목록/인증 빈번 검색의 별도 워밍업, 1→3→5 VU·각 100회·3반복이다. 선택 조건과 부하를 폭넓게 탐색하기 위한 실행이며 짧은 구간의 안정된 p99·SLO·운영 처리량을 보증하지 않는다. [실제 결과와 한계](../results/2026-09-30-roommate-board-baseline/report.md)를 확인한다.
+
+최초 3 VU에서 발견한 공통 helper의 폴더 생성 경쟁 조건을 `Files.createDirectories`로 수정했다. HTTP 오류 0건이어도 worker 누락과 `STOP_BY_ERROR`는 실패로 처리한다. 수정 후 두 경로의 3 worker·9요청 검증을 통과했다. 나머지 프로필 계약 검증은 H2 fixture snapshot에 한정된다. 다른 DB/snapshot에서는 다시 기대 count·회원·관심/차단 관계를 준비해야 한다.
+
+
+## 2026-09-30~10-01 네 경로 장시간 대조와 SQL 진단
+
+`run-roommate-board-baseline.py --mode controls`는 익명/인증 × 검색어 유무 네 경로를 1 VU·3회씩 실행한다. 각 경로100건 워밍업 후 요청 속도로 회수를 보정하고 실제 GET 구간이 최소180초가 되도록 완료 요청 방식으로 실행한다. 실행 순서를 회전하고15초 휴식한다. 집계기는 처음30초를 제외한 `[+30초,+170초]`의 동일140초 구간에서 시작·완료한 요청만 비교한다. 이 구간의 성공 지연과 성공 처리량에 오류 건수/오류율을 함께 기록한다.
+
+Controller 반복 상한10000회는 긴 익명 측정을 제한한다. 이 모드에서는 Controller가 idle인 것을 확인한 뒤 로컬 관리자 API로 상한만 일시1000000회로 높이고 종료 시 원래 설정과 실효 상한을 복원한다. Controller 재시작은 하지 않는다. 시간 종료나 한 반복에 여러 GET을 묶는 우회는 종료 시 통계/CSV 불일치를 일으켜 사용하지 않는다. `controller-limit.json`과 `cleanup.json`에서 복원을 확인한다. 강제 프로세스 종료 시에는 로컬 Controller 시스템 설정의 `controller.max_run_count`를 이전 값으로 복원하고 실효값을 확인해야 한다.
+
+`passed=true`는 오류0·응답 계약·전체 집계·DB 증분·길이 검증을 모두 통과했다는 뜻이다. `measurementComplete=true`는 끝난 요청의 CSV/Controller/DB 집계와 구간 길이가 맞아 비교 가능한 측정이란 뜻이며 오류가 남아 있을 수 있다. 오류 있는 반복을 숨기지 않는다. 첫 장시간 시험의 통신 실패는 별도 관측 증거를 남긴 후 같은1VU 독립 조건만 계속 수집했다. 종료 상태 이상·표본/Controller 불일치·검색 이력 증분 불일치 시 남은 측정은 중단한다. 이 모드에서는 VU를 올리지 않는다.
+
+```powershell
+python -B performance-test/tools/run-roommate-board-baseline.py --mode controls --output-directory performance-test/results/<측정일-주제>/<새-runId> --jar C:/dev/workspace/KnockIn/back/11th-1team-BE/build/libs/KnockIn-0.0.1-SNAPSHOT.jar
+python -B performance-test/tools/summarize-roommate-board-controls.py performance-test/results/<측정일-주제>/<runId>
+python -B performance-test/tools/diagnose-roommate-board-sql.py performance-test/results/<측정일-주제>/<runId> --jar C:/dev/workspace/KnockIn/back/11th-1team-BE/build/libs/KnockIn-0.0.1-SNAPSHOT.jar
+```
+
+중단 후 동일 시험 DB를 유지한 경우에만 `--resume-controls`로 같은 output-directory를 이어간다. 성공/오류가 있는 완료 실행과 보정·종료 불일치 원본을 보존한다. 서버를 재기동했다면 새로운 runId를 사용한다. 백엔드의 `loggers` Actuator endpoint는 SQL 진단에서만 필요하다. 진단 실행기는12회 집계 검증과 Controller idle/H2를 확인한 뒤 H2 query statistics를 켜고 경로별10요청의 SQL 횟수·시간 증분을 수집한다. 그 다음 SQL/bind logger로 경로별1요청을 수집하고 실제 바인딩 값을 넣은 SELECT에만 `EXPLAIN ANALYZE`를 실행한다. 진단이 끝나면 통계와 logger를 원래 상태로 복원한다.
+
+H2 SQL 통계의 실행 시간 단위는 ms다. `EXPLAIN ANALYZE`는 실제 쿼리를 실행하므로 본 측정과 분리한다. SQL 시간은 HTTP 전체·commit·네트워크 시간이 아니며 H2 결과를 PostgreSQL 운영 실행계획으로 외삽하지 않는다. [H2 System Tables](https://h2database.com/html/systemtables.html), [H2 Commands](https://h2database.com/html/commands.html).
+
+[장시간 대조 측정과 진단 기록](../results/2026-09-30-roommate-board-controls/report.md).
+
+
+최신 CSV schema2는 `failure`에 wrapper 예외 클래스를, `failureRoot`에 최대8단계까지 확인한 뿌리 예외 클래스만 남긴다. 예외 메시지·JWT는 남기지 않는다. 집계기는 schema1도 읽고 뿌리 예외가 없는 전송 오류 수를 구분한다. 이번 장시간 측정은 schema1이고 보강은 측정 종료 후 오프라인 검증·Controller 반영했다.
+
+이번 결과와 엄격한 API 전후 비교를 할 때 `--script-directory performance-test/results/2026-09-30-roommate-board-controls/run-20260930-233949/measurement-source`로 같은 스크립트·리소스를 선택한다. 현재 도구의 기본은 APM 최신 소스다. 측정 당시 실행기와 소스 SHA256도 결과 폴더에 보존했다.
+
+SQL 수집 후에는 다음 두 도구로 보고서와 읽기 전용 차단 SQL 후보를 확인할 수 있다. 후보 수치는 API 개선률과 분리한다.
+
+```powershell
+python -B performance-test/tools/summarize-roommate-board-sql.py performance-test/results/<측정일-주제>/<runId>/sql-diagnostics
+python -B performance-test/tools/probe-roommate-board-block-sql.py performance-test/results/<측정일-주제>/<runId>
+```

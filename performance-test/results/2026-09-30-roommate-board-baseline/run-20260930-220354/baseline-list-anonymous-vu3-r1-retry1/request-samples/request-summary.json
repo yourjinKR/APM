@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-baseline-list-anonymous-vu3-r1-retry1-test_321",
+  "profile": "list-anonymous",
+  "configSha256": "d07bc55a17d37ae0926b330d26e5233d8f46b314e0e76db6ff752f84409ca562",
+  "sampleComplete": true,
+  "expectedRequests": 300,
+  "requests": 300,
+  "expectedWorkers": 3,
+  "workers": 3,
+  "successes": 300,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 71.08866666666667,
+  "successP50Ms": 55.604,
+  "successP95Ms": 155.456,
+  "successP99Ms": 258.678,
+  "observedAllP95Ms": 155.456,
+  "sampleSpanSeconds": 7.30002392578125,
+  "sampleSuccessRps": 41.09575571944361,
+  "inputs": {
+    "0": 300
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

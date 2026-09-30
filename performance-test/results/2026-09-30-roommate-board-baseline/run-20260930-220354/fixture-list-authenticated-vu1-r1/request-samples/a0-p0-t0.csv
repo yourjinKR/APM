@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-list-authenticated-vu1-r1-test_294,list-authenticated,0,0,0,0,0,1790774120255,1205.499,200,true,,12376
+run-20260930-220354-fixture-list-authenticated-vu1-r1-test_294,list-authenticated,0,0,0,1,0,1790774121533,986.418,200,true,,12376
+run-20260930-220354-fixture-list-authenticated-vu1-r1-test_294,list-authenticated,0,0,0,2,0,1790774122527,973.981,200,true,,12376

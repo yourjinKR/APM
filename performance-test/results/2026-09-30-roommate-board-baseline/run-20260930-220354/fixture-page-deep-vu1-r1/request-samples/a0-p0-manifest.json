@@ -1,0 +1,31 @@
+{
+    "profileId": "page-deep",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 40,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "expect": {
+                    "minTotalElements": 801,
+                    "totalElements": 1002
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-page-deep-vu1-r1-test_302",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "fa820e052ec3bd6b28c120db7b7b5b9dd9022aa5bd90dedf9349be497a3016bc",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774286374
+}

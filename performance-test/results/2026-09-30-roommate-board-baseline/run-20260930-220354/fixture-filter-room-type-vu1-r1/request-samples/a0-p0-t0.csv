@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-filter-room-type-vu1-r1-test_296,filter-room-type,0,0,0,0,0,1790774165378,161.366,200,true,,12286
+run-20260930-220354-fixture-filter-room-type-vu1-r1-test_296,filter-room-type,0,0,0,1,0,1790774165575,84.020,200,true,,12286
+run-20260930-220354-fixture-filter-room-type-vu1-r1-test_296,filter-room-type,0,0,0,2,0,1790774165662,41.983,200,true,,12286

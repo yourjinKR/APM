@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-search-rare-authenticated-vu1-r1-test_307,search-rare-authenticated,0,0,0,0,0,1790774396344,634.738,200,true,,959
+run-20260930-220354-fixture-search-rare-authenticated-vu1-r1-test_307,search-rare-authenticated,0,0,0,1,0,1790774397002,473.429,200,true,,959
+run-20260930-220354-fixture-search-rare-authenticated-vu1-r1-test_307,search-rare-authenticated,0,0,0,2,0,1790774397476,297.606,200,true,,959

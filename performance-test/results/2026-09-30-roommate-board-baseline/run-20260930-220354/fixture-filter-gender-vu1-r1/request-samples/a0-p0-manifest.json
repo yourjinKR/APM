@@ -1,0 +1,32 @@
+{
+    "profileId": "filter-gender",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "gender": "MALE"
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "totalElements": 500
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-filter-gender-vu1-r1-test_298",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "1b9f8083d0d7332b23c3f75a2e8f804811ee601e801c2c2ba223793c90ed6d3a",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774207096
+}

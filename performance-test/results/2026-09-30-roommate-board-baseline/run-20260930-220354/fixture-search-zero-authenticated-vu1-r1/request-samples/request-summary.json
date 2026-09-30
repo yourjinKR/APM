@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-search-zero-authenticated-vu1-r1-test_308",
+  "profile": "search-zero-authenticated",
+  "configSha256": "30962a7a9a738f623f0e773c5978924608e2a2558f9753b637af35f636d25149",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 507.81733333333335,
+  "successP50Ms": 435.99,
+  "successP95Ms": 657.094,
+  "successP99Ms": 657.094,
+  "observedAllP95Ms": 657.094,
+  "sampleSpanSeconds": 1.545367919921875,
+  "sampleSuccessRps": 1.9412852831522884,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

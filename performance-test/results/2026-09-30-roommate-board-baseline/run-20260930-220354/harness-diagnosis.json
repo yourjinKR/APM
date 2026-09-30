@@ -1,0 +1,12 @@
+{
+  "resumeStage": 3,
+  "validation": "3 VU x 3 requests each profile before repeating 3 and 5 VU",
+  "workerException": "IllegalArgumentException: Cannot create sample directory",
+  "note": "Original failure preserved and excluded from valid baseline groups. No backend optimization.",
+  "failedTestId": 318,
+  "cause": "Concurrent check/mkdir race in shared worker sample directory",
+  "httpExecutionAndTimingChanged": false,
+  "fix": "java.nio.file.Files.createDirectories",
+  "category": "measurement harness",
+  "firstStageValidated": "1 VU x 100 requests x 3 repetitions, both profiles"
+}

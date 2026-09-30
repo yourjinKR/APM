@@ -1,0 +1,761 @@
+{
+  "experiments": [
+    {
+      "profile": "list-authenticated",
+      "role": "content",
+      "originalSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+      "candidateSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+      "memberResultChecks": [
+        {
+          "memberId": 2,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        },
+        {
+          "memberId": 3,
+          "equal": true,
+          "returnedRows": 0,
+          "countResult": null
+        },
+        {
+          "memberId": 4,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        },
+        {
+          "memberId": 31,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        }
+      ],
+      "consoleRoundTrip": {
+        "original": {
+          "durationsMs": [
+            343.61410001292825,
+            329.219099949114,
+            348.76289998646826,
+            406.2883999431506,
+            407.4563999893144,
+            414.1737000318244,
+            369.68180001713336,
+            343.84240000508726,
+            383.1223000306636,
+            367.9820999968797
+          ],
+          "medianMs": 368.8319500070065
+        },
+        "candidate": {
+          "durationsMs": [
+            50.612400053068995,
+            24.196699960157275,
+            24.958499940112233,
+            29.638999956659973,
+            25.423999992199242,
+            28.858400066383183,
+            42.7915999898687,
+            26.413000072352588,
+            45.14890001155436,
+            30.246500042267144
+          ],
+          "medianMs": 29.248700011521578
+        }
+      },
+      "sqlExecution": {
+        "original": {
+          "executions": 10,
+          "totalMs": 3578.8577,
+          "meanMs": 357.88577,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785901071565400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "332.6277"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785901415185700 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "320.2553"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785901744407200 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "339.573"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785902093172600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "378.2364"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785902499464400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "395.9658"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785902906924800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "403.5037"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785903321106400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "357.6877"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785903690788300 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "334.7449"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785904034632000 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "361.7366"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-original-1790785904417760100 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "354.5266"
+            }
+          ]
+        },
+        "candidate": {
+          "executions": 10,
+          "totalMs": 158.0182,
+          "meanMs": 15.801820000000001,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905143954000 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "16.1709"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905194571300 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "14.5845"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905218769500 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "14.4015"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905243731400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "17.9521"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905273372900 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "14.6829"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905298803800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "15.9895"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905327662600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "15.1386"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905370460100 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "14.8992"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905396873500 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "15.3441"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-content-candidate-1790785905442026600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "18.8549"
+            }
+          ]
+        }
+      },
+      "sqlMeanReductionPercent": 95.5846749648638
+    },
+    {
+      "profile": "list-authenticated",
+      "role": "count",
+      "originalSql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+      "candidateSql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+      "memberResultChecks": [
+        {
+          "memberId": 2,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1002"
+            }
+          ]
+        },
+        {
+          "memberId": 3,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "0"
+            }
+          ]
+        },
+        {
+          "memberId": 4,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1002"
+            }
+          ]
+        },
+        {
+          "memberId": 31,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1002"
+            }
+          ]
+        }
+      ],
+      "consoleRoundTrip": {
+        "original": {
+          "durationsMs": [
+            222.90530009195209,
+            136.91459991969168,
+            126.20010005775839,
+            118.09869995340705,
+            123.66419995669276,
+            116.00410006940365,
+            131.4407999161631,
+            120.47760002315044,
+            114.47500006761402,
+            122.55200010258704
+          ],
+          "medianMs": 123.1081000296399
+        },
+        "candidate": {
+          "durationsMs": [
+            4.3889000080525875,
+            18.17070005927235,
+            3.432299941778183,
+            20.73039999231696,
+            3.6046000896021724,
+            4.512400017119944,
+            3.5582000855356455,
+            3.8291000528261065,
+            3.918000031262636,
+            3.499199985526502
+          ],
+          "medianMs": 3.8735500420443714
+        }
+      },
+      "sqlExecution": {
+        "original": {
+          "executions": 10,
+          "totalMs": 1267.4974,
+          "meanMs": 126.74974,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785907952797800 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "218.5029"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908175703900 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.182"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908312635400 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "113.9042"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908438834700 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "115.3377"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908556934000 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "121.3701"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908680599300 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "113.7256"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908796604000 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "118.4012"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785908928046100 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "118.1938"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785909048524800 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "112.1484"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-original-1790785909163000200 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "119.7315"
+            }
+          ]
+        },
+        "candidate": {
+          "executions": 10,
+          "totalMs": 18.3821,
+          "meanMs": 1.8382100000000001,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909409345800 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.8542"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909413735300 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.9125"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909431906900 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.5686"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909435339200 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.0921"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909456071000 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.588"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909459676100 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.5834"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909464189500 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.6164"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909467747800 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.8657"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909471578600 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.6228"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-list-authenticated-count-candidate-1790785909475497200 */ count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:22.041412400') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.6784"
+            }
+          ]
+        }
+      },
+      "sqlMeanReductionPercent": 98.54973272529001
+    },
+    {
+      "profile": "search-frequent-authenticated",
+      "role": "content",
+      "originalSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+      "candidateSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+      "memberResultChecks": [
+        {
+          "memberId": 2,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        },
+        {
+          "memberId": 3,
+          "equal": true,
+          "returnedRows": 0,
+          "countResult": null
+        },
+        {
+          "memberId": 4,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        },
+        {
+          "memberId": 31,
+          "equal": true,
+          "returnedRows": 20,
+          "countResult": null
+        }
+      ],
+      "consoleRoundTrip": {
+        "original": {
+          "durationsMs": [
+            141.15579996723682,
+            123.94750001840293,
+            138.7068999465555,
+            120.6003000261262,
+            134.04889998491853,
+            127.33699998352677,
+            120.84939994383603,
+            121.88190000597388,
+            147.12890004739165,
+            140.96260000951588
+          ],
+          "medianMs": 130.69294998422265
+        },
+        "candidate": {
+          "durationsMs": [
+            9.051900007762015,
+            8.67169990669936,
+            9.181100060231984,
+            33.433299977332354,
+            8.222199976444244,
+            31.93769999779761,
+            26.640899945050478,
+            8.34890000987798,
+            9.260599967092276,
+            8.966200053691864
+          ],
+          "medianMs": 9.116500033997
+        }
+      },
+      "sqlExecution": {
+        "original": {
+          "executions": 10,
+          "totalMs": 1213.3653,
+          "meanMs": 121.33653,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785910489685600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "136.0345"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785910630841600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "119.1423"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785910754790400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "121.9171"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785910893498100 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.2261"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911014099900 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "121.2773"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911148149400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "123.1692"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911275487300 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.4826"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911396337800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "117.845"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911518220800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "118.3975"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-original-1790785911665350600 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "122.8737"
+            }
+          ]
+        },
+        "candidate": {
+          "executions": 10,
+          "totalMs": 47.2335,
+          "meanMs": 4.72335,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785911950561100 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.89"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785911959613800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.5238"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785911968286800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "5.0021"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785911977469100 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.9776"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912010903400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.252"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912019126200 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.3342"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912051064800 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "5.5479"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912077706400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.3357"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912086057000 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.5282"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-content-candidate-1790785912095318400 */ rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "4.842"
+            }
+          ]
+        }
+      },
+      "sqlMeanReductionPercent": 96.10723168035216
+    },
+    {
+      "profile": "search-frequent-authenticated",
+      "role": "count",
+      "originalSql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+      "candidateSql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+      "memberResultChecks": [
+        {
+          "memberId": 2,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1000"
+            }
+          ]
+        },
+        {
+          "memberId": 3,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "0"
+            }
+          ]
+        },
+        {
+          "memberId": 4,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1000"
+            }
+          ]
+        },
+        {
+          "memberId": 31,
+          "equal": true,
+          "returnedRows": 1,
+          "countResult": [
+            {
+              "?column?": "1000"
+            }
+          ]
+        }
+      ],
+      "consoleRoundTrip": {
+        "original": {
+          "durationsMs": [
+            119.00669999886304,
+            129.72789991181344,
+            119.0360999898985,
+            118.69879998266697,
+            119.5664000697434,
+            118.25719999615103,
+            118.8496999675408,
+            140.39810001850128,
+            121.50399992242455,
+            139.13310004863888
+          ],
+          "medianMs": 119.30125002982095
+        },
+        "candidate": {
+          "durationsMs": [
+            4.7824999783188105,
+            3.8619000697508454,
+            4.049299983307719,
+            28.650899999774992,
+            5.211099982261658,
+            16.600099974311888,
+            5.580700002610683,
+            5.965300020761788,
+            4.944899934343994,
+            22.74140005465597
+          ],
+          "medianMs": 5.395899992436171
+        }
+      },
+      "sqlExecution": {
+        "original": {
+          "executions": 10,
+          "totalMs": 1178.0446,
+          "meanMs": 117.80445999999999,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785912999562400 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.444"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913118570000 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "114.3632"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913248299100 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "115.9343"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913367338500 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "115.4267"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913486038600 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.1505"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913605604300 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "115.7176"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913723862800 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "116.3101"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913842713200 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "128.5646"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785913983112300 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "117.6028"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-original-1790785914104619800 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "121.5308"
+            }
+          ]
+        },
+        "candidate": {
+          "executions": 10,
+          "totalMs": 26.351399999999998,
+          "meanMs": 2.63514,
+          "entries": [
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914408236100 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.1262"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914413018800 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.9019"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914416881400 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "1.9437"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914420931500 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.7538"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914449584000 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.4266"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914454806100 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "3.1828"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914471407100 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.5793"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914476988100 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "3.871"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914482954500 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "2.1015"
+            },
+            {
+              "SQL_STATEMENT": "select /* perfproto-search-frequent-authenticated-count-candidate-1790785914487900500 */ count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:25:23.979744100') and (not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id)) and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)))",
+              "EXECUTION_COUNT": "1",
+              "CUMULATIVE_EXECUTION_TIME": "3.4646"
+            }
+          ]
+        }
+      },
+      "sqlMeanReductionPercent": 97.7631237391182
+    }
+  ],
+  "scope": "Literal SELECT SQL on same local H2, original member2, equality checks2/3/4/31. No API/JAR/source/index changes. Unique comments force fresh commands to avoid result reuse. SQL timings exclude console/HTML round trip; not API improvement metrics."
+}

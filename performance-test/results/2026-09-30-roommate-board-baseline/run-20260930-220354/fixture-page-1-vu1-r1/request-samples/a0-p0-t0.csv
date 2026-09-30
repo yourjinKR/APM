@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-page-1-vu1-r1-test_301,page-1,0,0,0,0,0,1790774264786,155.380,200,true,,12321
+run-20260930-220354-fixture-page-1-vu1-r1-test_301,page-1,0,0,0,1,0,1790774265038,44.187,200,true,,12321
+run-20260930-220354-fixture-page-1-vu1-r1-test_301,page-1,0,0,0,2,0,1790774265086,39.535,200,true,,12321

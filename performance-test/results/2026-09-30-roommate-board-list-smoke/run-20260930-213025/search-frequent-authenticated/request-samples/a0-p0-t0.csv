@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-213025-search-frequent-authenticated-test_292,search-frequent-authenticated,0,0,0,0,0,1790772409998,942.425,200,true,,12376
+run-20260930-213025-search-frequent-authenticated-test_292,search-frequent-authenticated,0,0,0,1,0,1790772410983,971.821,200,true,,12376
+run-20260930-213025-search-frequent-authenticated-test_292,search-frequent-authenticated,0,0,0,2,0,1790772411958,838.964,200,true,,12376

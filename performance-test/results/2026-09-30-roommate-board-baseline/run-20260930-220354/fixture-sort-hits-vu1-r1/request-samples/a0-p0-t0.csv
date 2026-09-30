@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-sort-hits-vu1-r1-test_304,sort-hits,0,0,0,0,0,1790774325202,126.348,200,true,,12376
+run-20260930-220354-fixture-sort-hits-vu1-r1-test_304,sort-hits,0,0,0,1,0,1790774325365,61.701,200,true,,12376
+run-20260930-220354-fixture-sort-hits-vu1-r1-test_304,sort-hits,0,0,0,2,0,1790774325428,35.943,200,true,,12376

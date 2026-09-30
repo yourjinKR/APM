@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-233949-fixture-search-frequent-authenticated-vu1-r1-test_356,search-frequent-authenticated,0,0,0,0,0,1790779409627,314.208,200,true,,12361
+run-20260930-233949-fixture-search-frequent-authenticated-vu1-r1-test_356,search-frequent-authenticated,0,0,0,1,0,1790779409964,247.687,200,true,,12361
+run-20260930-233949-fixture-search-frequent-authenticated-vu1-r1-test_356,search-frequent-authenticated,0,0,0,2,0,1790779410215,275.749,200,true,,12361

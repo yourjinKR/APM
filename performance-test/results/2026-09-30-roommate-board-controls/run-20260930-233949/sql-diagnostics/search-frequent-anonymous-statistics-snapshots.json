@@ -1,0 +1,279 @@
+{
+  "before": {
+    "SELECT SETTING_VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE SETTING_NAME=?": {
+      "SQL_STATEMENT": "SELECT SETTING_VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE SETTING_NAME=?",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.2773",
+      "AVERAGE_EXECUTION_TIME": "0.2773",
+      "MAX_EXECUTION_TIME": "0.2773"
+    },
+    "SELECT /* perfstats-1790785510804872100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785510804872100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0692",
+      "AVERAGE_EXECUTION_TIME": "0.0692",
+      "MAX_EXECUTION_TIME": "0.0692"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "72.3953",
+      "AVERAGE_EXECUTION_TIME": "5.568869230769231",
+      "MAX_EXECUTION_TIME": "10.1591"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "19.6121",
+      "AVERAGE_EXECUTION_TIME": "1.508623076923077",
+      "MAX_EXECUTION_TIME": "2.4623"
+    },
+    "SELECT /* perfstats-1790785511004170100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785511004170100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.2286",
+      "AVERAGE_EXECUTION_TIME": "0.2286",
+      "MAX_EXECUTION_TIME": "0.2286"
+    },
+    "SELECT /* perfstats-1790785512092309100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785512092309100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0856",
+      "AVERAGE_EXECUTION_TIME": "0.0856",
+      "MAX_EXECUTION_TIME": "0.0856"
+    },
+    "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?": {
+      "SQL_STATEMENT": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "0.066",
+      "AVERAGE_EXECUTION_TIME": "0.005076923076923076",
+      "MAX_EXECUTION_TIME": "0.019"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "2625.9951",
+      "AVERAGE_EXECUTION_TIME": "201.99962307692303",
+      "MAX_EXECUTION_TIME": "376.3072"
+    },
+    "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "0.0515",
+      "AVERAGE_EXECUTION_TIME": "0.003961538461538462",
+      "MAX_EXECUTION_TIME": "0.0351"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "2525.1746",
+      "AVERAGE_EXECUTION_TIME": "194.2442",
+      "MAX_EXECUTION_TIME": "440.6852"
+    },
+    "SELECT /* perfstats-1790785516316840100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785516316840100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0713",
+      "AVERAGE_EXECUTION_TIME": "0.0713",
+      "MAX_EXECUTION_TIME": "0.0713"
+    },
+    "SELECT COUNT(*) AS TOTAL FROM SEARCH": {
+      "SQL_STATEMENT": "SELECT COUNT(*) AS TOTAL FROM SEARCH",
+      "EXECUTION_COUNT": "4",
+      "CUMULATIVE_EXECUTION_TIME": "0.0325",
+      "AVERAGE_EXECUTION_TIME": "0.008125",
+      "MAX_EXECUTION_TIME": "0.0224"
+    },
+    "SELECT COUNT(*) AS TOTAL FROM SEARCH WHERE KEYWORD='부하 테스트 게시글' AND MEMBER_ID IN (2)": {
+      "SQL_STATEMENT": "SELECT COUNT(*) AS TOTAL FROM SEARCH WHERE KEYWORD='부하 테스트 게시글' AND MEMBER_ID IN (2)",
+      "EXECUTION_COUNT": "4",
+      "CUMULATIVE_EXECUTION_TIME": "0.0414",
+      "AVERAGE_EXECUTION_TIME": "0.01035",
+      "MAX_EXECUTION_TIME": "0.0335"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "3",
+      "CUMULATIVE_EXECUTION_TIME": "17.1917",
+      "AVERAGE_EXECUTION_TIME": "5.730566666666667",
+      "MAX_EXECUTION_TIME": "6.7472"
+    },
+    "COMMIT": {
+      "SQL_STATEMENT": "COMMIT",
+      "EXECUTION_COUNT": "84",
+      "CUMULATIVE_EXECUTION_TIME": "0.2543",
+      "AVERAGE_EXECUTION_TIME": "0.003027380952380952",
+      "MAX_EXECUTION_TIME": "0.0716"
+    },
+    "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+      "EXECUTION_COUNT": "29",
+      "CUMULATIVE_EXECUTION_TIME": "0.1342",
+      "AVERAGE_EXECUTION_TIME": "0.00462758620689655",
+      "MAX_EXECUTION_TIME": "0.0447"
+    },
+    "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id": {
+      "SQL_STATEMENT": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+      "EXECUTION_COUNT": "29",
+      "CUMULATIVE_EXECUTION_TIME": "0.0838",
+      "AVERAGE_EXECUTION_TIME": "0.002889655172413793",
+      "MAX_EXECUTION_TIME": "0.0364"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+      "EXECUTION_COUNT": "3",
+      "CUMULATIVE_EXECUTION_TIME": "6.8217",
+      "AVERAGE_EXECUTION_TIME": "2.2739",
+      "MAX_EXECUTION_TIME": "3.2226"
+    },
+    "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+      "EXECUTION_COUNT": "29",
+      "CUMULATIVE_EXECUTION_TIME": "0.2113",
+      "AVERAGE_EXECUTION_TIME": "0.007286206896551722",
+      "MAX_EXECUTION_TIME": "0.084"
+    }
+  },
+  "after": {
+    "SELECT SETTING_VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE SETTING_NAME=?": {
+      "SQL_STATEMENT": "SELECT SETTING_VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE SETTING_NAME=?",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.2773",
+      "AVERAGE_EXECUTION_TIME": "0.2773",
+      "MAX_EXECUTION_TIME": "0.2773"
+    },
+    "SELECT /* perfstats-1790785510804872100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785510804872100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0692",
+      "AVERAGE_EXECUTION_TIME": "0.0692",
+      "MAX_EXECUTION_TIME": "0.0692"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "72.3953",
+      "AVERAGE_EXECUTION_TIME": "5.568869230769231",
+      "MAX_EXECUTION_TIME": "10.1591"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "19.6121",
+      "AVERAGE_EXECUTION_TIME": "1.508623076923077",
+      "MAX_EXECUTION_TIME": "2.4623"
+    },
+    "SELECT /* perfstats-1790785511004170100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785511004170100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.2286",
+      "AVERAGE_EXECUTION_TIME": "0.2286",
+      "MAX_EXECUTION_TIME": "0.2286"
+    },
+    "SELECT /* perfstats-1790785512092309100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785512092309100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0856",
+      "AVERAGE_EXECUTION_TIME": "0.0856",
+      "MAX_EXECUTION_TIME": "0.0856"
+    },
+    "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?": {
+      "SQL_STATEMENT": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "0.066",
+      "AVERAGE_EXECUTION_TIME": "0.005076923076923076",
+      "MAX_EXECUTION_TIME": "0.019"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "2625.9951",
+      "AVERAGE_EXECUTION_TIME": "201.99962307692303",
+      "MAX_EXECUTION_TIME": "376.3072"
+    },
+    "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "0.0515",
+      "AVERAGE_EXECUTION_TIME": "0.003961538461538462",
+      "MAX_EXECUTION_TIME": "0.0351"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "2525.1746",
+      "AVERAGE_EXECUTION_TIME": "194.2442",
+      "MAX_EXECUTION_TIME": "440.6852"
+    },
+    "SELECT /* perfstats-1790785516316840100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785516316840100 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0713",
+      "AVERAGE_EXECUTION_TIME": "0.0713",
+      "MAX_EXECUTION_TIME": "0.0713"
+    },
+    "SELECT /* perfstats-1790785516389371800 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS": {
+      "SQL_STATEMENT": "SELECT /* perfstats-1790785516389371800 */ SQL_STATEMENT,EXECUTION_COUNT,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,MAX_EXECUTION_TIME FROM INFORMATION_SCHEMA.QUERY_STATISTICS",
+      "EXECUTION_COUNT": "1",
+      "CUMULATIVE_EXECUTION_TIME": "0.0888",
+      "AVERAGE_EXECUTION_TIME": "0.0888",
+      "MAX_EXECUTION_TIME": "0.0888"
+    },
+    "SELECT COUNT(*) AS TOTAL FROM SEARCH": {
+      "SQL_STATEMENT": "SELECT COUNT(*) AS TOTAL FROM SEARCH",
+      "EXECUTION_COUNT": "5",
+      "CUMULATIVE_EXECUTION_TIME": "0.0361",
+      "AVERAGE_EXECUTION_TIME": "0.00722",
+      "MAX_EXECUTION_TIME": "0.0224"
+    },
+    "SELECT COUNT(*) AS TOTAL FROM SEARCH WHERE KEYWORD='부하 테스트 게시글' AND MEMBER_ID IN (2)": {
+      "SQL_STATEMENT": "SELECT COUNT(*) AS TOTAL FROM SEARCH WHERE KEYWORD='부하 테스트 게시글' AND MEMBER_ID IN (2)",
+      "EXECUTION_COUNT": "5",
+      "CUMULATIVE_EXECUTION_TIME": "0.0447",
+      "AVERAGE_EXECUTION_TIME": "0.00894",
+      "MAX_EXECUTION_TIME": "0.0335"
+    },
+    "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only": {
+      "SQL_STATEMENT": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "72.3588",
+      "AVERAGE_EXECUTION_TIME": "5.566061538461538",
+      "MAX_EXECUTION_TIME": "6.7472"
+    },
+    "COMMIT": {
+      "SQL_STATEMENT": "COMMIT",
+      "EXECUTION_COUNT": "104",
+      "CUMULATIVE_EXECUTION_TIME": "0.2806",
+      "AVERAGE_EXECUTION_TIME": "0.0026980769230769233",
+      "MAX_EXECUTION_TIME": "0.0716"
+    },
+    "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+      "EXECUTION_COUNT": "39",
+      "CUMULATIVE_EXECUTION_TIME": "0.1531",
+      "AVERAGE_EXECUTION_TIME": "0.003925641025641024",
+      "MAX_EXECUTION_TIME": "0.0447"
+    },
+    "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id": {
+      "SQL_STATEMENT": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+      "EXECUTION_COUNT": "39",
+      "CUMULATIVE_EXECUTION_TIME": "0.1014",
+      "AVERAGE_EXECUTION_TIME": "0.0026",
+      "MAX_EXECUTION_TIME": "0.0364"
+    },
+    "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)": {
+      "SQL_STATEMENT": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+      "EXECUTION_COUNT": "13",
+      "CUMULATIVE_EXECUTION_TIME": "27.4193",
+      "AVERAGE_EXECUTION_TIME": "2.109176923076923",
+      "MAX_EXECUTION_TIME": "3.2226"
+    },
+    "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?": {
+      "SQL_STATEMENT": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+      "EXECUTION_COUNT": "39",
+      "CUMULATIVE_EXECUTION_TIME": "0.2507",
+      "AVERAGE_EXECUTION_TIME": "0.006428205128205126",
+      "MAX_EXECUTION_TIME": "0.084"
+    }
+  }
+}

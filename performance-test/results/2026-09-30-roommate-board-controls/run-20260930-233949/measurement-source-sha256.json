@@ -1,0 +1,22 @@
+[
+  {
+    "path": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-controls\\run-20260930-233949\\measurement-source\\RoommateBoardListGetTest.groovy",
+    "sha256": "aab87e5c1a44982d380f8e917e4fd28a1bc9e85f7c8c902b5d767701741c3f1e"
+  },
+  {
+    "path": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-controls\\run-20260930-233949\\measurement-source\\RoommateBoardListKeywordGetTest.groovy",
+    "sha256": "579e59ae79eacb29f419df9a4d5b068c91fcc453ad2028ab036e688dbc66e8b1"
+  },
+  {
+    "path": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-controls\\run-20260930-233949\\measurement-source\\run-roommate-board-baseline.py",
+    "sha256": "d19ad82a5bf14a404bf2db660168791648ef3d602b831dd8a9994294f862db1e"
+  },
+  {
+    "path": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-controls\\run-20260930-233949\\measurement-source\\resources\\roommate-board-list.json",
+    "sha256": "44f4fea8469159255397f65f91d13358e04f698755df6fdfa1083af43bb2b3d8"
+  },
+  {
+    "path": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-controls\\run-20260930-233949\\measurement-source\\resources\\RoommateBoardListSupport.txt",
+    "sha256": "7efcca4e2dd825bb3265a5fc71721343317fc4a0f228f4ff0bc9e5797a8281e9"
+  }
+]

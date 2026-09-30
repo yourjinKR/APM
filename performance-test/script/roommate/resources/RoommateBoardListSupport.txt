@@ -1,6 +1,7 @@
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import java.nio.charset.StandardCharsets
+import java.nio.file.Files
 import java.security.MessageDigest
 import java.time.LocalDateTime
 import org.apache.hc.core5.http.message.BasicHeader
@@ -84,8 +85,8 @@ class RoommateBoardListSupport {
             String supplied = System.getenv('ROOMMATE_BOARD_TOKENS')
             if (supplied) tokens = supplied.split(',', -1).collect { it.trim() }
             else {
-                String tokenFile = System.getenv('ROOMMATE_BOARD_TOKEN_FILE')
-                require(tokenFile?.trim() as boolean, 'Set Agent ROOMMATE_BOARD_TOKENS or ROOMMATE_BOARD_TOKEN_FILE')
+                String tokenFile = System.getenv('ROOMMATE_BOARD_TOKEN_FILE') ?: config.tokenFile
+                require(tokenFile?.trim() as boolean, 'Set Agent ROOMMATE_BOARD_TOKENS, ROOMMATE_BOARD_TOKEN_FILE or config.tokenFile')
                 tokens = new File(tokenFile).readLines('UTF-8').collect { it.trim() }
             }
             require(tokens && tokens.every { it && !it.startsWith('Bearer ') && !it.startsWith('TOKEN_') }, 'Invalid token pool')
@@ -113,17 +114,17 @@ class RoommateBoardListSupport {
             headers.add(new BasicHeader('Authorization', 'Bearer ' + settings.tokens[userSlot]))
         }
         File directory = new File(settings.outputDir as String, settings.runId as String)
-        require(directory.isDirectory() || directory.mkdirs(), 'Cannot create sample directory')
+        Files.createDirectories(directory.toPath())
         String stem = "a${agent}-p${processSlot}-t${context.threadNumber}"
         File sampleFile = new File(directory, stem + '.csv')
         require(sampleFile.createNewFile(), 'Sample file already exists; use a new runId')
         samples = sampleFile.newWriter('UTF-8')
-        samples.write('runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes\n')
+        samples.write('runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,failureRoot,responseBytes\n')
         samples.flush()
         if (context.threadNumber == 0) {
             Map metadata = settings.findAll { key, value -> key != 'tokens' }
             metadata = metadata + [agent: agent, process: processSlot, processes: processes, threads: threads,
-                    startedAtEpochMs: System.currentTimeMillis()]
+                    startedAtEpochMs: System.currentTimeMillis(), sampleSchemaVersion: 2]
             new File(directory, "a${agent}-p${processSlot}-manifest.json").setText(JsonOutput.prettyPrint(JsonOutput.toJson(metadata)), 'UTF-8')
         }
     }
@@ -144,6 +145,7 @@ class RoommateBoardListSupport {
         int status = 0
         int bytes = 0
         String failure = ''
+        String failureRoot = ''
         boolean success = false
         try {
             def response = request.GET(settings.baseUrl + '/roommate/boards', params, headers)
@@ -163,12 +165,17 @@ class RoommateBoardListSupport {
         } catch (Exception transport) {
             elapsedMs = (System.nanoTime() - start) / 1_000_000d
             failure = transport.class.simpleName
+            Throwable cause = transport
+            for (int depth = 0; depth < 8 && cause.cause != null && cause.cause != cause; depth++) {
+                cause = cause.cause
+            }
+            failureRoot = cause.class.simpleName
         } finally {
             if (!success) context.statistics.forLastTest.success = false
             samples.write([settings.runId, settings.profileId, context.agentNumber,
                     context.processNumber - context.firstProcessNumber, context.threadNumber,
                     iteration, index, startedAt, String.format(Locale.ROOT, '%.3f', elapsedMs),
-                    status, success, failure, bytes].join(',') + '\n')
+                    status, success, failure, failureRoot, bytes].join(',') + '\n')
             iteration++
             if (iteration % 100 == 0) samples.flush()
         }

@@ -23,6 +23,8 @@ Controller에 실행 스크립트와 같은 폴더의 resources를 함께 등록
 ```bash
 bash performance-test/tools/run-ngrinder-load-stages.sh --help
 python performance-test/tools/summarize-roommate-board-samples.py --help
+python performance-test/tools/run-roommate-board-baseline.py --help
+python performance-test/tools/summarize-roommate-board-baseline.py --help
 python -B -m unittest discover -s performance-test/tools/tests -p test_roommate_board_samples.py
 ```
 
@@ -39,5 +41,9 @@ Groovy 오프라인 smoke는 `performance-test/script/roommate/`를 작업 디�
 - [2026-09-28 목록 단계별 탐색](./results/2026-09-28-roommate-board-list-load/report.md)
 - [2026-09-28 목록 반복 측정](./results/2026-09-28-roommate-board-list-repeats/report.md)
 - [2026-09-30 산출물 통합 기록](./results/2026-09-30-artifact-consolidation/report.md)
+- [2026-09-30 목록·검색 실제 smoke](./results/2026-09-30-roommate-board-list-smoke/report.md)
+- [2026-09-30 필터·페이지 검증과 반복 기준선](./results/2026-09-30-roommate-board-baseline/report.md)
+
+- [2026-09-30~10-01 네 경로 장시간 대조와 SQL 진단](./results/2026-09-30-roommate-board-controls/report.md)
 
 과거 측정 원본의 커밋·리비전·경로·환경 값은 당시 증거이므로 유지한다. 재실행 명령과 문서 링크는 현재 위치로 갱신했다. 기존 `ngrinder-performance-testing-*.md`는 초기 설계 참고 자료이며 실행 가능한 코드와 검증 상태는 `script/README.md`를 기준으로 확인한다.

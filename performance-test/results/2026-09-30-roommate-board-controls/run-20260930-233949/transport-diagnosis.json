@@ -1,0 +1,105 @@
+{
+  "testId": 368,
+  "expectedRequests": 29165,
+  "controllerSuccesses": 29163,
+  "controllerErrors": 2,
+  "csvRequests": 29165,
+  "csvErrors": 2,
+  "errorElapsedMs": [
+    5006.991,
+    5006.21
+  ],
+  "failure": "ExecutionException",
+  "httpStatus": 0,
+  "serverCompletedCountBefore": 29247,
+  "serverCompletedCountAfter": 58410,
+  "serverCompletedDelta": 29163,
+  "serverCounterObservationEpochMs": [
+    1790781103045,
+    1790781365459
+  ],
+  "hikariPendingObserved": 0,
+  "serverRequestMaxSecondsNearErrors": 0.0177644,
+  "interpretation": "Counter delta equals successful client requests. No server HTTP error or Hikari pending observed. Failures likely occurred before server request handling, but lower transport cause is not available in current sanitized CSV; Docker/client transport cause remains unproven. Retain errors in comparisons.",
+  "logLocation": "control-list-anonymous-vu1-r1-attempt3/controller-logs/",
+  "resumeScope": "same1VU four independent paths; no higher VU",
+  "allErrorRuns": [
+    {
+      "testId": 368,
+      "label": "control-list-anonymous-vu1-r1-attempt3",
+      "successes": 29163,
+      "errors": 2,
+      "serverCompletedDelta": 29163.0,
+      "counterBoundaryEpochMs": [
+        1790781115280,
+        1790781365459
+      ],
+      "failedSamples": [
+        {
+          "iteration": "7000",
+          "startedAtEpochMs": "1790781174017",
+          "elapsedMs": "5006.991",
+          "httpStatus": "0",
+          "failure": "ExecutionException"
+        },
+        {
+          "iteration": "7201",
+          "startedAtEpochMs": "1790781180581",
+          "elapsedMs": "5006.210",
+          "httpStatus": "0",
+          "failure": "ExecutionException"
+        }
+      ]
+    },
+    {
+      "testId": 371,
+      "label": "control-search-frequent-anonymous-vu1-r1-attempt2",
+      "successes": 26876,
+      "errors": 2,
+      "serverCompletedDelta": 26876.0,
+      "counterBoundaryEpochMs": [
+        1790782115982,
+        1790782366169
+      ],
+      "failedSamples": [
+        {
+          "iteration": "18100",
+          "startedAtEpochMs": "1790782276033",
+          "elapsedMs": "5007.545",
+          "httpStatus": "0",
+          "failure": "ExecutionException"
+        },
+        {
+          "iteration": "18301",
+          "startedAtEpochMs": "1790782282869",
+          "elapsedMs": "5006.451",
+          "httpStatus": "0",
+          "failure": "ExecutionException"
+        }
+      ]
+    },
+    {
+      "testId": 379,
+      "label": "control-list-anonymous-vu1-r3-attempt1",
+      "successes": 29164,
+      "errors": 1,
+      "serverCompletedDelta": 29164.0,
+      "counterBoundaryEpochMs": [
+        1790784380336,
+        1790784680453
+      ],
+      "failedSamples": [
+        {
+          "iteration": "28400",
+          "startedAtEpochMs": "1790784658087",
+          "elapsedMs": "5006.365",
+          "httpStatus": "0",
+          "failure": "ExecutionException"
+        }
+      ]
+    }
+  ],
+  "allServerCountersMatchClientSuccesses": true,
+  "tcpip4227Or4231EventsObserved": 0,
+  "limitation": "No lower exception cause or packet-level evidence for actual errors; class-only root capture added after measurement. No port-exhaustion event does not exclude all transport causes."
+}

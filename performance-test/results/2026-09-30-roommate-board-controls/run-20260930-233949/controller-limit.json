@@ -1,0 +1,7 @@
+{
+  "originalMaxRunCount": 10000,
+  "temporaryMaxRunCount": 1000000,
+  "originalConfigSha256": "6cee0a47c3ce4a08db4a9a3df56d9f472ac73f1535e9af39528e7dcc05c1551a",
+  "restored": true,
+  "restoredContentMatches": true
+}

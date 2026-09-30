@@ -1,0 +1,19 @@
+{
+  "list-anonymous": true,
+  "list-authenticated": true,
+  "filter-region": true,
+  "filter-room-type": true,
+  "filter-budget": true,
+  "filter-gender": true,
+  "filter-combined": true,
+  "liked-authenticated": true,
+  "page-1": true,
+  "page-deep": true,
+  "size-100": true,
+  "sort-hits": true,
+  "search-frequent-anonymous": true,
+  "search-frequent-authenticated": true,
+  "search-rare-authenticated": true,
+  "search-zero-authenticated": true,
+  "search-combined-authenticated": true
+}

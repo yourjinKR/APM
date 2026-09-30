@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-baseline-search-frequent-authenticated-vu3-r3-retry1-test_326",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "f38797abb91452bbf5a113250c9470510c2f8389a4bd23225b025d39a2def81c",
+  "sampleComplete": true,
+  "expectedRequests": 300,
+  "requests": 300,
+  "expectedWorkers": 3,
+  "workers": 3,
+  "successes": 300,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 998.6914733333333,
+  "successP50Ms": 984.242,
+  "successP95Ms": 1254.668,
+  "successP99Ms": 1440.588,
+  "observedAllP95Ms": 1254.668,
+  "sampleSpanSeconds": 100.37838793945312,
+  "sampleSuccessRps": 2.988691153129057,
+  "inputs": {
+    "0": 300
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

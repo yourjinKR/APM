@@ -1,0 +1,338 @@
+{
+  "runId": "run-20260930-220354-baseline-list-anonymous-vu1-r2",
+  "baseUrl": "http://host.docker.internal:8080",
+  "connectTimeoutMs": 5000,
+  "socketTimeoutMs": 5000,
+  "outputDir": "/tmp/knockin-roommate-board-results",
+  "activeReadProfile": "list-anonymous",
+  "activeKeywordProfile": "search-frequent-authenticated",
+  "profiles": {
+    "list-anonymous": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "list-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "filter-region": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              19
+            ]
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              "역삼동"
+            ],
+            "totalElements": 18
+          }
+        }
+      ]
+    },
+    "filter-room-type": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "roomTypeIds": [
+              1
+            ]
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "roomTypeNames": [
+              "원룸"
+            ],
+            "totalElements": 202
+          }
+        }
+      ]
+    },
+    "filter-budget": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "minDeposit": 300,
+            "maxDeposit": 600,
+            "minMounthRent": 30,
+            "maxMounthRent": 50
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 252
+          }
+        }
+      ]
+    },
+    "filter-gender": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "gender": "MALE"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 500
+          }
+        }
+      ]
+    },
+    "filter-combined": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              19
+            ],
+            "roomTypeIds": [
+              1
+            ],
+            "gender": "MALE",
+            "minDeposit": 300,
+            "maxDeposit": 600,
+            "minMounthRent": 30,
+            "maxMounthRent": 50
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              "역삼동"
+            ],
+            "roomTypeNames": [
+              "원룸"
+            ],
+            "totalElements": 4
+          }
+        }
+      ]
+    },
+    "liked-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "likedOnly": true
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1
+          }
+        }
+      ]
+    },
+    "page-1": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 1,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 21,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "page-deep": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 40,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 801,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "size-100": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 100,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 100,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "sort-hits": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "hits,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1002
+          }
+        }
+      ]
+    },
+    "search-frequent-anonymous": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1000
+          }
+        }
+      ]
+    },
+    "search-frequent-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1000
+          }
+        }
+      ]
+    },
+    "search-rare-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글 999",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1
+          }
+        }
+      ]
+    },
+    "search-zero-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "__knockin_perf_no_match_20260930__",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 0,
+            "totalElements": 0
+          }
+        }
+      ]
+    },
+    "search-combined-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              19
+            ],
+            "roomTypeIds": [
+              1
+            ],
+            "minDeposit": 300,
+            "maxDeposit": 600
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              "역삼동"
+            ],
+            "roomTypeNames": [
+              "원룸"
+            ],
+            "totalElements": 4
+          }
+        }
+      ]
+    }
+  },
+  "tokenFile": "/tmp/knockin-board-baseline-run-20260930-220354.txt"
+}

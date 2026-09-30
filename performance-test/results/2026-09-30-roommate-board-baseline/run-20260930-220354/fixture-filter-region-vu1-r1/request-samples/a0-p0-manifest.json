@@ -1,0 +1,37 @@
+{
+    "profileId": "filter-region",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "regionIds": [
+                        19
+                    ]
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "regionFragments": [
+                        "\uc5ed\uc0bc\ub3d9"
+                    ],
+                    "totalElements": 18
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-filter-region-vu1-r1-test_295",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "ec263b339d1bce0ab300f8004c838234c8807e9189b42c5c40f4896d86ba2cfa",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774144592
+}

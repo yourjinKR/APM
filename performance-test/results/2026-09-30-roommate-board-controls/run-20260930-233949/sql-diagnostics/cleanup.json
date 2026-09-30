@@ -1,0 +1,7 @@
+{
+  "loggersRestored": {
+    "org.hibernate.SQL": true,
+    "org.hibernate.orm.jdbc.bind": true
+  },
+  "queryStatisticsDisabled": true
+}

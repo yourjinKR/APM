@@ -1,0 +1,35 @@
+{
+    "profileId": "filter-budget",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "minDeposit": 300,
+                    "maxDeposit": 600,
+                    "minMounthRent": 30,
+                    "maxMounthRent": 50
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "totalElements": 252
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-filter-budget-vu1-r1-test_297",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "b7e3d973e41d6a847260b0bc06ecb7dfe125b80a7edbff217db09c5b0ebaa23d",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774183613
+}

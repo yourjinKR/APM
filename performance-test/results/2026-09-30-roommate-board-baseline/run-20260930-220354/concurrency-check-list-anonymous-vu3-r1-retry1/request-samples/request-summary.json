@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-concurrency-check-list-anonymous-vu3-r1-retry1-test_319",
+  "profile": "list-anonymous",
+  "configSha256": "24c524c9f996694e407ac97738e7d3e42ac5476aa71caaf0928d5243341d47cf",
+  "sampleComplete": true,
+  "expectedRequests": 9,
+  "requests": 9,
+  "expectedWorkers": 3,
+  "workers": 3,
+  "successes": 9,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 75.9191111111111,
+  "successP50Ms": 91.205,
+  "successP95Ms": 97.565,
+  "successP99Ms": 97.565,
+  "observedAllP95Ms": 97.565,
+  "sampleSpanSeconds": 0.299205078125,
+  "sampleSuccessRps": 30.079703380702774,
+  "inputs": {
+    "0": 9
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

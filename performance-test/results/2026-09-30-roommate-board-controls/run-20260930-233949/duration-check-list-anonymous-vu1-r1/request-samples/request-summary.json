@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-233949-duration-check-list-anonymous-vu1-r1-test_357",
+  "profile": "list-anonymous",
+  "configSha256": "f68775d91eb3fd018590ae885dd01bf3b23c58965353404067df05d1e122e245",
+  "sampleComplete": false,
+  "expectedRequests": 1086,
+  "requests": 1100,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 1100,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 10.563653636363636,
+  "successP50Ms": 9.745,
+  "successP95Ms": 15.694,
+  "successP99Ms": 20.953,
+  "observedAllP95Ms": 15.694,
+  "sampleSpanSeconds": 12.6223779296875,
+  "sampleSuccessRps": 87.14681228271806,
+  "inputs": {
+    "0": 1100
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

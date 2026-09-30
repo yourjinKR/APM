@@ -1,0 +1,4 @@
+{
+  "entriesBeforeEnable": 0,
+  "observation": "QUERY_STATISTICS not listed in SETTINGS; no entries after completed load; enable/disable commands verified with statistics table"
+}

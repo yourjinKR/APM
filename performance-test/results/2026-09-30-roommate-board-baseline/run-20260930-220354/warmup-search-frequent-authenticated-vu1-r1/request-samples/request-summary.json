@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-warmup-search-frequent-authenticated-vu1-r1-test_311",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "9f68c0f303baacaea7bbf334956078590499b1903d594b65396878962acba988",
+  "sampleComplete": true,
+  "expectedRequests": 30,
+  "requests": 30,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 30,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 872.4537333333334,
+  "successP50Ms": 837.69,
+  "successP95Ms": 1095.884,
+  "successP99Ms": 1177.916,
+  "observedAllP95Ms": 1095.884,
+  "sampleSpanSeconds": 26.307635009765626,
+  "sampleSuccessRps": 1.1403533608727556,
+  "inputs": {
+    "0": 30
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-page-deep-vu1-r1-test_302,page-deep,0,0,0,0,0,1790774286419,98.133,200,true,,12258
+run-20260930-220354-fixture-page-deep-vu1-r1-test_302,page-deep,0,0,0,1,0,1790774286554,36.476,200,true,,12258
+run-20260930-220354-fixture-page-deep-vu1-r1-test_302,page-deep,0,0,0,2,0,1790774286594,42.954,200,true,,12258

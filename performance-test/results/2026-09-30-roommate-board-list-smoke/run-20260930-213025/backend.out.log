@@ -1,0 +1,60 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-30T21:30:27.324+09:00  INFO 44264 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : Starting KnockInApplication v0.0.1-SNAPSHOT using Java 21.0.8 with PID 44264 (C:\dev\workspace\KnockIn\back\11th-1team-BE\build\libs\KnockIn-0.0.1-SNAPSHOT.jar started by young in C:\dev\workspace\KnockIn\back\11th-1team-BE)
+2026-09-30T21:30:27.341+09:00  INFO 44264 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : The following 3 profiles are active: "secret-common", "test", "secret-test"
+2026-09-30T21:30:32.264+09:00  INFO 44264 --- [KnockIn] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-30T21:30:33.901+09:00  INFO 44264 --- [KnockIn] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1606 ms. Found 75 JPA repository interfaces.
+2026-09-30T21:30:34.888+09:00  WARN 44264 --- [KnockIn] [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'springdocQuerydslConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static' and/or marking the containing configuration class as 'proxyBeanMethods=false'.
+2026-09-30T21:30:38.494+09:00  INFO 44264 --- [KnockIn] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-30T21:30:38.533+09:00  INFO 44264 --- [KnockIn] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-30T21:30:38.534+09:00  INFO 44264 --- [KnockIn] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-09-30T21:30:38.640+09:00  INFO 44264 --- [KnockIn] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 11197 ms
+2026-09-30T21:30:40.125+09:00  INFO 44264 --- [KnockIn] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-30T21:30:40.332+09:00  INFO 44264 --- [KnockIn] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-09-30T21:30:42.377+09:00  INFO 44264 --- [KnockIn] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-30T21:30:42.489+09:00  INFO 44264 --- [KnockIn] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-30T21:30:42.799+09:00  INFO 44264 --- [KnockIn] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-09-30T21:30:42.814+09:00  INFO 44264 --- [KnockIn] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-30T21:30:42.892+09:00  WARN 44264 --- [KnockIn] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-30T21:30:42.958+09:00  INFO 44264 --- [KnockIn] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.3.232
+	Default catalog/schema: TESTDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-30T21:30:48.986+09:00  INFO 44264 --- [KnockIn] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-30T21:30:49.391+09:00  INFO 44264 --- [KnockIn] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-30T21:30:49.749+09:00  INFO 44264 --- [KnockIn] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-30T21:30:53.660+09:00  INFO 44264 --- [KnockIn] [           main] o.e.k.global.config.FirebaseConfig       : Successfully initialized firebase app
+2026-09-30T21:30:56.848+09:00  WARN 44264 --- [KnockIn] [           main] o.s.aop.framework.CglibAopProxy          : Public final method [public final void org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService.setRestOperations(org.springframework.web.client.RestOperations)] cannot get proxied via CGLIB, consider removing the final marker or using interface-based JDK proxies.
+2026-09-30T21:30:56.859+09:00  WARN 44264 --- [KnockIn] [           main] o.s.aop.framework.CglibAopProxy          : Public final method [public final void org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService.setRequestEntityConverter(org.springframework.core.convert.converter.Converter)] cannot get proxied via CGLIB, consider removing the final marker or using interface-based JDK proxies.
+2026-09-30T21:30:57.861+09:00  WARN 44264 --- [KnockIn] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-30T21:31:01.186+09:00  INFO 44264 --- [KnockIn] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-09-30T21:31:01.433+09:00  INFO 44264 --- [KnockIn] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-09-30T21:31:01.589+09:00  INFO 44264 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-09-30T21:31:01.589+09:00  INFO 44264 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6b5517e7]]
+2026-09-30T21:31:01.589+09:00  INFO 44264 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-09-30T21:31:01.610+09:00  INFO 44264 --- [KnockIn] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-30T21:31:01.635+09:00  INFO 44264 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : Started KnockInApplication in 34.88 seconds (process running for 35.728)
+2026-09-30T21:31:03.804+09:00  INFO 44264 --- [KnockIn] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-30T21:31:03.816+09:00  INFO 44264 --- [KnockIn] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-30T21:31:03.822+09:00  INFO 44264 --- [KnockIn] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-09-30T21:32:01.507+09:00  INFO 44264 --- [KnockIn] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2026-09-30T21:32:30.795+09:00  WARN 44264 --- [KnockIn] [nio-8080-exec-4] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+

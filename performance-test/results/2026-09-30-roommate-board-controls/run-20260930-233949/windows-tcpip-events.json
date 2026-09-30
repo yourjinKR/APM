@@ -1,0 +1,11 @@
+{
+  "queriedAtUtc": "2026-09-30T16:46:34.1195849Z",
+  "startTimeKst": "2026-09-30T23:39:50+09:00",
+  "provider": "Tcpip",
+  "events": [],
+  "querySucceeded": true,
+  "eventIds": [
+    4227,
+    4231
+  ]
+}

@@ -1,0 +1,2160 @@
+{
+  "startedAtUtc": "2026-09-30T16:19:44.416313+00:00",
+  "finishedAtUtc": "2026-09-30T16:19:58.188465+00:00",
+  "memberId": 2,
+  "groups": [
+    {
+      "profile": "list-anonymous",
+      "requests": 10,
+      "httpMeanMs": 20.692599995527416,
+      "httpDurationsMs": [
+        13.024299987591803,
+        16.71710005030036,
+        19.29520000703633,
+        18.17930000834167,
+        17.733599990606308,
+        24.410299956798553,
+        23.28660001512617,
+        33.92690001055598,
+        29.986599925905466,
+        10.366100003011525
+      ],
+      "historyDelta": 0,
+      "statements": [],
+      "sqlTotalMs": 0
+    },
+    {
+      "profile": "list-authenticated",
+      "requests": 10,
+      "httpMeanMs": 343.72858999995515,
+      "httpDurationsMs": [
+        334.87999998033047,
+        342.44420006871223,
+        366.8132000602782,
+        343.74559996649623,
+        353.3299999544397,
+        338.2256000768393,
+        349.2058999836445,
+        348.29439991153777,
+        337.5189999351278,
+        322.8280000621453
+      ],
+      "historyDelta": 0,
+      "statements": [],
+      "sqlTotalMs": 0
+    },
+    {
+      "profile": "search-frequent-anonymous",
+      "requests": 10,
+      "httpMeanMs": 14.439100003801286,
+      "httpDurationsMs": [
+        10.578799992799759,
+        10.992900002747774,
+        10.70149999577552,
+        10.994400014169514,
+        22.8376000886783,
+        26.69720002450049,
+        10.447099921293557,
+        19.933899980969727,
+        10.355800040997565,
+        10.851799976080656
+      ],
+      "historyDelta": 0,
+      "statements": [],
+      "sqlTotalMs": 0
+    },
+    {
+      "profile": "search-frequent-authenticated",
+      "requests": 10,
+      "httpMeanMs": 262.1806000126526,
+      "httpDurationsMs": [
+        256.9708999944851,
+        247.9223000118509,
+        260.24990004952997,
+        259.46890003979206,
+        261.9168000528589,
+        346.72669996507466,
+        252.11739994119853,
+        253.9338000351563,
+        242.4365000333637,
+        240.06280000321567
+      ],
+      "historyDelta": 10,
+      "statements": [
+        {
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "executions": 10,
+          "totalMs": 1331.732,
+          "meanMs": 133.1732
+        },
+        {
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+          "executions": 10,
+          "totalMs": 1199.3015,
+          "meanMs": 119.93015
+        },
+        {
+          "sql": "COMMIT",
+          "executions": 40,
+          "totalMs": 0.288,
+          "meanMs": 0.0072
+        },
+        {
+          "sql": "insert into search (created_at,keyword,member_id,id) values (?,?,?,default)",
+          "executions": 10,
+          "totalMs": 0.20559999999999998,
+          "meanMs": 0.02056
+        },
+        {
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "executions": 10,
+          "totalMs": 0.048900000000000055,
+          "meanMs": 0.0048900000000000055
+        },
+        {
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "executions": 20,
+          "totalMs": 0.0421,
+          "meanMs": 0.002105
+        },
+        {
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "executions": 10,
+          "totalMs": 0.014600000000000002,
+          "meanMs": 0.0014600000000000001
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+          "executions": 10,
+          "totalMs": 0.011300000000000004,
+          "meanMs": 0.0011300000000000004
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "executions": 10,
+          "totalMs": 0.007899999999999963,
+          "meanMs": 0.0007899999999999962
+        }
+      ],
+      "sqlTotalMs": 2531.6519
+    }
+  ],
+  "captures": [
+    {
+      "profile": "list-anonymous",
+      "statements": [
+        {
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "3": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "4": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "5": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:54.168225900"
+            },
+            "6": {
+              "type": "INTEGER",
+              "value": "0"
+            },
+            "7": {
+              "type": "INTEGER",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "3": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "4": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:54.168225900"
+            }
+          }
+        },
+        {
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1004"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1003"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        }
+      ],
+      "plans": [
+        {
+          "statementIndex": 0,
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "boundSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:54.168225900') order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+          "plan": "SELECT    \"RB1_0\".\"ID\",    \"RB1_0\".\"TITLE\",    \"RB1_0\".\"DEPOSIT\",    \"RB1_0\".\"MONTHLY_RENT\",    \"RB1_0\".\"MANAGEMENT_COST\",    \"RB1_0\".\"COMEABLE_DATE\",    \"RB1_0\".\"HITS\",    \"RT1_0\".\"NAME\",    \"R1_0\".\"NAME\",    \"P1_0\".\"NAME\",    \"P2_0\".\"NAME\",    \"M1_0\".\"ID\",    \"BI1_0\".\"NAME\",    \"F1_0\".\"SAVED_FILE_NAME\",    \"BI1_0\".\"BIRTH\",    \"BI1_0\".\"GENDER\",    \"RB1_0\".\"CREATED_AT\"FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE ((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:54.1682259')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = RB1_0.MEMBER_ID */    ON \"M1_0\".\"ID\" = \"RB1_0\".\"MEMBER_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION\" \"BI1_0\"    /* PUBLIC.PRIMARY_KEY_D9: ID = (SELECT        MAX(BI2_0.ID)    FROM PUBLIC.BASIC_INFORMATION BI2_0        /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */        /* scanCount: 2 */    WHERE BI2_0.MEMBER_ID = M1_0.ID)     */    ON (\"BI1_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\")    AND (\"BI1_0\".\"ID\" = (SELECT    MAX(\"BI2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION\" \"BI2_0\"    /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */    /* scanCount: 2 */WHERE \"BI2_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\"))    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF1_0\"    /* PUBLIC.PRIMARY_KEY_7B: ID = (SELECT        MAX(BIF2_0.ID)    FROM PUBLIC.BASIC_INFORMATION_FILE BIF2_0        /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */        /* scanCount: 2 */    WHERE BIF2_0.BASIC_INFORMATION_ID = BI1_0.ID)     */    ON \"BIF1_0\".\"ID\" = (SELECT    MAX(\"BIF2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF2_0\"    /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */    /* scanCount: 2 */WHERE \"BIF2_0\".\"BASIC_INFORMATION_ID\" = \"BI1_0\".\"ID\")    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = BIF1_0.FILE_ID */    ON (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"F1_0\".\"ID\" = \"BIF1_0\".\"FILE_ID\")    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:54.1682259'))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))ORDER BY 17 DESC, 1 DESCOFFSET 0 ROWSFETCH NEXT 20 ROWS ONLY",
+          "scanCounts": [
+            1,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            2,
+            2,
+            2004,
+            2,
+            2,
+            2004,
+            2004,
+            2004,
+            1
+          ]
+        },
+        {
+          "statementIndex": 1,
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+          "boundSql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:54.168225900')",
+          "plan": "SELECT    COUNT(\"RB1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE ((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:54.1682259')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */WHERE (\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:54.1682259'))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))",
+          "scanCounts": [
+            1,
+            1003,
+            2004,
+            2004,
+            1
+          ]
+        },
+        {
+          "statementIndex": 2,
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "boundSql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbf1_0.is_thumbnail=true and f1_0.is_deleted=false",
+          "plan": "SELECT    \"RBF1_0\".\"ROOMMATE_BOARD_ID\",    \"F1_0\".\"SAVED_FILE_NAME\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_FILE\" \"RBF1_0\"    /* PUBLIC.FKOTBF1TC2X1NP0DLA0WU27RXLY_INDEX_C: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* WHERE (RBF1_0.ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))        AND (RBF1_0.IS_THUMBNAIL = TRUE)    */    /* scanCount: 21 */INNER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = RBF1_0.FILE_ID */    ON 1=1    /* scanCount: 40 */WHERE (\"F1_0\".\"ID\" = \"RBF1_0\".\"FILE_ID\")    AND (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBF1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBF1_0\".\"IS_THUMBNAIL\" = TRUE)",
+          "scanCounts": [
+            21,
+            40
+          ]
+        },
+        {
+          "statementIndex": 3,
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "boundSql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (1004,1003,1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985) and a1_0.is_accepted=true and a1_0.is_deleted=false",
+          "plan": "SELECT DISTINCT    \"A1_0\".\"MEMBER_ID\",    \"A1_0\".\"TYPE\"FROM \"PUBLIC\".\"AUTHENTICATION\" \"A1_0\"    /* PUBLIC.FKT8W1AWOIVI0ILQTRWQRJWQ2S2_INDEX_9: MEMBER_ID IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985) */    /* scanCount: 21 */WHERE (\"A1_0\".\"IS_DELETED\" = FALSE)    AND (\"A1_0\".\"MEMBER_ID\" IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985))    AND (\"A1_0\".\"IS_ACCEPTED\" = TRUE)",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 4,
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "boundSql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false group by rbi1_0.roommate_board_id",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\",    COUNT(\"RBI1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.FKAT0832OIJ489LTNN2S4H650FG_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"IS_DELETED\" = FALSE)GROUP BY \"RBI1_0\".\"ROOMMATE_BOARD_ID\"",
+          "scanCounts": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "list-authenticated",
+      "statements": [
+        {
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "3": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "4": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "5": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:54.812330600"
+            },
+            "6": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "9": {
+              "type": "INTEGER",
+              "value": "0"
+            },
+            "10": {
+              "type": "INTEGER",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "3": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "4": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:54.812330600"
+            },
+            "5": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1004"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1003"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "21": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        }
+      ],
+      "plans": [
+        {
+          "statementIndex": 0,
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "boundSql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=2",
+          "plan": "SELECT    \"M1_0\".\"ID\",    \"M1_0\".\"CREATED_AT\",    \"M1_0\".\"DELETED_AT\",    \"M1_0\".\"DEVICE_ID\",    \"M1_0\".\"EMAIL\",    \"M1_0\".\"FCM_TOKEN\",    \"M1_0\".\"IS_DELETE\",    \"M1_0\".\"NAME\",    \"M1_0\".\"PLATFORM\",    \"M1_0\".\"PROVIDER_ID\",    \"M1_0\".\"PROVIDER_TYPE\",    \"M1_0\".\"ROLE\"FROM \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = CAST(2 AS BIGINT) */    /* scanCount: 2 */WHERE \"M1_0\".\"ID\" = CAST(2 AS BIGINT)",
+          "scanCounts": [
+            2
+          ]
+        },
+        {
+          "statementIndex": 1,
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "boundSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:54.812330600') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+          "plan": "SELECT    \"RB1_0\".\"ID\",    \"RB1_0\".\"TITLE\",    \"RB1_0\".\"DEPOSIT\",    \"RB1_0\".\"MONTHLY_RENT\",    \"RB1_0\".\"MANAGEMENT_COST\",    \"RB1_0\".\"COMEABLE_DATE\",    \"RB1_0\".\"HITS\",    \"RT1_0\".\"NAME\",    \"R1_0\".\"NAME\",    \"P1_0\".\"NAME\",    \"P2_0\".\"NAME\",    \"M1_0\".\"ID\",    \"BI1_0\".\"NAME\",    \"F1_0\".\"SAVED_FILE_NAME\",    \"BI1_0\".\"BIRTH\",    \"BI1_0\".\"GENDER\",    \"RB1_0\".\"CREATED_AT\"FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE (((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:54.8123306')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID)))        AND (NOT EXISTS(    SELECT            1        FROM PUBLIC.BLOCK B1_0            /* PUBLIC.BLOCK.tableScan */            /* scanCount: 1002 */        WHERE (B1_0.IS_DELETED = FALSE)            AND (((B1_0.BLOCKER_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKED_ID = RB1_0.MEMBER_ID))            OR ((B1_0.BLOCKED_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKER_ID = RB1_0.MEMBER_ID)))))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = RB1_0.MEMBER_ID */    ON \"M1_0\".\"ID\" = \"RB1_0\".\"MEMBER_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION\" \"BI1_0\"    /* PUBLIC.PRIMARY_KEY_D9: ID = (SELECT        MAX(BI2_0.ID)    FROM PUBLIC.BASIC_INFORMATION BI2_0        /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */        /* scanCount: 2 */    WHERE BI2_0.MEMBER_ID = M1_0.ID)     */    ON (\"BI1_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\")    AND (\"BI1_0\".\"ID\" = (SELECT    MAX(\"BI2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION\" \"BI2_0\"    /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */    /* scanCount: 2 */WHERE \"BI2_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\"))    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF1_0\"    /* PUBLIC.PRIMARY_KEY_7B: ID = (SELECT        MAX(BIF2_0.ID)    FROM PUBLIC.BASIC_INFORMATION_FILE BIF2_0        /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */        /* scanCount: 2 */    WHERE BIF2_0.BASIC_INFORMATION_ID = BI1_0.ID)     */    ON \"BIF1_0\".\"ID\" = (SELECT    MAX(\"BIF2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF2_0\"    /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */    /* scanCount: 2 */WHERE \"BIF2_0\".\"BASIC_INFORMATION_ID\" = \"BI1_0\".\"ID\")    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = BIF1_0.FILE_ID */    ON (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"F1_0\".\"ID\" = \"BIF1_0\".\"FILE_ID\")    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:54.8123306'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))    AND (NOT EXISTS(    SELECT        1    FROM \"PUBLIC\".\"BLOCK\" \"B1_0\"        /* PUBLIC.BLOCK.tableScan */        /* scanCount: 1002 */    WHERE (\"B1_0\".\"IS_DELETED\" = FALSE)        AND (((\"B1_0\".\"BLOCKER_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKED_ID\" = \"RB1_0\".\"MEMBER_ID\"))        OR ((\"B1_0\".\"BLOCKED_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKER_ID\" = \"RB1_0\".\"MEMBER_ID\")))))ORDER BY 17 DESC, 1 DESCOFFSET 0 ROWSFETCH NEXT 20 ROWS ONLY",
+          "scanCounts": [
+            1,
+            1002,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            2,
+            2,
+            2004,
+            2,
+            2,
+            2004,
+            2004,
+            2004,
+            1,
+            1002
+          ]
+        },
+        {
+          "statementIndex": 2,
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+          "boundSql": "select count(rb1_0.id) from roommate_board rb1_0 join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id where rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:54.812330600') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+          "plan": "SELECT    COUNT(\"RB1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE (((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:54.8123306')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID)))        AND (NOT EXISTS(    SELECT            1        FROM PUBLIC.BLOCK B1_0            /* PUBLIC.BLOCK.tableScan */            /* scanCount: 1002 */        WHERE (B1_0.IS_DELETED = FALSE)            AND (((B1_0.BLOCKER_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKED_ID = RB1_0.MEMBER_ID))            OR ((B1_0.BLOCKED_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKER_ID = RB1_0.MEMBER_ID)))))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */WHERE (\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:54.8123306'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))    AND (NOT EXISTS(    SELECT        1    FROM \"PUBLIC\".\"BLOCK\" \"B1_0\"        /* PUBLIC.BLOCK.tableScan */        /* scanCount: 1002 */    WHERE (\"B1_0\".\"IS_DELETED\" = FALSE)        AND (((\"B1_0\".\"BLOCKER_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKED_ID\" = \"RB1_0\".\"MEMBER_ID\"))        OR ((\"B1_0\".\"BLOCKED_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKER_ID\" = \"RB1_0\".\"MEMBER_ID\")))))",
+          "scanCounts": [
+            1,
+            1002,
+            1003,
+            2004,
+            2004,
+            1,
+            1002
+          ]
+        },
+        {
+          "statementIndex": 3,
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "boundSql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbf1_0.is_thumbnail=true and f1_0.is_deleted=false",
+          "plan": "SELECT    \"RBF1_0\".\"ROOMMATE_BOARD_ID\",    \"F1_0\".\"SAVED_FILE_NAME\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_FILE\" \"RBF1_0\"    /* PUBLIC.FKOTBF1TC2X1NP0DLA0WU27RXLY_INDEX_C: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* WHERE (RBF1_0.ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))        AND (RBF1_0.IS_THUMBNAIL = TRUE)    */    /* scanCount: 21 */INNER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = RBF1_0.FILE_ID */    ON 1=1    /* scanCount: 40 */WHERE (\"F1_0\".\"ID\" = \"RBF1_0\".\"FILE_ID\")    AND (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBF1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBF1_0\".\"IS_THUMBNAIL\" = TRUE)",
+          "scanCounts": [
+            21,
+            40
+          ]
+        },
+        {
+          "statementIndex": 4,
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "boundSql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (1004,1003,1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985) and a1_0.is_accepted=true and a1_0.is_deleted=false",
+          "plan": "SELECT DISTINCT    \"A1_0\".\"MEMBER_ID\",    \"A1_0\".\"TYPE\"FROM \"PUBLIC\".\"AUTHENTICATION\" \"A1_0\"    /* PUBLIC.FKT8W1AWOIVI0ILQTRWQRJWQ2S2_INDEX_9: MEMBER_ID IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985) */    /* scanCount: 21 */WHERE (\"A1_0\".\"IS_DELETED\" = FALSE)    AND (\"A1_0\".\"MEMBER_ID\" IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985))    AND (\"A1_0\".\"IS_ACCEPTED\" = TRUE)",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 5,
+          "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+          "boundSql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=2 and rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.UK_ROOMMATE_BOARD_MEMBER_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983)        AND MEMBER_ID = CAST(2 AS BIGINT)     */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"MEMBER_ID\" = CAST(2 AS BIGINT))",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 6,
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "boundSql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false group by rbi1_0.roommate_board_id",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\",    COUNT(\"RBI1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.FKAT0832OIJ489LTNN2S4H650FG_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"IS_DELETED\" = FALSE)GROUP BY \"RBI1_0\".\"ROOMMATE_BOARD_ID\"",
+          "scanCounts": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "search-frequent-anonymous",
+      "statements": [
+        {
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "3": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "4": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "5": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "6": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "7": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "8": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "9": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "10": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:56.144337300"
+            },
+            "11": {
+              "type": "INTEGER",
+              "value": "0"
+            },
+            "12": {
+              "type": "INTEGER",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+          "bindings": {
+            "1": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "2": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "3": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "4": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "5": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "6": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "7": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "8": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "9": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:56.144337300"
+            }
+          }
+        },
+        {
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1004"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1003"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        }
+      ],
+      "plans": [
+        {
+          "statementIndex": 0,
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "boundSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:56.144337300') order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+          "plan": "SELECT    \"RB1_0\".\"ID\",    \"RB1_0\".\"TITLE\",    \"RB1_0\".\"DEPOSIT\",    \"RB1_0\".\"MONTHLY_RENT\",    \"RB1_0\".\"MANAGEMENT_COST\",    \"RB1_0\".\"COMEABLE_DATE\",    \"RB1_0\".\"HITS\",    \"RT1_0\".\"NAME\",    \"R1_0\".\"NAME\",    \"P1_0\".\"NAME\",    \"P2_0\".\"NAME\",    \"M1_0\".\"ID\",    \"BI1_0\".\"NAME\",    \"F1_0\".\"SAVED_FILE_NAME\",    \"BI1_0\".\"BIRTH\",    \"BI1_0\".\"GENDER\",    \"RB1_0\".\"CREATED_AT\"FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE ((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:56.1443373')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = RB1_0.MEMBER_ID */    ON \"M1_0\".\"ID\" = \"RB1_0\".\"MEMBER_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION\" \"BI1_0\"    /* PUBLIC.PRIMARY_KEY_D9: ID = (SELECT        MAX(BI2_0.ID)    FROM PUBLIC.BASIC_INFORMATION BI2_0        /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */        /* scanCount: 2 */    WHERE BI2_0.MEMBER_ID = M1_0.ID)     */    ON (\"BI1_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\")    AND (\"BI1_0\".\"ID\" = (SELECT    MAX(\"BI2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION\" \"BI2_0\"    /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */    /* scanCount: 2 */WHERE \"BI2_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\"))    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF1_0\"    /* PUBLIC.PRIMARY_KEY_7B: ID = (SELECT        MAX(BIF2_0.ID)    FROM PUBLIC.BASIC_INFORMATION_FILE BIF2_0        /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */        /* scanCount: 2 */    WHERE BIF2_0.BASIC_INFORMATION_ID = BI1_0.ID)     */    ON \"BIF1_0\".\"ID\" = (SELECT    MAX(\"BIF2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF2_0\"    /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */    /* scanCount: 2 */WHERE \"BIF2_0\".\"BASIC_INFORMATION_ID\" = \"BI1_0\".\"ID\")    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = BIF1_0.FILE_ID */    ON (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"F1_0\".\"ID\" = \"BIF1_0\".\"FILE_ID\")    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:56.1443373'))    AND ((LOWER(\"RB1_0\".\"TITLE\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"RT1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"R1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P2_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))ORDER BY 17 DESC, 1 DESCOFFSET 0 ROWSFETCH NEXT 20 ROWS ONLY",
+          "scanCounts": [
+            1,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            2,
+            2,
+            2004,
+            2,
+            2,
+            2004,
+            2004,
+            2004,
+            1
+          ]
+        },
+        {
+          "statementIndex": 1,
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?)",
+          "boundSql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:56.144337300')",
+          "plan": "SELECT    COUNT(\"RB1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE ((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:56.1443373')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:56.1443373'))    AND ((LOWER(\"RB1_0\".\"TITLE\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"RT1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"R1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P2_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))",
+          "scanCounts": [
+            1,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            1
+          ]
+        },
+        {
+          "statementIndex": 2,
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "boundSql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbf1_0.is_thumbnail=true and f1_0.is_deleted=false",
+          "plan": "SELECT    \"RBF1_0\".\"ROOMMATE_BOARD_ID\",    \"F1_0\".\"SAVED_FILE_NAME\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_FILE\" \"RBF1_0\"    /* PUBLIC.FKOTBF1TC2X1NP0DLA0WU27RXLY_INDEX_C: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* WHERE (RBF1_0.ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))        AND (RBF1_0.IS_THUMBNAIL = TRUE)    */    /* scanCount: 21 */INNER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = RBF1_0.FILE_ID */    ON 1=1    /* scanCount: 40 */WHERE (\"F1_0\".\"ID\" = \"RBF1_0\".\"FILE_ID\")    AND (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBF1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBF1_0\".\"IS_THUMBNAIL\" = TRUE)",
+          "scanCounts": [
+            21,
+            40
+          ]
+        },
+        {
+          "statementIndex": 3,
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "boundSql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (1004,1003,1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985) and a1_0.is_accepted=true and a1_0.is_deleted=false",
+          "plan": "SELECT DISTINCT    \"A1_0\".\"MEMBER_ID\",    \"A1_0\".\"TYPE\"FROM \"PUBLIC\".\"AUTHENTICATION\" \"A1_0\"    /* PUBLIC.FKT8W1AWOIVI0ILQTRWQRJWQ2S2_INDEX_9: MEMBER_ID IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985) */    /* scanCount: 21 */WHERE (\"A1_0\".\"IS_DELETED\" = FALSE)    AND (\"A1_0\".\"MEMBER_ID\" IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985))    AND (\"A1_0\".\"IS_ACCEPTED\" = TRUE)",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 4,
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "boundSql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false group by rbi1_0.roommate_board_id",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\",    COUNT(\"RBI1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.FKAT0832OIJ489LTNN2S4H650FG_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"IS_DELETED\" = FALSE)GROUP BY \"RBI1_0\".\"ROOMMATE_BOARD_ID\"",
+          "scanCounts": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "search-frequent-authenticated",
+      "statements": [
+        {
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "insert into search (created_at,keyword,member_id,id) values (?,?,?,default)",
+          "bindings": {
+            "1": {
+              "type": "TIMESTAMP",
+              "value": "2026-10-01T01:19:56.776383600"
+            },
+            "2": {
+              "type": "VARCHAR",
+              "value": "부하 테스트 게시글"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "bindings": {
+            "1": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "2": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "3": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "4": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "5": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "6": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "7": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "8": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "9": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "10": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:56.780163600"
+            },
+            "11": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "14": {
+              "type": "INTEGER",
+              "value": "0"
+            },
+            "15": {
+              "type": "INTEGER",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+          "bindings": {
+            "1": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "2": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "3": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "4": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "5": {
+              "type": "VARCHAR",
+              "value": "%부하 테스트 게시글%"
+            },
+            "6": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "7": {
+              "type": "ENUM",
+              "value": "ACTIVE"
+            },
+            "8": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "9": {
+              "type": "TIMESTAMP",
+              "value": "2026-09-24T01:19:56.780163600"
+            },
+            "10": {
+              "type": "BOOLEAN",
+              "value": "false"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1004"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1003"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "true"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "2"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "21": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "22": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        },
+        {
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "bindings": {
+            "1": {
+              "type": "BIGINT",
+              "value": "1002"
+            },
+            "2": {
+              "type": "BIGINT",
+              "value": "1001"
+            },
+            "3": {
+              "type": "BIGINT",
+              "value": "1000"
+            },
+            "4": {
+              "type": "BIGINT",
+              "value": "999"
+            },
+            "5": {
+              "type": "BIGINT",
+              "value": "998"
+            },
+            "6": {
+              "type": "BIGINT",
+              "value": "997"
+            },
+            "7": {
+              "type": "BIGINT",
+              "value": "996"
+            },
+            "8": {
+              "type": "BIGINT",
+              "value": "995"
+            },
+            "9": {
+              "type": "BIGINT",
+              "value": "994"
+            },
+            "10": {
+              "type": "BIGINT",
+              "value": "993"
+            },
+            "11": {
+              "type": "BIGINT",
+              "value": "992"
+            },
+            "12": {
+              "type": "BIGINT",
+              "value": "991"
+            },
+            "13": {
+              "type": "BIGINT",
+              "value": "990"
+            },
+            "14": {
+              "type": "BIGINT",
+              "value": "989"
+            },
+            "15": {
+              "type": "BIGINT",
+              "value": "988"
+            },
+            "16": {
+              "type": "BIGINT",
+              "value": "987"
+            },
+            "17": {
+              "type": "BIGINT",
+              "value": "986"
+            },
+            "18": {
+              "type": "BIGINT",
+              "value": "985"
+            },
+            "19": {
+              "type": "BIGINT",
+              "value": "984"
+            },
+            "20": {
+              "type": "BIGINT",
+              "value": "983"
+            },
+            "21": {
+              "type": "BOOLEAN",
+              "value": "false"
+            }
+          }
+        }
+      ],
+      "plans": [
+        {
+          "statementIndex": 0,
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "boundSql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=2",
+          "plan": "SELECT    \"M1_0\".\"ID\",    \"M1_0\".\"CREATED_AT\",    \"M1_0\".\"DELETED_AT\",    \"M1_0\".\"DEVICE_ID\",    \"M1_0\".\"EMAIL\",    \"M1_0\".\"FCM_TOKEN\",    \"M1_0\".\"IS_DELETE\",    \"M1_0\".\"NAME\",    \"M1_0\".\"PLATFORM\",    \"M1_0\".\"PROVIDER_ID\",    \"M1_0\".\"PROVIDER_TYPE\",    \"M1_0\".\"ROLE\"FROM \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = CAST(2 AS BIGINT) */    /* scanCount: 2 */WHERE \"M1_0\".\"ID\" = CAST(2 AS BIGINT)",
+          "scanCounts": [
+            2
+          ]
+        },
+        {
+          "statementIndex": 1,
+          "sql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=?",
+          "boundSql": "select m1_0.id,m1_0.created_at,m1_0.deleted_at,m1_0.device_id,m1_0.email,m1_0.fcm_token,m1_0.is_delete,m1_0.name,m1_0.platform,m1_0.provider_id,m1_0.provider_type,m1_0.role from member m1_0 where m1_0.id=2",
+          "plan": "SELECT    \"M1_0\".\"ID\",    \"M1_0\".\"CREATED_AT\",    \"M1_0\".\"DELETED_AT\",    \"M1_0\".\"DEVICE_ID\",    \"M1_0\".\"EMAIL\",    \"M1_0\".\"FCM_TOKEN\",    \"M1_0\".\"IS_DELETE\",    \"M1_0\".\"NAME\",    \"M1_0\".\"PLATFORM\",    \"M1_0\".\"PROVIDER_ID\",    \"M1_0\".\"PROVIDER_TYPE\",    \"M1_0\".\"ROLE\"FROM \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = CAST(2 AS BIGINT) */    /* scanCount: 2 */WHERE \"M1_0\".\"ID\" = CAST(2 AS BIGINT)",
+          "scanCounts": [
+            2
+          ]
+        },
+        {
+          "statementIndex": 3,
+          "sql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=? where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?)) order by rb1_0.created_at desc,rb1_0.id desc offset ? rows fetch first ? rows only",
+          "boundSql": "select rb1_0.id,rb1_0.title,rb1_0.deposit,rb1_0.monthly_rent,rb1_0.management_cost,rb1_0.comeable_date,rb1_0.hits,rt1_0.name,r1_0.name,p1_0.name,p2_0.name,m1_0.id,bi1_0.name,f1_0.saved_file_name,bi1_0.birth,bi1_0.gender,rb1_0.created_at from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id join member m1_0 on m1_0.id=rb1_0.member_id left join basic_information bi1_0 on bi1_0.member_id=m1_0.id and bi1_0.id=(select max(bi2_0.id) from basic_information bi2_0 where bi2_0.member_id=m1_0.id) left join basic_information_file bif1_0 on bif1_0.id=(select max(bif2_0.id) from basic_information_file bif2_0 where bif2_0.basic_information_id=bi1_0.id) left join file f1_0 on f1_0.id=bif1_0.file_id and f1_0.is_deleted=false where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:56.780163600') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2)) order by rb1_0.created_at desc,rb1_0.id desc offset 0 rows fetch first 20 rows only",
+          "plan": "SELECT    \"RB1_0\".\"ID\",    \"RB1_0\".\"TITLE\",    \"RB1_0\".\"DEPOSIT\",    \"RB1_0\".\"MONTHLY_RENT\",    \"RB1_0\".\"MANAGEMENT_COST\",    \"RB1_0\".\"COMEABLE_DATE\",    \"RB1_0\".\"HITS\",    \"RT1_0\".\"NAME\",    \"R1_0\".\"NAME\",    \"P1_0\".\"NAME\",    \"P2_0\".\"NAME\",    \"M1_0\".\"ID\",    \"BI1_0\".\"NAME\",    \"F1_0\".\"SAVED_FILE_NAME\",    \"BI1_0\".\"BIRTH\",    \"BI1_0\".\"GENDER\",    \"RB1_0\".\"CREATED_AT\"FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE (((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:56.7801636')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID)))        AND (NOT EXISTS(    SELECT            1        FROM PUBLIC.BLOCK B1_0            /* PUBLIC.BLOCK.tableScan */            /* scanCount: 1002 */        WHERE (B1_0.IS_DELETED = FALSE)            AND (((B1_0.BLOCKER_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKED_ID = RB1_0.MEMBER_ID))            OR ((B1_0.BLOCKED_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKER_ID = RB1_0.MEMBER_ID)))))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"MEMBER\" \"M1_0\"    /* PUBLIC.PRIMARY_KEY_87: ID = RB1_0.MEMBER_ID */    ON \"M1_0\".\"ID\" = \"RB1_0\".\"MEMBER_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION\" \"BI1_0\"    /* PUBLIC.PRIMARY_KEY_D9: ID = (SELECT        MAX(BI2_0.ID)    FROM PUBLIC.BASIC_INFORMATION BI2_0        /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */        /* scanCount: 2 */    WHERE BI2_0.MEMBER_ID = M1_0.ID)     */    ON (\"BI1_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\")    AND (\"BI1_0\".\"ID\" = (SELECT    MAX(\"BI2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION\" \"BI2_0\"    /* PUBLIC.FK1IGQKKI5C9LJGHUKOKJWII4R1_INDEX_D: MEMBER_ID = M1_0.ID */    /* scanCount: 2 */WHERE \"BI2_0\".\"MEMBER_ID\" = \"M1_0\".\"ID\"))    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF1_0\"    /* PUBLIC.PRIMARY_KEY_7B: ID = (SELECT        MAX(BIF2_0.ID)    FROM PUBLIC.BASIC_INFORMATION_FILE BIF2_0        /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */        /* scanCount: 2 */    WHERE BIF2_0.BASIC_INFORMATION_ID = BI1_0.ID)     */    ON \"BIF1_0\".\"ID\" = (SELECT    MAX(\"BIF2_0\".\"ID\")FROM \"PUBLIC\".\"BASIC_INFORMATION_FILE\" \"BIF2_0\"    /* PUBLIC.FKO70XB5TUHOKXB2RXCHSJUV913_INDEX_7: BASIC_INFORMATION_ID = BI1_0.ID */    /* scanCount: 2 */WHERE \"BIF2_0\".\"BASIC_INFORMATION_ID\" = \"BI1_0\".\"ID\")    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = BIF1_0.FILE_ID */    ON (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"F1_0\".\"ID\" = \"BIF1_0\".\"FILE_ID\")    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:56.7801636'))    AND ((LOWER(\"RB1_0\".\"TITLE\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"RT1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"R1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P2_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))    AND (NOT EXISTS(    SELECT        1    FROM \"PUBLIC\".\"BLOCK\" \"B1_0\"        /* PUBLIC.BLOCK.tableScan */        /* scanCount: 1002 */    WHERE (\"B1_0\".\"IS_DELETED\" = FALSE)        AND (((\"B1_0\".\"BLOCKER_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKED_ID\" = \"RB1_0\".\"MEMBER_ID\"))        OR ((\"B1_0\".\"BLOCKED_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKER_ID\" = \"RB1_0\".\"MEMBER_ID\")))))ORDER BY 17 DESC, 1 DESCOFFSET 0 ROWSFETCH NEXT 20 ROWS ONLY",
+          "scanCounts": [
+            1,
+            1002,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            2,
+            2,
+            2004,
+            2,
+            2,
+            2004,
+            2004,
+            2004,
+            1,
+            1002
+          ]
+        },
+        {
+          "statementIndex": 4,
+          "sql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like ? escape '!' or lower(rt1_0.name) like ? escape '!' or lower(r1_0.name) like ? escape '!' or lower(p1_0.name) like ? escape '!' or lower(p2_0.name) like ? escape '!') and rb1_0.is_deleted=? and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state=?) and (rb1_0.comeable_date_negotiable=? or rb1_0.comeable_date>=?) and not exists(select 1 from block b1_0 where b1_0.is_deleted=? and (b1_0.blocker_id=? and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=?))",
+          "boundSql": "select count(rb1_0.id) from roommate_board rb1_0 join room_type rt1_0 on rt1_0.id=rb1_0.room_type_id join region r1_0 on r1_0.id=rb1_0.region_id left join region p1_0 on p1_0.id=r1_0.parents_id left join region p2_0 on p2_0.id=p1_0.parents_id where (lower(rb1_0.title) like '%부하 테스트 게시글%' escape '!' or lower(rt1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(r1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p1_0.name) like '%부하 테스트 게시글%' escape '!' or lower(p2_0.name) like '%부하 테스트 게시글%' escape '!') and rb1_0.is_deleted=false and exists(select 1 from state s1_0 where s1_0.member_id=rb1_0.member_id and s1_0.state='ACTIVE') and (rb1_0.comeable_date_negotiable=true or rb1_0.comeable_date>=TIMESTAMP '2026-09-24T01:19:56.780163600') and not exists(select 1 from block b1_0 where b1_0.is_deleted=false and (b1_0.blocker_id=2 and b1_0.blocked_id=rb1_0.member_id or b1_0.blocker_id=rb1_0.member_id and b1_0.blocked_id=2))",
+          "plan": "SELECT    COUNT(\"RB1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD\" \"RB1_0\"    /* PUBLIC.ROOMMATE_BOARD.tableScan */    /* WHERE (((RB1_0.IS_DELETED = FALSE)        AND ((RB1_0.COMEABLE_DATE_NEGOTIABLE = TRUE)        OR (RB1_0.COMEABLE_DATE >= TIMESTAMP '2026-09-24 01:19:56.7801636')))        AND EXISTS(    SELECT            1        FROM PUBLIC.STATE S1_0            /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */            /* scanCount: 1 */        WHERE (S1_0.STATE = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))            AND (S1_0.MEMBER_ID = RB1_0.MEMBER_ID)))        AND (NOT EXISTS(    SELECT            1        FROM PUBLIC.BLOCK B1_0            /* PUBLIC.BLOCK.tableScan */            /* scanCount: 1002 */        WHERE (B1_0.IS_DELETED = FALSE)            AND (((B1_0.BLOCKER_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKED_ID = RB1_0.MEMBER_ID))            OR ((B1_0.BLOCKED_ID = CAST(2 AS BIGINT))            AND (B1_0.BLOCKER_ID = RB1_0.MEMBER_ID)))))    */    /* scanCount: 1003 */INNER JOIN \"PUBLIC\".\"REGION\" \"R1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = RB1_0.REGION_ID */    ON 1=1    /* WHERE R1_0.ID = RB1_0.REGION_ID    */    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P1_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = R1_0.PARENTS_ID */    ON \"P1_0\".\"ID\" = \"R1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */LEFT OUTER JOIN \"PUBLIC\".\"REGION\" \"P2_0\"    /* PUBLIC.PRIMARY_KEY_8F: ID = P1_0.PARENTS_ID */    ON \"P2_0\".\"ID\" = \"P1_0\".\"PARENTS_ID\"    /* scanCount: 2004 */INNER JOIN \"PUBLIC\".\"ROOM_TYPE\" \"RT1_0\"    /* PUBLIC.PRIMARY_KEY_68: ID = RB1_0.ROOM_TYPE_ID */    ON 1=1    /* scanCount: 2004 */WHERE ((\"R1_0\".\"ID\" = \"RB1_0\".\"REGION_ID\")    AND (\"RT1_0\".\"ID\" = \"RB1_0\".\"ROOM_TYPE_ID\"))    AND (\"RB1_0\".\"IS_DELETED\" = FALSE)    AND ((\"RB1_0\".\"COMEABLE_DATE_NEGOTIABLE\" = TRUE)    OR (\"RB1_0\".\"COMEABLE_DATE\" >= TIMESTAMP '2026-09-24 01:19:56.7801636'))    AND ((LOWER(\"RB1_0\".\"TITLE\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"RT1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"R1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P1_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!')    OR (LOWER(\"P2_0\".\"NAME\") LIKE U&'%\\bd80\\d558 \\d14c\\c2a4\\d2b8 \\ac8c\\c2dc\\ae00%' ESCAPE '!'))    AND EXISTS(    SELECT        1    FROM \"PUBLIC\".\"STATE\" \"S1_0\"        /* PUBLIC.CONSTRAINT_INDEX_4: MEMBER_ID = RB1_0.MEMBER_ID */        /* scanCount: 1 */    WHERE (\"S1_0\".\"STATE\" = CAST('ACTIVE' AS ENUM('ACTIVE', 'INACTIVE')))        AND (\"S1_0\".\"MEMBER_ID\" = \"RB1_0\".\"MEMBER_ID\"))    AND (NOT EXISTS(    SELECT        1    FROM \"PUBLIC\".\"BLOCK\" \"B1_0\"        /* PUBLIC.BLOCK.tableScan */        /* scanCount: 1002 */    WHERE (\"B1_0\".\"IS_DELETED\" = FALSE)        AND (((\"B1_0\".\"BLOCKER_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKED_ID\" = \"RB1_0\".\"MEMBER_ID\"))        OR ((\"B1_0\".\"BLOCKED_ID\" = CAST(2 AS BIGINT))        AND (\"B1_0\".\"BLOCKER_ID\" = \"RB1_0\".\"MEMBER_ID\")))))",
+          "scanCounts": [
+            1,
+            1002,
+            1003,
+            2004,
+            2004,
+            2004,
+            2004,
+            1,
+            1002
+          ]
+        },
+        {
+          "statementIndex": 5,
+          "sql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbf1_0.is_thumbnail=? and f1_0.is_deleted=?",
+          "boundSql": "select rbf1_0.roommate_board_id,f1_0.saved_file_name from roommate_board_file rbf1_0 join file f1_0 on f1_0.id=rbf1_0.file_id where rbf1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbf1_0.is_thumbnail=true and f1_0.is_deleted=false",
+          "plan": "SELECT    \"RBF1_0\".\"ROOMMATE_BOARD_ID\",    \"F1_0\".\"SAVED_FILE_NAME\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_FILE\" \"RBF1_0\"    /* PUBLIC.FKOTBF1TC2X1NP0DLA0WU27RXLY_INDEX_C: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* WHERE (RBF1_0.ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))        AND (RBF1_0.IS_THUMBNAIL = TRUE)    */    /* scanCount: 21 */INNER JOIN \"PUBLIC\".\"FILE\" \"F1_0\"    /* PUBLIC.PRIMARY_KEY_20: ID = RBF1_0.FILE_ID */    ON 1=1    /* scanCount: 40 */WHERE (\"F1_0\".\"ID\" = \"RBF1_0\".\"FILE_ID\")    AND (\"F1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBF1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBF1_0\".\"IS_THUMBNAIL\" = TRUE)",
+          "scanCounts": [
+            21,
+            40
+          ]
+        },
+        {
+          "statementIndex": 6,
+          "sql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and a1_0.is_accepted=? and a1_0.is_deleted=?",
+          "boundSql": "select distinct a1_0.member_id,a1_0.type from authentication a1_0 where a1_0.member_id in (1004,1003,1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985) and a1_0.is_accepted=true and a1_0.is_deleted=false",
+          "plan": "SELECT DISTINCT    \"A1_0\".\"MEMBER_ID\",    \"A1_0\".\"TYPE\"FROM \"PUBLIC\".\"AUTHENTICATION\" \"A1_0\"    /* PUBLIC.FKT8W1AWOIVI0ILQTRWQRJWQ2S2_INDEX_9: MEMBER_ID IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985) */    /* scanCount: 21 */WHERE (\"A1_0\".\"IS_DELETED\" = FALSE)    AND (\"A1_0\".\"MEMBER_ID\" IN(1004, 1003, 1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985))    AND (\"A1_0\".\"IS_ACCEPTED\" = TRUE)",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 7,
+          "sql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=? and rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=?",
+          "boundSql": "select rbi1_0.roommate_board_id from roommate_board_interest rbi1_0 where rbi1_0.member_id=2 and rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\"FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.UK_ROOMMATE_BOARD_MEMBER_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983)        AND MEMBER_ID = CAST(2 AS BIGINT)     */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"IS_DELETED\" = FALSE)    AND (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"MEMBER_ID\" = CAST(2 AS BIGINT))",
+          "scanCounts": [
+            21
+          ]
+        },
+        {
+          "statementIndex": 8,
+          "sql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) and rbi1_0.is_deleted=? group by rbi1_0.roommate_board_id",
+          "boundSql": "select rbi1_0.roommate_board_id,count(rbi1_0.id) from roommate_board_interest rbi1_0 where rbi1_0.roommate_board_id in (1002,1001,1000,999,998,997,996,995,994,993,992,991,990,989,988,987,986,985,984,983) and rbi1_0.is_deleted=false group by rbi1_0.roommate_board_id",
+          "plan": "SELECT    \"RBI1_0\".\"ROOMMATE_BOARD_ID\",    COUNT(\"RBI1_0\".\"ID\")FROM \"PUBLIC\".\"ROOMMATE_BOARD_INTEREST\" \"RBI1_0\"    /* PUBLIC.FKAT0832OIJ489LTNN2S4H650FG_INDEX_E: ROOMMATE_BOARD_ID IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983) */    /* scanCount: 21 */WHERE (\"RBI1_0\".\"ROOMMATE_BOARD_ID\" IN(1002, 1001, 1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983))    AND (\"RBI1_0\".\"IS_DELETED\" = FALSE)GROUP BY \"RBI1_0\".\"ROOMMATE_BOARD_ID\"",
+          "scanCounts": [
+            21
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Isolated SQL diagnostic after main measurements; H2 cumulative times are milliseconds; prepared statements include executions, not full HTTP/commit time."
+}

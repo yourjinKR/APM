@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-liked-authenticated-vu1-r1-test_300",
+  "profile": "liked-authenticated",
+  "configSha256": "dc062fb07c412d2b53ed760de1b81d0ac1ec3334f194c5026b23b4e0acc3f779",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 56.833666666666666,
+  "successP50Ms": 27.601,
+  "successP95Ms": 115.315,
+  "successP99Ms": 115.315,
+  "observedAllP95Ms": 115.315,
+  "sampleSpanSeconds": 0.1885849609375,
+  "sampleSuccessRps": 15.907949314125037,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

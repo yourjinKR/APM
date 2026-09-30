@@ -1,0 +1,17 @@
+[
+  {
+    "path": "RoommateBoardListGetTest.groovy",
+    "revision": 43,
+    "sha256": "aab87e5c1a44982d380f8e917e4fd28a1bc9e85f7c8c902b5d767701741c3f1e"
+  },
+  {
+    "path": "RoommateBoardListKeywordGetTest.groovy",
+    "revision": 44,
+    "sha256": "579e59ae79eacb29f419df9a4d5b068c91fcc453ad2028ab036e688dbc66e8b1"
+  },
+  {
+    "path": "resources/RoommateBoardListSupport.txt",
+    "revision": 45,
+    "sha256": "5bd504cd5fabf28fd61899db07627613715633d97dceb02b10fcb347e65e24d6"
+  }
+]

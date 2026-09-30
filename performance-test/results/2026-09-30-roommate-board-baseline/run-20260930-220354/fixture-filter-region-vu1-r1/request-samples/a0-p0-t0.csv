@@ -1,0 +1,4 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,responseBytes
+run-20260930-220354-fixture-filter-region-vu1-r1-test_295,filter-region,0,0,0,0,0,1790774144662,161.812,200,true,,11037
+run-20260930-220354-fixture-filter-region-vu1-r1-test_295,filter-region,0,0,0,1,0,1790774144859,53.679,200,true,,11037
+run-20260930-220354-fixture-filter-region-vu1-r1-test_295,filter-region,0,0,0,2,0,1790774144918,40.807,200,true,,11037

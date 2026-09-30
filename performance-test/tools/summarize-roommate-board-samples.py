@@ -68,6 +68,8 @@ def summarize(directory, expected_requests, expected_workers):
         "expectedWorkers": expected_workers, "workers": len(workers),
         "successes": len(successful), "errors": len(failed), "errorRatePercent": 100 * len(failed) / len(rows),
         "failures": dict(Counter(row["failure"] for row in failed)),
+        "transportFailureRoots": dict(Counter(row.get("failureRoot") for row in failed if row.get("failureRoot"))),
+        "transportFailuresWithoutRoot": sum(row["httpStatus"] == "0" and not row.get("failureRoot") for row in failed),
         "successMeanMs": sum(successful) / len(successful) if successful else None,
         "successP50Ms": percentile(successful, .50), "successP95Ms": percentile(successful, .95),
         "successP99Ms": percentile(successful, .99),

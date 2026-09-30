@@ -1,0 +1,37 @@
+{
+    "profileId": "filter-room-type",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC",
+                    "roomTypeIds": [
+                        1
+                    ]
+                },
+                "expect": {
+                    "minTotalElements": 1,
+                    "roomTypeNames": [
+                        "\uc6d0\ub8f8"
+                    ],
+                    "totalElements": 202
+                }
+            }
+        ]
+    },
+    "runId": "run-20260930-220354-fixture-filter-room-type-vu1-r1-test_296",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 5000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": false,
+    "configSha256": "9719e36e0a9a5ac75c1a321a3c2498f9101d80a3a2a649b54f380d076205214e",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1790774165336
+}

@@ -54,10 +54,14 @@ assert captured.params.find { it.name == 'keyword' }.value == '부하 테스트'
 assert context.statistics.forLastTest.success
 worker.execute([GET: { String url, List params, List headers -> throw new java.net.SocketTimeoutException('SECRET') }])
 assert !context.statistics.forLastTest.success
+worker.execute([GET: { String url, List params, List headers ->
+    throw new java.util.concurrent.ExecutionException(new java.net.SocketTimeoutException('SECRET'))
+}])
 worker.close()
 def csv = new File(args[0], 'offline-smoke/a1-p1-t0.csv').text
-assert csv.readLines().size() == 3
+assert csv.readLines().size() == 4
 assert csv.contains('SocketTimeoutException') && !csv.contains('SECRET') && !csv.contains('fake3')
+assert csv.contains('ExecutionException,SocketTimeoutException')
 assert !new File(args[0], 'offline-smoke/a1-p1-manifest.json').text.contains('fake3')
 assert support.loadSettings(false).profileId == 'list-anonymous'
 assert support.loadSettings(true).profileId == 'search-frequent-authenticated'

@@ -1,0 +1,30 @@
+{
+  "runId": "run-20260930-220354-fixture-filter-budget-vu1-r1-test_297",
+  "profile": "filter-budget",
+  "configSha256": "b7e3d973e41d6a847260b0bc06ecb7dfe125b80a7edbff217db09c5b0ebaa23d",
+  "sampleComplete": true,
+  "expectedRequests": 3,
+  "requests": 3,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 3,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "successMeanMs": 68.86033333333334,
+  "successP50Ms": 38.454,
+  "successP95Ms": 130.389,
+  "successP99Ms": 130.389,
+  "observedAllP95Ms": 130.389,
+  "sampleSpanSeconds": 0.2644541015625,
+  "sampleSuccessRps": 11.344123544595478,
+  "inputs": {
+    "0": 3
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

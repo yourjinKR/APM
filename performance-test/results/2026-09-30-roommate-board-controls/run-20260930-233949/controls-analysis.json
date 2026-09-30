@@ -1,0 +1,2899 @@
+{
+  "groups": [
+    {
+      "profile": "list-anonymous",
+      "repetitions": 3,
+      "fullRequests": 87495,
+      "windowRequests": 47673,
+      "historyDelta": 0,
+      "fullErrors": 3,
+      "windowErrors": 2,
+      "errorFreeRepetitions": 1,
+      "testIds": [
+        368,
+        376,
+        379
+      ],
+      "meanMs": {
+        "median": 8.673368638062106,
+        "min": 7.34333768601847,
+        "max": 8.909212211221123,
+        "cvPercent": 8.296530173267488
+      },
+      "p50Ms": {
+        "median": 7.48,
+        "min": 7.156,
+        "max": 8.297,
+        "cvPercent": 6.280290430754625
+      },
+      "p95Ms": {
+        "median": 11.086,
+        "min": 8.63,
+        "max": 13.001,
+        "cvPercent": 16.404347975933355
+      },
+      "p99Ms": {
+        "median": 14.887,
+        "min": 10.706,
+        "max": 19.825,
+        "cvPercent": 24.618584113533124
+      },
+      "rps": {
+        "median": 110.87142857142857,
+        "min": 108.21428571428571,
+        "max": 121.43571428571428,
+        "cvPercent": 5.030810258749065
+      }
+    },
+    {
+      "profile": "list-authenticated",
+      "repetitions": 3,
+      "fullRequests": 3075,
+      "windowRequests": 1744,
+      "historyDelta": 0,
+      "fullErrors": 0,
+      "windowErrors": 0,
+      "errorFreeRepetitions": 3,
+      "testIds": [
+        369,
+        373,
+        380
+      ],
+      "meanMs": {
+        "median": 232.65115719063544,
+        "min": 231.32056976744187,
+        "max": 255.97978308823528,
+        "cvPercent": 4.718600558526749
+      },
+      "p50Ms": {
+        "median": 230.661,
+        "min": 229.357,
+        "max": 254.293,
+        "cvPercent": 4.813012386055523
+      },
+      "p95Ms": {
+        "median": 245.952,
+        "min": 245.219,
+        "max": 275.732,
+        "cvPercent": 5.560421588045906
+      },
+      "p99Ms": {
+        "median": 261.484,
+        "min": 255.678,
+        "max": 295.089,
+        "cvPercent": 6.416426480841942
+      },
+      "rps": {
+        "median": 4.271428571428571,
+        "min": 3.8857142857142857,
+        "max": 4.3,
+        "cvPercent": 4.549732666256277
+      }
+    },
+    {
+      "profile": "search-frequent-anonymous",
+      "repetitions": 3,
+      "fullRequests": 80634,
+      "windowRequests": 47008,
+      "historyDelta": 0,
+      "fullErrors": 2,
+      "windowErrors": 2,
+      "errorFreeRepetitions": 2,
+      "testIds": [
+        371,
+        374,
+        377
+      ],
+      "meanMs": {
+        "median": 7.96634114923424,
+        "min": 7.8786987997473155,
+        "max": 9.372300586101032,
+        "cvPercent": 8.141648624074053
+      },
+      "p50Ms": {
+        "median": 7.745,
+        "min": 7.689,
+        "max": 8.935,
+        "cvPercent": 7.074057309600275
+      },
+      "p95Ms": {
+        "median": 9.377,
+        "min": 9.211,
+        "max": 11.972,
+        "cvPercent": 12.410723063105415
+      },
+      "p99Ms": {
+        "median": 11.584,
+        "min": 11.14,
+        "max": 15.787,
+        "cvPercent": 16.31086457271344
+      },
+      "rps": {
+        "median": 113.07142857142857,
+        "min": 102.37142857142857,
+        "max": 120.32857142857142,
+        "cvPercent": 6.589973437782551
+      }
+    },
+    {
+      "profile": "search-frequent-authenticated",
+      "repetitions": 3,
+      "fullRequests": 3081,
+      "windowRequests": 1777,
+      "historyDelta": 3081,
+      "fullErrors": 0,
+      "windowErrors": 0,
+      "errorFreeRepetitions": 3,
+      "testIds": [
+        372,
+        375,
+        378
+      ],
+      "meanMs": {
+        "median": 228.02333278688525,
+        "min": 227.31392320261438,
+        "max": 250.81997657657658,
+        "cvPercent": 4.638128150587931
+      },
+      "p50Ms": {
+        "median": 226.325,
+        "min": 224.788,
+        "max": 249.345,
+        "cvPercent": 4.8103731784516155
+      },
+      "p95Ms": {
+        "median": 244.009,
+        "min": 241.206,
+        "max": 269.016,
+        "cvPercent": 4.972575485680721
+      },
+      "p99Ms": {
+        "median": 257.285,
+        "min": 252.617,
+        "max": 288.695,
+        "cvPercent": 6.018362654413727
+      },
+      "rps": {
+        "median": 4.357142857142857,
+        "min": 3.9642857142857144,
+        "max": 4.371428571428571,
+        "cvPercent": 4.458853751162696
+      }
+    }
+  ],
+  "runs": [
+    {
+      "label": "control-list-anonymous-vu1-r1-attempt3",
+      "phase": "control",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 29165,
+      "testId": 368,
+      "configRevision": 122,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 29165,
+      "successes": 29163,
+      "errors": 2,
+      "controllerTps": 124.36,
+      "controllerMeanMs": 7.37,
+      "startTime": 1790781116255,
+      "finishTime": 1790781353530,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 29165,
+      "sampleErrors": 2,
+      "sampleSpanSeconds": 234.59164501953126,
+      "failures": {
+        "ExecutionException": 2
+      },
+      "meanMs": 7.373459280595275,
+      "p95Ms": 8.691,
+      "p99Ms": 10.775,
+      "passed": false,
+      "integrityPassed": false,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "accountingPassed": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790781148185.0,
+      "windowEndEpochMs": 1790781288185.0,
+      "window": {
+        "requests": 17001,
+        "attempts": 17003,
+        "errors": 2,
+        "errorRatePercent": 0.011762630124095747,
+        "rps": 121.43571428571428,
+        "meanMs": 7.34333768601847,
+        "p50Ms": 7.156,
+        "p95Ms": 8.63,
+        "p99Ms": 10.706
+      },
+      "segments20Seconds": [
+        {
+          "requests": 2587,
+          "attempts": 2587,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 129.35,
+          "meanMs": 7.393284885968303,
+          "p50Ms": 7.231,
+          "p95Ms": 8.545,
+          "p99Ms": 10.957
+        },
+        {
+          "requests": 1303,
+          "attempts": 1305,
+          "errors": 2,
+          "errorRatePercent": 0.15325670498084293,
+          "rps": 65.15,
+          "meanMs": 7.332013046815042,
+          "p50Ms": 7.173,
+          "p95Ms": 8.46,
+          "p99Ms": 10.775
+        },
+        {
+          "requests": 2599,
+          "attempts": 2599,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 129.95,
+          "meanMs": 7.391166602539438,
+          "p50Ms": 7.173,
+          "p95Ms": 8.72,
+          "p99Ms": 10.904
+        },
+        {
+          "requests": 2599,
+          "attempts": 2599,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 129.95,
+          "meanMs": 7.400779530588688,
+          "p50Ms": 7.15,
+          "p95Ms": 8.772,
+          "p99Ms": 11.173
+        },
+        {
+          "requests": 2632,
+          "attempts": 2632,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 131.6,
+          "meanMs": 7.305899696048632,
+          "p50Ms": 7.121,
+          "p95Ms": 8.565,
+          "p99Ms": 10.402
+        },
+        {
+          "requests": 2625,
+          "attempts": 2625,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 131.25,
+          "meanMs": 7.325663238095238,
+          "p50Ms": 7.161,
+          "p95Ms": 8.725,
+          "p99Ms": 10.406
+        },
+        {
+          "requests": 2650,
+          "attempts": 2650,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 132.5,
+          "meanMs": 7.252131320754717,
+          "p50Ms": 7.088,
+          "p95Ms": 8.483,
+          "p99Ms": 10.855
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 27.4524522588943,
+          "min": 9.801442534287197,
+          "max": 47.49618110341368
+        },
+        "backendCpuPercent": {
+          "median": 10.296558090273427,
+          "min": 0.18010648748524452,
+          "max": 12.602241371162226
+        },
+        "heapMiB": {
+          "median": 222.90516662597656,
+          "min": 178.7529067993164,
+          "max": 323.42061614990234
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.5899999999999999,
+        "gcPauseCountDeltaApprox": 656.0,
+        "hikariAcquireSecondsDeltaApprox": 0.008756999999999994,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 8.36,
+            "min": 7.58,
+            "max": 14.46
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.19
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.11,
+            "min": 0.1,
+            "max": 0.14
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.1,
+            "min": 0.1,
+            "max": 0.13
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.1,
+            "min": 0.1,
+            "max": 0.14
+          },
+          "ngrinder-controller": {
+            "median": 1.24,
+            "min": 0.96,
+            "max": 13.77
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 32.339,
+          "min": 29.886,
+          "max": 50.137
+        }
+      }
+    },
+    {
+      "label": "control-list-authenticated-vu1-r1-attempt1",
+      "phase": "control",
+      "profile": "list-authenticated",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 1025,
+      "testId": 369,
+      "configRevision": 127,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1025,
+      "successes": 1025,
+      "errors": 0,
+      "controllerTps": 4.3,
+      "controllerMeanMs": 231.17,
+      "startTime": 1790781679281,
+      "finishTime": 1790781920925,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1025,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 237.94342993164062,
+      "failures": {},
+      "meanMs": 231.20593170731706,
+      "p95Ms": 245.952,
+      "p99Ms": 255.94,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790781711198.0,
+      "windowEndEpochMs": 1790781851198.0,
+      "window": {
+        "requests": 602,
+        "attempts": 602,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 4.3,
+        "meanMs": 231.32056976744187,
+        "p50Ms": 229.357,
+        "p95Ms": 245.952,
+        "p99Ms": 255.678
+      },
+      "segments20Seconds": [
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 230.96175294117648,
+          "p50Ms": 229.306,
+          "p95Ms": 241.212,
+          "p99Ms": 255.121
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 231.32062352941176,
+          "p50Ms": 229.993,
+          "p95Ms": 242.153,
+          "p99Ms": 258.126
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 231.45070588235293,
+          "p50Ms": 229.698,
+          "p95Ms": 244.89,
+          "p99Ms": 255.443
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 231.9916,
+          "p50Ms": 229.924,
+          "p95Ms": 247.354,
+          "p99Ms": 260.412
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 230.87294186046512,
+          "p50Ms": 228.303,
+          "p95Ms": 244.756,
+          "p99Ms": 292.693
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 230.2785294117647,
+          "p50Ms": 228.642,
+          "p95Ms": 239.106,
+          "p99Ms": 253.478
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 232.50132941176471,
+          "p50Ms": 230.121,
+          "p95Ms": 251.895,
+          "p99Ms": 262.053
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 21.154703581801215,
+          "min": 19.301301451620212,
+          "max": 34.32851399354225
+        },
+        "backendCpuPercent": {
+          "median": 12.244460108933263,
+          "min": 11.81197753421133,
+          "max": 13.031229791091043
+        },
+        "heapMiB": {
+          "median": 257.9700012207031,
+          "min": 157.8478775024414,
+          "max": 305.7489700317383
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.32699999999999996,
+        "gcPauseCountDeltaApprox": 288.0,
+        "hikariAcquireSecondsDeltaApprox": 0.0005864999999999967,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.42,
+            "min": 0.84,
+            "max": 6.65
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.15,
+            "min": 0.11,
+            "max": 0.16
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.14,
+            "min": 0.11,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.15,
+            "min": 0.1,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.13,
+            "min": 0.12,
+            "max": 0.17
+          },
+          "ngrinder-controller": {
+            "median": 1.57,
+            "min": 1.13,
+            "max": 2.84
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 29.832,
+          "min": 28.775,
+          "max": 48.026
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-anonymous-vu1-r1-attempt2",
+      "phase": "control",
+      "profile": "search-frequent-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 26878,
+      "testId": 371,
+      "configRevision": 129,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 26878,
+      "successes": 26876,
+      "errors": 2,
+      "controllerTps": 114.57,
+      "controllerMeanMs": 7.94,
+      "startTime": 1790782123323,
+      "finishTime": 1790782361393,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 26878,
+      "sampleErrors": 2,
+      "sampleSpanSeconds": 233.5074699707031,
+      "failures": {
+        "ExecutionException": 2
+      },
+      "meanMs": 7.948423463312993,
+      "p95Ms": 9.29,
+      "p99Ms": 11.418,
+      "passed": false,
+      "integrityPassed": false,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790782155486.0,
+      "windowEndEpochMs": 1790782295486.0,
+      "window": {
+        "requests": 15830,
+        "attempts": 15832,
+        "errors": 2,
+        "errorRatePercent": 0.012632642748863063,
+        "rps": 113.07142857142857,
+        "meanMs": 7.8786987997473155,
+        "p50Ms": 7.689,
+        "p95Ms": 9.211,
+        "p99Ms": 11.14
+      },
+      "segments20Seconds": [
+        {
+          "requests": 2391,
+          "attempts": 2391,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 119.55,
+          "meanMs": 7.995081555834379,
+          "p50Ms": 7.808,
+          "p95Ms": 9.383,
+          "p99Ms": 11.327
+        },
+        {
+          "requests": 2440,
+          "attempts": 2440,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 122.0,
+          "meanMs": 7.863961475409836,
+          "p50Ms": 7.677,
+          "p95Ms": 9.128,
+          "p99Ms": 10.726
+        },
+        {
+          "requests": 2434,
+          "attempts": 2434,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 121.7,
+          "meanMs": 7.885799096138045,
+          "p50Ms": 7.657,
+          "p95Ms": 9.272,
+          "p99Ms": 11.824
+        },
+        {
+          "requests": 2469,
+          "attempts": 2469,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 123.45,
+          "meanMs": 7.775745240988254,
+          "p50Ms": 7.611,
+          "p95Ms": 9.033,
+          "p99Ms": 10.328
+        },
+        {
+          "requests": 2455,
+          "attempts": 2455,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 122.75,
+          "meanMs": 7.825158044806518,
+          "p50Ms": 7.644,
+          "p95Ms": 9.118,
+          "p99Ms": 11.007
+        },
+        {
+          "requests": 2451,
+          "attempts": 2451,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 122.55,
+          "meanMs": 7.8341909424724605,
+          "p50Ms": 7.669,
+          "p95Ms": 9.099,
+          "p99Ms": 10.868
+        },
+        {
+          "requests": 1185,
+          "attempts": 1187,
+          "errors": 2,
+          "errorRatePercent": 0.16849199663016007,
+          "rps": 59.25,
+          "meanMs": 8.074135864978903,
+          "p50Ms": 7.806,
+          "p95Ms": 9.509,
+          "p99Ms": 12.336
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 24.706196465424636,
+          "min": 12.774310218139995,
+          "max": 37.805958498562916
+        },
+        "backendCpuPercent": {
+          "median": 10.551429671467483,
+          "min": 3.7323783965240587,
+          "max": 11.526838365851805
+        },
+        "heapMiB": {
+          "median": 234.50260162353516,
+          "min": 127.41790771484375,
+          "max": 322.1200256347656
+        },
+        "hikariActive": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.6140000000000003,
+        "gcPauseCountDeltaApprox": 665.0,
+        "hikariAcquireSecondsDeltaApprox": 0.008128600000000007,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 8.28,
+            "min": 0.32,
+            "max": 10.85
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.11,
+            "min": 0.09,
+            "max": 0.12
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.11,
+            "min": 0.09,
+            "max": 0.15
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.11,
+            "min": 0.1,
+            "max": 0.17
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.1,
+            "min": 0.09,
+            "max": 0.18
+          },
+          "ngrinder-controller": {
+            "median": 1.02,
+            "min": 0.83,
+            "max": 2.01
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 31.637,
+          "min": 28.149,
+          "max": 47.407
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-authenticated-vu1-r1-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-authenticated",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 1027,
+      "testId": 372,
+      "configRevision": 130,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1027,
+      "successes": 1027,
+      "errors": 0,
+      "controllerTps": 4.38,
+      "controllerMeanMs": 227.68,
+      "startTime": 1790782392433,
+      "finishTime": 1790782630723,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 2032,
+        "newTestRows": 1027
+      },
+      "historyDelta": 1027,
+      "expectedHistoryDelta": 1027,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1027,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 234.9068630371094,
+      "failures": {},
+      "meanMs": 227.71827458617332,
+      "p95Ms": 240.811,
+      "p99Ms": 252.617,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790782424438.0,
+      "windowEndEpochMs": 1790782564438.0,
+      "window": {
+        "requests": 610,
+        "attempts": 610,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 4.357142857142857,
+        "meanMs": 228.02333278688525,
+        "p50Ms": 226.325,
+        "p95Ms": 241.206,
+        "p99Ms": 252.617
+      },
+      "segments20Seconds": [
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 227.34462068965516,
+          "p50Ms": 226.325,
+          "p95Ms": 236.621,
+          "p99Ms": 257.698
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 229.2425930232558,
+          "p50Ms": 226.539,
+          "p95Ms": 246.039,
+          "p99Ms": 312.85
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 227.87882558139535,
+          "p50Ms": 226.248,
+          "p95Ms": 238.875,
+          "p99Ms": 252.617
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 229.4012558139535,
+          "p50Ms": 226.964,
+          "p95Ms": 244.521,
+          "p99Ms": 299.646
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 227.57896511627908,
+          "p50Ms": 226.157,
+          "p95Ms": 239.319,
+          "p99Ms": 248.923
+        },
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 227.14010344827585,
+          "p50Ms": 226.012,
+          "p95Ms": 240.958,
+          "p99Ms": 248.949
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 227.37130232558138,
+          "p50Ms": 225.496,
+          "p95Ms": 240.732,
+          "p99Ms": 251.395
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 23.768804166669398,
+          "min": 21.034118650557797,
+          "max": 37.316053210162266
+        },
+        "backendCpuPercent": {
+          "median": 12.288769488218826,
+          "min": 11.713023125004195,
+          "max": 12.609726816422068
+        },
+        "heapMiB": {
+          "median": 229.9656982421875,
+          "min": 134.4880599975586,
+          "max": 322.24195861816406
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.3420000000000005,
+        "gcPauseCountDeltaApprox": 296.0,
+        "hikariAcquireSecondsDeltaApprox": 0.0006335000000000091,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.5,
+            "min": 1.09,
+            "max": 11.48
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.16,
+            "min": 0.12,
+            "max": 0.21
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.15,
+            "min": 0.12,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.14,
+            "min": 0.13,
+            "max": 0.29
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.15,
+            "min": 0.12,
+            "max": 0.19
+          },
+          "ngrinder-controller": {
+            "median": 1.56,
+            "min": 1.17,
+            "max": 2.1
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 29.742,
+          "min": 26.577,
+          "max": 45.791
+        }
+      }
+    },
+    {
+      "label": "control-list-authenticated-vu1-r2-attempt1",
+      "phase": "control",
+      "profile": "list-authenticated",
+      "vu": 1,
+      "repeat": 2,
+      "requestsPerVu": 1025,
+      "testId": 373,
+      "configRevision": 131,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1025,
+      "successes": 1025,
+      "errors": 0,
+      "controllerTps": 4.26,
+      "controllerMeanMs": 232.51,
+      "startTime": 1790782655316,
+      "finishTime": 1790782899042,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1025,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 239.38043701171875,
+      "failures": {},
+      "meanMs": 232.55672878048782,
+      "p95Ms": 246.1,
+      "p99Ms": 259.398,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790782687193.0,
+      "windowEndEpochMs": 1790782827193.0,
+      "window": {
+        "requests": 598,
+        "attempts": 598,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 4.271428571428571,
+        "meanMs": 232.65115719063544,
+        "p50Ms": 230.661,
+        "p95Ms": 245.219,
+        "p99Ms": 261.484
+      },
+      "segments20Seconds": [
+        {
+          "requests": 84,
+          "attempts": 84,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.2,
+          "meanMs": 233.01457142857143,
+          "p50Ms": 231.357,
+          "p95Ms": 245.238,
+          "p99Ms": 256.148
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 233.00382352941176,
+          "p50Ms": 231.46,
+          "p95Ms": 244.76,
+          "p99Ms": 257.915
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 231.60555294117648,
+          "p50Ms": 229.893,
+          "p95Ms": 241.428,
+          "p99Ms": 261.484
+        },
+        {
+          "requests": 84,
+          "attempts": 84,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.2,
+          "meanMs": 233.79784523809525,
+          "p50Ms": 230.756,
+          "p95Ms": 247.614,
+          "p99Ms": 300.63
+        },
+        {
+          "requests": 84,
+          "attempts": 84,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.2,
+          "meanMs": 232.98855952380953,
+          "p50Ms": 230.657,
+          "p95Ms": 242.78,
+          "p99Ms": 294.163
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 231.95451764705882,
+          "p50Ms": 230.308,
+          "p95Ms": 244.912,
+          "p99Ms": 256.595
+        },
+        {
+          "requests": 85,
+          "attempts": 85,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.25,
+          "meanMs": 232.45990588235293,
+          "p50Ms": 230.432,
+          "p95Ms": 240.919,
+          "p99Ms": 291.129
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 22.84073674750047,
+          "min": 19.94774972145128,
+          "max": 35.81154711795467
+        },
+        "backendCpuPercent": {
+          "median": 12.2834146366574,
+          "min": 11.972053138737254,
+          "max": 13.463657326245668
+        },
+        "heapMiB": {
+          "median": 220.42896270751953,
+          "min": 116.03694152832031,
+          "max": 328.2552032470703
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.34799999999999986,
+        "gcPauseCountDeltaApprox": 288.0,
+        "hikariAcquireSecondsDeltaApprox": 0.0005913000000000029,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.55,
+            "min": 1.13,
+            "max": 8.06
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.15,
+            "min": 0.1,
+            "max": 0.2
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.15,
+            "min": 0.12,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.13,
+            "min": 0.1,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.13,
+            "min": 0.12,
+            "max": 0.25
+          },
+          "ngrinder-controller": {
+            "median": 1.57,
+            "min": 1.1,
+            "max": 2.05
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 30.152,
+          "min": 28.956,
+          "max": 45.479
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-anonymous-vu1-r2-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-anonymous",
+      "vu": 1,
+      "repeat": 2,
+      "requestsPerVu": 26878,
+      "testId": 374,
+      "configRevision": 132,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 26878,
+      "successes": 26878,
+      "errors": 0,
+      "controllerTps": 118.71,
+      "controllerMeanMs": 7.97,
+      "startTime": 1790782925505,
+      "finishTime": 1790783155296,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 26878,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 224.65251611328125,
+      "failures": {},
+      "meanMs": 7.981377781084903,
+      "p95Ms": 9.379,
+      "p99Ms": 11.421,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790782957483.0,
+      "windowEndEpochMs": 1790783097483.0,
+      "window": {
+        "requests": 16846,
+        "attempts": 16846,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 120.32857142857142,
+        "meanMs": 7.96634114923424,
+        "p50Ms": 7.745,
+        "p95Ms": 9.377,
+        "p99Ms": 11.584
+      },
+      "segments20Seconds": [
+        {
+          "requests": 2385,
+          "attempts": 2385,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 119.25,
+          "meanMs": 8.005772327044026,
+          "p50Ms": 7.852,
+          "p95Ms": 9.272,
+          "p99Ms": 10.85
+        },
+        {
+          "requests": 2383,
+          "attempts": 2383,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 119.15,
+          "meanMs": 8.047495174150232,
+          "p50Ms": 7.815,
+          "p95Ms": 9.479,
+          "p99Ms": 12.355
+        },
+        {
+          "requests": 2398,
+          "attempts": 2398,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 119.9,
+          "meanMs": 8.000733110925772,
+          "p50Ms": 7.765,
+          "p95Ms": 9.538,
+          "p99Ms": 12.756
+        },
+        {
+          "requests": 2452,
+          "attempts": 2452,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 122.6,
+          "meanMs": 7.826405791190864,
+          "p50Ms": 7.644,
+          "p95Ms": 9.116,
+          "p99Ms": 11.151
+        },
+        {
+          "requests": 2461,
+          "attempts": 2461,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 123.05,
+          "meanMs": 7.800748069890289,
+          "p50Ms": 7.635,
+          "p95Ms": 9.026,
+          "p99Ms": 11.138
+        },
+        {
+          "requests": 2419,
+          "attempts": 2419,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 120.95,
+          "meanMs": 7.933470442331542,
+          "p50Ms": 7.662,
+          "p95Ms": 9.306,
+          "p99Ms": 12.666
+        },
+        {
+          "requests": 2344,
+          "attempts": 2344,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 117.2,
+          "meanMs": 8.161263225255972,
+          "p50Ms": 7.976,
+          "p95Ms": 9.797,
+          "p99Ms": 11.839
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 26.307821268581332,
+          "min": 21.190829246388056,
+          "max": 42.575191677667746
+        },
+        "backendCpuPercent": {
+          "median": 10.477320038677236,
+          "min": 9.759334901010876,
+          "max": 11.329207894948025
+        },
+        "heapMiB": {
+          "median": 230.72691345214844,
+          "min": 186.35751342773438,
+          "max": 327.88939666748047
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.6609999999999996,
+        "gcPauseCountDeltaApprox": 705.0,
+        "hikariAcquireSecondsDeltaApprox": 0.008863499999999996,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 9.8,
+            "min": 8.07,
+            "max": 16.66
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.11,
+            "min": 0.1,
+            "max": 0.12
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.11,
+            "min": 0.1,
+            "max": 0.15
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.11,
+            "min": 0.09,
+            "max": 0.13
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.11,
+            "min": 0.09,
+            "max": 0.15
+          },
+          "ngrinder-controller": {
+            "median": 1.34,
+            "min": 0.92,
+            "max": 2.35
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 45.599,
+          "min": 30.821,
+          "max": 56.127
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-authenticated-vu1-r2-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-authenticated",
+      "vu": 1,
+      "repeat": 2,
+      "requestsPerVu": 1027,
+      "testId": 375,
+      "configRevision": 133,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1027,
+      "successes": 1027,
+      "errors": 0,
+      "controllerTps": 4.38,
+      "controllerMeanMs": 226.74,
+      "startTime": 1790783180742,
+      "finishTime": 1790783418618,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 2032,
+        "newTestRows": 1027
+      },
+      "historyDelta": 1027,
+      "expectedHistoryDelta": 1027,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1027,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 233.87767309570313,
+      "failures": {},
+      "meanMs": 226.7941265822785,
+      "p95Ms": 239.774,
+      "p99Ms": 252.106,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790783212723.0,
+      "windowEndEpochMs": 1790783352723.0,
+      "window": {
+        "requests": 612,
+        "attempts": 612,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 4.371428571428571,
+        "meanMs": 227.31392320261438,
+        "p50Ms": 224.788,
+        "p95Ms": 244.009,
+        "p99Ms": 257.285
+      },
+      "segments20Seconds": [
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 226.8691724137931,
+          "p50Ms": 225.071,
+          "p95Ms": 239.712,
+          "p99Ms": 250.257
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 228.52872093023257,
+          "p50Ms": 225.244,
+          "p95Ms": 244.009,
+          "p99Ms": 324.359
+        },
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 227.68705747126438,
+          "p50Ms": 224.314,
+          "p95Ms": 244.067,
+          "p99Ms": 297.049
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 227.8651046511628,
+          "p50Ms": 224.839,
+          "p95Ms": 248.378,
+          "p99Ms": 257.285
+        },
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 225.9978275862069,
+          "p50Ms": 224.514,
+          "p95Ms": 237.802,
+          "p99Ms": 252.106
+        },
+        {
+          "requests": 87,
+          "attempts": 87,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.35,
+          "meanMs": 227.63711494252874,
+          "p50Ms": 224.956,
+          "p95Ms": 243.303,
+          "p99Ms": 293.995
+        },
+        {
+          "requests": 86,
+          "attempts": 86,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 4.3,
+          "meanMs": 226.83688372093025,
+          "p50Ms": 224.505,
+          "p95Ms": 245.545,
+          "p99Ms": 247.033
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 24.432353951787654,
+          "min": 22.416768531098576,
+          "max": 35.991749386842244
+        },
+        "backendCpuPercent": {
+          "median": 12.256243363880301,
+          "min": 11.901897109218826,
+          "max": 12.83699677474186
+        },
+        "heapMiB": {
+          "median": 229.38357543945312,
+          "min": 133.58785247802734,
+          "max": 286.6209487915039
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.3620000000000001,
+        "gcPauseCountDeltaApprox": 297.0,
+        "hikariAcquireSecondsDeltaApprox": 0.0005953999999999959,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.52,
+            "min": 1.2,
+            "max": 2.77
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.14,
+            "min": 0.12,
+            "max": 0.19
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.14,
+            "min": 0.12,
+            "max": 0.67
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.14,
+            "min": 0.12,
+            "max": 0.17
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.15,
+            "min": 0.11,
+            "max": 0.18
+          },
+          "ngrinder-controller": {
+            "median": 1.37,
+            "min": 1.23,
+            "max": 1.96
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 30.941,
+          "min": 29.351,
+          "max": 44.981
+        }
+      }
+    },
+    {
+      "label": "control-list-anonymous-vu1-r2-attempt1",
+      "phase": "control",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 2,
+      "requestsPerVu": 29165,
+      "testId": 376,
+      "configRevision": 134,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 29165,
+      "successes": 29165,
+      "errors": 0,
+      "controllerTps": 98.2,
+      "controllerMeanMs": 9.77,
+      "startTime": 1790783444797,
+      "finishTime": 1790783744936,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 29165,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 295.70472607421874,
+      "failures": {},
+      "meanMs": 9.784202125835762,
+      "p95Ms": 13.586,
+      "p99Ms": 20.643,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790783476712.0,
+      "windowEndEpochMs": 1790783616712.0,
+      "window": {
+        "requests": 15150,
+        "attempts": 15150,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 108.21428571428571,
+        "meanMs": 8.909212211221123,
+        "p50Ms": 7.48,
+        "p95Ms": 13.001,
+        "p99Ms": 19.825
+      },
+      "segments20Seconds": [
+        {
+          "requests": 2532,
+          "attempts": 2532,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 126.6,
+          "meanMs": 7.498870458135861,
+          "p50Ms": 7.332,
+          "p95Ms": 8.603,
+          "p99Ms": 10.378
+        },
+        {
+          "requests": 2570,
+          "attempts": 2570,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 128.5,
+          "meanMs": 7.429691050583657,
+          "p50Ms": 7.266,
+          "p95Ms": 8.671,
+          "p99Ms": 10.318
+        },
+        {
+          "requests": 2628,
+          "attempts": 2628,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 131.4,
+          "meanMs": 7.310590563165905,
+          "p50Ms": 7.153,
+          "p95Ms": 8.589,
+          "p99Ms": 10.569
+        },
+        {
+          "requests": 2578,
+          "attempts": 2578,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 128.9,
+          "meanMs": 7.461731574864236,
+          "p50Ms": 7.252,
+          "p95Ms": 8.709,
+          "p99Ms": 11.093
+        },
+        {
+          "requests": 1610,
+          "attempts": 1610,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 80.5,
+          "meanMs": 12.114429813664596,
+          "p50Ms": 7.909,
+          "p95Ms": 22.892,
+          "p99Ms": 67.033
+        },
+        {
+          "requests": 1571,
+          "attempts": 1571,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 78.55,
+          "meanMs": 12.375619350732018,
+          "p50Ms": 11.518,
+          "p95Ms": 16.143,
+          "p99Ms": 23.983
+        },
+        {
+          "requests": 1656,
+          "attempts": 1656,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 82.8,
+          "meanMs": 11.750337560386473,
+          "p50Ms": 11.673,
+          "p95Ms": 13.929,
+          "p99Ms": 18.402
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 27.291546515119116,
+          "min": 22.546561041959922,
+          "max": 63.98289280716442
+        },
+        "backendCpuPercent": {
+          "median": 10.682954257675181,
+          "min": 9.670103754265583,
+          "max": 11.339253898139159
+        },
+        "heapMiB": {
+          "median": 169.5637664794922,
+          "min": 144.29690551757812,
+          "max": 312.7290954589844
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.5649999999999995,
+        "gcPauseCountDeltaApprox": 590.0,
+        "hikariAcquireSecondsDeltaApprox": 0.011014399999999994,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 8.23,
+            "min": 5.15,
+            "max": 15.34
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.15
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.17,
+            "min": 0.09,
+            "max": 0.19
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.12,
+            "min": 0.09,
+            "max": 0.21
+          },
+          "ngrinder-controller": {
+            "median": 1.33,
+            "min": 0.95,
+            "max": 2.4
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 45.83,
+          "min": 29.667,
+          "max": 119.042
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-anonymous-vu1-r3-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-anonymous",
+      "vu": 1,
+      "repeat": 3,
+      "requestsPerVu": 26878,
+      "testId": 377,
+      "configRevision": 135,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 26878,
+      "successes": 26878,
+      "errors": 0,
+      "controllerTps": 96.38,
+      "controllerMeanMs": 9.89,
+      "startTime": 1790783773313,
+      "finishTime": 1790784055389,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 26878,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 277.9072958984375,
+      "failures": {},
+      "meanMs": 9.905062355830047,
+      "p95Ms": 13.835,
+      "p99Ms": 28.432,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790783805439.0,
+      "windowEndEpochMs": 1790783945439.0,
+      "window": {
+        "requests": 14332,
+        "attempts": 14332,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 102.37142857142857,
+        "meanMs": 9.372300586101032,
+        "p50Ms": 8.935,
+        "p95Ms": 11.972,
+        "p99Ms": 15.787
+      },
+      "segments20Seconds": [
+        {
+          "requests": 1997,
+          "attempts": 1997,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 99.85,
+          "meanMs": 9.518235853780672,
+          "p50Ms": 9.095,
+          "p95Ms": 11.916,
+          "p99Ms": 15.897
+        },
+        {
+          "requests": 2095,
+          "attempts": 2095,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 104.75,
+          "meanMs": 9.13232553699284,
+          "p50Ms": 8.889,
+          "p95Ms": 10.766,
+          "p99Ms": 14.349
+        },
+        {
+          "requests": 2020,
+          "attempts": 2020,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 101.0,
+          "meanMs": 9.495735148514852,
+          "p50Ms": 8.965,
+          "p95Ms": 12.27,
+          "p99Ms": 16.782
+        },
+        {
+          "requests": 2106,
+          "attempts": 2106,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 105.3,
+          "meanMs": 9.131252136752137,
+          "p50Ms": 8.842,
+          "p95Ms": 11.334,
+          "p99Ms": 13.856
+        },
+        {
+          "requests": 2132,
+          "attempts": 2132,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 106.6,
+          "meanMs": 9.019183395872421,
+          "p50Ms": 8.789,
+          "p95Ms": 10.598,
+          "p99Ms": 14.248
+        },
+        {
+          "requests": 2160,
+          "attempts": 2160,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 108.0,
+          "meanMs": 8.899389351851852,
+          "p50Ms": 8.7,
+          "p95Ms": 10.48,
+          "p99Ms": 13.202
+        },
+        {
+          "requests": 1817,
+          "attempts": 1817,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 90.85,
+          "meanMs": 10.608249312052834,
+          "p50Ms": 10.433,
+          "p95Ms": 14.222,
+          "p99Ms": 20.678
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 24.250965802289215,
+          "min": 21.019282175300102,
+          "max": 36.308091015750165
+        },
+        "backendCpuPercent": {
+          "median": 9.679959265999695,
+          "min": 8.778536233537462,
+          "max": 9.951970575472089
+        },
+        "heapMiB": {
+          "median": 202.77935028076172,
+          "min": 167.7420425415039,
+          "max": 287.4910659790039
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.5839999999999996,
+        "gcPauseCountDeltaApprox": 601.0,
+        "hikariAcquireSecondsDeltaApprox": 0.009876200000000002,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 9.42,
+            "min": 7.33,
+            "max": 15.32
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.18
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.16,
+            "min": 0.11,
+            "max": 0.3
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.12,
+            "min": 0.11,
+            "max": 0.39
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.46
+          },
+          "ngrinder-controller": {
+            "median": 1.64,
+            "min": 1.08,
+            "max": 2.13
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 43.081,
+          "min": 37.792,
+          "max": 59.952
+        }
+      }
+    },
+    {
+      "label": "control-search-frequent-authenticated-vu1-r3-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-authenticated",
+      "vu": 1,
+      "repeat": 3,
+      "requestsPerVu": 1027,
+      "testId": 378,
+      "configRevision": 136,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1027,
+      "successes": 1027,
+      "errors": 0,
+      "controllerTps": 3.85,
+      "controllerMeanMs": 258.29,
+      "startTime": 1790784096003,
+      "finishTime": 1790784366790,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 2032,
+        "newTestRows": 1027
+      },
+      "historyDelta": 1027,
+      "expectedHistoryDelta": 1027,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1027,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 266.206416015625,
+      "failures": {},
+      "meanMs": 258.29491626095427,
+      "p95Ms": 338.084,
+      "p99Ms": 373.606,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790784129168.0,
+      "windowEndEpochMs": 1790784269168.0,
+      "window": {
+        "requests": 555,
+        "attempts": 555,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 3.9642857142857144,
+        "meanMs": 250.81997657657658,
+        "p50Ms": 249.345,
+        "p95Ms": 269.016,
+        "p99Ms": 288.695
+      },
+      "segments20Seconds": [
+        {
+          "requests": 79,
+          "attempts": 79,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.95,
+          "meanMs": 249.64062025316454,
+          "p50Ms": 247.744,
+          "p95Ms": 266.339,
+          "p99Ms": 291.561
+        },
+        {
+          "requests": 79,
+          "attempts": 79,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.95,
+          "meanMs": 249.70886075949366,
+          "p50Ms": 247.245,
+          "p95Ms": 273.226,
+          "p99Ms": 288.695
+        },
+        {
+          "requests": 79,
+          "attempts": 79,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.95,
+          "meanMs": 249.30360759493672,
+          "p50Ms": 248.008,
+          "p95Ms": 267.414,
+          "p99Ms": 289.641
+        },
+        {
+          "requests": 78,
+          "attempts": 78,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.9,
+          "meanMs": 250.08646153846155,
+          "p50Ms": 248.28,
+          "p95Ms": 270.542,
+          "p99Ms": 281.761
+        },
+        {
+          "requests": 79,
+          "attempts": 79,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.95,
+          "meanMs": 251.81484810126582,
+          "p50Ms": 248.951,
+          "p95Ms": 268.384,
+          "p99Ms": 322.097
+        },
+        {
+          "requests": 77,
+          "attempts": 77,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.85,
+          "meanMs": 253.00436363636365,
+          "p50Ms": 251.194,
+          "p95Ms": 278.182,
+          "p99Ms": 289.918
+        },
+        {
+          "requests": 78,
+          "attempts": 78,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.9,
+          "meanMs": 252.7509358974359,
+          "p50Ms": 250.919,
+          "p95Ms": 269.102,
+          "p99Ms": 280.458
+        }
+      ],
+      "resources": {
+        "points": 12,
+        "systemCpuPercent": {
+          "median": 22.928925119255727,
+          "min": 19.229300264126593,
+          "max": 35.091860118596315
+        },
+        "backendCpuPercent": {
+          "median": 12.143142604993985,
+          "min": 11.385499001399923,
+          "max": 12.777859959924998
+        },
+        "heapMiB": {
+          "median": 259.9034843444824,
+          "min": 133.6653289794922,
+          "max": 329.49537658691406
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.35599999999999987,
+        "gcPauseCountDeltaApprox": 293.0,
+        "hikariAcquireSecondsDeltaApprox": 0.0005968000000000084,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.715,
+            "min": 1.07,
+            "max": 3.63
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.14
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.13,
+            "min": 0.12,
+            "max": 0.15
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.13,
+            "min": 0.1,
+            "max": 0.17
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.135,
+            "min": 0.12,
+            "max": 0.18
+          },
+          "ngrinder-controller": {
+            "median": 1.5350000000000001,
+            "min": 1.03,
+            "max": 5.59
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 36.1415,
+          "min": 32.915,
+          "max": 51.298
+        }
+      }
+    },
+    {
+      "label": "control-list-anonymous-vu1-r3-attempt1",
+      "phase": "control",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 3,
+      "requestsPerVu": 29165,
+      "testId": 379,
+      "configRevision": 137,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 29165,
+      "successes": 29164,
+      "errors": 1,
+      "controllerTps": 106.14,
+      "controllerMeanMs": 8.83,
+      "startTime": 1790784393054,
+      "finishTime": 1790784671173,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 29165,
+      "sampleErrors": 1,
+      "sampleSpanSeconds": 274.243330078125,
+      "failures": {
+        "ExecutionException": 1
+      },
+      "meanMs": 8.848776436702783,
+      "p95Ms": 11.692,
+      "p99Ms": 15.776,
+      "passed": false,
+      "integrityPassed": false,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790784425740.0,
+      "windowEndEpochMs": 1790784565740.0,
+      "window": {
+        "requests": 15522,
+        "attempts": 15522,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 110.87142857142857,
+        "meanMs": 8.673368638062106,
+        "p50Ms": 8.297,
+        "p95Ms": 11.086,
+        "p99Ms": 14.887
+      },
+      "segments20Seconds": [
+        {
+          "requests": 2227,
+          "attempts": 2227,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 111.35,
+          "meanMs": 8.60367804220925,
+          "p50Ms": 8.371,
+          "p95Ms": 10.072,
+          "p99Ms": 14.343
+        },
+        {
+          "requests": 2200,
+          "attempts": 2200,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 110.0,
+          "meanMs": 8.717882272727273,
+          "p50Ms": 8.297,
+          "p95Ms": 11.295,
+          "p99Ms": 15.734
+        },
+        {
+          "requests": 2151,
+          "attempts": 2151,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 107.55,
+          "meanMs": 8.941056252905625,
+          "p50Ms": 8.39,
+          "p95Ms": 11.664,
+          "p99Ms": 15.98
+        },
+        {
+          "requests": 2278,
+          "attempts": 2278,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 113.9,
+          "meanMs": 8.45310755048288,
+          "p50Ms": 8.23,
+          "p95Ms": 10.114,
+          "p99Ms": 13.43
+        },
+        {
+          "requests": 2294,
+          "attempts": 2294,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 114.7,
+          "meanMs": 8.391428945074106,
+          "p50Ms": 8.147,
+          "p95Ms": 10.152,
+          "p99Ms": 14.093
+        },
+        {
+          "requests": 2092,
+          "attempts": 2092,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 104.6,
+          "meanMs": 9.208034894837477,
+          "p50Ms": 8.599,
+          "p95Ms": 12.179,
+          "p99Ms": 15.606
+        },
+        {
+          "requests": 2275,
+          "attempts": 2275,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 113.75,
+          "meanMs": 8.457060659340659,
+          "p50Ms": 8.185,
+          "p95Ms": 9.899,
+          "p99Ms": 14.371
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 24.677201500553924,
+          "min": 21.839362160279773,
+          "max": 46.06872089564482
+        },
+        "backendCpuPercent": {
+          "median": 9.42720960080738,
+          "min": 8.793884259470842,
+          "max": 10.80658705917943
+        },
+        "heapMiB": {
+          "median": 247.77105712890625,
+          "min": 171.86780548095703,
+          "max": 319.26197052001953
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.5660000000000007,
+        "gcPauseCountDeltaApprox": 612.0,
+        "hikariAcquireSecondsDeltaApprox": 0.009788600000000008,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 9.48,
+            "min": 7.69,
+            "max": 42.43
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.16
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.12,
+            "min": 0.11,
+            "max": 0.2
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.13,
+            "min": 0.1,
+            "max": 0.16
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.17
+          },
+          "ngrinder-controller": {
+            "median": 1.35,
+            "min": 0.76,
+            "max": 21.94
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 41.001,
+          "min": 38.732,
+          "max": 52.815
+        }
+      }
+    },
+    {
+      "label": "control-list-authenticated-vu1-r3-attempt1",
+      "phase": "control",
+      "profile": "list-authenticated",
+      "vu": 1,
+      "repeat": 3,
+      "requestsPerVu": 1025,
+      "testId": 380,
+      "configRevision": 138,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 1025,
+      "successes": 1025,
+      "errors": 0,
+      "controllerTps": 3.81,
+      "controllerMeanMs": 261.39,
+      "startTime": 1790784717798,
+      "finishTime": 1790784990603,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 1025,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 269.0212990722656,
+      "failures": {},
+      "meanMs": 261.4231629268293,
+      "p95Ms": 324.777,
+      "p99Ms": 371.191,
+      "passed": true,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": true,
+      "measurementComplete": true,
+      "windowStartEpochMs": 1790784750760.0,
+      "windowEndEpochMs": 1790784890760.0,
+      "window": {
+        "requests": 544,
+        "attempts": 544,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "rps": 3.8857142857142857,
+        "meanMs": 255.97978308823528,
+        "p50Ms": 254.293,
+        "p95Ms": 275.732,
+        "p99Ms": 295.089
+      },
+      "segments20Seconds": [
+        {
+          "requests": 76,
+          "attempts": 76,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.8,
+          "meanMs": 257.32709210526315,
+          "p50Ms": 254.812,
+          "p95Ms": 272.114,
+          "p99Ms": 296.234
+        },
+        {
+          "requests": 77,
+          "attempts": 77,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.85,
+          "meanMs": 255.56151948051948,
+          "p50Ms": 254.823,
+          "p95Ms": 268.099,
+          "p99Ms": 286.585
+        },
+        {
+          "requests": 77,
+          "attempts": 77,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.85,
+          "meanMs": 255.74197402597403,
+          "p50Ms": 253.36,
+          "p95Ms": 275.189,
+          "p99Ms": 295.089
+        },
+        {
+          "requests": 77,
+          "attempts": 77,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.85,
+          "meanMs": 255.4842077922078,
+          "p50Ms": 253.921,
+          "p95Ms": 279.462,
+          "p99Ms": 291.12
+        },
+        {
+          "requests": 77,
+          "attempts": 77,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.85,
+          "meanMs": 257.54948051948054,
+          "p50Ms": 254.418,
+          "p95Ms": 287.243,
+          "p99Ms": 351.509
+        },
+        {
+          "requests": 76,
+          "attempts": 76,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.8,
+          "meanMs": 256.38292105263156,
+          "p50Ms": 254.293,
+          "p95Ms": 281.877,
+          "p99Ms": 298.05
+        },
+        {
+          "requests": 78,
+          "attempts": 78,
+          "errors": 0,
+          "errorRatePercent": 0.0,
+          "rps": 3.9,
+          "meanMs": 254.32856410256412,
+          "p50Ms": 253.797,
+          "p95Ms": 267.444,
+          "p99Ms": 289.257
+        }
+      ],
+      "resources": {
+        "points": 11,
+        "systemCpuPercent": {
+          "median": 21.887315926191377,
+          "min": 18.998268506987603,
+          "max": 27.5324148013078
+        },
+        "backendCpuPercent": {
+          "median": 11.891780450553318,
+          "min": 11.315336576596797,
+          "max": 12.793633114544441
+        },
+        "heapMiB": {
+          "median": 257.9479064941406,
+          "min": 122.11238861083984,
+          "max": 330.0160827636719
+        },
+        "hikariActive": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "hikariPending": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hikariTimeoutDelta": 0.0,
+        "gcPauseSecondsDeltaApprox": 0.2919999999999998,
+        "gcPauseCountDeltaApprox": 261.0,
+        "hikariAcquireSecondsDeltaApprox": 0.00048199999999998244,
+        "containerCpuPercent": {
+          "apm-ngrinder-agent-2": {
+            "median": 1.27,
+            "min": 0.67,
+            "max": 29.14
+          },
+          "apm-ngrinder-agent-5": {
+            "median": 0.13,
+            "min": 0.11,
+            "max": 0.15
+          },
+          "apm-ngrinder-agent-1": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.14
+          },
+          "apm-ngrinder-agent-3": {
+            "median": 0.12,
+            "min": 0.1,
+            "max": 0.14
+          },
+          "apm-ngrinder-agent-4": {
+            "median": 0.11,
+            "min": 0.1,
+            "max": 0.12
+          },
+          "ngrinder-controller": {
+            "median": 1.38,
+            "min": 0.94,
+            "max": 1.69
+          }
+        },
+        "scrapeElapsedMs": {
+          "median": 37.318,
+          "min": 35.098,
+          "max": 60.67
+        }
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "comparison": "authentication without keyword",
+      "reference": "list-anonymous",
+      "compared": "list-authenticated",
+      "p95MedianRatio": 22.18581995309399,
+      "meanMedianDeltaMs": 223.97778855257334
+    },
+    {
+      "comparison": "keyword for anonymous",
+      "reference": "list-anonymous",
+      "compared": "search-frequent-anonymous",
+      "p95MedianRatio": 0.8458416020205665,
+      "meanMedianDeltaMs": -0.7070274888278663
+    },
+    {
+      "comparison": "keyword for authenticated",
+      "reference": "list-authenticated",
+      "compared": "search-frequent-authenticated",
+      "p95MedianRatio": 0.9921000845693468,
+      "meanMedianDeltaMs": -4.627824403750196
+    }
+  ],
+  "fullRequests": 174285,
+  "windowRequests": 98202,
+  "errors": 5,
+  "historyDelta": 3081,
+  "excludedRuns": [
+    {
+      "label": "duration-check-list-anonymous-vu1-r1",
+      "phase": "duration-check",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": null,
+      "testId": 357,
+      "configRevision": 98,
+      "status": "FINISHED",
+      "durationSeconds": 15,
+      "expectedRequests": 1086,
+      "successes": 1086,
+      "errors": 0,
+      "controllerTps": 90.11,
+      "controllerMeanMs": 10.58,
+      "startTime": 1790779424946,
+      "finishTime": 1790779440153,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": false,
+      "sampleRequests": 1100,
+      "sampleErrors": 0,
+      "failures": {},
+      "meanMs": 10.563653636363636,
+      "p95Ms": 15.694,
+      "p99Ms": 20.953,
+      "passed": false,
+      "sampleSpanSeconds": 12.6223779296875,
+      "excludedFromControls": true,
+      "excludedReason": "Controller duration shutdown cuts final statistics/CSV tail; fixed-count complete runs used instead"
+    },
+    {
+      "label": "control-list-anonymous-vu1-r1-attempt1",
+      "phase": "control",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 20523,
+      "requestedRequestsPerVu": 20522,
+      "controllerRuns": 6841,
+      "requestsPerIteration": 3,
+      "testId": 366,
+      "configRevision": 116,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 20523,
+      "successes": 7033,
+      "errors": 0,
+      "controllerTps": 120.93,
+      "controllerMeanMs": 7.89,
+      "startTime": 1790780472898,
+      "finishTime": 1790780534062,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": false,
+      "sampleRequests": 7116,
+      "sampleErrors": 1,
+      "sampleSpanSeconds": 59.17923388671875,
+      "failures": {
+        "ShutdownException": 1
+      },
+      "meanMs": 7.9003745607870695,
+      "p95Ms": 9.41,
+      "p99Ms": 11.461,
+      "passed": false,
+      "integrityPassed": false,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": false,
+      "excludedFromControls": true,
+      "excludedReason": "Multiple GET per iteration reaches Controller request threshold early; reverted batching"
+    },
+    {
+      "label": "control-list-anonymous-vu1-r1-attempt2",
+      "phase": "control",
+      "profile": "list-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 20522,
+      "testId": 367,
+      "configRevision": 121,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 20522,
+      "successes": 20522,
+      "errors": 0,
+      "controllerTps": 129.58,
+      "controllerMeanMs": 7.37,
+      "startTime": 1790780930240,
+      "finishTime": 1790781091217,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 20522,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 158.3249541015625,
+      "failures": {},
+      "meanMs": 7.377428125913653,
+      "p95Ms": 8.7,
+      "p99Ms": 10.69,
+      "passed": false,
+      "integrityPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": false,
+      "excludedFromControls": true,
+      "excludedReason": "Calibration attempt shorter than minimum observation window"
+    },
+    {
+      "label": "control-search-frequent-anonymous-vu1-r1-attempt1",
+      "phase": "control",
+      "profile": "search-frequent-anonymous",
+      "vu": 1,
+      "repeat": 1,
+      "requestsPerVu": 17469,
+      "testId": 370,
+      "configRevision": 128,
+      "status": "FINISHED",
+      "durationSeconds": null,
+      "expectedRequests": 17469,
+      "successes": 17469,
+      "errors": 0,
+      "controllerTps": 119.41,
+      "controllerMeanMs": 7.98,
+      "startTime": 1790781946389,
+      "finishTime": 1790782096123,
+      "historyBefore": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyAfter": {
+        "total": 1005,
+        "newTestRows": 0
+      },
+      "historyDelta": 0,
+      "expectedHistoryDelta": 0,
+      "sampleAgents": [
+        "apm-ngrinder-agent-2"
+      ],
+      "sampleComplete": true,
+      "sampleRequests": 17469,
+      "sampleErrors": 0,
+      "sampleSpanSeconds": 146.23660400390625,
+      "failures": {},
+      "meanMs": 7.996022611483199,
+      "p95Ms": 9.387,
+      "p99Ms": 11.356,
+      "passed": false,
+      "integrityPassed": true,
+      "accountingPassed": true,
+      "minimumSampleSeconds": 180,
+      "durationSufficient": false,
+      "excludedFromControls": true,
+      "excludedReason": "Calibration attempt shorter than minimum observation window",
+      "measurementComplete": false
+    }
+  ],
+  "notes": [
+    "Window is [first GET start+30s,first GET start+170s], requests must finish in window.",
+    "Closed workload: one Agent/process/thread, no pacing; throughput includes response validation and CSV overhead.",
+    "Quantiles are nearest rank; aggregate median/range are per-repetition, not pooled percentiles.",
+    "H2 and generator share host. This is a controlled local diagnostic, not a production capacity or SLO result."
+  ]
+}

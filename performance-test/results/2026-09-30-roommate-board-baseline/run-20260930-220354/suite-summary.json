@@ -1,0 +1,1524 @@
+[
+  {
+    "label": "fixture-list-anonymous-vu1-r1",
+    "phase": "fixture",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 293,
+    "configRevision": 46,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 578.0,
+    "startTime": 1790774097362,
+    "finishTime": 1790774104439,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 579.237,
+    "p95Ms": 1493.931,
+    "p99Ms": 1493.931,
+    "passed": true
+  },
+  {
+    "label": "fixture-list-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "list-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 294,
+    "configRevision": 47,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 1053.67,
+    "startTime": 1790774117245,
+    "finishTime": 1790774124571,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 1055.2993333333334,
+    "p95Ms": 1205.499,
+    "p99Ms": 1205.499,
+    "passed": true
+  },
+  {
+    "label": "fixture-filter-region-vu1-r1",
+    "phase": "fixture",
+    "profile": "filter-region",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 295,
+    "configRevision": 48,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 84.33,
+    "startTime": 1790774142594,
+    "finishTime": 1790774147775,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 85.43266666666666,
+    "p95Ms": 161.812,
+    "p99Ms": 161.812,
+    "passed": true
+  },
+  {
+    "label": "fixture-filter-room-type-vu1-r1",
+    "phase": "fixture",
+    "profile": "filter-room-type",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 296,
+    "configRevision": 49,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 94.67,
+    "startTime": 1790774163294,
+    "finishTime": 1790774167935,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 95.78966666666668,
+    "p95Ms": 161.366,
+    "p99Ms": 161.366,
+    "passed": true
+  },
+  {
+    "label": "fixture-filter-budget-vu1-r1",
+    "phase": "fixture",
+    "profile": "filter-budget",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 297,
+    "configRevision": 50,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 67.67,
+    "startTime": 1790774181617,
+    "finishTime": 1790774187041,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 68.86033333333334,
+    "p95Ms": 130.389,
+    "p99Ms": 130.389,
+    "passed": true
+  },
+  {
+    "label": "fixture-filter-gender-vu1-r1",
+    "phase": "fixture",
+    "profile": "filter-gender",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 298,
+    "configRevision": 51,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 110.33,
+    "startTime": 1790774204167,
+    "finishTime": 1790774210165,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 111.72766666666666,
+    "p95Ms": 187.989,
+    "p99Ms": 187.989,
+    "passed": true
+  },
+  {
+    "label": "fixture-filter-combined-vu1-r1",
+    "phase": "fixture",
+    "profile": "filter-combined",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 299,
+    "configRevision": 52,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 64.0,
+    "startTime": 1790774226443,
+    "finishTime": 1790774231330,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 65.68633333333334,
+    "p95Ms": 135.069,
+    "p99Ms": 135.069,
+    "passed": true
+  },
+  {
+    "label": "fixture-liked-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "liked-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 300,
+    "configRevision": 53,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 56.0,
+    "startTime": 1790774244728,
+    "finishTime": 1790774249427,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 56.833666666666666,
+    "p95Ms": 115.315,
+    "p99Ms": 115.315,
+    "passed": true
+  },
+  {
+    "label": "fixture-page-1-vu1-r1",
+    "phase": "fixture",
+    "profile": "page-1",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 301,
+    "configRevision": 54,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 77.0,
+    "startTime": 1790774261994,
+    "finishTime": 1790774267601,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 79.70066666666666,
+    "p95Ms": 155.38,
+    "p99Ms": 155.38,
+    "passed": true
+  },
+  {
+    "label": "fixture-page-deep-vu1-r1",
+    "phase": "fixture",
+    "profile": "page-deep",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 302,
+    "configRevision": 55,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 58.33,
+    "startTime": 1790774283547,
+    "finishTime": 1790774288883,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 59.187666666666665,
+    "p95Ms": 98.133,
+    "p99Ms": 98.133,
+    "passed": true
+  },
+  {
+    "label": "fixture-size-100-vu1-r1",
+    "phase": "fixture",
+    "profile": "size-100",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 303,
+    "configRevision": 56,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 79.67,
+    "startTime": 1790774303978,
+    "finishTime": 1790774308965,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 80.30633333333334,
+    "p95Ms": 111.202,
+    "p99Ms": 111.202,
+    "passed": true
+  },
+  {
+    "label": "fixture-sort-hits-vu1-r1",
+    "phase": "fixture",
+    "profile": "sort-hits",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 304,
+    "configRevision": 57,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 73.67,
+    "startTime": 1790774322976,
+    "finishTime": 1790774328066,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 74.664,
+    "p95Ms": 126.348,
+    "p99Ms": 126.348,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-frequent-anonymous-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-frequent-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 305,
+    "configRevision": 58,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 225.67,
+    "startTime": 1790774347322,
+    "finishTime": 1790774353161,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 226.86800000000002,
+    "p95Ms": 401.035,
+    "p99Ms": 401.035,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-frequent-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 306,
+    "configRevision": 59,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 895.67,
+    "startTime": 1790774372988,
+    "finishTime": 1790774379348,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1008,
+      "newTestRows": 3
+    },
+    "historyDelta": 3,
+    "expectedHistoryDelta": 3,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 897.0506666666666,
+    "p95Ms": 1073.581,
+    "p99Ms": 1073.581,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-rare-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-rare-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 307,
+    "configRevision": 60,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 467.67,
+    "startTime": 1790774393423,
+    "finishTime": 1790774399474,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1008,
+      "newTestRows": 3
+    },
+    "historyDelta": 3,
+    "expectedHistoryDelta": 3,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 468.59100000000007,
+    "p95Ms": 634.738,
+    "p99Ms": 634.738,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-zero-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-zero-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 308,
+    "configRevision": 61,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.49,
+    "controllerMeanMs": 506.33,
+    "startTime": 1790774415245,
+    "finishTime": 1790774421591,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1008,
+      "newTestRows": 3
+    },
+    "historyDelta": 3,
+    "expectedHistoryDelta": 3,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 507.81733333333335,
+    "p95Ms": 657.094,
+    "p99Ms": 657.094,
+    "passed": true
+  },
+  {
+    "label": "fixture-search-combined-authenticated-vu1-r1",
+    "phase": "fixture",
+    "profile": "search-combined-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 309,
+    "configRevision": 62,
+    "status": "FINISHED",
+    "successes": 3,
+    "errors": 0,
+    "controllerTps": 1.5,
+    "controllerMeanMs": 127.33,
+    "startTime": 1790774434509,
+    "finishTime": 1790774439697,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1008,
+      "newTestRows": 3
+    },
+    "historyDelta": 3,
+    "expectedHistoryDelta": 3,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 3,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 127.91166666666668,
+    "p95Ms": 164.221,
+    "p99Ms": 164.221,
+    "passed": true
+  },
+  {
+    "label": "warmup-list-anonymous-vu1-r1",
+    "phase": "warmup",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 30,
+    "testId": 310,
+    "configRevision": 63,
+    "status": "FINISHED",
+    "successes": 30,
+    "errors": 0,
+    "controllerTps": 15.0,
+    "controllerMeanMs": 48.9,
+    "startTime": 1790774455478,
+    "finishTime": 1790774461795,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 30,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 48.99986666666666,
+    "p95Ms": 106.684,
+    "p99Ms": 112.467,
+    "passed": true
+  },
+  {
+    "label": "warmup-search-frequent-authenticated-vu1-r1",
+    "phase": "warmup",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 30,
+    "testId": 311,
+    "configRevision": 64,
+    "status": "FINISHED",
+    "successes": 30,
+    "errors": 0,
+    "controllerTps": 1.15,
+    "controllerMeanMs": 872.27,
+    "startTime": 1790774476234,
+    "finishTime": 1790774506979,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1035,
+      "newTestRows": 30
+    },
+    "historyDelta": 30,
+    "expectedHistoryDelta": 30,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 30,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 872.4537333333334,
+    "p95Ms": 1095.884,
+    "p99Ms": 1177.916,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu1-r1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 312,
+    "configRevision": 65,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 24.42,
+    "controllerMeanMs": 40.63,
+    "startTime": 1790774523382,
+    "finishTime": 1790774531099,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 40.72041,
+    "p95Ms": 71.049,
+    "p99Ms": 124.421,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu1-r1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 313,
+    "configRevision": 66,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 1.27,
+    "controllerMeanMs": 792.17,
+    "startTime": 1790774557501,
+    "finishTime": 1790774639358,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1105,
+      "newTestRows": 100
+    },
+    "historyDelta": 100,
+    "expectedHistoryDelta": 100,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 792.31456,
+    "p95Ms": 956.077,
+    "p99Ms": 1118.442,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu1-r2",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 314,
+    "configRevision": 67,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 23.4,
+    "controllerMeanMs": 42.61,
+    "startTime": 1790774667496,
+    "finishTime": 1790774676520,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 42.695479999999996,
+    "p95Ms": 74.982,
+    "p99Ms": 115.966,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu1-r2",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 315,
+    "configRevision": 68,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 1.24,
+    "controllerMeanMs": 809.81,
+    "startTime": 1790774704012,
+    "finishTime": 1790774788824,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1105,
+      "newTestRows": 100
+    },
+    "historyDelta": 100,
+    "expectedHistoryDelta": 100,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 809.8618799999999,
+    "p95Ms": 957.559,
+    "p99Ms": 1014.906,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu1-r3",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 1,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 316,
+    "configRevision": 69,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 23.22,
+    "controllerMeanMs": 35.84,
+    "startTime": 1790774817375,
+    "finishTime": 1790774825968,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 35.93308,
+    "p95Ms": 62.242,
+    "p99Ms": 91.475,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu1-r3",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 1,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 317,
+    "configRevision": 70,
+    "status": "FINISHED",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 1.21,
+    "controllerMeanMs": 831.93,
+    "startTime": 1790774852554,
+    "finishTime": 1790774939311,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1105,
+      "newTestRows": 100
+    },
+    "historyDelta": 100,
+    "expectedHistoryDelta": 100,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 832.0958899999999,
+    "p95Ms": 989.958,
+    "p99Ms": 1066.578,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu3-r1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 3,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 318,
+    "configRevision": 71,
+    "status": "STOP_BY_ERROR",
+    "successes": 100,
+    "errors": 0,
+    "controllerTps": 3.31,
+    "controllerMeanMs": 31.44,
+    "startTime": 1790774968034,
+    "finishTime": 1790775001487,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": false,
+    "sampleRequests": 100,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 31.55803,
+    "p95Ms": 46.071,
+    "p99Ms": 59.518,
+    "passed": false,
+    "excludedFromBaseline": true,
+    "excludedReason": "Worker sample directory creation race; not an API load result"
+  },
+  {
+    "label": "concurrency-check-list-anonymous-vu3-r1-retry1",
+    "phase": "concurrency-check",
+    "profile": "list-anonymous",
+    "vu": 3,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 319,
+    "configRevision": 76,
+    "status": "FINISHED",
+    "successes": 9,
+    "errors": 0,
+    "controllerTps": 4.5,
+    "controllerMeanMs": 73.67,
+    "startTime": 1790775315498,
+    "finishTime": 1790775320678,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 9,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 75.9191111111111,
+    "p95Ms": 97.565,
+    "p99Ms": 97.565,
+    "passed": true
+  },
+  {
+    "label": "concurrency-check-search-frequent-authenticated-vu3-r1-retry1",
+    "phase": "concurrency-check",
+    "profile": "search-frequent-authenticated",
+    "vu": 3,
+    "repeat": 1,
+    "requestsPerVu": 3,
+    "testId": 320,
+    "configRevision": 77,
+    "status": "FINISHED",
+    "successes": 9,
+    "errors": 0,
+    "controllerTps": 2.18,
+    "controllerMeanMs": 1146.33,
+    "startTime": 1790775335654,
+    "finishTime": 1790775344851,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1014,
+      "newTestRows": 9
+    },
+    "historyDelta": 9,
+    "expectedHistoryDelta": 9,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 9,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 1148.1545555555556,
+    "p95Ms": 1358.719,
+    "p99Ms": 1358.719,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu3-r1-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 3,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 321,
+    "configRevision": 78,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 34.67,
+    "controllerMeanMs": 70.99,
+    "startTime": 1790775358913,
+    "finishTime": 1790775371071,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 71.08866666666667,
+    "p95Ms": 155.456,
+    "p99Ms": 258.678,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu3-r1-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 3,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 322,
+    "configRevision": 79,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 2.89,
+    "controllerMeanMs": 1041.04,
+    "startTime": 1790775398708,
+    "finishTime": 1790775507365,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1305,
+      "newTestRows": 300
+    },
+    "historyDelta": 300,
+    "expectedHistoryDelta": 300,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 1041.1160266666668,
+    "p95Ms": 1429.225,
+    "p99Ms": 1611.421,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu3-r2-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 3,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 323,
+    "configRevision": 80,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 73.35,
+    "controllerMeanMs": 35.81,
+    "startTime": 1790775534793,
+    "finishTime": 1790775542491,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 35.88314666666667,
+    "p95Ms": 65.028,
+    "p99Ms": 109.206,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu3-r2-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 3,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 324,
+    "configRevision": 81,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 3.07,
+    "controllerMeanMs": 968.94,
+    "startTime": 1790775570312,
+    "finishTime": 1790775672755,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1305,
+      "newTestRows": 300
+    },
+    "historyDelta": 300,
+    "expectedHistoryDelta": 300,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 969.0059200000001,
+    "p95Ms": 1264.303,
+    "p99Ms": 1469.171,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu3-r3-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 3,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 325,
+    "configRevision": 82,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 71.6,
+    "controllerMeanMs": 29.3,
+    "startTime": 1790775700839,
+    "finishTime": 1790775708894,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 29.437579999999997,
+    "p95Ms": 48.689,
+    "p99Ms": 63.29,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu3-r3-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 3,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 326,
+    "configRevision": 83,
+    "status": "FINISHED",
+    "successes": 300,
+    "errors": 0,
+    "controllerTps": 2.99,
+    "controllerMeanMs": 998.59,
+    "startTime": 1790775735742,
+    "finishTime": 1790775840271,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1305,
+      "newTestRows": 300
+    },
+    "historyDelta": 300,
+    "expectedHistoryDelta": 300,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 300,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 998.6914733333333,
+    "p95Ms": 1254.668,
+    "p99Ms": 1440.588,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu5-r1-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 5,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 327,
+    "configRevision": 84,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 79.76,
+    "controllerMeanMs": 47.27,
+    "startTime": 1790775866624,
+    "finishTime": 1790775876401,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 47.31416,
+    "p95Ms": 84.76,
+    "p99Ms": 120.132,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu5-r1-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 5,
+    "repeat": 1,
+    "requestsPerVu": 100,
+    "testId": 328,
+    "configRevision": 85,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 3.26,
+    "controllerMeanMs": 1543.69,
+    "startTime": 1790775903316,
+    "finishTime": 1790776061718,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1505,
+      "newTestRows": 500
+    },
+    "historyDelta": 500,
+    "expectedHistoryDelta": 500,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 1543.7575,
+    "p95Ms": 1919.453,
+    "p99Ms": 2406.84,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu5-r2-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 5,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 329,
+    "configRevision": 86,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 76.93,
+    "controllerMeanMs": 57.48,
+    "startTime": 1790776096979,
+    "finishTime": 1790776106844,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 57.556826,
+    "p95Ms": 93.868,
+    "p99Ms": 121.17,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu5-r2-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 5,
+    "repeat": 2,
+    "requestsPerVu": 100,
+    "testId": 330,
+    "configRevision": 87,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 7.06,
+    "controllerMeanMs": 721.38,
+    "startTime": 1790776135075,
+    "finishTime": 1790776211064,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1505,
+      "newTestRows": 500
+    },
+    "historyDelta": 500,
+    "expectedHistoryDelta": 500,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 721.451242,
+    "p95Ms": 1677.986,
+    "p99Ms": 1889.156,
+    "passed": true
+  },
+  {
+    "label": "baseline-list-anonymous-vu5-r3-retry1",
+    "phase": "baseline",
+    "profile": "list-anonymous",
+    "vu": 5,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 331,
+    "configRevision": 88,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 250.0,
+    "controllerMeanMs": 17.58,
+    "startTime": 1790776238396,
+    "finishTime": 1790776244191,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyDelta": 0,
+    "expectedHistoryDelta": 0,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 17.681995999999998,
+    "p95Ms": 27.643,
+    "p99Ms": 44.95,
+    "passed": true
+  },
+  {
+    "label": "baseline-search-frequent-authenticated-vu5-r3-retry1",
+    "phase": "baseline",
+    "profile": "search-frequent-authenticated",
+    "vu": 5,
+    "repeat": 3,
+    "requestsPerVu": 100,
+    "testId": 332,
+    "configRevision": 89,
+    "status": "FINISHED",
+    "successes": 500,
+    "errors": 0,
+    "controllerTps": 6.84,
+    "controllerMeanMs": 752.99,
+    "startTime": 1790776274065,
+    "finishTime": 1790776354438,
+    "historyBefore": {
+      "total": 1005,
+      "newTestRows": 0
+    },
+    "historyAfter": {
+      "total": 1505,
+      "newTestRows": 500
+    },
+    "historyDelta": 500,
+    "expectedHistoryDelta": 500,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "sampleComplete": true,
+    "sampleRequests": 500,
+    "sampleErrors": 0,
+    "failures": {},
+    "meanMs": 753.1119620000001,
+    "p95Ms": 2228.51,
+    "p99Ms": 2557.501,
+    "passed": true
+  }
+]
