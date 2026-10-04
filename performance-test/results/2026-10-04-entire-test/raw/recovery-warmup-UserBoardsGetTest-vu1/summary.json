@@ -1,0 +1,39 @@
+{
+  "script": "UserBoardsGetTest.groovy",
+  "domain": "user",
+  "scenario": "내 게시글",
+  "phase": "recovery-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 445,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 9.99,
+  "controllerMeanMs": 25.65,
+  "startTime": 1791105213523,
+  "finishTime": 1791105218790,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 26.016,
+  "p95Ms": 51.087,
+  "allRequestP95Ms": 51.087,
+  "sampleSpanSeconds": 0.563,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

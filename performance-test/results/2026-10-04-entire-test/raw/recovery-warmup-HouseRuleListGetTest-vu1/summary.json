@@ -1,0 +1,39 @@
+{
+  "script": "HouseRuleListGetTest.groovy",
+  "domain": "roommate-management",
+  "scenario": "하우스룰 목록",
+  "phase": "recovery-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 427,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 10.0,
+  "controllerMeanMs": 8.7,
+  "startTime": 1791104773854,
+  "finishTime": 1791104778564,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 9.124,
+  "p95Ms": 6.294,
+  "allRequestP95Ms": 6.294,
+  "sampleSpanSeconds": 0.213,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

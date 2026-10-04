@@ -1,0 +1,39 @@
+{
+  "script": "RoommateBoardListKeywordGetTest.groovy",
+  "domain": "roommate",
+  "scenario": "게시글 검색(인증)",
+  "phase": "smoke-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 388,
+  "status": "FINISHED",
+  "scriptRevision": "195",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 1.98,
+  "controllerMeanMs": 502.6,
+  "startTime": 1791102653888,
+  "finishTime": 1791102667978,
+  "historyDelta": 20,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 502.733,
+  "p95Ms": 614.371,
+  "allRequestP95Ms": 614.371,
+  "sampleSpanSeconds": 10.119,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

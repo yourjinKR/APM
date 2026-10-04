@@ -1,0 +1,309 @@
+{
+  "startedAtKst": "2026-10-04T17:59:28.846801+09:00",
+  "backendUrl": "http://localhost:8080",
+  "controllerUrl": "http://localhost",
+  "profile": "test",
+  "database": "H2 in-memory, PostgreSQL mode",
+  "recordsPerEntity": 1000,
+  "actualCounts": {
+    "MEMBER": 2004,
+    "ROOMMATE_BOARD": 1002,
+    "CHATTING_ROOM": 1001,
+    "CHAT_ROOM_MESSAGE": 2002,
+    "ROOMMATE_HOUSE_RULE": 1002,
+    "ROOMMATE_CALENDAR": 1001
+  },
+  "jarPath": "C:\\dev\\workspace\\KnockIn\\back\\11th-1team-BE\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+  "jarSha256": "b4ae391fd773bb570f1a0ef5f8b39db0fe07b2444a5354b1b800c298cf64f9b3",
+  "backendCheckoutCommit": "355bff4d61b6869f14db32b552bed62857038819",
+  "apmCommit": "4ffaa5a3d57b88f9d8bd8c5212306af89d9b6fc2",
+  "agents": [
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "agentCountPerRun": 1,
+  "processesPerRun": 1,
+  "vusers": [
+    10,
+    30
+  ],
+  "iterationsPerVu": 100,
+  "smokeWarmupIterations": 20,
+  "connectTimeoutMs": 5000,
+  "socketTimeoutMs": 15000,
+  "cooldownSeconds": 5,
+  "calendarDate": "2026-10-04",
+  "fixture": [
+    {
+      "ID": "5",
+      "PROVIDER_ID": "load_test_user_1",
+      "BOARD_ID": "3",
+      "CHATTING_ROOM_ID": "2",
+      "HOUSE_RULE_ID": "3",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "6",
+      "PROVIDER_ID": "load_test_user_2",
+      "BOARD_ID": "4",
+      "CHATTING_ROOM_ID": "3",
+      "HOUSE_RULE_ID": "4",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "7",
+      "PROVIDER_ID": "load_test_user_3",
+      "BOARD_ID": "5",
+      "CHATTING_ROOM_ID": "4",
+      "HOUSE_RULE_ID": "5",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "8",
+      "PROVIDER_ID": "load_test_user_4",
+      "BOARD_ID": "6",
+      "CHATTING_ROOM_ID": "5",
+      "HOUSE_RULE_ID": "6",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "9",
+      "PROVIDER_ID": "load_test_user_5",
+      "BOARD_ID": "7",
+      "CHATTING_ROOM_ID": "6",
+      "HOUSE_RULE_ID": "7",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "10",
+      "PROVIDER_ID": "load_test_user_6",
+      "BOARD_ID": "8",
+      "CHATTING_ROOM_ID": "7",
+      "HOUSE_RULE_ID": "8",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "11",
+      "PROVIDER_ID": "load_test_user_7",
+      "BOARD_ID": "9",
+      "CHATTING_ROOM_ID": "8",
+      "HOUSE_RULE_ID": "9",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "12",
+      "PROVIDER_ID": "load_test_user_8",
+      "BOARD_ID": "10",
+      "CHATTING_ROOM_ID": "9",
+      "HOUSE_RULE_ID": "10",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "13",
+      "PROVIDER_ID": "load_test_user_9",
+      "BOARD_ID": "11",
+      "CHATTING_ROOM_ID": "10",
+      "HOUSE_RULE_ID": "11",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "14",
+      "PROVIDER_ID": "load_test_user_10",
+      "BOARD_ID": "12",
+      "CHATTING_ROOM_ID": "11",
+      "HOUSE_RULE_ID": "12",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "15",
+      "PROVIDER_ID": "load_test_user_11",
+      "BOARD_ID": "13",
+      "CHATTING_ROOM_ID": "12",
+      "HOUSE_RULE_ID": "13",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "16",
+      "PROVIDER_ID": "load_test_user_12",
+      "BOARD_ID": "14",
+      "CHATTING_ROOM_ID": "13",
+      "HOUSE_RULE_ID": "14",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "17",
+      "PROVIDER_ID": "load_test_user_13",
+      "BOARD_ID": "15",
+      "CHATTING_ROOM_ID": "14",
+      "HOUSE_RULE_ID": "15",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "18",
+      "PROVIDER_ID": "load_test_user_14",
+      "BOARD_ID": "16",
+      "CHATTING_ROOM_ID": "15",
+      "HOUSE_RULE_ID": "16",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "19",
+      "PROVIDER_ID": "load_test_user_15",
+      "BOARD_ID": "17",
+      "CHATTING_ROOM_ID": "16",
+      "HOUSE_RULE_ID": "17",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "20",
+      "PROVIDER_ID": "load_test_user_16",
+      "BOARD_ID": "18",
+      "CHATTING_ROOM_ID": "17",
+      "HOUSE_RULE_ID": "18",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "21",
+      "PROVIDER_ID": "load_test_user_17",
+      "BOARD_ID": "19",
+      "CHATTING_ROOM_ID": "18",
+      "HOUSE_RULE_ID": "19",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "22",
+      "PROVIDER_ID": "load_test_user_18",
+      "BOARD_ID": "20",
+      "CHATTING_ROOM_ID": "19",
+      "HOUSE_RULE_ID": "20",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "23",
+      "PROVIDER_ID": "load_test_user_19",
+      "BOARD_ID": "21",
+      "CHATTING_ROOM_ID": "20",
+      "HOUSE_RULE_ID": "21",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "24",
+      "PROVIDER_ID": "load_test_user_20",
+      "BOARD_ID": "22",
+      "CHATTING_ROOM_ID": "21",
+      "HOUSE_RULE_ID": "22",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "25",
+      "PROVIDER_ID": "load_test_user_21",
+      "BOARD_ID": "23",
+      "CHATTING_ROOM_ID": "22",
+      "HOUSE_RULE_ID": "23",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "26",
+      "PROVIDER_ID": "load_test_user_22",
+      "BOARD_ID": "24",
+      "CHATTING_ROOM_ID": "23",
+      "HOUSE_RULE_ID": "24",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "27",
+      "PROVIDER_ID": "load_test_user_23",
+      "BOARD_ID": "25",
+      "CHATTING_ROOM_ID": "24",
+      "HOUSE_RULE_ID": "25",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "28",
+      "PROVIDER_ID": "load_test_user_24",
+      "BOARD_ID": "26",
+      "CHATTING_ROOM_ID": "25",
+      "HOUSE_RULE_ID": "26",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "29",
+      "PROVIDER_ID": "load_test_user_25",
+      "BOARD_ID": "27",
+      "CHATTING_ROOM_ID": "26",
+      "HOUSE_RULE_ID": "27",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "30",
+      "PROVIDER_ID": "load_test_user_26",
+      "BOARD_ID": "28",
+      "CHATTING_ROOM_ID": "27",
+      "HOUSE_RULE_ID": "28",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "31",
+      "PROVIDER_ID": "load_test_user_27",
+      "BOARD_ID": "29",
+      "CHATTING_ROOM_ID": "28",
+      "HOUSE_RULE_ID": "29",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "32",
+      "PROVIDER_ID": "load_test_user_28",
+      "BOARD_ID": "30",
+      "CHATTING_ROOM_ID": "29",
+      "HOUSE_RULE_ID": "30",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "33",
+      "PROVIDER_ID": "load_test_user_29",
+      "BOARD_ID": "31",
+      "CHATTING_ROOM_ID": "30",
+      "HOUSE_RULE_ID": "31",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    },
+    {
+      "ID": "34",
+      "PROVIDER_ID": "load_test_user_30",
+      "BOARD_ID": "32",
+      "CHATTING_ROOM_ID": "31",
+      "HOUSE_RULE_ID": "32",
+      "START_DATE": "2026-10-04 17:57:01.292097"
+    }
+  ],
+  "sourceSha256": {
+    "roommate\\RoommateBoardListGetTest.groovy": "aab87e5c1a44982d380f8e917e4fd28a1bc9e85f7c8c902b5d767701741c3f1e",
+    "roommate\\RoommateBoardListKeywordGetTest.groovy": "579e59ae79eacb29f419df9a4d5b068c91fcc453ad2028ab036e688dbc66e8b1",
+    "roommate\\RoommateBoardDetailGetTest.groovy": "11b998447f019909c0cfff224d3c631228846f8ced930807c91f823071a50092",
+    "roommate\\RoommateBoardEditFormGetTest.groovy": "fe04738f37b795c69fd5293234620d224ca81213ac56babb94b4ca587f38b7a9",
+    "roommate\\RoommateMatchListGetTest.groovy": "4f1964d7ddbe84d694e532acbdef001d6448bee27ee0892124aed2e4a1d25501",
+    "roommate\\RoommateMatchDetailGetTest.groovy": "66146bbd1d027719ae2aa7040c00ee0c439c43469f51a34ff360aa7618bbc642",
+    "chat\\ChatRoomListGetTest.groovy": "032a9a98f822546730a8345d121c61777e282b1bf6201b35f114dae560eae7de",
+    "chat\\ChatRoomDetailGetTest.groovy": "9a2d2b0813e3a245551ba3eaecc69a5731f78abc1740966bb7d97e0b4672cb92",
+    "roommate-request\\RoommateRequestListGetTest.groovy": "3028aaf139732cc996b4b54eee54dee3ea772531c276800b4b56de2908de8e3a",
+    "roommate-management\\MyRoommateGetTest.groovy": "eefa42f0362d02d87e600477bc6f63f9935c7bd4cffda3a0772e0055c2ba91e8",
+    "roommate-management\\HouseRuleListGetTest.groovy": "f97a40c408cdc0bf6cd173e53c82b982d3583fd9ea795a9c02173f557270f711",
+    "roommate-management\\HouseRuleDetailGetTest.groovy": "d5688b31438bc9754bf9333c0be4d3f413db93d4be443a496448e4488995920a",
+    "roommate-management\\CalendarMonthListGetTest.groovy": "d4c8a6e1b080a03271d012964942c10c914c45c68ec20c83b50144d979c21824",
+    "roommate-management\\CalendarDayListGetTest.groovy": "dad8d5573fdf1dfa7c3d131e98cadd52ac176da6672c62a1d27c0d40519f92a5",
+    "roommate-management\\CalendarCategoryGetTest.groovy": "fec451907c8b9c5bbefedeb971db85ba1f02fee2c133b3b1a90d508c07f995a9",
+    "roommate-management\\CalendarEditFormGetTest.groovy": "83d39df9854d696938d89283bcb068df96532c6b6a953854d67667f05c2ed084",
+    "user\\UserBoardsGetTest.groovy": "5c69905fd16c7e4581595d01044d2b995635b12b5c09957052a4276d0b8aa693"
+  },
+  "sqlLogging": false,
+  "controllerAgentVersion": "3.5.9-p1",
+  "backendJavaVersion": "21",
+  "sourceConfigPreexistingUserChangePreserved": true,
+  "finishedAtKst": "2026-10-04T18:14:45.969816+09:00",
+  "backendArtifactCommit": "9dbc58399c83ee7679d8d00b17c97048ec66b324",
+  "backendArtifactEvidence": "C:\\dev\\workspace\\prography\\APM\\performance-test\\results\\2026-09-30-roommate-board-list-smoke\\run-20260930-213025\\environment.json",
+  "backendJarRebuiltForSurvey": false,
+  "backendArtifactModifiedAtKst": "2026-09-30T21:29:09.282940+09:00"
+}

@@ -1,0 +1,602 @@
+{
+  "verifiedAtKst": "2026-10-04T18:16:23.170448+09:00",
+  "runs": 63,
+  "loadRuns": 34,
+  "smokeRuns": 17,
+  "scenarios": 17,
+  "requests": 66971,
+  "loadRequests": 66391,
+  "errors": 569,
+  "controllerRequests": 66905,
+  "controllerErrors": 503,
+  "allMetricsVerified": true,
+  "entireScriptCoverage": true,
+  "failureTypes": [
+    {
+      "testId": 390,
+      "scenario": "게시글 검색(인증)",
+      "vusers": 30,
+      "failures": {
+        "SocketTimeoutException": 70
+      }
+    },
+    {
+      "testId": 411,
+      "scenario": "추천 회원 목록",
+      "vusers": 30,
+      "failures": {
+        "RuntimeException": 469,
+        "ShutdownException": 30
+      }
+    }
+  ],
+  "checks": [
+    {
+      "testId": 385,
+      "script": "RoommateBoardListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 386,
+      "script": "RoommateBoardListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 387,
+      "script": "RoommateBoardListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 388,
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 389,
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 390,
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 391,
+      "script": "RoommateBoardDetailGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 392,
+      "script": "RoommateBoardEditFormGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 393,
+      "script": "RoommateMatchListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 394,
+      "script": "RoommateMatchDetailGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 395,
+      "script": "ChatRoomListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 396,
+      "script": "ChatRoomDetailGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 397,
+      "script": "RoommateRequestListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 398,
+      "script": "MyRoommateGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 399,
+      "script": "HouseRuleListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 400,
+      "script": "HouseRuleDetailGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 401,
+      "script": "CalendarMonthListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 402,
+      "script": "CalendarDayListGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 403,
+      "script": "CalendarCategoryGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 404,
+      "script": "CalendarEditFormGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 405,
+      "script": "UserBoardsGetTest.groovy",
+      "phase": "smoke-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 406,
+      "script": "RoommateBoardDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 407,
+      "script": "RoommateBoardDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 408,
+      "script": "RoommateBoardEditFormGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 409,
+      "script": "RoommateBoardEditFormGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 410,
+      "script": "RoommateMatchListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 411,
+      "script": "RoommateMatchListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 1391,
+      "controllerAccounting": false,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 412,
+      "script": "RoommateMatchDetailGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 413,
+      "script": "RoommateMatchDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 414,
+      "script": "RoommateMatchDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 415,
+      "script": "ChatRoomListGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 416,
+      "script": "ChatRoomListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 417,
+      "script": "ChatRoomListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 418,
+      "script": "ChatRoomDetailGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 419,
+      "script": "ChatRoomDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 420,
+      "script": "ChatRoomDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 421,
+      "script": "RoommateRequestListGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 422,
+      "script": "RoommateRequestListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 423,
+      "script": "RoommateRequestListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 424,
+      "script": "MyRoommateGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 425,
+      "script": "MyRoommateGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 426,
+      "script": "MyRoommateGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 427,
+      "script": "HouseRuleListGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 428,
+      "script": "HouseRuleListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 429,
+      "script": "HouseRuleListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 430,
+      "script": "HouseRuleDetailGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 431,
+      "script": "HouseRuleDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 432,
+      "script": "HouseRuleDetailGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 433,
+      "script": "CalendarMonthListGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 434,
+      "script": "CalendarMonthListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 435,
+      "script": "CalendarMonthListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 436,
+      "script": "CalendarDayListGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 437,
+      "script": "CalendarDayListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 438,
+      "script": "CalendarDayListGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 439,
+      "script": "CalendarCategoryGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 440,
+      "script": "CalendarCategoryGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 441,
+      "script": "CalendarCategoryGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 442,
+      "script": "CalendarEditFormGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 443,
+      "script": "CalendarEditFormGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 444,
+      "script": "CalendarEditFormGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 445,
+      "script": "UserBoardsGetTest.groovy",
+      "phase": "recovery-warmup",
+      "sampleFiles": 1,
+      "samples": 20,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 446,
+      "script": "UserBoardsGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 10,
+      "samples": 1000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    },
+    {
+      "testId": 447,
+      "script": "UserBoardsGetTest.groovy",
+      "phase": "load",
+      "sampleFiles": 30,
+      "samples": 3000,
+      "controllerAccounting": true,
+      "metricsRecalculated": true
+    }
+  ]
+}

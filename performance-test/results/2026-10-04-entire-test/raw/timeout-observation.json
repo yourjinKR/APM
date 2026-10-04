@@ -1,0 +1,11 @@
+{
+  "testId": 390,
+  "configuredConnectTimeoutMs": 5000,
+  "configuredSocketTimeoutMs": 15000,
+  "failureType": "SocketTimeoutException",
+  "failures": 70,
+  "failureElapsedMinMs": 5127.902,
+  "failureElapsedMeanMs": 5446.250828571428,
+  "failureElapsedMaxMs": 6885.576,
+  "note": "Observed timeout failure span differs from nominal socket setting; effective HTTP library behavior requires further verification"
+}

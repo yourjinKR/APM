@@ -1,0 +1,97 @@
+[
+  {
+    "path": "RoommateBoardListGetTest.groovy",
+    "revision": 215,
+    "sha256": "aab87e5c1a44982d380f8e917e4fd28a1bc9e85f7c8c902b5d767701741c3f1e"
+  },
+  {
+    "path": "RoommateBoardListKeywordGetTest.groovy",
+    "revision": 216,
+    "sha256": "579e59ae79eacb29f419df9a4d5b068c91fcc453ad2028ab036e688dbc66e8b1"
+  },
+  {
+    "path": "RoommateBoardDetailGetTest.groovy",
+    "revision": 217,
+    "sha256": "f225a91ae659b02a4349c63534086a76676d366892834d67f30553fd4a0962ac"
+  },
+  {
+    "path": "RoommateBoardEditFormGetTest.groovy",
+    "revision": 218,
+    "sha256": "1aa2e27a3751a6a3ad733735b755b8eaf3aec6c3657d229acbbf5758b9e35ca3"
+  },
+  {
+    "path": "RoommateMatchListGetTest.groovy",
+    "revision": 219,
+    "sha256": "6fddce31a48aa7b70126e886e6e06f89483a7ba59c6bf190d846e2bd48b9118f"
+  },
+  {
+    "path": "RoommateMatchDetailGetTest.groovy",
+    "revision": 220,
+    "sha256": "4cc704fe5fb942781d05b0f185ca176c5773cc244d3eeda7daf395e7e995448c"
+  },
+  {
+    "path": "ChatRoomListGetTest.groovy",
+    "revision": 221,
+    "sha256": "674c74a36eaf1d1439081f0cf43cc432f1a774595853f2aed730e8da766699a0"
+  },
+  {
+    "path": "ChatRoomDetailGetTest.groovy",
+    "revision": 222,
+    "sha256": "d3c9ba8f986b0634994275bb325b26216380588e5504637bd541fc5405175cb8"
+  },
+  {
+    "path": "RoommateRequestListGetTest.groovy",
+    "revision": 223,
+    "sha256": "2040c9529cd93d62ccd017416d8386a9251f1236dcc961b1243ecf8b3ede3385"
+  },
+  {
+    "path": "MyRoommateGetTest.groovy",
+    "revision": 224,
+    "sha256": "0081c9f9c173858aecb1943a173944181669648fd7ef40030ff6e7b679800a36"
+  },
+  {
+    "path": "HouseRuleListGetTest.groovy",
+    "revision": 225,
+    "sha256": "a4c9d94d5fe1de9e9bd978b75717a4828ff5efd8460a76eaca3cb0d3cb0d726a"
+  },
+  {
+    "path": "HouseRuleDetailGetTest.groovy",
+    "revision": 226,
+    "sha256": "32edfdf4eb4ae3f1125f53c27c24074c2764462279a9ed115ee7cc62f68d708e"
+  },
+  {
+    "path": "CalendarMonthListGetTest.groovy",
+    "revision": 227,
+    "sha256": "6066dbfc698dc6f558610a4eec6959c7585b53d9e8c128d77997dc8f22f7d566"
+  },
+  {
+    "path": "CalendarDayListGetTest.groovy",
+    "revision": 228,
+    "sha256": "04e4f9c49247d2fbad3886f2d0e030549c07b4eaa1232eede63d0d2dcd3937ca"
+  },
+  {
+    "path": "CalendarCategoryGetTest.groovy",
+    "revision": 229,
+    "sha256": "f90a9f313683fa36905fcb8933e05070f6cdcdf192a249030808e8eeaff43899"
+  },
+  {
+    "path": "CalendarEditFormGetTest.groovy",
+    "revision": 230,
+    "sha256": "17476b0176d7419712ed057d2bf60639380be09b9c1e3d0bc59bff444d61313a"
+  },
+  {
+    "path": "UserBoardsGetTest.groovy",
+    "revision": 231,
+    "sha256": "2b901d9c1c71dcda5d3d0604bc9620bf483f6131859a10d97d2b5fc22886adc3"
+  },
+  {
+    "path": "resources/RoommateBoardListSupport.txt",
+    "revision": 232,
+    "sha256": "44f5b02c0fc788c08decad15480d39f7ba998d142ba3048e99d8e78ec7f0b963"
+  },
+  {
+    "path": "resources/roommate-board-list.json",
+    "revision": 233,
+    "sha256": "0f763aef48f874cc26e7c559367ac363cf5775733d4e4d1ae502d28f887bb9ef"
+  }
+]

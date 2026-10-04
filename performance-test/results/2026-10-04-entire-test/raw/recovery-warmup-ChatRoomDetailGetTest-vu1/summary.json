@@ -1,0 +1,39 @@
+{
+  "script": "ChatRoomDetailGetTest.groovy",
+  "domain": "chat",
+  "scenario": "채팅방 상세·이력",
+  "phase": "recovery-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 418,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 10.0,
+  "controllerMeanMs": 82.7,
+  "startTime": 1791104542223,
+  "finishTime": 1791104547473,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 82.995,
+  "p95Ms": 123.918,
+  "allRequestP95Ms": 123.918,
+  "sampleSpanSeconds": 1.697,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

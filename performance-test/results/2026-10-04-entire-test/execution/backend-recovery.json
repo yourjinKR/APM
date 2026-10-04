@@ -1,0 +1,11 @@
+{
+  "recoveredAtKst": "2026-10-04T17:56:21.0735055+09:00",
+  "triggerTestId": 411,
+  "oldOwnedPid": 26996,
+  "newOwnedPid": 14600,
+  "reason": "Recommendation list 30 VU stopped by nGrinder with errors; backend health request timed out; JDBC pool acquisition timeouts observed",
+  "sameJar": true,
+  "sameSeedSize": 1000,
+  "completedResultsRetained": true,
+  "remainingScripts": 12
+}

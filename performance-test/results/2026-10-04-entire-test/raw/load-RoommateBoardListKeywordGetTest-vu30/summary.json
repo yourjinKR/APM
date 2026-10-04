@@ -1,0 +1,156 @@
+{
+  "script": "RoommateBoardListKeywordGetTest.groovy",
+  "domain": "roommate",
+  "scenario": "게시글 검색(인증)",
+  "phase": "load",
+  "vusers": 30,
+  "iterationsPerVu": 100,
+  "testId": 390,
+  "status": "FINISHED",
+  "scriptRevision": "195",
+  "plannedRequests": 3000,
+  "requests": 3000,
+  "successes": 2930,
+  "errors": 70,
+  "errorRatePct": 2.333,
+  "tps": 8.54,
+  "controllerMeanMs": 3341.49,
+  "startTime": 1791102824002,
+  "finishTime": 1791103171946,
+  "historyDelta": 3000,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 3000,
+  "sampleErrors": 70,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t1.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t10.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t11.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t12.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t13.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t14.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t15.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t16.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t17.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t18.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t19.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t2.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t20.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t21.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t22.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t23.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t24.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t25.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t26.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t27.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t28.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t29.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t3.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t4.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t5.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t6.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t7.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t8.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t9.csv",
+      "samples": 100
+    }
+  ],
+  "meanMs": 3341.595,
+  "p95Ms": 4528.111,
+  "allRequestP95Ms": 4722.3,
+  "sampleSpanSeconds": 343.703,
+  "httpStatuses": {
+    "0": 70,
+    "200": 2930
+  },
+  "result": "FAIL"
+}

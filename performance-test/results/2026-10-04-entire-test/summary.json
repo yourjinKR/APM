@@ -1,0 +1,5108 @@
+[
+  {
+    "script": "RoommateBoardListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 목록(익명)",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 385,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 53.8,
+    "startTime": 1791102563237,
+    "finishTime": 1791102568689,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 54.02,
+    "p95Ms": 93.161,
+    "allRequestP95Ms": 93.161,
+    "sampleSpanSeconds": 1.137,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 목록(익명)",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 386,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 85.55,
+    "controllerMeanMs": 108.03,
+    "startTime": 1791102585528,
+    "finishTime": 1791102600782,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 108.064,
+    "p95Ms": 212.607,
+    "allRequestP95Ms": 212.607,
+    "sampleSpanSeconds": 11.003,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 목록(익명)",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 387,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 173.82,
+    "controllerMeanMs": 169.67,
+    "startTime": 1791102616798,
+    "finishTime": 1791102636887,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 169.71,
+    "p95Ms": 383.639,
+    "allRequestP95Ms": 383.639,
+    "sampleSpanSeconds": 17.296,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardListKeywordGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 검색(인증)",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 388,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 1.98,
+    "controllerMeanMs": 502.6,
+    "startTime": 1791102653888,
+    "finishTime": 1791102667978,
+    "historyDelta": 20,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 502.733,
+    "p95Ms": 614.371,
+    "allRequestP95Ms": 614.371,
+    "sampleSpanSeconds": 10.119,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardListKeywordGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 검색(인증)",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 389,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 8.48,
+    "controllerMeanMs": 1179.19,
+    "startTime": 1791102684805,
+    "finishTime": 1791102807220,
+    "historyDelta": 1000,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 1179.261,
+    "p95Ms": 1375.174,
+    "allRequestP95Ms": 1375.174,
+    "sampleSpanSeconds": 118.143,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardListKeywordGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 검색(인증)",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 390,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 2930,
+    "errors": 70,
+    "errorRatePct": 2.333,
+    "tps": 8.54,
+    "controllerMeanMs": 3341.49,
+    "startTime": 1791102824002,
+    "finishTime": 1791103171946,
+    "historyDelta": 3000,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 70,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 3341.595,
+    "p95Ms": 4528.111,
+    "allRequestP95Ms": 4722.3,
+    "sampleSpanSeconds": 343.703,
+    "httpStatuses": {
+      "0": 70,
+      "200": 2930
+    },
+    "result": "FAIL",
+    "sampleErrorRatePct": 2.3333333333333335
+  },
+  {
+    "script": "RoommateBoardDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 상세",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 391,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 44.6,
+    "startTime": 1791103189184,
+    "finishTime": 1791103194028,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 44.824,
+    "p95Ms": 41.094,
+    "allRequestP95Ms": 41.094,
+    "sampleSpanSeconds": 0.937,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardEditFormGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 편집 폼",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 392,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 9.45,
+    "startTime": 1791103209782,
+    "finishTime": 1791103214092,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 9.743,
+    "p95Ms": 6.964,
+    "allRequestP95Ms": 6.964,
+    "sampleSpanSeconds": 0.226,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 목록",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 393,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 1.99,
+    "controllerMeanMs": 486.65,
+    "startTime": 1791103228548,
+    "finishTime": 1791103242147,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 486.874,
+    "p95Ms": 607.169,
+    "allRequestP95Ms": 607.169,
+    "sampleSpanSeconds": 9.768,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 상세",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 394,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 13.9,
+    "startTime": 1791103256726,
+    "finishTime": 1791103261219,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 14.069,
+    "p95Ms": 18.273,
+    "allRequestP95Ms": 18.273,
+    "sampleSpanSeconds": 0.315,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomListGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 목록",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 395,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 37.05,
+    "startTime": 1791103275205,
+    "finishTime": 1791103281291,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 37.184,
+    "p95Ms": 60.038,
+    "allRequestP95Ms": 60.038,
+    "sampleSpanSeconds": 0.782,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomDetailGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 상세·이력",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 396,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 9.6,
+    "startTime": 1791103296974,
+    "finishTime": 1791103301350,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 10.104,
+    "p95Ms": 8.138,
+    "allRequestP95Ms": 8.138,
+    "sampleSpanSeconds": 0.238,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateRequestListGetTest.groovy",
+    "domain": "roommate-request",
+    "scenario": "룸메이트 요청 목록",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 397,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 7.45,
+    "startTime": 1791103315927,
+    "finishTime": 1791103320411,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 7.755,
+    "p95Ms": 5.189,
+    "allRequestP95Ms": 5.189,
+    "sampleSpanSeconds": 0.183,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "MyRoommateGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "내 룸메이트",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 398,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 9.85,
+    "startTime": 1791103340000,
+    "finishTime": 1791103344473,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 9.998,
+    "p95Ms": 5.719,
+    "allRequestP95Ms": 5.719,
+    "sampleSpanSeconds": 0.24,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 목록",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 399,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 8.05,
+    "startTime": 1791103359100,
+    "finishTime": 1791103364532,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 8.248,
+    "p95Ms": 5.515,
+    "allRequestP95Ms": 5.515,
+    "sampleSpanSeconds": 0.192,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleDetailGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 상세",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 400,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 7.6,
+    "startTime": 1791103380153,
+    "finishTime": 1791103384603,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 7.618,
+    "p95Ms": 5.652,
+    "allRequestP95Ms": 5.652,
+    "sampleSpanSeconds": 0.187,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarMonthListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 월별",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 401,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 10.75,
+    "startTime": 1791103399207,
+    "finishTime": 1791103403669,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 11.07,
+    "p95Ms": 7.483,
+    "allRequestP95Ms": 7.483,
+    "sampleSpanSeconds": 0.249,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarDayListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 일별",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 402,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 10.6,
+    "startTime": 1791103417393,
+    "finishTime": 1791103421725,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 10.803,
+    "p95Ms": 7.175,
+    "allRequestP95Ms": 7.175,
+    "sampleSpanSeconds": 0.248,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarCategoryGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 카테고리",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 403,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 7.0,
+    "startTime": 1791103436619,
+    "finishTime": 1791103440800,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 7.135,
+    "p95Ms": 6.558,
+    "allRequestP95Ms": 6.558,
+    "sampleSpanSeconds": 0.172,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarEditFormGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 편집 폼",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 404,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 9.99,
+    "controllerMeanMs": 9.25,
+    "startTime": 1791103453713,
+    "finishTime": 1791103458857,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 9.591,
+    "p95Ms": 7.43,
+    "allRequestP95Ms": 7.43,
+    "sampleSpanSeconds": 0.223,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "UserBoardsGetTest.groovy",
+    "domain": "user",
+    "scenario": "내 게시글",
+    "phase": "smoke-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 405,
+    "status": "FINISHED",
+    "scriptRevision": "195",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 9.4,
+    "startTime": 1791103473714,
+    "finishTime": 1791103477915,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 9.848,
+    "p95Ms": 5.971,
+    "allRequestP95Ms": 5.971,
+    "sampleSpanSeconds": 0.23,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 상세",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 406,
+    "status": "FINISHED",
+    "scriptRevision": "233",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 206.91,
+    "controllerMeanMs": 47.48,
+    "startTime": 1791103568757,
+    "finishTime": 1791103577001,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 47.51,
+    "p95Ms": 107.764,
+    "allRequestP95Ms": 107.764,
+    "sampleSpanSeconds": 4.846,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 상세",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 407,
+    "status": "FINISHED",
+    "scriptRevision": "233",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 688.71,
+    "controllerMeanMs": 29.9,
+    "startTime": 1791103593472,
+    "finishTime": 1791103601088,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 30.069,
+    "p95Ms": 51.993,
+    "allRequestP95Ms": 51.993,
+    "sampleSpanSeconds": 3.162,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardEditFormGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 편집 폼",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 408,
+    "status": "FINISHED",
+    "scriptRevision": "233",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 8.68,
+    "startTime": 1791103616798,
+    "finishTime": 1791103622153,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 8.887,
+    "p95Ms": 15.625,
+    "allRequestP95Ms": 15.625,
+    "sampleSpanSeconds": 0.983,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateBoardEditFormGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "게시글 편집 폼",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 409,
+    "status": "FINISHED",
+    "scriptRevision": "233",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 730.82,
+    "controllerMeanMs": 27.35,
+    "startTime": 1791103638167,
+    "finishTime": 1791103645217,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 27.42,
+    "p95Ms": 43.269,
+    "allRequestP95Ms": 43.269,
+    "sampleSpanSeconds": 2.877,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 목록",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 410,
+    "status": "FINISHED",
+    "scriptRevision": "233",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 8.21,
+    "controllerMeanMs": 1216.26,
+    "startTime": 1791103659250,
+    "finishTime": 1791103784418,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 1216.322,
+    "p95Ms": 1812.558,
+    "allRequestP95Ms": 1812.558,
+    "sampleSpanSeconds": 122.183,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchListGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 목록",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 411,
+    "status": "STOP_BY_ERROR",
+    "scriptRevision": "233",
+    "plannedRequests": 3000,
+    "requests": 1325,
+    "successes": 892,
+    "errors": 433,
+    "errorRatePct": 32.679,
+    "tps": 5.35,
+    "controllerMeanMs": 2957.89,
+    "startTime": 1791103800332,
+    "finishTime": 1791103969923,
+    "historyDelta": 0,
+    "accountingPassed": false,
+    "historyPassed": true,
+    "samples": 1391,
+    "sampleErrors": 499,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 43
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 45
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 45
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 48
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 45
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 45
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 46
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 47
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 47
+      }
+    ],
+    "meanMs": 2958.181,
+    "p95Ms": 5086.771,
+    "allRequestP95Ms": 5427.411,
+    "sampleSpanSeconds": 173.574,
+    "httpStatuses": {
+      "0": 499,
+      "200": 892
+    },
+    "result": "FAIL",
+    "sampleErrorRatePct": 35.873472322070455
+  },
+  {
+    "script": "RoommateMatchDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 상세",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 412,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 9.99,
+    "controllerMeanMs": 132.0,
+    "startTime": 1791104375501,
+    "finishTime": 1791104381613,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 132.119,
+    "p95Ms": 202.232,
+    "allRequestP95Ms": 202.232,
+    "sampleSpanSeconds": 2.673,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 상세",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 413,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 68.3,
+    "controllerMeanMs": 145.77,
+    "startTime": 1791104397806,
+    "finishTime": 1791104415740,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 145.857,
+    "p95Ms": 422.941,
+    "allRequestP95Ms": 422.941,
+    "sampleSpanSeconds": 14.671,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateMatchDetailGetTest.groovy",
+    "domain": "roommate",
+    "scenario": "추천 회원 상세",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 414,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 195.13,
+    "controllerMeanMs": 142.93,
+    "startTime": 1791104432102,
+    "finishTime": 1791104450886,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 143.056,
+    "p95Ms": 302.009,
+    "allRequestP95Ms": 302.009,
+    "sampleSpanSeconds": 14.674,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomListGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 목록",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 415,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 82.9,
+    "startTime": 1791104467322,
+    "finishTime": 1791104472970,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 83.246,
+    "p95Ms": 80.964,
+    "allRequestP95Ms": 80.964,
+    "sampleSpanSeconds": 1.706,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomListGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 목록",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 416,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 229.15,
+    "controllerMeanMs": 28.48,
+    "startTime": 1791104489448,
+    "finishTime": 1791104497125,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 28.609,
+    "p95Ms": 90.901,
+    "allRequestP95Ms": 90.901,
+    "sampleSpanSeconds": 2.922,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomListGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 목록",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 417,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 406.95,
+    "controllerMeanMs": 58.07,
+    "startTime": 1791104514635,
+    "finishTime": 1791104525287,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 58.107,
+    "p95Ms": 133.501,
+    "allRequestP95Ms": 133.501,
+    "sampleSpanSeconds": 5.952,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomDetailGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 상세·이력",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 418,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 82.7,
+    "startTime": 1791104542223,
+    "finishTime": 1791104547473,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 82.995,
+    "p95Ms": 123.918,
+    "allRequestP95Ms": 123.918,
+    "sampleSpanSeconds": 1.697,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomDetailGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 상세·이력",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 419,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 122.67,
+    "controllerMeanMs": 72.78,
+    "startTime": 1791104568083,
+    "finishTime": 1791104579626,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 72.857,
+    "p95Ms": 246.469,
+    "allRequestP95Ms": 246.469,
+    "sampleSpanSeconds": 7.398,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "ChatRoomDetailGetTest.groovy",
+    "domain": "chat",
+    "scenario": "채팅방 상세·이력",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 420,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 385.6,
+    "controllerMeanMs": 65.93,
+    "startTime": 1791104595359,
+    "finishTime": 1791104606771,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 66.109,
+    "p95Ms": 138.048,
+    "allRequestP95Ms": 138.048,
+    "sampleSpanSeconds": 6.763,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateRequestListGetTest.groovy",
+    "domain": "roommate-request",
+    "scenario": "룸메이트 요청 목록",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 421,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 23.15,
+    "startTime": 1791104623299,
+    "finishTime": 1791104628888,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 23.268,
+    "p95Ms": 31.232,
+    "allRequestP95Ms": 31.232,
+    "sampleSpanSeconds": 0.498,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateRequestListGetTest.groovy",
+    "domain": "roommate-request",
+    "scenario": "룸메이트 요청 목록",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 422,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 22.88,
+    "startTime": 1791104646462,
+    "finishTime": 1791104652050,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 22.976,
+    "p95Ms": 48.313,
+    "allRequestP95Ms": 48.313,
+    "sampleSpanSeconds": 2.397,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "RoommateRequestListGetTest.groovy",
+    "domain": "roommate-request",
+    "scenario": "룸메이트 요청 목록",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 423,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 661.81,
+    "controllerMeanMs": 29.18,
+    "startTime": 1791104669547,
+    "finishTime": 1791104677133,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 29.235,
+    "p95Ms": 53.816,
+    "allRequestP95Ms": 53.816,
+    "sampleSpanSeconds": 3.078,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "MyRoommateGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "내 룸메이트",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 424,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 16.25,
+    "startTime": 1791104695255,
+    "finishTime": 1791104700225,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 16.609,
+    "p95Ms": 13.738,
+    "allRequestP95Ms": 13.738,
+    "sampleSpanSeconds": 0.371,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "MyRoommateGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "내 룸메이트",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 425,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.5,
+    "controllerMeanMs": 13.87,
+    "startTime": 1791104718900,
+    "finishTime": 1791104724347,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 13.963,
+    "p95Ms": 32.266,
+    "allRequestP95Ms": 32.266,
+    "sampleSpanSeconds": 1.482,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "MyRoommateGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "내 룸메이트",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 426,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 647.81,
+    "controllerMeanMs": 31.42,
+    "startTime": 1791104744395,
+    "finishTime": 1791104752440,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 31.617,
+    "p95Ms": 69.05,
+    "allRequestP95Ms": 69.05,
+    "sampleSpanSeconds": 3.299,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 목록",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 427,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 8.7,
+    "startTime": 1791104773854,
+    "finishTime": 1791104778564,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 9.124,
+    "p95Ms": 6.294,
+    "allRequestP95Ms": 6.294,
+    "sampleSpanSeconds": 0.213,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 목록",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 428,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.5,
+    "controllerMeanMs": 13.92,
+    "startTime": 1791104796303,
+    "finishTime": 1791104801704,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 14.022,
+    "p95Ms": 36.398,
+    "allRequestP95Ms": 36.398,
+    "sampleSpanSeconds": 1.479,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 목록",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 429,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 1500.0,
+    "controllerMeanMs": 21.74,
+    "startTime": 1791104819496,
+    "finishTime": 1791104825783,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 21.877,
+    "p95Ms": 38.284,
+    "allRequestP95Ms": 38.284,
+    "sampleSpanSeconds": 2.328,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleDetailGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 상세",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 430,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 12.05,
+    "startTime": 1791104846226,
+    "finishTime": 1791104851933,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 12.323,
+    "p95Ms": 8.713,
+    "allRequestP95Ms": 8.713,
+    "sampleSpanSeconds": 0.295,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleDetailGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 상세",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 431,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 500.0,
+    "controllerMeanMs": 10.27,
+    "startTime": 1791104870466,
+    "finishTime": 1791104875071,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 10.369,
+    "p95Ms": 24.359,
+    "allRequestP95Ms": 24.359,
+    "sampleSpanSeconds": 1.114,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "HouseRuleDetailGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "하우스룰 상세",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 432,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 1500.0,
+    "controllerMeanMs": 19.58,
+    "startTime": 1791104891665,
+    "finishTime": 1791104896186,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 19.651,
+    "p95Ms": 34.902,
+    "allRequestP95Ms": 34.902,
+    "sampleSpanSeconds": 2.071,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarMonthListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 월별",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 433,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 26.2,
+    "startTime": 1791104918110,
+    "finishTime": 1791104923326,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 26.377,
+    "p95Ms": 17.817,
+    "allRequestP95Ms": 17.817,
+    "sampleSpanSeconds": 0.563,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarMonthListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 월별",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 434,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 8.9,
+    "startTime": 1791104946498,
+    "finishTime": 1791104951469,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 9.049,
+    "p95Ms": 14.763,
+    "allRequestP95Ms": 14.763,
+    "sampleSpanSeconds": 0.985,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarMonthListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 월별",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 435,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 693.32,
+    "controllerMeanMs": 26.52,
+    "startTime": 1791104977118,
+    "finishTime": 1791104984598,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 26.741,
+    "p95Ms": 51.63,
+    "allRequestP95Ms": 51.63,
+    "sampleSpanSeconds": 2.856,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarDayListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 일별",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 436,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 28.2,
+    "startTime": 1791105002885,
+    "finishTime": 1791105007750,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 28.401,
+    "p95Ms": 17.788,
+    "allRequestP95Ms": 17.788,
+    "sampleSpanSeconds": 0.605,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarDayListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 일별",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 437,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 13.32,
+    "startTime": 1791105023839,
+    "finishTime": 1791105028862,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 13.388,
+    "p95Ms": 23.398,
+    "allRequestP95Ms": 23.398,
+    "sampleSpanSeconds": 1.412,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarDayListGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 일별",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 438,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 620.86,
+    "controllerMeanMs": 34.13,
+    "startTime": 1791105044496,
+    "finishTime": 1791105051960,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 34.206,
+    "p95Ms": 76.548,
+    "allRequestP95Ms": 76.548,
+    "sampleSpanSeconds": 3.602,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarCategoryGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 카테고리",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 439,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 8.45,
+    "startTime": 1791105069697,
+    "finishTime": 1791105075097,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 8.665,
+    "p95Ms": 5.05,
+    "allRequestP95Ms": 5.05,
+    "sampleSpanSeconds": 0.208,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarCategoryGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 카테고리",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 440,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 7.9,
+    "startTime": 1791105091187,
+    "finishTime": 1791105096185,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 7.991,
+    "p95Ms": 20.026,
+    "allRequestP95Ms": 20.026,
+    "sampleSpanSeconds": 0.872,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarCategoryGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 카테고리",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 441,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 1499.25,
+    "controllerMeanMs": 14.68,
+    "startTime": 1791105117329,
+    "finishTime": 1791105122293,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 14.935,
+    "p95Ms": 26.543,
+    "allRequestP95Ms": 26.543,
+    "sampleSpanSeconds": 1.598,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarEditFormGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 편집 폼",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 442,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 10.0,
+    "controllerMeanMs": 15.15,
+    "startTime": 1791105138630,
+    "finishTime": 1791105143391,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 15.522,
+    "p95Ms": 16.112,
+    "allRequestP95Ms": 16.112,
+    "sampleSpanSeconds": 0.35,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarEditFormGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 편집 폼",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 443,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 499.75,
+    "controllerMeanMs": 19.36,
+    "startTime": 1791105165885,
+    "finishTime": 1791105171578,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 19.429,
+    "p95Ms": 43.145,
+    "allRequestP95Ms": 43.145,
+    "sampleSpanSeconds": 2.04,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "CalendarEditFormGetTest.groovy",
+    "domain": "roommate-management",
+    "scenario": "캘린더 편집 폼",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 444,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 572.74,
+    "controllerMeanMs": 46.39,
+    "startTime": 1791105187174,
+    "finishTime": 1791105195670,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 46.529,
+    "p95Ms": 105.855,
+    "allRequestP95Ms": 105.855,
+    "sampleSpanSeconds": 4.737,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "UserBoardsGetTest.groovy",
+    "domain": "user",
+    "scenario": "내 게시글",
+    "phase": "recovery-warmup",
+    "vusers": 1,
+    "iterationsPerVu": 20,
+    "testId": 445,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 9.99,
+    "controllerMeanMs": 25.65,
+    "startTime": 1791105213523,
+    "finishTime": 1791105218790,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 26.016,
+    "p95Ms": 51.087,
+    "allRequestP95Ms": 51.087,
+    "sampleSpanSeconds": 0.563,
+    "httpStatuses": {
+      "200": 20
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "UserBoardsGetTest.groovy",
+    "domain": "user",
+    "scenario": "내 게시글",
+    "phase": "load",
+    "vusers": 10,
+    "iterationsPerVu": 100,
+    "testId": 446,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 243.78,
+    "controllerMeanMs": 22.92,
+    "startTime": 1791105238578,
+    "finishTime": 1791105245904,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 1000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 23.024,
+    "p95Ms": 55.911,
+    "allRequestP95Ms": 55.911,
+    "sampleSpanSeconds": 2.416,
+    "httpStatuses": {
+      "200": 1000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  },
+  {
+    "script": "UserBoardsGetTest.groovy",
+    "domain": "user",
+    "scenario": "내 게시글",
+    "phase": "load",
+    "vusers": 30,
+    "iterationsPerVu": 100,
+    "testId": 447,
+    "status": "FINISHED",
+    "scriptRevision": "271",
+    "plannedRequests": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePct": 0.0,
+    "tps": 458.3,
+    "controllerMeanMs": 65.52,
+    "startTime": 1791105264288,
+    "finishTime": 1791105274051,
+    "historyDelta": 0,
+    "accountingPassed": true,
+    "historyPassed": true,
+    "samples": 3000,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t1.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t10.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t11.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t12.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t13.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t14.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t15.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t16.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t17.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t18.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t19.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t2.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t20.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t21.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t22.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t23.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t24.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t25.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t26.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t27.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t28.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t29.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t3.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t4.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t5.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t6.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t7.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t8.csv",
+        "samples": 100
+      },
+      {
+        "file": "a0-p0-t9.csv",
+        "samples": 100
+      }
+    ],
+    "meanMs": 65.783,
+    "p95Ms": 171.127,
+    "allRequestP95Ms": 171.127,
+    "sampleSpanSeconds": 6.762,
+    "httpStatuses": {
+      "200": 3000
+    },
+    "result": "PASS",
+    "sampleErrorRatePct": 0.0
+  }
+]

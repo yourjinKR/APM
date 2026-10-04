@@ -1,0 +1,75 @@
+{
+  "script": "RoommateBoardListGetTest.groovy",
+  "domain": "roommate",
+  "scenario": "게시글 목록(익명)",
+  "phase": "load",
+  "vusers": 10,
+  "iterationsPerVu": 100,
+  "testId": 386,
+  "status": "FINISHED",
+  "scriptRevision": "195",
+  "plannedRequests": 1000,
+  "requests": 1000,
+  "successes": 1000,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 85.55,
+  "controllerMeanMs": 108.03,
+  "startTime": 1791102585528,
+  "finishTime": 1791102600782,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 1000,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t1.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t2.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t3.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t4.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t5.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t6.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t7.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t8.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t9.csv",
+      "samples": 100
+    }
+  ],
+  "meanMs": 108.064,
+  "p95Ms": 212.607,
+  "allRequestP95Ms": 212.607,
+  "sampleSpanSeconds": 11.003,
+  "httpStatuses": {
+    "200": 1000
+  },
+  "result": "PASS"
+}

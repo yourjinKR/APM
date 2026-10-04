@@ -1,0 +1,39 @@
+{
+  "script": "CalendarMonthListGetTest.groovy",
+  "domain": "roommate-management",
+  "scenario": "캘린더 월별",
+  "phase": "recovery-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 433,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 10.0,
+  "controllerMeanMs": 26.2,
+  "startTime": 1791104918110,
+  "finishTime": 1791104923326,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 26.377,
+  "p95Ms": 17.817,
+  "allRequestP95Ms": 17.817,
+  "sampleSpanSeconds": 0.563,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,76 @@
+{
+  "test": {
+    "id": 437,
+    "createdAt": 1791105019769,
+    "createdBy": {
+      "id": 1,
+      "userId": "admin",
+      "userName": "admin",
+      "email": "ngrinder-admin@naver.com"
+    },
+    "lastModifiedAt": 1791105019769,
+    "lastModifiedBy": {
+      "id": 1,
+      "userId": "admin",
+      "userName": "admin",
+      "email": "ngrinder-admin@naver.com"
+    },
+    "testName": "entire-20261004-load-CalendarDayListGetTest-vu10-1791105019",
+    "tagString": "",
+    "description": "All read scripts survey; test/H2 seed1000; one agent/process; SQL logging off",
+    "status": {
+      "category": "FINISHED",
+      "springMessageKey": "perftest.status.finished",
+      "stoppable": false,
+      "reportable": true,
+      "deletable": true,
+      "iconName": "green.png",
+      "name": "FINISHED"
+    },
+    "ignoreSampleCount": 0,
+    "startTime": 1791105023839,
+    "finishTime": 1791105028862,
+    "targetHosts": "host.docker.internal",
+    "useRampUp": false,
+    "rampUpType": "PROCESS",
+    "threshold": "R",
+    "scm": "svn",
+    "scriptName": "CalendarDayListGetTest.groovy",
+    "duration": 60000,
+    "runCount": 100,
+    "agentCount": 1,
+    "vuserPerAgent": 10,
+    "processes": 1,
+    "rampUpInitCount": 0,
+    "rampUpInitSleepTime": 0,
+    "rampUpStep": 1,
+    "rampUpIncrementInterval": 1000,
+    "threads": 10,
+    "tests": 1000,
+    "errors": 0,
+    "meanTestTime": 13.32,
+    "tps": 499.75,
+    "peakTps": 0.0,
+    "progressMessage": "Distribution files are being prepared.\nDistribution files are prepared.\nConsole is being prepared.\nConsole is started on port 12002\n1 agents are starting.\n1 agents are ready.\nAll necessary files are being distributed.\nAll necessary files are distributed.\nThe test is ready to start.\nThe test is started.\n",
+    "lastProgressMessage": "The test is successfully finished.",
+    "testComment": "",
+    "scriptRevision": "271",
+    "stopRequest": false,
+    "region": "NONE",
+    "safeDistribution": false,
+    "ignoreTooManyError": false,
+    "connectionReset": false,
+    "samplingInterval": 2,
+    "param": "",
+    "gitHubScm": false,
+    "runtime": "00:00:05"
+  },
+  "tps": [
+    500.0,
+    null
+  ],
+  "chartInterval": 2,
+  "logs": [
+    "62dbb23e4b8e--log.zip"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "phase": "preparation",
+  "reason": "Controller rejects TEXT resource enum; corrected to TXT before any load test",
+  "testsStarted": 0,
+  "controllerScriptsRestored": 17,
+  "agentCleanup": 5
+}

@@ -1,0 +1,21 @@
+{
+  "reason": "Collector expected /ID but grinder.test.id includes test_ prefix",
+  "originalSamples": 0,
+  "recoveredMetrics": {
+    "samples": 20,
+    "sampleErrors": 0,
+    "workers": [
+      {
+        "file": "a0-p0-t0.csv",
+        "samples": 20
+      }
+    ],
+    "meanMs": 486.874,
+    "p95Ms": 607.169,
+    "allRequestP95Ms": 607.169,
+    "sampleSpanSeconds": 9.768,
+    "httpStatuses": {
+      "200": 20
+    }
+  }
+}

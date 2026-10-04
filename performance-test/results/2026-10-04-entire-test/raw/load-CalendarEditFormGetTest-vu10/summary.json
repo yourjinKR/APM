@@ -1,0 +1,75 @@
+{
+  "script": "CalendarEditFormGetTest.groovy",
+  "domain": "roommate-management",
+  "scenario": "캘린더 편집 폼",
+  "phase": "load",
+  "vusers": 10,
+  "iterationsPerVu": 100,
+  "testId": 443,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 1000,
+  "requests": 1000,
+  "successes": 1000,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 499.75,
+  "controllerMeanMs": 19.36,
+  "startTime": 1791105165885,
+  "finishTime": 1791105171578,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 1000,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t1.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t2.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t3.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t4.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t5.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t6.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t7.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t8.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t9.csv",
+      "samples": 100
+    }
+  ],
+  "meanMs": 19.429,
+  "p95Ms": 43.145,
+  "allRequestP95Ms": 43.145,
+  "sampleSpanSeconds": 2.04,
+  "httpStatuses": {
+    "200": 1000
+  },
+  "result": "PASS"
+}

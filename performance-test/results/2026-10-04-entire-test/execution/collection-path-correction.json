@@ -1,0 +1,12 @@
+{
+  "reason": "Grinder test id contains test_ prefix; sample collector corrected to /test_ID",
+  "affectedPhase": "smoke-warmup",
+  "recoveredCompletedSamples": 300,
+  "apiErrorsInRecoveredSamples": 0,
+  "loadRunsRetained": [
+    386,
+    387,
+    389,
+    390
+  ]
+}

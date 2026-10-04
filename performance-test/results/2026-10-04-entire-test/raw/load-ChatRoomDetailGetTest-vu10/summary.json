@@ -1,0 +1,75 @@
+{
+  "script": "ChatRoomDetailGetTest.groovy",
+  "domain": "chat",
+  "scenario": "채팅방 상세·이력",
+  "phase": "load",
+  "vusers": 10,
+  "iterationsPerVu": 100,
+  "testId": 419,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 1000,
+  "requests": 1000,
+  "successes": 1000,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 122.67,
+  "controllerMeanMs": 72.78,
+  "startTime": 1791104568083,
+  "finishTime": 1791104579626,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 1000,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t1.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t2.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t3.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t4.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t5.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t6.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t7.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t8.csv",
+      "samples": 100
+    },
+    {
+      "file": "a0-p0-t9.csv",
+      "samples": 100
+    }
+  ],
+  "meanMs": 72.857,
+  "p95Ms": 246.469,
+  "allRequestP95Ms": 246.469,
+  "sampleSpanSeconds": 7.398,
+  "httpStatuses": {
+    "200": 1000
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,39 @@
+{
+  "script": "CalendarEditFormGetTest.groovy",
+  "domain": "roommate-management",
+  "scenario": "캘린더 편집 폼",
+  "phase": "smoke-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 404,
+  "status": "FINISHED",
+  "scriptRevision": "195",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 9.99,
+  "controllerMeanMs": 9.25,
+  "startTime": 1791103453713,
+  "finishTime": 1791103458857,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 9.591,
+  "p95Ms": 7.43,
+  "allRequestP95Ms": 7.43,
+  "sampleSpanSeconds": 0.223,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

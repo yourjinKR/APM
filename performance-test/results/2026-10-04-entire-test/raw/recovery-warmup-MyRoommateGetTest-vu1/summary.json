@@ -1,0 +1,39 @@
+{
+  "script": "MyRoommateGetTest.groovy",
+  "domain": "roommate-management",
+  "scenario": "내 룸메이트",
+  "phase": "recovery-warmup",
+  "vusers": 1,
+  "iterationsPerVu": 20,
+  "testId": 424,
+  "status": "FINISHED",
+  "scriptRevision": "271",
+  "plannedRequests": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePct": 0.0,
+  "tps": 10.0,
+  "controllerMeanMs": 16.25,
+  "startTime": 1791104695255,
+  "finishTime": 1791104700225,
+  "historyDelta": 0,
+  "accountingPassed": true,
+  "historyPassed": true,
+  "samples": 20,
+  "sampleErrors": 0,
+  "workers": [
+    {
+      "file": "a0-p0-t0.csv",
+      "samples": 20
+    }
+  ],
+  "meanMs": 16.609,
+  "p95Ms": 13.738,
+  "allRequestP95Ms": 13.738,
+  "sampleSpanSeconds": 0.371,
+  "httpStatuses": {
+    "200": 20
+  },
+  "result": "PASS"
+}

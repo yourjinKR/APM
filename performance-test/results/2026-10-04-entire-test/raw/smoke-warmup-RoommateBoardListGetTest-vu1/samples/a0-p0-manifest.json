@@ -1,0 +1,31 @@
+{
+    "profileId": "list-anonymous",
+    "profile": {
+        "auth": "anonymous",
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "expect": {
+                    "minTotalElements": 1
+                }
+            }
+        ]
+    },
+    "runId": "entire-20261004-test_385",
+    "baseUrl": "http://host.docker.internal:8080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 15000,
+    "outputDir": "/tmp/knockin-entire-20261004",
+    "keywordMode": false,
+    "configSha256": "0f763aef48f874cc26e7c559367ac363cf5775733d4e4d1ae502d28f887bb9ef",
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 1,
+    "startedAtEpochMs": 1791102565441,
+    "sampleSchemaVersion": 2
+}
