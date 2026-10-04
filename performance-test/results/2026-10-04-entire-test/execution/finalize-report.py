@@ -99,7 +99,8 @@ lines = ['# 전체 조회 API 부하 테스트 — 2026-10-04', '',
 for smoke in smokes:
     group = [next((x for x in loads if x['script'] == smoke['script'] and x['vusers'] == vu), None) for vu in [10,30]]
     verdict = ' / '.join(x['result'] if x else '미실행' for x in group)
-    lines.append(f"| {smoke['domain']} | {smoke['scenario']} | {pair(group,'samples')} | {pair(group,'tps')} | {pair(group,'meanMs')} | {pair(group,'p95Ms')} | {pair(group,'sampleErrorRatePct')} | {verdict} |")
+    script_link = f"[{smoke['scenario']}](./execution/deployed-scripts/{smoke['script']})"
+    lines.append(f"| {smoke['domain']} | {script_link} | {pair(group,'samples')} | {pair(group,'tps')} | {pair(group,'meanMs')} | {pair(group,'p95Ms')} | {pair(group,'sampleErrorRatePct')} | {verdict} |")
 
 lines += ['', '## 주요 관찰', '']
 for row in loads:

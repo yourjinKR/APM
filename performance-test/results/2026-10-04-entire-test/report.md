@@ -10,23 +10,23 @@
 
 | 도메인 | API | 요청 수 | TPS | 평균 ms | p95 ms | 오류율 % | 판정 |
 |---|---|---:|---:|---:|---:|---:|---|
-| roommate | 게시글 목록(익명) | 1,000 / 3,000 | 85.55 / 173.82 | 108.06 / 169.71 | 212.61 / 383.64 | 0.00 / 0.00 | PASS / PASS |
-| roommate | 게시글 검색(인증) | 1,000 / 3,000 | 8.48 / 8.54 | 1,179.26 / 3,341.59 | 1,375.17 / 4,528.11 | 0.00 / 2.33 | PASS / FAIL |
-| roommate | 게시글 상세 | 1,000 / 3,000 | 206.91 / 688.71 | 47.51 / 30.07 | 107.76 / 51.99 | 0.00 / 0.00 | PASS / PASS |
-| roommate | 게시글 편집 폼 | 1,000 / 3,000 | 499.75 / 730.82 | 8.89 / 27.42 | 15.62 / 43.27 | 0.00 / 0.00 | PASS / PASS |
-| roommate | 추천 회원 목록 | 1,000 / 1,391 | 8.21 / 5.35 | 1,216.32 / 2,958.18 | 1,812.56 / 5,086.77 | 0.00 / 35.87 | PASS / FAIL |
-| roommate | 추천 회원 상세 | 1,000 / 3,000 | 68.30 / 195.13 | 145.86 / 143.06 | 422.94 / 302.01 | 0.00 / 0.00 | PASS / PASS |
-| chat | 채팅방 목록 | 1,000 / 3,000 | 229.15 / 406.95 | 28.61 / 58.11 | 90.90 / 133.50 | 0.00 / 0.00 | PASS / PASS |
-| chat | 채팅방 상세·이력 | 1,000 / 3,000 | 122.67 / 385.60 | 72.86 / 66.11 | 246.47 / 138.05 | 0.00 / 0.00 | PASS / PASS |
-| roommate-request | 룸메이트 요청 목록 | 1,000 / 3,000 | 499.75 / 661.81 | 22.98 / 29.23 | 48.31 / 53.82 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 내 룸메이트 | 1,000 / 3,000 | 499.50 / 647.81 | 13.96 / 31.62 | 32.27 / 69.05 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 하우스룰 목록 | 1,000 / 3,000 | 499.50 / 1,500.00 | 14.02 / 21.88 | 36.40 / 38.28 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 하우스룰 상세 | 1,000 / 3,000 | 500.00 / 1,500.00 | 10.37 / 19.65 | 24.36 / 34.90 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 캘린더 월별 | 1,000 / 3,000 | 499.75 / 693.32 | 9.05 / 26.74 | 14.76 / 51.63 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 캘린더 일별 | 1,000 / 3,000 | 499.75 / 620.86 | 13.39 / 34.21 | 23.40 / 76.55 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 캘린더 카테고리 | 1,000 / 3,000 | 499.75 / 1,499.25 | 7.99 / 14.94 | 20.03 / 26.54 | 0.00 / 0.00 | PASS / PASS |
-| roommate-management | 캘린더 편집 폼 | 1,000 / 3,000 | 499.75 / 572.74 | 19.43 / 46.53 | 43.15 / 105.86 | 0.00 / 0.00 | PASS / PASS |
-| user | 내 게시글 | 1,000 / 3,000 | 243.78 / 458.30 | 23.02 / 65.78 | 55.91 / 171.13 | 0.00 / 0.00 | PASS / PASS |
+| roommate | [게시글 목록(익명)](./execution/deployed-scripts/RoommateBoardListGetTest.groovy) | 1,000 / 3,000 | 85.55 / 173.82 | 108.06 / 169.71 | 212.61 / 383.64 | 0.00 / 0.00 | PASS / PASS |
+| roommate | [게시글 검색(인증)](./execution/deployed-scripts/RoommateBoardListKeywordGetTest.groovy) | 1,000 / 3,000 | 8.48 / 8.54 | 1,179.26 / 3,341.59 | 1,375.17 / 4,528.11 | 0.00 / 2.33 | PASS / FAIL |
+| roommate | [게시글 상세](./execution/deployed-scripts/RoommateBoardDetailGetTest.groovy) | 1,000 / 3,000 | 206.91 / 688.71 | 47.51 / 30.07 | 107.76 / 51.99 | 0.00 / 0.00 | PASS / PASS |
+| roommate | [게시글 편집 폼](./execution/deployed-scripts/RoommateBoardEditFormGetTest.groovy) | 1,000 / 3,000 | 499.75 / 730.82 | 8.89 / 27.42 | 15.62 / 43.27 | 0.00 / 0.00 | PASS / PASS |
+| roommate | [추천 회원 목록](./execution/deployed-scripts/RoommateMatchListGetTest.groovy) | 1,000 / 1,391 | 8.21 / 5.35 | 1,216.32 / 2,958.18 | 1,812.56 / 5,086.77 | 0.00 / 35.87 | PASS / FAIL |
+| roommate | [추천 회원 상세](./execution/deployed-scripts/RoommateMatchDetailGetTest.groovy) | 1,000 / 3,000 | 68.30 / 195.13 | 145.86 / 143.06 | 422.94 / 302.01 | 0.00 / 0.00 | PASS / PASS |
+| chat | [채팅방 목록](./execution/deployed-scripts/ChatRoomListGetTest.groovy) | 1,000 / 3,000 | 229.15 / 406.95 | 28.61 / 58.11 | 90.90 / 133.50 | 0.00 / 0.00 | PASS / PASS |
+| chat | [채팅방 상세·이력](./execution/deployed-scripts/ChatRoomDetailGetTest.groovy) | 1,000 / 3,000 | 122.67 / 385.60 | 72.86 / 66.11 | 246.47 / 138.05 | 0.00 / 0.00 | PASS / PASS |
+| roommate-request | [룸메이트 요청 목록](./execution/deployed-scripts/RoommateRequestListGetTest.groovy) | 1,000 / 3,000 | 499.75 / 661.81 | 22.98 / 29.23 | 48.31 / 53.82 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [내 룸메이트](./execution/deployed-scripts/MyRoommateGetTest.groovy) | 1,000 / 3,000 | 499.50 / 647.81 | 13.96 / 31.62 | 32.27 / 69.05 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [하우스룰 목록](./execution/deployed-scripts/HouseRuleListGetTest.groovy) | 1,000 / 3,000 | 499.50 / 1,500.00 | 14.02 / 21.88 | 36.40 / 38.28 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [하우스룰 상세](./execution/deployed-scripts/HouseRuleDetailGetTest.groovy) | 1,000 / 3,000 | 500.00 / 1,500.00 | 10.37 / 19.65 | 24.36 / 34.90 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [캘린더 월별](./execution/deployed-scripts/CalendarMonthListGetTest.groovy) | 1,000 / 3,000 | 499.75 / 693.32 | 9.05 / 26.74 | 14.76 / 51.63 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [캘린더 일별](./execution/deployed-scripts/CalendarDayListGetTest.groovy) | 1,000 / 3,000 | 499.75 / 620.86 | 13.39 / 34.21 | 23.40 / 76.55 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [캘린더 카테고리](./execution/deployed-scripts/CalendarCategoryGetTest.groovy) | 1,000 / 3,000 | 499.75 / 1,499.25 | 7.99 / 14.94 | 20.03 / 26.54 | 0.00 / 0.00 | PASS / PASS |
+| roommate-management | [캘린더 편집 폼](./execution/deployed-scripts/CalendarEditFormGetTest.groovy) | 1,000 / 3,000 | 499.75 / 572.74 | 19.43 / 46.53 | 43.15 / 105.86 | 0.00 / 0.00 | PASS / PASS |
+| user | [내 게시글](./execution/deployed-scripts/UserBoardsGetTest.groovy) | 1,000 / 3,000 | 243.78 / 458.30 | 23.02 / 65.78 | 55.91 / 171.13 | 0.00 / 0.00 | PASS / PASS |
 
 ## 주요 관찰
 
