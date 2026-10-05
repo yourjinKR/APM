@@ -1,0 +1,34 @@
+2026-10-05 11:21:14,362 INFO  Setting of nGrinder local DNS successfully
+2026-10-05 11:21:14,371 INFO  The Grinder version 3.9.1
+2026-10-05 11:21:14,375 INFO  OpenJDK Runtime Environment 11.0.22+7-LTS: OpenJDK 64-Bit Server VM (11.0.22+7-LTS, mixed mode) on Linux amd64 6.6.87.2-microsoft-standard-WSL2
+2026-10-05 11:21:14,381 INFO  time zone is UTC (+0000)
+2026-10-05 11:21:14,555 INFO  worker process 0 of agent number 0
+2026-10-05 11:21:14,588 INFO  Instrumentation agents: byte code transforming instrumenter for Java
+2026-10-05 11:21:16,671 INFO  registered plug-in net.grinder.plugin.http.HTTPPlugin
+2026-10-05 11:21:16,840 INFO  Running "CalendarCategoryGetTest.groovy" using GroovyScriptEngine running with groovy version: 3.0.5
+2026-10-05 11:21:16,916 INFO  starting, will do 1 run
+2026-10-05 11:21:16,917 INFO  Start time is 1791199276918 ms since Epoch
+2026-10-05 11:21:17,130 INFO  http://host.docker.internal:8080/roommates/me/calendar/categories -> 200 , 84 bytes
+2026-10-05 11:21:17,165 INFO  finished 1 run
+2026-10-05 11:21:17,169 INFO  elapsed time is 251 ms
+2026-10-05 11:21:17,169 INFO  Final statistics for this process:
+2026-10-05 11:21:17,181 INFO  
+             Tests        Errors       Mean Test    Test Time    TPS          Mean         Response     Response     Mean time to Mean time to Mean time to 
+                                       Time (ms)    Standard                  response     bytes per    errors       resolve host establish    first byte   
+                                                    Deviation                 length       second                                 connection                
+                                                    (ms)                                                                                                    
+
+Test 7203    1            0            185.00       0.00         3.98         84.00        334.66       0            0.00         88.00        152.00        "GET /roommates/me/calendar/categories"
+
+Totals       1            0            185.00       0.00         3.98         84.00        334.66       0            0.00         88.00        152.00       
+
+  Tests resulting in error only contribute to the Errors column.          
+  Statistics for individual tests can be found in the data file, including
+  (possibly incomplete) statistics for erroneous tests. Composite tests   
+  are marked with () and not included in the totals.                      
+
+
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2026-10-05 11:21:16,849 INFO  validation-0: Starting threads
+2026-10-05 11:21:17,181 INFO  validation-0: Finished

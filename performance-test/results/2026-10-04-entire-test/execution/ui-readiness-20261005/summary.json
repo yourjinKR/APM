@@ -1,0 +1,244 @@
+{
+  "startedAt": "2026-10-05T20:20:11.480711+09:00",
+  "tokenExpiresAt": "2026-10-12T20:20:02+09:00",
+  "tokenCount": 30,
+  "tokenFile": "/tmp/knockin-ngrinder-tokens.txt",
+  "containers": [
+    "ngrinder-controller",
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "memberIds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "calendarDate": "2026-10-05",
+  "activeKeywordProfile": "search-frequent-authenticated",
+  "deployments": [
+    {
+      "path": "ChatRoomDetailGetTest.groovy",
+      "revision": 292,
+      "sha256": "002c558dadb350621624be0a78391e94e8c0da06abee9acc4841d52bc807fb53"
+    },
+    {
+      "path": "ChatRoomListGetTest.groovy",
+      "revision": 293,
+      "sha256": "311141397ca42c704a38ac57430078ff1e351d4497ef4f6f843d1543d4b12133"
+    },
+    {
+      "path": "RoommateBoardDetailGetTest.groovy",
+      "revision": 294,
+      "sha256": "e2c498cedb1d06458941d62bb4026c90ec17ad5061e10d1306424a11a1bffab8"
+    },
+    {
+      "path": "RoommateBoardEditFormGetTest.groovy",
+      "revision": 295,
+      "sha256": "e234e8e9df439cfd49dcc5549d84adfebac19509deb60ac847265ec9a47ce4b6"
+    },
+    {
+      "path": "RoommateMatchDetailGetTest.groovy",
+      "revision": 296,
+      "sha256": "f6ce1596bdc3234653016e1c5f38fdc4191360b8c50061fa575437579000f038"
+    },
+    {
+      "path": "RoommateMatchListGetTest.groovy",
+      "revision": 297,
+      "sha256": "0e95af7f4d504b00411210559aa8b4b97cb43b654e5879881706098009f09370"
+    },
+    {
+      "path": "CalendarCategoryGetTest.groovy",
+      "revision": 298,
+      "sha256": "96fba41ed9fcd8bc22ac77f459a1b39129d766d721fcd3859c48751c388cada0"
+    },
+    {
+      "path": "CalendarDayListGetTest.groovy",
+      "revision": 299,
+      "sha256": "ea06cb2f31a5ffb9d27131eddec95b3625548d05868daaa609f2099aa617f991"
+    },
+    {
+      "path": "CalendarEditFormGetTest.groovy",
+      "revision": 300,
+      "sha256": "864203c17e272bb7263187cc6d9e3e86cf99c00e14f9efe5819235b7d511fd92"
+    },
+    {
+      "path": "CalendarMonthListGetTest.groovy",
+      "revision": 301,
+      "sha256": "fcc7320790df5f1eb6432ec2c5378467c76e471172caec40007267e344f0a609"
+    },
+    {
+      "path": "HouseRuleDetailGetTest.groovy",
+      "revision": 302,
+      "sha256": "11774e32cf45500906003820c0dbddcb4c8d1dbd6b1a78f5801ec6a2ed437fb0"
+    },
+    {
+      "path": "HouseRuleListGetTest.groovy",
+      "revision": 303,
+      "sha256": "2a0392a7ed98b98d377b83360a8808462c74947b71653cbd01b00012034dae6c"
+    },
+    {
+      "path": "MyRoommateGetTest.groovy",
+      "revision": 304,
+      "sha256": "1cbafe86047c342e933e958f37fd388346c0f6fe12db539a5489755d2c2c2ef3"
+    },
+    {
+      "path": "RoommateRequestListGetTest.groovy",
+      "revision": 305,
+      "sha256": "6e31b50310ea0eb6d2673c6ed6259c9e9107c8edb03ef768a13fd4d1ff1022c8"
+    },
+    {
+      "path": "UserBoardsGetTest.groovy",
+      "revision": 306,
+      "sha256": "38f9a13128cfd2e470fbe471fa2bb50ff5c1f5ca0868a9fd0ac469128a08675a"
+    },
+    {
+      "path": "resources/roommate-board-list.json",
+      "revision": 307,
+      "sha256": "6e226dadb4221dc5167f5530839e564cbeef4ef4836d6236ec86fec2a22cec3a"
+    }
+  ],
+  "validations": [
+    {
+      "script": "ChatRoomDetailGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "ChatRoomListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateBoardDetailGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateBoardEditFormGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateBoardListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateMatchDetailGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateMatchListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "CalendarCategoryGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "CalendarDayListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "CalendarEditFormGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "CalendarMonthListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "HouseRuleDetailGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "HouseRuleListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "MyRoommateGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "RoommateRequestListGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    },
+    {
+      "script": "UserBoardsGetTest.groovy",
+      "passed": true,
+      "successes": 1,
+      "errors": 0
+    }
+  ],
+  "agentCheck": {
+    "testId": 449,
+    "status": "FINISHED",
+    "successes": 1,
+    "errors": 0,
+    "passed": true
+  },
+  "finishedAt": "2026-10-05T20:25:53.039149+09:00",
+  "passed": true,
+  "collectionCorrection": "Agent execution succeeded; corrected status field lookup from id to name and finalized from original saved API result without rerunning requests."
+}

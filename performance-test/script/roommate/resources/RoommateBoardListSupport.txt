@@ -70,7 +70,13 @@ class RoommateBoardListSupport {
         }
         String runId = System.getenv('ROOMMATE_BOARD_RUN_ID') ?: config.runId
         require(runId ==~ /[A-Za-z0-9_-]+/ && runId != 'CHANGE-ME', 'Set a unique runId before each test')
-        if (context != null) {
+        boolean validationMode = context != null &&
+                context.properties.getProperty('grinder.script.validation', 'false').toBoolean()
+        if (validationMode) {
+            // UI Validate runs on the Controller without a performance test ID.
+            // Keep repeated validations separate from each other and Agent samples.
+            runId += '-validation-' + UUID.randomUUID().toString()
+        } else if (context != null) {
             String testId = context.properties.getProperty('grinder.test.id')
             require(testId ==~ /[A-Za-z0-9_-]+/, 'Controller test ID is required for unique sample directories')
             runId += '-' + testId
@@ -86,7 +92,7 @@ class RoommateBoardListSupport {
             if (supplied) tokens = supplied.split(',', -1).collect { it.trim() }
             else {
                 String tokenFile = System.getenv('ROOMMATE_BOARD_TOKEN_FILE') ?: config.tokenFile
-                require(tokenFile?.trim() as boolean, 'Set Agent ROOMMATE_BOARD_TOKENS, ROOMMATE_BOARD_TOKEN_FILE or config.tokenFile')
+                require(tokenFile?.trim() as boolean, 'Authentication requires ROOMMATE_BOARD_TOKENS, ROOMMATE_BOARD_TOKEN_FILE or config.tokenFile on the Controller (Validate) and Agents (load test)')
                 tokens = new File(tokenFile).readLines('UTF-8').collect { it.trim() }
             }
             require(tokens && tokens.every { it && !it.startsWith('Bearer ') && !it.startsWith('TOKEN_') }, 'Invalid token pool')
@@ -96,7 +102,7 @@ class RoommateBoardListSupport {
         return [profileId: profileId, profile: profile, runId: runId, baseUrl: config.baseUrl.replaceAll('/+$', ''),
                 connectTimeoutMs: config.connectTimeoutMs, socketTimeoutMs: config.socketTimeoutMs,
                 outputDir: System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir,
-                keywordMode: keywordMode, configSha256: hash, tokens: tokens]
+                keywordMode: keywordMode, validationMode: validationMode, configSha256: hash, tokens: tokens]
     }
 
     RoommateBoardListSupport(Map settings, def context) {
@@ -178,6 +184,10 @@ class RoommateBoardListSupport {
                     status, success, failure, failureRoot, bytes].join(',') + '\n')
             iteration++
             if (iteration % 100 == 0) samples.flush()
+        }
+        if (settings.validationMode) {
+            require(success, 'Validation request failed: ' + failure +
+                    (failureRoot ? '/' + failureRoot : '') + ' (HTTP ' + status + ')')
         }
     }
 

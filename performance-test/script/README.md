@@ -2,7 +2,7 @@
 
 `performance-test/script`에서 관리하는 실행 가능한 nGrinder 스크립트의 협업 인덱스다. 스크립트는 작성자별 폴더가 아니라 **도메인 폴더**에 배치하고, 추가·이동·삭제할 때 이 문서의 해당 표를 같은 변경에서 갱신한다.
 
-- 최종 갱신: 2026-09-30 — 목록·검색 실제 Controller 계약 smoke 통과
+- 최종 갱신: 2026-10-05 — UI Validate 호환 수정 및 직접 실행 가이드 추가
 - 기준 환경: nGrinder Controller/Agent `3.5.9-p1`, The Grinder `3.9.1`, Groovy `3.0.5`, JDK `11`
 - 공통 대상 주소: `http://host.docker.internal:8080`
 - 현재 범위: 조회 REST API
@@ -62,9 +62,13 @@
 |---|---|---|---:|---|---|---|---|---|
 | S12 준비 · 내가 쓴 게시글 조회 | GET | `/users/me/boards?page=0&size=20&sort=createdAt,DESC` | 3020 | [`script/user/UserBoardsGetTest.groovy`](./user/UserBoardsGetTest.groovy) | `yourjin` | JWT, 게시글 작성 이력이 있는 사용자 권장 | 없음 | 런타임 검증 완료 |
 
+## UI에서 직접 실행
+
+[UI 실행 가이드](../docs/ngrinder-ui-testing.md)에서 Script 설정, Controller/Agent 토큰 준비, Validate 오류 해결과 성능 테스트 화면 입력값을 확인한다.
+
 ## 게시글 목록·검색 설정
 
-목록·검색 두 스크립트는 [전용 실행 가이드](../docs/roommate-board-list-testing.md)를 따른다. `roommate/resources/roommate-board-list.json`에서 대상 주소·runId·프로필·fixture를 관리하고 인증 토큰은 Agent 환경/로컬 파일로 제공한다. 공통 txt 리소스도 함께 배포한다. GTest 4102는 기존 상세 조회이며 새 검색은 4104다.
+목록·검색 두 스크립트는 [전용 실행 가이드](../docs/roommate-board-list-testing.md)를 따른다. `roommate/resources/roommate-board-list.json`에서 대상 주소·runId·프로필·fixture를 관리하고 인증 토큰은 Controller(Validate)·Agent(성능 테스트) 환경/로컬 파일로 제공한다. 공통 txt 리소스도 함께 배포한다. GTest 4102는 기존 상세 조회이며 새 검색은 4104다.
 
 ## 나머지 조회 스크립트 실행 전 설정
 

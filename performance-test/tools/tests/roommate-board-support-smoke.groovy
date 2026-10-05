@@ -68,4 +68,22 @@ assert support.loadSettings(true).profileId == 'search-frequent-authenticated'
 def testProperties = new Properties()
 testProperties.setProperty('grinder.test.id', 'test_123')
 assert support.loadSettings(false, [properties: testProperties]).runId == 'offline-smoke-test_123'
-println 'Offline compilation, filters, response validation, sharding, samples and timeout checks passed'
+assert !support.loadSettings(false, [properties: testProperties]).validationMode
+reject { support.loadSettings(false, [properties: new Properties()]) }
+testProperties.setProperty('grinder.test.id', '../unsafe')
+reject { support.loadSettings(false, [properties: testProperties]) }
+def validationProperties = new Properties()
+validationProperties.setProperty('grinder.script.validation', 'true')
+def firstValidation = support.loadSettings(false, [properties: validationProperties])
+def nextValidation = support.loadSettings(false, [properties: validationProperties])
+assert firstValidation.validationMode
+assert firstValidation.runId ==~ /offline-smoke-validation-[a-f0-9-]+/
+assert firstValidation.runId != nextValidation.runId
+def validationWorker = support.newInstance(settings + [runId: 'offline-validation', validationMode: true], context)
+reject { validationWorker.execute([GET: { String url, List params, List headers ->
+    throw new java.net.SocketTimeoutException('SECRET')
+}]) }
+validationWorker.close()
+assert new File(args[0], 'offline-validation/a1-p1-t0.csv').text.contains('SocketTimeoutException')
+assert !new File(args[0], 'offline-validation/a1-p1-t0.csv').text.contains('SECRET')
+println 'Offline compilation, filters, response validation, sharding, samples, timeouts and UI validation checks passed'

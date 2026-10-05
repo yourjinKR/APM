@@ -55,7 +55,9 @@
 5. 지역/방 유형의 `[null]`을 실제 ID로, `regionFragments`/`roomTypeNames`를 실제 이름으로 채운다. 미완성 fixture는 요청 전에 실패한다. 예산 단위는 API와 DB의 단위로 확인한다.
 6. 측정 전 1 VU·1~3회로 count·필터·회원별 결과를 확인한다. `expect.totalElements`, `requiredIds`, `excludedIds`를 추가하면 고정 snapshot의 count·노출/제외까지 확인할 수 있다. `minTotalElements`만으로 필터 적용의 완전한 정합성을 증명할 수는 없다.
 
-인증 토큰은 **Agent 프로세스 환경**의 `ROOMMATE_BOARD_TOKENS`(쉼표 구분) 또는 `ROOMMATE_BOARD_TOKEN_FILE`(Agent 로컬 절대 경로, 한 줄 한 토큰)로 제공한다. Agent 환경 변수를 변경하기 어려우면 배포할 JSON의 `tokenFile`에 Agent 로컬 절대 경로를 지정할 수 있다. 환경 변수 경로가 우선한다. Controller 호스트의 shell 변수만 설정해도 Agent에 자동 전달되는 것은 아니다. 파일/환경 변경은 worker가 실제로 읽는지 확인한다. 토큰·서명 키를 저장소나 결과 파일에 넣지 않는다.
+UI의 Validate는 Controller에서 실행되므로 인증 토큰을 **Controller와 Agent 양쪽**에 준비한다. [UI 실행·Validate 오류 해결 가이드](./ngrinder-ui-testing.md)에 현재 Docker 환경의 파일 복사 방법과 화면 입력값을 정리했다.
+
+인증 토큰은 **Controller(Validate) 및 Agent(성능 테스트) 프로세스 환경**의 `ROOMMATE_BOARD_TOKENS`(쉼표 구분) 또는 `ROOMMATE_BOARD_TOKEN_FILE`(Agent 로컬 절대 경로, 한 줄 한 토큰)로 제공한다. Agent 환경 변수를 변경하기 어려우면 배포할 JSON의 `tokenFile`에 Agent 로컬 절대 경로를 지정할 수 있다. 환경 변수 경로가 우선한다. Controller 호스트의 shell 변수만 설정해도 Agent에 자동 전달되는 것은 아니다. 파일/환경 변경은 worker가 실제로 읽는지 확인한다. 토큰·서명 키를 저장소나 결과 파일에 넣지 않는다.
 
 모든 Agent에 동일한 전체 토큰 목록과 같은 정렬을 제공한다. slot은 `(agentNumber × processes + processSlot) × threads + threadNumber`이며 `processSlot=processNumber-firstProcessNumber`다. modulo 재사용 없이 slot마다 다른 토큰을 배정한다. 토큰 수가 부족하면 실패한다. Agent 번호가 불연속이면 최대 slot까지 준비한다. **토큰 문자열이 서로 달라도 같은 회원일 수 있으므로 사전 발급 단계에서 member ID 중복을 확인한다.** [Grinder ScriptContext](https://grinder.sourceforge.net/g3/script-javadoc/net/grinder/script/Grinder.ScriptContext.html)
 

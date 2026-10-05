@@ -1,0 +1,34 @@
+2026-10-05 11:21:52,416 INFO  Setting of nGrinder local DNS successfully
+2026-10-05 11:21:52,424 INFO  The Grinder version 3.9.1
+2026-10-05 11:21:52,428 INFO  OpenJDK Runtime Environment 11.0.22+7-LTS: OpenJDK 64-Bit Server VM (11.0.22+7-LTS, mixed mode) on Linux amd64 6.6.87.2-microsoft-standard-WSL2
+2026-10-05 11:21:52,434 INFO  time zone is UTC (+0000)
+2026-10-05 11:21:52,579 INFO  worker process 0 of agent number 0
+2026-10-05 11:21:52,612 INFO  Instrumentation agents: byte code transforming instrumenter for Java
+2026-10-05 11:21:54,518 INFO  registered plug-in net.grinder.plugin.http.HTTPPlugin
+2026-10-05 11:21:54,672 INFO  Running "UserBoardsGetTest.groovy" using GroovyScriptEngine running with groovy version: 3.0.5
+2026-10-05 11:21:54,740 INFO  starting, will do 1 run
+2026-10-05 11:21:54,741 INFO  Start time is 1791199314740 ms since Epoch
+2026-10-05 11:21:54,940 INFO  http://host.docker.internal:8080/users/me/boards -> 200 , 631 bytes
+2026-10-05 11:21:54,979 INFO  finished 1 run
+2026-10-05 11:21:54,986 INFO  elapsed time is 246 ms
+2026-10-05 11:21:54,986 INFO  Final statistics for this process:
+2026-10-05 11:21:55,002 INFO  
+             Tests        Errors       Mean Test    Test Time    TPS          Mean         Response     Response     Mean time to Mean time to Mean time to 
+                                       Time (ms)    Standard                  response     bytes per    errors       resolve host establish    first byte   
+                                                    Deviation                 length       second                                 connection                
+                                                    (ms)                                                                                                    
+
+Test 3020    1            0            172.00       0.00         4.07         631.00       2565.04      0            0.00         56.00        115.00        "GET /users/me/boards"
+
+Totals       1            0            172.00       0.00         4.07         631.00       2565.04      0            0.00         56.00        115.00       
+
+  Tests resulting in error only contribute to the Errors column.          
+  Statistics for individual tests can be found in the data file, including
+  (possibly incomplete) statistics for erroneous tests. Composite tests   
+  are marked with () and not included in the totals.                      
+
+
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2026-10-05 11:21:54,677 INFO  validation-0: Starting threads
+2026-10-05 11:21:55,002 INFO  validation-0: Finished
