@@ -1,0 +1,75 @@
+import groovy.json.JsonSlurper
+import java.nio.charset.StandardCharsets
+import java.time.LocalDateTime
+
+/** Optional Page contract. The load runtime does not interpret response bodies. */
+class RoommateBoardPageContract {
+    static void require(boolean condition, String code) {
+        if (!condition) throw new IllegalArgumentException(code)
+    }
+
+    static void validateInput(Map input) {
+        require(input.expect instanceof Map, 'PAGE_EXPECT_REQUIRED')
+        Map expect = input.expect
+        require(expect.minTotalElements instanceof Integer && expect.minTotalElements >= 0,
+                'PAGE_MIN_TOTAL_ELEMENTS_REQUIRED')
+        if (expect.containsKey('totalElements')) require(expect.totalElements instanceof Number &&
+                expect.totalElements >= expect.minTotalElements, 'PAGE_INVALID_EXPECTED_TOTAL_ELEMENTS')
+        if (expect.minTotalElements == 0)
+            require(expect.totalElements == 0, 'PAGE_EMPTY_COUNT_REQUIRED')
+        if (input.query.regionIds) require(expect.regionFragments &&
+                expect.regionFragments.every { it instanceof String && it.trim() }, 'PAGE_REGION_FRAGMENTS_REQUIRED')
+        if (input.query.roomTypeIds) require(expect.roomTypeNames &&
+                expect.roomTypeNames.every { it instanceof String && it.trim() }, 'PAGE_ROOM_TYPE_NAMES_REQUIRED')
+    }
+
+    static void validateResponse(def response, Map input) {
+        def body = new JsonSlurper().parseText(response.getBodyText(StandardCharsets.UTF_8))
+        require(body instanceof Map, 'PAGE_ENVELOPE_REQUIRED')
+        validateBody(body as Map, input)
+    }
+
+    static void validateBody(Map body, Map input) {
+        require(body.status == 200 && body.error == null, 'PAGE_INVALID_ENVELOPE')
+        Map page = body.data as Map
+        Map query = input.query
+        Map expect = input.expect
+        require(page.content instanceof List, 'PAGE_CONTENT_REQUIRED')
+        require(page.totalElements instanceof Number, 'PAGE_TOTAL_ELEMENTS_REQUIRED')
+        List rows = page.content
+        require(page.number == query.page && page.size == query.size, 'PAGE_WRONG_PAGE_OR_SIZE')
+        require(rows.size() <= query.size && page.totalElements >= expect.minTotalElements, 'PAGE_INVALID_CONTENT_COUNT')
+        if (expect.containsKey('totalElements')) require(page.totalElements == expect.totalElements, 'PAGE_WRONG_EXACT_COUNT')
+        require(expect.totalElements == 0 ? rows.isEmpty() : !rows.isEmpty(), 'PAGE_UNEXPECTED_EMPTY_NONEMPTY_PAGE')
+        if (rows) require(page.totalElements >= (query.page as long) * query.size + rows.size(), 'PAGE_COUNT_CONTRADICTS_PAGE_CONTENT')
+        require(rows.every { it.id instanceof Number } && rows*.id.toSet().size() == rows.size(), 'PAGE_INVALID_DUPLICATE_IDS')
+        rows.each { row ->
+            if (query.gender) require(row.gender == query.gender, 'PAGE_GENDER_FILTER_MISSING')
+            if (query.likedOnly) require(row.interested == true, 'PAGE_LIKED_FILTER_MISSING')
+            [['minDeposit', 'deposit', true], ['maxDeposit', 'deposit', false],
+             ['minMounthRent', 'monthlyRent', true], ['maxMounthRent', 'monthlyRent', false]].each { rule ->
+                if (query.containsKey(rule[0])) require(row[rule[1]] instanceof Number &&
+                        (rule[2] ? row[rule[1]] >= query[rule[0]] : row[rule[1]] <= query[rule[0]]), 'PAGE_BUDGET_FILTER_MISSING')
+            }
+            if (expect.regionFragments) require(expect.regionFragments.any { row.regionFullName?.contains(it) }, 'PAGE_REGION_FILTER_MISSING')
+            if (expect.roomTypeNames) require(row.roomTypes instanceof List &&
+                    row.roomTypes.any { it in expect.roomTypeNames }, 'PAGE_ROOM_TYPE_FILTER_MISSING')
+            if (input.keyword) {
+                String keyword = input.keyword.trim().toLowerCase(Locale.ROOT)
+                List text = [row.title, row.regionFullName] + (row.roomTypes ?: [])
+                require(text.any { it?.toLowerCase(Locale.ROOT)?.contains(keyword) }, 'PAGE_KEYWORD_FILTER_MISSING')
+            }
+            require(!(row.id in (expect.excludedIds ?: [])), 'PAGE_EXCLUDED_FIXTURE_RETURNED')
+        }
+        require((expect.requiredIds ?: []).every { it in rows*.id }, 'PAGE_REQUIRED_FIXTURE_MISSING')
+        List sort = query.sort.split(',') as List
+        for (int i = 1; i < rows.size(); i++) {
+            def previous = sort[0] == 'createdAt' ? LocalDateTime.parse(rows[i - 1].createdAt) : rows[i - 1].hits
+            def current = sort[0] == 'createdAt' ? LocalDateTime.parse(rows[i].createdAt) : rows[i].hits
+            int compared = previous <=> current
+            require(sort[1] == 'DESC' ? compared >= 0 : compared <= 0, 'PAGE_INVALID_ORDERING')
+            if (compared == 0) require(rows[i - 1].id > rows[i].id, 'PAGE_INVALID_ID_TIE_BREAK_ORDERING')
+        }
+    }
+
+}

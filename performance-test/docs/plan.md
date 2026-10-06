@@ -176,7 +176,7 @@ nGrinder의 일반 thread 반복은 응답을 기다리는 폐쇄형 부하다. 
 | `@Test` | 하나의 명시적 여정 실행. 앞 응답에서 ID 추출→검증→후속 요청. 실패하면 의존 단계 중단 |
 | 종료 | 연결 close, 소모 ID/불확실 요청 목록 기록. 강제 중단에서도 별도 cleanup manifest로 회수 |
 | HTTP 계측 | API·경로 종류별 고정 GTest ID 사용. 동적 memberId/boardId를 metric 이름으로 만들지 않음 |
-| 검증 | HTTP status와 JSON `status`, `error`, `data` 확인. 200만 보고 성공 판정하지 않음 |
+| 검증 | 기본 부하는 기대 HTTP 상태/통신을 확인. JSON·업무 계약은 선택 검증기 또는 별도 기능 검증으로 확인하고 판정 범위를 기록 |
 | 시간 | API 시간에 생각 시간·CSV 읽기·seed 시간을 포함하지 않음. 사용자 여정 시간은 별도 지표로 기록 |
 | timeout | 초기 일반 HTTP 10초, 업로드 30초 제안. 연결/응답 timeout을 분리 기록하고 실패 표본을 버리지 않음 |
 | 재시도 | 측정 중 자동 HTTP 재시도·로그인 redirect 따라가기 비활성. 연결 재접속은 해당 시나리오에서만 수행 |

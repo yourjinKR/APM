@@ -2,6 +2,12 @@
 
 작성일: 2026-09-30. 이번 작업은 조건별 측정 스크립트와 기록 절차를 준비한 것이다. 백엔드 최적화나 새 부하 측정 결과를 의미하지 않는다.
 
+## 현재 실행 기준 (2026-10-07)
+
+기본 모드는 HTTP 상태/통신만 확인하며 응답 형식과 무관하게 실행한다. `expectedStatusCodes: [200]`, `responseValidator: null`이 기본값이다. 과거 count·필터·정렬 assertion은 [RoommateBoardPageContract.txt](../script/roommate/resources/RoommateBoardPageContract.txt)로 분리했다. 필요할 때 경로를 선택하며, `inputs[].expect`는 해당 검증기를 켰을 때만 사용한다. 현재 Slice에 Page 검증을 켜면 계약 불일치로 실패한다. 설정 예시·오류 유형·Controller 자동 갱신은 [UI 가이드](./ngrinder-ui-testing.md#기본-부하-판정과-선택-응답-검증-2026-10-07)를 따른다.
+
+아래 과거 측정의 응답 계약 통과 기록은 당시 실행본의 결과다. 현재 기본 실행의 성공은 HTTP 성공이며, 업무 결과/검색 저장 정합성은 별도 계약·DB 검증으로 확인한다.
+
 ## 기존 결과의 충분성
 
 [단계별 탐색](../results/2026-09-28-roommate-board-list-load/report.md), [반복 측정](../results/2026-09-28-roommate-board-list-repeats/report.md), [시드 선정](../results/2026-09-28-read-seed-selection/report.md), [연결 오류 조사](../results/2026-09-21-terms-investigation/report.md)를 검토했다. **기본 조회의 탐색 자료는 있지만, 필터·검색까지 포함한 성능 개선의 기준선은 아직 부족하다.**
@@ -52,8 +58,8 @@
 2. JSON의 `baseUrl`을 **Agent에서 접근 가능한 주소**로 설정한다. Bash 실행기의 `--target-host`는 nGrinder 대상 호스트 설정이며 JSON의 실제 GET URL을 바꾸지 않는다. 둘을 함께 맞춘다.
 3. `runId`의 `CHANGE-ME`를 `before-H2-seed1000-r1`처럼 바꾼다. Controller의 `grinder.test.id`가 자동으로 붙으므로 여러 VU 단계가 서로 덮어쓰지 않는다. before/after·반복 회차는 각각 다른 prefix를 사용한다.
 4. `activeReadProfile`/`activeKeywordProfile`을 선택한다. 두 스크립트가 각각 해당 값을 읽는다. 환경 변수 `ROOMMATE_BOARD_PROFILE`이 있으면 두 설정보다 우선하므로 종류가 다른 스크립트를 연속 실행할 때는 이 변수를 해제한다.
-5. 지역/방 유형의 `[null]`을 실제 ID로, `regionFragments`/`roomTypeNames`를 실제 이름으로 채운다. 미완성 fixture는 요청 전에 실패한다. 예산 단위는 API와 DB의 단위로 확인한다.
-6. 측정 전 1 VU·1~3회로 count·필터·회원별 결과를 확인한다. `expect.totalElements`, `requiredIds`, `excludedIds`를 추가하면 고정 snapshot의 count·노출/제외까지 확인할 수 있다. `minTotalElements`만으로 필터 적용의 완전한 정합성을 증명할 수는 없다.
+5. 지역/방 유형의 `[null]`을 실제 ID로 채운다. Page 검증을 선택하면 `regionFragments`/`roomTypeNames`도 실제 이름으로 준비한다. 요청에 필요한 ID가 미완성이면 요청 전에 실패한다. 예산 단위는 API와 DB의 단위로 확인한다.
+6. 측정 전 1 VU·1~3회로 HTTP 요청을 확인한다. count·필터·회원별 결과는 선택한 응답 검증기로 별도 확인한다. `expect.totalElements`, `requiredIds`, `excludedIds`를 추가하면 고정 snapshot의 count·노출/제외까지 확인할 수 있다. `minTotalElements`만으로 필터 적용의 완전한 정합성을 증명할 수는 없다.
 
 UI의 Validate는 Controller에서 실행되므로 인증 토큰을 **Controller와 Agent 양쪽**에 준비한다. [UI 실행·Validate 오류 해결 가이드](./ngrinder-ui-testing.md)에 현재 Docker 환경의 파일 복사 방법과 화면 입력값을 정리했다.
 

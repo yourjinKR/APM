@@ -1,0 +1,12 @@
+[
+  {
+    "path": "resources/RoommateBoardListSupport.txt",
+    "revision": 311,
+    "sha256": "bcdc8b41876617e4011ab2ede43b727f16004f77eff250aa8fb4f74f80d9f4df"
+  },
+  {
+    "path": "resources/RoommateBoardPageContract.txt",
+    "revision": 311,
+    "sha256": "486e2fabb6a98276d6699640d204669fe6e54f1a5b2a3dbfb4c2035a25b43257"
+  }
+]

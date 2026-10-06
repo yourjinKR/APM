@@ -1,0 +1,2 @@
+runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,failureRoot,responseBytes
+manual-validation-20261003-01-test_481,search-frequent-authenticated,0,0,0,0,0,1791306997237,326.036,200,true,,,12339

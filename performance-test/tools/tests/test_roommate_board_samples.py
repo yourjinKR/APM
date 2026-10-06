@@ -56,6 +56,24 @@ class SampleTests(unittest.TestCase):
         self.assertEqual(result['successes'], 99)
         self.assertEqual(result['successP99Ms'], 99)
 
+    def test_contract_failure_is_not_a_transport_root(self):
+        path = self.directory / 'a0-p0-t0.csv'
+        with path.open(encoding='utf-8') as stream:
+            reader = csv.DictReader(stream)
+            fields = reader.fieldnames + ['failureRoot']
+            rows = list(reader)
+        for row in rows:
+            row['failureRoot'] = ''
+        rows[-1].update(success='false', failure='contract_mismatch', failureRoot='PAGE_TOTAL_ELEMENTS_REQUIRED')
+        rows[-2].update(success='false', failure='ExecutionException', failureRoot='SocketTimeoutException', httpStatus='0')
+        with path.open('w', newline='', encoding='utf-8') as stream:
+            writer = csv.DictWriter(stream, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(rows)
+        result = MODULE.summarize(self.directory, 100, 1)
+        self.assertEqual(result['failures']['contract_mismatch'], 1)
+        self.assertEqual(result['transportFailureRoots'], {'SocketTimeoutException': 1})
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,21 @@
+test_complete_api_log_needs_no_fallback (test_ngrinder_ui_validation.ValidationTests.test_complete_api_log_needs_no_fallback) ... ok
+test_correlated_process_log_fallback (test_ngrinder_ui_validation.ValidationTests.test_correlated_process_log_fallback) ... ok
+test_initialization_error_is_setup_failure (test_ngrinder_ui_validation.ValidationTests.test_initialization_error_is_setup_failure) ... ok
+test_initialization_failure_with_totals_is_still_setup_failure (test_ngrinder_ui_validation.ValidationTests.test_initialization_failure_with_totals_is_still_setup_failure) ... ok
+test_marker_is_injected_only_in_validation_copy (test_ngrinder_ui_validation.ValidationTests.test_marker_is_injected_only_in_validation_copy) ... ok
+test_missing_totals_is_collection_failure (test_ngrinder_ui_validation.ValidationTests.test_missing_totals_is_collection_failure) ... ok
+test_request_failures_have_separate_categories (test_ngrinder_ui_validation.ValidationTests.test_request_failures_have_separate_categories) ... ok
+test_success_requires_one_request_and_no_error (test_ngrinder_ui_validation.ValidationTests.test_success_requires_one_request_and_no_error) ... ok
+test_unavailable_process_log_remains_unconfirmed (test_ngrinder_ui_validation.ValidationTests.test_unavailable_process_log_remains_unconfirmed) ... ok
+test_unknown_exception_detail_is_not_printed (test_ngrinder_ui_validation.ValidationTests.test_unknown_exception_detail_is_not_printed) ... ok
+test_unrelated_process_log_is_never_accepted (test_ngrinder_ui_validation.ValidationTests.test_unrelated_process_log_is_never_accepted) ... ok
+test_contract_failure_is_not_a_transport_root (test_roommate_board_samples.SampleTests.test_contract_failure_is_not_a_transport_root) ... ok
+test_duplicate_collection_rejected (test_roommate_board_samples.SampleTests.test_duplicate_collection_rejected) ... ok
+test_errors_do_not_lower_success_percentiles (test_roommate_board_samples.SampleTests.test_errors_do_not_lower_success_percentiles) ... ok
+test_individual_quantiles_and_complete_count (test_roommate_board_samples.SampleTests.test_individual_quantiles_and_complete_count) ... ok
+test_missing_samples_are_incomplete (test_roommate_board_samples.SampleTests.test_missing_samples_are_incomplete) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.032s
+
+OK

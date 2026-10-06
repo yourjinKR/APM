@@ -1,7 +1,7 @@
 """Prepare existing local H2 load-test members for manual nGrinder UI runs.
 
 No backend restart, direct SQL writes, or load stages. JWTs stay in container-local
-files; Controller changes are token file references, fixture IDs and dates.
+files; Controller changes are runtime resources, token file references, fixture IDs and dates.
 """
 import argparse
 import base64
@@ -16,6 +16,7 @@ import subprocess
 import time
 import urllib.parse
 import urllib.request
+import uuid
 from datetime import datetime, timedelta, timezone
 
 PERF = Path(__file__).resolve().parents[1]
@@ -66,6 +67,54 @@ def issue_tokens(project, members, hours):
     return tokens, expires
 
 
+def classify_validation(script, log, source='api'):
+    """A missing Totals table means unknown execution results, not a failed API."""
+    totals = re.search(r'(?m)^Totals\s+(\d+)\s+(\d+)', log)
+    successes, errors = (int(totals[1]), int(totals[2])) if totals else (None, None)
+    explicit = re.search(r'(CONTRACT_MISMATCH|HTTP_REQUEST_FAILED|TRANSPORT_FAILED):\s*([^\r\n]+)', log)
+    has_error = bool(re.search(r'\bERROR\b|Caused by:', log))
+    if explicit:
+        outcome = explicit[1]
+        # Runtime diagnostics consist only of fixed failure codes/classes and HTTP status.
+        diagnostic = re.match(r'[A-Za-z0-9_]+(?:/[A-Za-z0-9_]+)? \(HTTP \d+\)', explicit[2])
+        message = diagnostic[0] if diagnostic else 'See validation log'
+    elif totals and successes == 1 and errors == 0 and not has_error:
+        outcome, message = 'PASSED', 'One request succeeded'
+    elif has_error and re.search(r'beforeProcess|beforeThread|initializ|MultipleCompilationErrorsException', log, re.IGNORECASE):
+        outcome, message = 'SETUP_FAILED', 'Script compilation or initialization failed; see validation log'
+    elif not totals and has_error:
+        outcome, message = 'SETUP_FAILED', 'Script compilation or initialization failed; see validation log'
+    elif totals and (errors or has_error):
+        outcome, message = 'REQUEST_FAILED', 'Request execution failed; see validation log'
+    else:
+        outcome, message = 'RESULT_COLLECTION_FAILED', 'Expected Totals for one request were not collected'
+    return {'script': script, 'passed': outcome == 'PASSED', 'outcome': outcome,
+            'message': message, 'logSource': source, 'successes': successes, 'errors': errors}
+
+
+def validation_content(content, marker):
+    anchor = 'static void beforeProcess() {'
+    if content.count(anchor) != 1:
+        raise RuntimeError('Cannot correlate validation: expected one beforeProcess method')
+    return content.replace(anchor, anchor + "\n        grinder.logger.info('" + marker + "')", 1)
+
+
+def resolve_validation_log(api_log, marker, read_process_log, pause=time.sleep):
+    if re.search(r'(?m)^Totals\s+\d+\s+\d+', api_log):
+        return api_log, 'api'
+    # nGrinder 3.5.9 can return stderr alone. Never accept another validation's process log.
+    for attempt in range(3):
+        try:
+            process_log = read_process_log()
+        except (RuntimeError, OSError):
+            process_log = ''
+        if marker in process_log and re.search(r'(?m)^Totals\s+\d+\s+\d+|\bERROR\b|Caused by:', process_log):
+            return process_log, 'controller-process-log'
+        if attempt < 2:
+            pause(0.2)
+    return api_log, 'api'
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--backend-project', required=True, type=Path)
@@ -113,10 +162,11 @@ def main():
         raise RuntimeError('Calendar fixtures have mixed dates')
     calendar = dates.pop()
     tokens, expires = issue_tokens(args.backend_project.resolve(), members, args.token_hours)
-    probe = baseline.request('http://localhost:8080/users/me/boards?page=0&size=20',
-                             headers={'Authorization': 'Bearer ' + tokens[0]})
-    if not isinstance(probe, dict) or probe.get('status') != 200 or probe.get('data') is None:
-        raise RuntimeError('Current backend rejected the test member/token contract')
+    probe = urllib.request.Request('http://localhost:8080/users/me/boards?page=0&size=20',
+                                   headers={'Authorization': 'Bearer ' + tokens[0]})
+    with urllib.request.urlopen(probe, timeout=30) as response:
+        if response.status != 200:
+            raise RuntimeError('Current backend rejected the test member/token (HTTP status)')
     agent_names = docker('ps', '--filter', 'ancestor=ngrinder/agent:3.5.9-p1', '--format', '{{.Names}}').splitlines()
     if not agent_names:
         raise RuntimeError('No running nGrinder Agents')
@@ -152,12 +202,16 @@ def main():
     originals[config_path] = api('/script/api/detail/' + config_path)['file']
     config = json.loads(originals[config_path]['content'])
     config['tokenFile'] = TOKEN_FILE
+    config.setdefault('expectedStatusCodes', [200])
+    config.setdefault('responseValidator', None)
     if config.get('runId') == 'CHANGE-ME':
         config['runId'] = 'ui-' + datetime.now().strftime('%Y%m%d-%H%M%S')
     updates[config_path] = json.dumps(config, ensure_ascii=False, indent=2) + '\n'
-    helper = api('/script/api/detail/resources/RoommateBoardListSupport.txt')['file']['content']
-    if 'grinder.script.validation' not in helper:
-        raise RuntimeError('Update RoommateBoardListSupport.txt with the UI Validate compatibility fix first')
+    for name in ['RoommateBoardListSupport.txt', 'RoommateBoardPageContract.txt']:
+        path = 'resources/' + name
+        entry = api('/script/api/detail/' + path).get('file')
+        originals[path] = entry or {'fileType': 'TXT', 'content': None, 'encoding': 'UTF-8'}
+        updates[path] = (PERF / 'script/roommate/resources' / name).read_text('utf-8')
     output = (args.output_directory or PERF / 'results' / (datetime.now().strftime('%Y-%m-%d') + '-ui-readiness') /
               datetime.now().strftime('%H%M%S')).resolve()
     output.mkdir(parents=True, exist_ok=True)
@@ -178,7 +232,10 @@ def main():
                'tokenExpiresAt': datetime.fromtimestamp(expires, timezone(timedelta(hours=9))).isoformat(),
                'tokenCount': 30, 'tokenFile': TOKEN_FILE, 'containers': containers,
                'memberIds': [int(row['ID']) for row in members], 'calendarDate': calendar.isoformat(),
-               'activeKeywordProfile': config['activeKeywordProfile'], 'deployments': [], 'validations': []}
+               'activeKeywordProfile': config['activeKeywordProfile'],
+               'expectedStatusCodes': config.get('profiles', {}).get(config['activeKeywordProfile'], {}).get('expectedStatusCodes', config['expectedStatusCodes']),
+               'responseValidator': config.get('profiles', {}).get(config['activeKeywordProfile'], {}).get('responseValidator', config['responseValidator']),
+               'deployments': [], 'validations': []}
     changed = []
     try:
         for container in containers:
@@ -192,26 +249,32 @@ def main():
             summary['deployments'].append(deploy(path, content))
     except Exception:
         for path in reversed(changed):
-            deploy(path, originals[path]['content'])
+            if originals[path]['content'] is not None:
+                deploy(path, originals[path]['content'])
         raise
     print('Prepared 30 local fixture members on Controller and ' + str(len(agent_names)) + ' Agents; expires=' + summary['tokenExpiresAt'], flush=True)
     save(output / 'summary.json', summary)
     selected = scripts if args.validate_all else [path for path in scripts if path.stem == 'RoommateBoardListKeywordGetTest']
     for script in selected:
-        log = api('/script/api/validate', {'fileEntry': {'path': script.name, 'content': updates[script.name]},
-                                         'hostString': 'host.docker.internal'})
-        if not isinstance(log, str):
-            log = json.dumps(log)
+        marker = 'ui-validation-' + uuid.uuid4().hex
+        content = validation_content(updates[script.name], marker)
+        api_log = api('/script/api/validate', {'fileEntry': {'path': script.name, 'content': content},
+                                             'hostString': 'host.docker.internal'})
+        if not isinstance(api_log, str):
+            api_log = json.dumps(api_log)
+        username = os.getenv('NGRINDER_USERNAME', 'admin')
+        if not re.fullmatch(r'[A-Za-z0-9_-]+', username):
+            raise RuntimeError('Cannot safely locate the Controller validation log for this username')
+        log, source = resolve_validation_log(api_log, marker, lambda: docker('exec', 'ngrinder-controller',
+            'cat', '/opt/ngrinder-controller/script/' + username + '/validation-0.log'))
+        api_log = re.sub(JWT_PATTERN, '[REDACTED_JWT]', api_log)
         log = re.sub(JWT_PATTERN, '[REDACTED_JWT]', log)
+        (output / (script.stem + '.api.log')).write_text(api_log, encoding='utf-8')
         (output / (script.stem + '.log')).write_text(log, encoding='utf-8')
-        totals = re.search(r'(?m)^Totals\s+(\d+)\s+(\d+)', log)
-        passed = bool(totals and totals[1] == '1' and totals[2] == '0' and
-                      not re.search(r'\bERROR\b|Caused by:', log))
-        row = {'script': script.name, 'passed': passed,
-               'successes': int(totals[1]) if totals else None, 'errors': int(totals[2]) if totals else None}
+        row = classify_validation(script.name, log, source)
         summary['validations'].append(row)
         save(output / 'summary.json', summary)
-        print(('PASS ' if passed else 'FAIL ') + script.name, flush=True)
+        print(('PASS' if row['passed'] else row['outcome']) + ' ' + script.name + ': ' + row['message'], flush=True)
     if args.verify_agent and all(row['passed'] for row in summary['validations']):
         created = api('/perftest/api', {'testName': 'ui-readiness-authenticated-search-' + datetime.now().strftime('%Y%m%d-%H%M%S'),
             'description': 'UI input preparation check; one request; no load stage',

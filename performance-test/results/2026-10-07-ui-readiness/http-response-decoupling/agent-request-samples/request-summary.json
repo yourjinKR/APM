@@ -1,0 +1,32 @@
+{
+  "runId": "manual-validation-20261003-01-test_481",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "6b3b7f444820f17fa7fc4d7350e75a6cbb010ba1795fb8fb4ed58af523125654",
+  "sampleComplete": true,
+  "expectedRequests": 1,
+  "requests": 1,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 1,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 326.036,
+  "successP50Ms": 326.036,
+  "successP95Ms": 326.036,
+  "successP99Ms": 326.036,
+  "observedAllP95Ms": 326.036,
+  "sampleSpanSeconds": 0.326035888671875,
+  "sampleSuccessRps": 3.06714700664873,
+  "inputs": {
+    "0": 1
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

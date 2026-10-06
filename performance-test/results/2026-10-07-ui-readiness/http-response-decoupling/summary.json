@@ -1,0 +1,89 @@
+{
+  "startedAt": "2026-10-07T02:16:16.988051+09:00",
+  "tokenExpiresAt": "2026-10-14T02:16:09+09:00",
+  "tokenCount": 30,
+  "tokenFile": "/tmp/knockin-ngrinder-tokens.txt",
+  "containers": [
+    "ngrinder-controller",
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "memberIds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "calendarDate": "2026-10-07",
+  "activeKeywordProfile": "search-frequent-authenticated",
+  "expectedStatusCodes": [
+    200
+  ],
+  "responseValidator": null,
+  "deployments": [
+    {
+      "path": "resources/roommate-board-list.json",
+      "revision": 309,
+      "sha256": "6b3b7f444820f17fa7fc4d7350e75a6cbb010ba1795fb8fb4ed58af523125654"
+    },
+    {
+      "path": "resources/RoommateBoardListSupport.txt",
+      "revision": 310,
+      "sha256": "bcdc8b41876617e4011ab2ede43b727f16004f77eff250aa8fb4f74f80d9f4df"
+    },
+    {
+      "path": "resources/RoommateBoardPageContract.txt",
+      "revision": 311,
+      "sha256": "486e2fabb6a98276d6699640d204669fe6e54f1a5b2a3dbfb4c2035a25b43257"
+    }
+  ],
+  "validations": [
+    {
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "passed": true,
+      "outcome": "PASSED",
+      "message": "One request succeeded",
+      "logSource": "api",
+      "successes": 1,
+      "errors": 0
+    }
+  ],
+  "agentCheck": {
+    "testId": 481,
+    "status": "FINISHED",
+    "successes": 1,
+    "errors": 0,
+    "passed": true
+  },
+  "finishedAt": "2026-10-07T02:16:41.294580+09:00",
+  "passed": true
+}

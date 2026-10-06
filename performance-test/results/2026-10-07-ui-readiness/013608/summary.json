@@ -1,0 +1,65 @@
+{
+  "startedAt": "2026-10-07T01:36:08.625733+09:00",
+  "tokenExpiresAt": "2026-10-14T01:35:51+09:00",
+  "tokenCount": 30,
+  "tokenFile": "/tmp/knockin-ngrinder-tokens.txt",
+  "containers": [
+    "ngrinder-controller",
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "memberIds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "calendarDate": "2026-10-07",
+  "activeKeywordProfile": "search-frequent-authenticated",
+  "deployments": [
+    {
+      "path": "CalendarDayListGetTest.groovy",
+      "revision": 308,
+      "sha256": "ba4f805214c67aabeaab26ef4f2ef902529f622fff0de7516c81f6c678dc658e"
+    }
+  ],
+  "validations": [
+    {
+      "script": "RoommateBoardListKeywordGetTest.groovy",
+      "passed": false,
+      "successes": null,
+      "errors": null
+    }
+  ],
+  "finishedAt": "2026-10-07T01:36:26.489237+09:00",
+  "passed": false
+}

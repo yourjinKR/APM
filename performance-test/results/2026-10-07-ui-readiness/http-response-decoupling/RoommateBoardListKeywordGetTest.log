@@ -1,0 +1,35 @@
+2026-10-06 17:16:24,344 INFO  Setting of nGrinder local DNS successfully
+2026-10-06 17:16:24,353 INFO  The Grinder version 3.9.1
+2026-10-06 17:16:24,359 INFO  OpenJDK Runtime Environment 11.0.22+7-LTS: OpenJDK 64-Bit Server VM (11.0.22+7-LTS, mixed mode) on Linux amd64 6.6.87.2-microsoft-standard-WSL2
+2026-10-06 17:16:24,368 INFO  time zone is UTC (+0000)
+2026-10-06 17:16:24,535 INFO  worker process 0 of agent number 0
+2026-10-06 17:16:24,569 INFO  Instrumentation agents: byte code transforming instrumenter for Java
+2026-10-06 17:16:26,408 INFO  ui-validation-1b5d08b09b794b49aba3514d858931e6
+2026-10-06 17:16:27,371 INFO  registered plug-in net.grinder.plugin.http.HTTPPlugin
+2026-10-06 17:16:27,601 INFO  Running "RoommateBoardListKeywordGetTest.groovy" using GroovyScriptEngine running with groovy version: 3.0.5
+2026-10-06 17:16:27,770 INFO  starting, will do 1 run
+2026-10-06 17:16:27,771 INFO  Start time is 1791306987771 ms since Epoch
+2026-10-06 17:16:28,228 INFO  http://host.docker.internal:8080/roommate/boards -> 200 , 12339 bytes
+2026-10-06 17:16:28,245 INFO  finished 1 run
+2026-10-06 17:16:28,249 INFO  elapsed time is 479 ms
+2026-10-06 17:16:28,250 INFO  Final statistics for this process:
+2026-10-06 17:16:28,264 INFO  
+             Tests        Errors       Mean Test    Test Time    TPS          Mean         Response     Response     Mean time to Mean time to Mean time to 
+                                       Time (ms)    Standard                  response     bytes per    errors       resolve host establish    first byte   
+                                                    Deviation                 length       second                                 connection                
+                                                    (ms)                                                                                                    
+
+Test 4104    1            0            417.00       0.00         2.09         12339.00     25759.92     0            0.00         67.00        379.00        "GET /roommate/boards search-frequent-authenticated"
+
+Totals       1            0            417.00       0.00         2.09         12339.00     25759.92     0            0.00         67.00        379.00       
+
+  Tests resulting in error only contribute to the Errors column.          
+  Statistics for individual tests can be found in the data file, including
+  (possibly incomplete) statistics for erroneous tests. Composite tests   
+  are marked with () and not included in the totals.                      
+
+
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2026-10-06 17:16:27,611 INFO  validation-0: Starting threads
+2026-10-06 17:16:28,264 INFO  validation-0: Finished

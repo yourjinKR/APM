@@ -1,6 +1,6 @@
 # nGrinder UI에서 조회 스크립트 실행하기
 
-확인일: 2026-10-05. 현재 환경은 Docker의 nGrinder Controller/Agent `3.5.9-p1`, Windows 호스트의 백엔드다. [스크립트 인덱스](../script/README.md)에서 API별 파일과 인증·데이터 조건을 확인한다.
+확인일: 2026-10-07. 현재 환경은 Docker의 nGrinder Controller/Agent `3.5.9-p1`, Windows 호스트의 백엔드다. [스크립트 인덱스](../script/README.md)에서 API별 파일과 인증·데이터 조건을 확인한다.
 
 ## 현재 로컬 환경의 실행 준비와 갱신
 
@@ -12,7 +12,38 @@
 python -B C:/dev/workspace/prography/APM/performance-test/tools/prepare-ngrinder-ui.py --backend-project C:/dev/workspace/KnockIn/back/11th-1team-BE
 ```
 
-기본 동작은 토큰/등록본 입력 갱신과 인증 검색 Validate 1회다. 토큰 유효기간은 백엔드 기본과 같은 7일이며, 결과 JSON에 정확한 만료 시각을 남긴다. JWT·서명 키는 결과/소스에 저장하지 않고 Controller와 Agent의 `/tmp/knockin-ngrinder-tokens.txt`에만 토큰을 둔다. 전체 단건 검증이 필요하면 `--validate-all`, Agent에서 인증 검색 1회도 확인하려면 `--verify-agent`를 추가한다. 반복 요청으로 인증 검색 이력·게시글 조회수·채팅 읽음 상태가 바뀔 수 있다.
+기본 동작은 토큰/등록본 입력·공통 리소스 갱신과 인증 검색 Validate 1회다. 토큰 유효기간은 백엔드 기본과 같은 7일이며, 결과 JSON에 정확한 만료 시각을 남긴다. JWT·서명 키는 결과/소스에 저장하지 않고 Controller와 Agent의 `/tmp/knockin-ngrinder-tokens.txt`에만 토큰을 둔다. 전체 단건 검증이 필요하면 `--validate-all`, Agent에서 인증 검색 1회도 확인하려면 `--verify-agent`를 추가한다. 반복 요청으로 인증 검색 이력·게시글 조회수·채팅 읽음 상태가 바뀔 수 있다.
+
+## 기본 부하 판정과 선택 응답 검증 (2026-10-07)
+
+목록·검색의 기본 실행은 **설정한 HTTP 상태와 통신 성공 여부**만 판정한다. 응답 본문을 JSON으로 파싱하지 않으므로 Page→Slice 변경이나 필드 추가·삭제로 부하 실행이 중단되지 않는다. 성공은 HTTP 요청 성공을 뜻하며 업무 결과의 정확성을 보증하지 않는다. 요청 URL·필터·인증 입력은 실제 API 요구사항에 맞춰 준비한다.
+
+`resources/roommate-board-list.json` 최상위 기본값은 다음과 같다.
+
+```json
+"expectedStatusCodes": [200],
+"responseValidator": null
+```
+
+기존 Page의 count·필터·정렬·노출/제외 검증이 필요할 때만 `responseValidator`를 `"resources/RoommateBoardPageContract.txt"`로 설정한다. 선택한 프로필 내부에 같은 키를 두면 최상위 값을 덮어쓴다. 프로필의 `responseValidator: null`은 해당 프로필의 검증을 끈다. HTTP 상태는 최상위/프로필의 `expectedStatusCodes`로 지정하며 누락 시 `[200]`이다. 기본 모드에서는 `inputs[].expect`를 생략할 수 있다. Page 검증을 켠 경우에만 기대 count·지역/방 유형 이름이 필요하다.
+
+Page 검증은 `totalElements`가 있는 응답에만 적용한다. 현재 Slice API에 선택하면 `CONTRACT_MISMATCH`와 `PAGE_TOTAL_ELEMENTS_REQUIRED`가 표시된다. 다른 응답 계약을 확인하려면 별도 txt 리소스에서 `static void validateInput(Map input)`과 `static void validateResponse(def response, Map input)`을 구현하고 경로를 지정한다. 검증기는 원본 응답을 받아 자체 파싱하며 공통 실행기에 응답 필드를 추가하지 않는다.
+
+준비 도구는 저장소의 공통 실행기와 Page 검증 리소스를 Controller에 자동 반영한다. JSON의 실행 프로필·입력·명시적으로 선택한 검증기는 유지한다. 따라서 도구 재실행으로 옵션이 몰래 꺼지지 않는다. Script 화면에서 최신 리비전을 선택한다. 결과 manifest/준비 summary에는 HTTP 상태 조건과 선택 검증기 경로가 기록된다. 본문·JWT는 개별 요청 CSV에 저장하지 않는다.
+
+| 준비 결과/오류 유형 | 의미 |
+|---|---|
+| `PASS` | Validate 1회 성공·오류 0건을 확인 |
+| `SETUP_FAILED` | 컴파일·리소스·설정·토큰 등 초기화 실패 |
+| `HTTP_REQUEST_FAILED` | 허용하지 않은 HTTP 상태, 예: 401/500 |
+| `TRANSPORT_FAILED` | 연결 실패·타임아웃; 뿌리 예외 클래스 확인 |
+| `CONTRACT_MISMATCH` | 선택한 검증기의 계약 불일치; 기본 모드에서는 발생하지 않음 |
+| `REQUEST_FAILED` | 기존 스크립트의 실행 오류; 로그에서 원인 확인 |
+| `RESULT_COLLECTION_FAILED` | 단건 Totals를 수집하지 못해 실행 결과 미확인; API 실패로 단정하지 않음 |
+
+nGrinder가 Validate API에서 stderr만 반환하면 준비 도구는 해당 실행에 삽입한 고유 표시와 일치하는 Controller 프로세스 로그를 읽는다. 다른 Validate 로그는 사용하지 않는다. 결과 디렉터리의 `.api.log`는 API 출력, `.log`는 판정에 사용한 로그이며 `summary.json`에 출처를 남긴다.
+
+[2026-10-07 변경 검증 기록](../results/2026-10-07-ui-readiness/http-response-decoupling/report.md): 기본 목록·인증 검색 Validate 각 1회와 Agent 인증 검색 1회(테스트 481)가 성공했다.
 
 ## 1. Script에서 실행 입력 준비
 
@@ -21,7 +52,7 @@ python -B C:/dev/workspace/prography/APM/performance-test/tools/prepare-ngrinder
 | 스크립트 종류 | 실행 전에 확인할 값 |
 |---|---|
 | 게시글 목록·검색 2개 | 같은 디렉터리의 `resources/RoommateBoardListSupport.txt`, `resources/roommate-board-list.json` 필요 |
-| 위 2개의 JSON | `baseUrl`, `runId`, `activeReadProfile`/`activeKeywordProfile`, 선택 프로필의 검색어·필터·기대 결과 |
+| 위 2개의 JSON | `baseUrl`, `runId`, `activeReadProfile`/`activeKeywordProfile`, 선택 프로필의 검색어·필터·허용 HTTP 상태·선택 검증기 |
 | 나머지 조회 15개 | `targetHost`, 실제 JWT의 `TOKEN_POOL`, 토큰 사용자가 접근 가능한 ID 풀 |
 | 월·일 캘린더 | 데이터가 존재하는 `YEAR`, `MONTH`, `DAY` |
 
@@ -54,7 +85,7 @@ Script의 `resources/roommate-board-list.json` 최상위에 `"tokenFile": "/tmp/
 
 2026-10-05 `RoommateBoardListKeywordGetTest.groovy`의 로그에서 `Controller test ID is required for unique sample directories`를 확인했다. 공통 리소스가 성능 테스트 전용 `grinder.test.id`를 Validate에도 요구한 문제였다. `grinder.script.validation=true`일 때만 UUID가 포함된 별도 출력 폴더를 쓰도록 원본과 Controller의 공통 리소스를 수정했다. 실제 성능 테스트의 ID·토큰 배정은 유지한다. Validate의 HTTP/응답 검증 실패도 예외로 표시한다.
 
-수정 후 기본 목록 Validate 2회 연속 통과와 실제 Agent 라이브러리의 오프라인 검증을 확인했다. 이후 인증 검색의 토큰 미설정을 해결하고, 17개 스크립트의 UI Validate를 각각 1회·오류 0건으로 확인했다. 인증 검색의 Agent 1 VU·1회 실행도 통과했다(테스트 449). 현재 준비한 토큰의 만료는 `2026-10-12T20:20:02+09:00`다. [검증 기록](../results/2026-10-04-entire-test/execution/ui-readiness-20261005/report.md)을 참조한다.
+수정 후 기본 목록 Validate 2회 연속 통과와 실제 Agent 라이브러리의 오프라인 검증을 확인했다. 이후 인증 검색의 토큰 미설정을 해결하고, 17개 스크립트의 UI Validate를 각각 1회·오류 0건으로 확인했다. 인증 검색의 Agent 1 VU·1회 실행도 통과했다(테스트 449). 이전 검증에서 준비한 토큰의 만료는 `2026-10-12T20:20:02+09:00`다. [검증 기록](../results/2026-10-04-entire-test/execution/ui-readiness-20261005/report.md)을 참조한다.
 
 | 오류 | 확인할 항목 |
 |---|---|
@@ -63,7 +94,8 @@ Script의 `resources/roommate-board-list.json` 최상위에 `"tokenFile": "/tmp/
 | `FileNotFoundException` | 누락된 resources 또는 실행 컨테이너에 없는 토큰 파일 |
 | `Token pool too small...` | Agent/process/thread slot에 필요한 토큰 수 |
 | `HTTP 401/403` | 토큰 만료·현재 DB 회원·데이터 접근 권한 |
-| `response_validation` | 선택 프로필의 기대 count·페이지·필터·현재 데이터 |
+| `CONTRACT_MISMATCH` / `contract_mismatch` | 선택 검증기의 계약과 현재 응답/fixture 비교; Page 검증에 Slice를 사용했는지 확인 |
+| 과거 `response_validation` | 예전 공통 리소스의 응답 검증 오류; 최신 리소스로 갱신 |
 
 ## 4. Performance Test → Create Test
 

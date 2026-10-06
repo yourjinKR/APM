@@ -16,6 +16,8 @@ APM 저장소가 성능 테스트 산출물의 관리 기준이다. 모든 명�
 - [검색 조회](./script/roommate/RoommateBoardListKeywordGetTest.groovy), GTest 4104. 인증 검색은 검색 기록 저장을 포함한다.
 - [17개 조건별 프로필](./script/roommate/resources/roommate-board-list.json), [설정·측정·전후 비교 가이드](./docs/roommate-board-list-testing.md).
 
+목록·검색은 기본적으로 HTTP 상태/통신만 판정한다. 응답 계약은 `responseValidator`로 선택하며, 설정과 UI 준비 명령은 [UI 가이드](./docs/ngrinder-ui-testing.md)를 따른다.
+
 Controller에 실행 스크립트와 같은 폴더의 resources를 함께 등록한다. 코드/설정 변경은 이 저장소에서 수행한 후 Controller에 반영하고 리비전을 기록한다. Controller runtime volume과 KnockIn에 수정용 복사본을 별도로 관리하지 않는다.
 
 ## 실행·집계·검증
@@ -25,7 +27,7 @@ bash performance-test/tools/run-ngrinder-load-stages.sh --help
 python performance-test/tools/summarize-roommate-board-samples.py --help
 python performance-test/tools/run-roommate-board-baseline.py --help
 python performance-test/tools/summarize-roommate-board-baseline.py --help
-python -B -m unittest discover -s performance-test/tools/tests -p test_roommate_board_samples.py
+python -B -m unittest discover -s performance-test/tools/tests -p "test_*.py"
 ```
 
 H2 시드별 자동 기동·측정은 `performance-test/tools/run-read-sequential.ps1`을 사용한다. 소스 빌드가 필요하면 `-BackendProject C:/dev/workspace/KnockIn/back/11th-1team-BE`를 명시하고, 기존 JAR은 `-JarPath`로 지정한다. 기존 서버에 대한 측정에는 백엔드 소스 경로가 필요 없다. 생성 결과와 관리형 서버 로그는 `results/` 아래로 모인다.

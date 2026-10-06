@@ -1,4 +1,6 @@
 {
+  "expectedStatusCodes": [200],
+  "responseValidator": null,
   "runId": "manual-validation-20261003-01",
   "baseUrl": "http://host.docker.internal:8080",
   "connectTimeoutMs": 5000,

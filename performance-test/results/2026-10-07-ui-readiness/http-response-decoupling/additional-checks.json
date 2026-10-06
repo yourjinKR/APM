@@ -1,0 +1,19 @@
+{
+  "validations": [
+    {
+      "script": "RoommateBoardListGetTest.groovy",
+      "passed": true,
+      "outcome": "PASSED",
+      "message": "One request succeeded",
+      "logSource": "api",
+      "successes": 1,
+      "errors": 0
+    }
+  ],
+  "sampleAgents": [
+    "apm-ngrinder-agent-1"
+  ],
+  "sampleComplete": true,
+  "sampleSuccesses": 1,
+  "sampleErrors": 0
+}

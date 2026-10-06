@@ -2,11 +2,13 @@
 
 `performance-test/script`에서 관리하는 실행 가능한 nGrinder 스크립트의 협업 인덱스다. 스크립트는 작성자별 폴더가 아니라 **도메인 폴더**에 배치하고, 추가·이동·삭제할 때 이 문서의 해당 표를 같은 변경에서 갱신한다.
 
-- 최종 갱신: 2026-10-05 — UI Validate 호환 수정 및 직접 실행 가이드 추가
+- 최종 갱신: 2026-10-07 — 목록·검색의 HTTP 부하 판정과 선택 응답 계약 분리
 - 기준 환경: nGrinder Controller/Agent `3.5.9-p1`, The Grinder `3.9.1`, Groovy `3.0.5`, JDK `11`
 - 공통 대상 주소: `http://host.docker.internal:8080`
 - 현재 범위: 조회 REST API
 - 현재 제외: SSE, WebSocket, 이미지 업로드, deprecated `/chat-requests/**`, 빈 DTO를 반환하는 `/roommate/matches/score`, `/roommates/me/calendar/{id}`
+
+목록·검색의 현재 기본 실행은 HTTP 상태/통신을 판정한다. 응답 검증은 JSON의 `responseValidator`로 선택한다. 기존 Page 검증 기록은 당시 응답 계약에 대한 결과이며 현재 Slice의 업무 정합성을 뜻하지 않는다. [설정·UI 실행 안내](../docs/ngrinder-ui-testing.md), [2026-10-07 변경 검증](../results/2026-10-07-ui-readiness/http-response-decoupling/report.md).
 
 ## 검증 상태 표기
 
