@@ -1,0 +1,32 @@
+{
+  "runId": "block-index-20261007-jit-warmup-vu10-r1-test_542",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "b0c4dcf8042a57d7b3c957b514250ba2a25e431f0b54643824b203fe4731bb99",
+  "sampleComplete": true,
+  "expectedRequests": 500,
+  "requests": 500,
+  "expectedWorkers": 10,
+  "workers": 10,
+  "successes": 500,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 139.57433600000002,
+  "successP50Ms": 129.056,
+  "successP95Ms": 243.087,
+  "successP99Ms": 276.958,
+  "observedAllP95Ms": 243.087,
+  "sampleSpanSeconds": 7.028366943359375,
+  "sampleSuccessRps": 71.14028109650933,
+  "inputs": {
+    "0": 500
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

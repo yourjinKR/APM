@@ -1,0 +1,115 @@
+{
+  "basis": "Median of per-run metrics; same code except Block entity index and repository predicate; both Slice/no count",
+  "groups": [
+    {
+      "vu": 10,
+      "before": {
+        "repetitions": 3,
+        "requests": 3000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 554.0378000000001,
+        "p95MsMedian": 644.979,
+        "p99MsMedian": 698.494,
+        "tpsMedian": 17.86,
+        "meanMsRange": [
+          546.5319300000001,
+          598.366576
+        ],
+        "spanSecondsRange": [
+          54.751037109375,
+          60.06097998046875
+        ],
+        "historyDelta": 3000,
+        "testIds": [
+          535,
+          537,
+          539
+        ]
+      },
+      "after": {
+        "repetitions": 3,
+        "requests": 3000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 30.173504,
+        "p95MsMedian": 46.542,
+        "p99MsMedian": 73.552,
+        "tpsMedian": 235.13,
+        "meanMsRange": [
+          25.971011999999998,
+          93.258373
+        ],
+        "spanSecondsRange": [
+          2.686153076171875,
+          9.436052978515624
+        ],
+        "historyDelta": 3000,
+        "testIds": [
+          543,
+          545,
+          547
+        ]
+      },
+      "meanReductionPercent": 94.55389072731138,
+      "p95ReductionPercent": 92.78395110538482,
+      "p99ReductionPercent": 89.4699167065143,
+      "tpsIncreasePercent": 1216.5173572228443
+    },
+    {
+      "vu": 30,
+      "before": {
+        "repetitions": 3,
+        "requests": 9000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 1620.6038130000002,
+        "p95MsMedian": 2134.396,
+        "p99MsMedian": 2390.043,
+        "tpsMedian": 18.36,
+        "meanMsRange": [
+          1580.5976616666667,
+          1650.8043316666667
+        ],
+        "spanSecondsRange": [
+          160.01035498046875,
+          166.84493408203124
+        ],
+        "historyDelta": 9000,
+        "testIds": [
+          536,
+          538,
+          540
+        ]
+      },
+      "after": {
+        "repetitions": 3,
+        "requests": 9000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 83.34957566666667,
+        "p95MsMedian": 130.129,
+        "p99MsMedian": 180.886,
+        "tpsMedian": 340.44,
+        "meanMsRange": [
+          75.40981166666667,
+          90.287299
+        ],
+        "spanSecondsRange": [
+          7.7314990234375,
+          9.232212890625
+        ],
+        "historyDelta": 9000,
+        "testIds": [
+          544,
+          546,
+          548
+        ]
+      },
+      "meanReductionPercent": 94.85688142912775,
+      "p95ReductionPercent": 93.90324007353837,
+      "p99ReductionPercent": 92.43168428350452,
+      "tpsIncreasePercent": 1754.248366013072
+    }
+  ]
+}

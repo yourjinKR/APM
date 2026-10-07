@@ -1,0 +1,4 @@
+﻿variant,phase,vu,repeat,testId,requests,successes,errors,errorRatePercent,controllerTps,meanMs,p95Ms,p99Ms,sampleSpanSeconds,historyDelta,requestAccountingPassed,historyConsistentWithOutcomes,accountingPassed,passed
+current-steady,smoke-warmup,1,1,549,20,20,0,0.0,10.0,23.24875,24.078,82.258,0.48410888671875,20,True,True,True,True
+current-steady,jit-warmup,30,1,550,6000,6000,0,0.0,245.11,120.41530416666666,249.008,397.176,24.51231298828125,6000,True,True,True,True
+current-steady,steady-observation,30,1,551,34950,34948,2,0.005722460658082976,358.07,82.35160269543321,123.784,171.071,97.84398706054688,34948,True,True,False,False

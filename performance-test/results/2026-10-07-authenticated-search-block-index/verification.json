@@ -1,0 +1,39 @@
+{
+  "verifiedAtKst": "2026-10-07T19:36:14.759460+09:00",
+  "variants": {
+    "before-or": {
+      "runs": 6,
+      "loadRequests": 12000,
+      "allRequestAccountingPassed": true,
+      "allStrictAccountingPassed": true,
+      "historyConsistentWithOutcomes": true,
+      "historyDelta": 12000,
+      "errors": 0,
+      "contentExecutionsPer10Requests": 10,
+      "countExecutionsPer10Requests": 0,
+      "blockNotExistsSubqueries": 1,
+      "newCompositeIndexExists": false,
+      "newCompositeIndexUsedByFocusedPlan": false,
+      "cleanupVerified": true
+    },
+    "after-index-and": {
+      "runs": 6,
+      "loadRequests": 12000,
+      "allRequestAccountingPassed": true,
+      "allStrictAccountingPassed": true,
+      "historyConsistentWithOutcomes": true,
+      "historyDelta": 12000,
+      "errors": 0,
+      "contentExecutionsPer10Requests": 10,
+      "countExecutionsPer10Requests": 0,
+      "blockNotExistsSubqueries": 2,
+      "newCompositeIndexExists": true,
+      "newCompositeIndexUsedByFocusedPlan": true,
+      "cleanupVerified": true
+    }
+  },
+  "conditionsMatched": true,
+  "memberFirstPageResultsMatched": 30,
+  "measurementComplete": true,
+  "allRunsErrorFree": true
+}

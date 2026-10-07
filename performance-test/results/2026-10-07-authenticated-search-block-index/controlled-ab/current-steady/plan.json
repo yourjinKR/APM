@@ -1,0 +1,8 @@
+{
+  "purpose": "Current implementation observed longer because comparison runs became short; excluded from before/after improvement medians",
+  "vu": 30,
+  "requestsPerVu": 1165,
+  "plannedRequests": 34950,
+  "targetSeconds": 90,
+  "estimatedRateFromControlled30Vu": 388.02307171037717
+}

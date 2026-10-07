@@ -1,0 +1,13 @@
+{
+  "preparedAtKst": "2026-10-07T19:04:19.493808+09:00",
+  "backendCommit": "0525d702e26fe3769449f1e254077700271ae3b9",
+  "backendOriginalStatus": [
+    "M src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java",
+    " M src/main/java/org/example/knockin/member/entity/Block.java",
+    " M src/main/resources/application-test.properties"
+  ],
+  "existingBackend8080Listening": true,
+  "measurementPort": 18080,
+  "comparison": "Current HEAD Slice with OR/no new Block composite index versus working-tree Slice with two NOT EXISTS AND and Block composite index",
+  "previousReport": "../2026-10-07-authenticated-search-count-removal/report.md"
+}

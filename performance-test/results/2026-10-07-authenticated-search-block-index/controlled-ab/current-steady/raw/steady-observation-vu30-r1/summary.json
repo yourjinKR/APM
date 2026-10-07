@@ -1,0 +1,49 @@
+{
+  "label": "steady-observation-vu30-r1",
+  "phase": "steady-observation",
+  "vu": 30,
+  "repeat": 1,
+  "testId": 551,
+  "requestsPerVu": 1165,
+  "expectedRequests": 34950,
+  "status": "FINISHED",
+  "controllerSuccesses": 34948,
+  "controllerErrors": 2,
+  "controllerTps": 358.07,
+  "controllerMeanMs": 82.33,
+  "configRevision": 357,
+  "sampleAgents": [
+    "apm-ngrinder-agent-1"
+  ],
+  "historyBefore": {
+    "total": 7056,
+    "testMembersKeyword": 6051
+  },
+  "historyAfter": {
+    "total": 42004,
+    "testMembersKeyword": 40999
+  },
+  "historyDelta": 34948,
+  "memberKeywordHistoryDelta": 34948,
+  "requests": 34950,
+  "successes": 34948,
+  "errors": 2,
+  "errorRatePercent": 0.005722460658082976,
+  "meanMs": 82.35160269543321,
+  "p95Ms": 123.784,
+  "p99Ms": 171.071,
+  "sampleSpanSeconds": 97.84398706054688,
+  "sampleComplete": true,
+  "failures": {
+    "ExecutionException": 2
+  },
+  "transportFailureRoots": {
+    "SocketTimeoutException": 2
+  },
+  "startTime": 1791369127988,
+  "finishTime": 1791369229222,
+  "accountingPassed": false,
+  "requestAccountingPassed": true,
+  "historyConsistentWithOutcomes": true,
+  "passed": false
+}

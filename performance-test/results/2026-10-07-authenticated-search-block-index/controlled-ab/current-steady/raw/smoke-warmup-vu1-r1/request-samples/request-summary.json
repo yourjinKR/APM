@@ -1,0 +1,32 @@
+{
+  "runId": "block-index-20261007-smoke-warmup-vu1-r1-test_549",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "c4d426779a47d19ba5bb53b0bbf6b848d4d06e10facdf0e880a566bf95388d3d",
+  "sampleComplete": true,
+  "expectedRequests": 20,
+  "requests": 20,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 23.24875,
+  "successP50Ms": 19.455,
+  "successP95Ms": 24.078,
+  "successP99Ms": 82.258,
+  "observedAllP95Ms": 24.078,
+  "sampleSpanSeconds": 0.48410888671875,
+  "sampleSuccessRps": 41.31301975379619,
+  "inputs": {
+    "0": 20
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

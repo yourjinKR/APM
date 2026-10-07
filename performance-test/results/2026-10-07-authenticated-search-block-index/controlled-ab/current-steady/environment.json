@@ -1,0 +1,82 @@
+{
+  "variant": "current-steady",
+  "startedAtKst": "2026-10-07T19:30:45.612343+09:00",
+  "backendUrl": "http://localhost:18080",
+  "launch": "Owned isolated Java 21 executable JAR",
+  "javaOptions": [
+    "-Xms512m",
+    "-Xmx2g"
+  ],
+  "sqlLogging": false,
+  "executionTimeAspectLogger": "OFF",
+  "defaultTieredCompilation": true,
+  "jarSha256": "785a7d3667acdebad705d10e0bc7346c14936e9f3de306b1430c784b1659d2a8",
+  "sourceHashes": {
+    "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "797df198442815998b4fb6d082fa0b29aa171f754d3f55e0b88c5f7be752744d",
+    "src/main/java/org/example/knockin/member/entity/Block.java": "cc02ed83188321ea791dbbab932fec660668e1f2b8bcd83eb10cd8ca0da3bec8"
+  },
+  "actualCounts": {
+    "MEMBER": 2004,
+    "ROOMMATE_BOARD": 1002,
+    "BLOCK": 1001,
+    "SEARCH": 1005,
+    "STATE": 2003
+  },
+  "memberIds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "profile": "search-frequent-authenticated",
+  "keyword": "부하 테스트 게시글",
+  "query": {
+    "page": 0,
+    "size": 20,
+    "sort": "createdAt,DESC"
+  },
+  "agentCount": 1,
+  "processes": 1,
+  "vusers": [
+    30
+  ],
+  "requestsPerVu": 1165,
+  "repetitions": 1,
+  "cooldownSeconds": 15,
+  "connectTimeoutMs": 5000,
+  "socketTimeoutMs": 15000,
+  "connectionReset": false,
+  "rampUp": false,
+  "responseValidator": null,
+  "historyPolicy": "Append-only, fresh same seed for each variant",
+  "warmup": "1 VU x20 then 30 VU x200 (6000 requests); supplemental current-version observation",
+  "tokenExpiresAt": "2026-10-07T21:30:45+09:00",
+  "tokenFile": "/tmp/knockin-block-ab-current-steady-1791369045.txt",
+  "finishedAtKst": "2026-10-07T19:34:15.763763+09:00"
+}

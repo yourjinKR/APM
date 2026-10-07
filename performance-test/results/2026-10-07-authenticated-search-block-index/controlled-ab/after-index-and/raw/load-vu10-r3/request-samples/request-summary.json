@@ -1,0 +1,32 @@
+{
+  "runId": "block-index-20261007-load-vu10-r3-test_547",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "6ca35eb6fccc863b117fb0f515a203acc4e2f9e71c50dd6265760febfa711706",
+  "sampleComplete": true,
+  "expectedRequests": 1000,
+  "requests": 1000,
+  "expectedWorkers": 10,
+  "workers": 10,
+  "successes": 1000,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 25.971011999999998,
+  "successP50Ms": 24.241,
+  "successP95Ms": 37.916,
+  "successP99Ms": 50.363,
+  "observedAllP95Ms": 37.916,
+  "sampleSpanSeconds": 2.686153076171875,
+  "sampleSuccessRps": 372.27960270422597,
+  "inputs": {
+    "0": 1000
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

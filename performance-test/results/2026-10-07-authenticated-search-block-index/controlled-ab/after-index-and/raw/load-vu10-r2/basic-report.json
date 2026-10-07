@@ -1,0 +1,77 @@
+{
+  "test": {
+    "id": 545,
+    "createdAt": 1791368843987,
+    "createdBy": {
+      "id": 1,
+      "userId": "admin",
+      "userName": "admin",
+      "email": "ngrinder-admin@naver.com"
+    },
+    "lastModifiedAt": 1791368843987,
+    "lastModifiedBy": {
+      "id": 1,
+      "userId": "admin",
+      "userName": "admin",
+      "email": "ngrinder-admin@naver.com"
+    },
+    "testName": "block-index-auth-search-load-vu10-r2-1791368843",
+    "tagString": "",
+    "description": "Controlled Slice Block OR vs composite index/two NOT EXISTS AND; H2 seed1000; Java21 JAR; HTTP-only; SQL OFF",
+    "status": {
+      "category": "FINISHED",
+      "deletable": true,
+      "iconName": "green.png",
+      "stoppable": false,
+      "reportable": true,
+      "springMessageKey": "perftest.status.finished",
+      "name": "FINISHED"
+    },
+    "ignoreSampleCount": 0,
+    "startTime": 1791368849011,
+    "finishTime": 1791368856294,
+    "targetHosts": "host.docker.internal",
+    "useRampUp": false,
+    "rampUpType": "PROCESS",
+    "threshold": "R",
+    "scm": "svn",
+    "scriptName": "RoommateBoardListKeywordGetTest.groovy",
+    "duration": 60000,
+    "runCount": 100,
+    "agentCount": 1,
+    "vuserPerAgent": 10,
+    "processes": 1,
+    "rampUpInitCount": 0,
+    "rampUpInitSleepTime": 0,
+    "rampUpStep": 1,
+    "rampUpIncrementInterval": 1000,
+    "threads": 10,
+    "tests": 1000,
+    "errors": 0,
+    "meanTestTime": 30.13,
+    "tps": 235.13,
+    "peakTps": 326.0,
+    "progressMessage": "Distribution files are being prepared.\nDistribution files are prepared.\nConsole is being prepared.\nConsole is started on port 12002\n1 agents are starting.\n1 agents are ready.\nAll necessary files are being distributed.\n - resources/roommate-board-list.json\nAll necessary files are distributed.\nThe test is ready to start.\nThe test is started.\n",
+    "lastProgressMessage": "The test is successfully finished.",
+    "testComment": "",
+    "scriptRevision": "350",
+    "stopRequest": false,
+    "region": "NONE",
+    "safeDistribution": false,
+    "ignoreTooManyError": false,
+    "connectionReset": false,
+    "samplingInterval": 2,
+    "param": "",
+    "gitHubScm": false,
+    "runtime": "00:00:07"
+  },
+  "tps": [
+    326.0,
+    null,
+    174.0
+  ],
+  "chartInterval": 2,
+  "logs": [
+    "62dbb23e4b8e--log.zip"
+  ]
+}

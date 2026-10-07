@@ -1,0 +1,369 @@
+{
+  "note": "Only intervals with increasing server request counts; 5-second samples, observed peaks rather than exact maxima",
+  "runs": [
+    {
+      "variant": "before-or",
+      "testId": 535,
+      "vu": 10,
+      "repeat": 1,
+      "activeRequestScrapes": 10,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.38415314236400944,
+        "max": 0.426611492293987
+      },
+      "system_cpu_usage": {
+        "median": 0.5840991828162401,
+        "max": 0.6220928972406145
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 304520592.0,
+        "max": 435875960.0
+      }
+    },
+    {
+      "variant": "before-or",
+      "testId": 536,
+      "vu": 30,
+      "repeat": 1,
+      "activeRequestScrapes": 27,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.3989260070099602,
+        "max": 0.4253229307601329
+      },
+      "system_cpu_usage": {
+        "median": 0.5812229986500461,
+        "max": 0.605248183089375
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 20.0,
+        "max": 20.0
+      },
+      "heapUsedBytes": {
+        "median": 346086656.0,
+        "max": 447037408.0
+      }
+    },
+    {
+      "variant": "before-or",
+      "testId": 537,
+      "vu": 10,
+      "repeat": 2,
+      "activeRequestScrapes": 10,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.40507794978670253,
+        "max": 0.432949403013917
+      },
+      "system_cpu_usage": {
+        "median": 0.5868633943830048,
+        "max": 0.5986742710100057
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 307554552.0,
+        "max": 413095768.0
+      }
+    },
+    {
+      "variant": "before-or",
+      "testId": 538,
+      "vu": 30,
+      "repeat": 2,
+      "activeRequestScrapes": 26,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.4158419552331455,
+        "max": 0.437167437755139
+      },
+      "system_cpu_usage": {
+        "median": 0.5596923926737488,
+        "max": 0.608485139517198
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 20.0,
+        "max": 20.0
+      },
+      "heapUsedBytes": {
+        "median": 261538708.0,
+        "max": 419420944.0
+      }
+    },
+    {
+      "variant": "before-or",
+      "testId": 539,
+      "vu": 10,
+      "repeat": 3,
+      "activeRequestScrapes": 9,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.39416423411820584,
+        "max": 0.4187506066130527
+      },
+      "system_cpu_usage": {
+        "median": 0.5965835823498339,
+        "max": 0.6705017126446416
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 378128528.0,
+        "max": 439674056.0
+      }
+    },
+    {
+      "variant": "before-or",
+      "testId": 540,
+      "vu": 30,
+      "repeat": 3,
+      "activeRequestScrapes": 26,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.3996535797311258,
+        "max": 0.42799992435205636
+      },
+      "system_cpu_usage": {
+        "median": 0.5828762061141683,
+        "max": 0.618827931174003
+      },
+      "hikaricp_connections_active": {
+        "median": 10.0,
+        "max": 10.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 19.5,
+        "max": 20.0
+      },
+      "heapUsedBytes": {
+        "median": 330129084.0,
+        "max": 455107144.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 543,
+      "vu": 10,
+      "repeat": 1,
+      "activeRequestScrapes": 2,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.23929560038290384,
+        "max": 0.28345308369427435
+      },
+      "system_cpu_usage": {
+        "median": 0.7351765875665579,
+        "max": 0.8249117036501254
+      },
+      "hikaricp_connections_active": {
+        "median": 3.0,
+        "max": 6.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 292809232.0,
+        "max": 391334552.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 544,
+      "vu": 30,
+      "repeat": 1,
+      "activeRequestScrapes": 2,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.4676037125470759,
+        "max": 0.6551354734418127
+      },
+      "system_cpu_usage": {
+        "median": 0.8653914422813096,
+        "max": 0.9755716493004217
+      },
+      "hikaricp_connections_active": {
+        "median": 3.5,
+        "max": 6.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 233072836.0,
+        "max": 315409272.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 545,
+      "vu": 10,
+      "repeat": 2,
+      "activeRequestScrapes": 1,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.30087341999439954,
+        "max": 0.30087341999439954
+      },
+      "system_cpu_usage": {
+        "median": 0.7751005233021925,
+        "max": 0.7751005233021925
+      },
+      "hikaricp_connections_active": {
+        "median": 4.0,
+        "max": 4.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 202700416.0,
+        "max": 202700416.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 546,
+      "vu": 30,
+      "repeat": 2,
+      "activeRequestScrapes": 3,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.2773004931799632,
+        "max": 0.6497947490524336
+      },
+      "system_cpu_usage": {
+        "median": 0.6079663565330834,
+        "max": 0.9797430676987783
+      },
+      "hikaricp_connections_active": {
+        "median": 5.0,
+        "max": 6.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 253874464.0,
+        "max": 438836480.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 547,
+      "vu": 10,
+      "repeat": 3,
+      "activeRequestScrapes": 1,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.3058033011010876,
+        "max": 0.3058033011010876
+      },
+      "system_cpu_usage": {
+        "median": 0.8193485955401083,
+        "max": 0.8193485955401083
+      },
+      "hikaricp_connections_active": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 441460200.0,
+        "max": 441460200.0
+      }
+    },
+    {
+      "variant": "after-index-and",
+      "testId": 548,
+      "vu": 30,
+      "repeat": 3,
+      "activeRequestScrapes": 2,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.364848940561705,
+        "max": 0.6602010240369199
+      },
+      "system_cpu_usage": {
+        "median": 0.7122429789884397,
+        "max": 0.9854445596926749
+      },
+      "hikaricp_connections_active": {
+        "median": 5.0,
+        "max": 6.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 287037624.0,
+        "max": 366109200.0
+      }
+    },
+    {
+      "variant": "current-steady",
+      "testId": 551,
+      "vu": 30,
+      "repeat": 1,
+      "activeRequestScrapes": 17,
+      "samplingIntervalSeconds": 5,
+      "process_cpu_usage": {
+        "median": 0.6065817487221206,
+        "max": 0.6744099192177774
+      },
+      "system_cpu_usage": {
+        "median": 0.9663791637706289,
+        "max": 0.9771304894509474
+      },
+      "hikaricp_connections_active": {
+        "median": 5.0,
+        "max": 7.0
+      },
+      "hikaricp_connections_pending": {
+        "median": 0.0,
+        "max": 0.0
+      },
+      "heapUsedBytes": {
+        "median": 238248160.0,
+        "max": 408032312.0
+      }
+    }
+  ]
+}

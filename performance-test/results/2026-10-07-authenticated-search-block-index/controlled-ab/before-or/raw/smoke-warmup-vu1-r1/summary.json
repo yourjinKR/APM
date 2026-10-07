@@ -1,0 +1,45 @@
+{
+  "label": "smoke-warmup-vu1-r1",
+  "phase": "smoke-warmup",
+  "vu": 1,
+  "repeat": 1,
+  "testId": 533,
+  "requestsPerVu": 20,
+  "expectedRequests": 20,
+  "status": "FINISHED",
+  "controllerSuccesses": 20,
+  "controllerErrors": 0,
+  "controllerTps": 4.95,
+  "controllerMeanMs": 206.95,
+  "configRevision": 337,
+  "sampleAgents": [
+    "apm-ngrinder-agent-1"
+  ],
+  "historyBefore": {
+    "total": 1036,
+    "testMembersKeyword": 31
+  },
+  "historyAfter": {
+    "total": 1056,
+    "testMembersKeyword": 51
+  },
+  "historyDelta": 20,
+  "memberKeywordHistoryDelta": 20,
+  "requests": 20,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "meanMs": 207.03699999999998,
+  "p95Ms": 235.694,
+  "p99Ms": 251.81,
+  "sampleSpanSeconds": 4.15955810546875,
+  "sampleComplete": true,
+  "failures": {},
+  "transportFailureRoots": {},
+  "startTime": 1791367765649,
+  "finishTime": 1791367772721,
+  "accountingPassed": true,
+  "requestAccountingPassed": true,
+  "historyConsistentWithOutcomes": true,
+  "passed": true
+}

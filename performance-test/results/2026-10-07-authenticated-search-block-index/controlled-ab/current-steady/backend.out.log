@@ -1,0 +1,56 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-10-07T19:30:28.490+09:00  INFO 27352 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : Starting KnockInApplication v0.0.1-SNAPSHOT using Java 21.0.8 with PID 27352 (C:\dev\workspace\KnockIn\tmp\block-index-measurement\after-index-and\build\libs\KnockIn-0.0.1-SNAPSHOT.jar started by young in C:\dev\workspace\KnockIn\tmp\block-index-measurement\after-index-and)
+2026-10-07T19:30:28.508+09:00  INFO 27352 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : The following 3 profiles are active: "secret-common", "test", "secret-test"
+2026-10-07T19:30:31.021+09:00  INFO 27352 --- [KnockIn] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-07T19:30:31.540+09:00  INFO 27352 --- [KnockIn] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 506 ms. Found 75 JPA repository interfaces.
+2026-10-07T19:30:31.877+09:00  WARN 27352 --- [KnockIn] [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'springdocQuerydslConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static' and/or marking the containing configuration class as 'proxyBeanMethods=false'.
+2026-10-07T19:30:32.845+09:00  INFO 27352 --- [KnockIn] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 18080 (http)
+2026-10-07T19:30:32.862+09:00  INFO 27352 --- [KnockIn] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-07T19:30:32.862+09:00  INFO 27352 --- [KnockIn] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-10-07T19:30:32.911+09:00  INFO 27352 --- [KnockIn] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4257 ms
+2026-10-07T19:30:33.465+09:00  INFO 27352 --- [KnockIn] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-07T19:30:33.581+09:00  INFO 27352 --- [KnockIn] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-10-07T19:30:34.298+09:00  INFO 27352 --- [KnockIn] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-07T19:30:34.335+09:00  INFO 27352 --- [KnockIn] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-07T19:30:34.454+09:00  INFO 27352 --- [KnockIn] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-07T19:30:34.454+09:00  INFO 27352 --- [KnockIn] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-07T19:30:34.489+09:00  WARN 27352 --- [KnockIn] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07T19:30:34.505+09:00  INFO 27352 --- [KnockIn] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.3.232
+	Default catalog/schema: TESTDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-07T19:30:36.401+09:00  INFO 27352 --- [KnockIn] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07T19:30:36.572+09:00  INFO 27352 --- [KnockIn] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-07T19:30:36.761+09:00  INFO 27352 --- [KnockIn] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-07T19:30:38.205+09:00  INFO 27352 --- [KnockIn] [           main] o.e.k.global.config.FirebaseConfig       : Successfully initialized firebase app
+2026-10-07T19:30:39.054+09:00  WARN 27352 --- [KnockIn] [           main] o.s.aop.framework.CglibAopProxy          : Public final method [public final void org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService.setRequestEntityConverter(org.springframework.core.convert.converter.Converter)] cannot get proxied via CGLIB, consider removing the final marker or using interface-based JDK proxies.
+2026-10-07T19:30:39.054+09:00  WARN 27352 --- [KnockIn] [           main] o.s.aop.framework.CglibAopProxy          : Public final method [public final void org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService.setRestOperations(org.springframework.web.client.RestOperations)] cannot get proxied via CGLIB, consider removing the final marker or using interface-based JDK proxies.
+2026-10-07T19:30:39.411+09:00  WARN 27352 --- [KnockIn] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07T19:30:40.475+09:00  INFO 27352 --- [KnockIn] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-10-07T19:30:40.538+09:00  INFO 27352 --- [KnockIn] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-10-07T19:30:40.592+09:00  INFO 27352 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-10-07T19:30:40.594+09:00  INFO 27352 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@36e8fffc]]
+2026-10-07T19:30:40.594+09:00  INFO 27352 --- [KnockIn] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-10-07T19:30:40.605+09:00  INFO 27352 --- [KnockIn] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 18080 (http) with context path '/'
+2026-10-07T19:30:40.614+09:00  INFO 27352 --- [KnockIn] [           main] org.example.knockin.KnockInApplication   : Started KnockInApplication in 12.782 seconds (process running for 13.802)
+2026-10-07T19:30:41.005+09:00  INFO 27352 --- [KnockIn] [io-18080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07T19:30:41.006+09:00  INFO 27352 --- [KnockIn] [io-18080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-07T19:30:41.009+09:00  INFO 27352 --- [KnockIn] [io-18080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-10-07T19:31:40.574+09:00  INFO 27352 --- [KnockIn] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]

@@ -1,0 +1,20 @@
+[
+  {
+    "variant": "before-or",
+    "jarPath": "C:\\dev\\workspace\\KnockIn\\tmp\\block-index-measurement\\before-or\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+    "jarSha256": "a3db15e49e0df8a92c4bccc065d66f4790dd8996967d7823bf779ee32e931ca7",
+    "sourceHashes": {
+      "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "3662cf90212581a606d5e00c291e467b0194eb8751ecf8e1f7ec3a455f159f9b",
+      "src/main/java/org/example/knockin/member/entity/Block.java": "866b20299325b8d9d917a68207b08ae9e092e6f0213db1348d35a48ba8a24605"
+    }
+  },
+  {
+    "variant": "after-index-and",
+    "jarPath": "C:\\dev\\workspace\\KnockIn\\tmp\\block-index-measurement\\after-index-and\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+    "jarSha256": "785a7d3667acdebad705d10e0bc7346c14936e9f3de306b1430c784b1659d2a8",
+    "sourceHashes": {
+      "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "797df198442815998b4fb6d082fa0b29aa171f754d3f55e0b88c5f7be752744d",
+      "src/main/java/org/example/knockin/member/entity/Block.java": "cc02ed83188321ea791dbbab932fec660668e1f2b8bcd83eb10cd8ca0da3bec8"
+    }
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "indexes": [
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "PRIMARY_KEY_3C",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "INDEX_TYPE_NAME": "PRIMARY KEY",
+      "NULLS_DISTINCT": "null",
+      "IS_GENERATED": "TRUE",
+      "REMARKS": "null",
+      "INDEX_CLASS": "org.h2.mvstore.db.MVDelegateIndex"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "IDX_BLOCK_BLOCKER_BLOCKED_DELETED",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "INDEX_TYPE_NAME": "INDEX",
+      "NULLS_DISTINCT": "null",
+      "IS_GENERATED": "FALSE",
+      "REMARKS": "null",
+      "INDEX_CLASS": "org.h2.mvstore.db.MVSecondaryIndex"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "FKS7Y2QYKJFJ3YTFOEWWJWJAQ7T_INDEX_3",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "INDEX_TYPE_NAME": "INDEX",
+      "NULLS_DISTINCT": "null",
+      "IS_GENERATED": "TRUE",
+      "REMARKS": "null",
+      "INDEX_CLASS": "org.h2.mvstore.db.MVSecondaryIndex"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "FKO3Q4WV2UEN3DEGJX9Q27GXYDT_INDEX_3",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "INDEX_TYPE_NAME": "INDEX",
+      "NULLS_DISTINCT": "null",
+      "IS_GENERATED": "TRUE",
+      "REMARKS": "null",
+      "INDEX_CLASS": "org.h2.mvstore.db.MVSecondaryIndex"
+    }
+  ],
+  "indexColumns": [
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "FKO3Q4WV2UEN3DEGJX9Q27GXYDT_INDEX_3",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "BLOCKER_ID",
+      "ORDINAL_POSITION": "1",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "FIRST",
+      "IS_UNIQUE": "FALSE"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "FKS7Y2QYKJFJ3YTFOEWWJWJAQ7T_INDEX_3",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "BLOCKED_ID",
+      "ORDINAL_POSITION": "1",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "FIRST",
+      "IS_UNIQUE": "FALSE"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "IDX_BLOCK_BLOCKER_BLOCKED_DELETED",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "BLOCKER_ID",
+      "ORDINAL_POSITION": "1",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "FIRST",
+      "IS_UNIQUE": "FALSE"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "IDX_BLOCK_BLOCKER_BLOCKED_DELETED",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "BLOCKED_ID",
+      "ORDINAL_POSITION": "2",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "FIRST",
+      "IS_UNIQUE": "FALSE"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "IDX_BLOCK_BLOCKER_BLOCKED_DELETED",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "IS_DELETED",
+      "ORDINAL_POSITION": "3",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "FIRST",
+      "IS_UNIQUE": "FALSE"
+    },
+    {
+      "INDEX_CATALOG": "TESTDB",
+      "INDEX_SCHEMA": "PUBLIC",
+      "INDEX_NAME": "PRIMARY_KEY_3C",
+      "TABLE_CATALOG": "TESTDB",
+      "TABLE_SCHEMA": "PUBLIC",
+      "TABLE_NAME": "BLOCK",
+      "COLUMN_NAME": "ID",
+      "ORDINAL_POSITION": "1",
+      "ORDERING_SPECIFICATION": "ASC",
+      "NULL_ORDERING": "null",
+      "IS_UNIQUE": "TRUE"
+    }
+  ],
+  "newCompositeIndexExists": true
+}

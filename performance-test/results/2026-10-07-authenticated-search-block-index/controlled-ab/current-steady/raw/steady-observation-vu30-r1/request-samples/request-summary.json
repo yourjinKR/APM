@@ -1,0 +1,36 @@
+{
+  "runId": "block-index-20261007-steady-observation-vu30-r1-test_551",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "2a63c9e31d9b007640f271c08e57caefe105612af5a4b2f7fa45172da3981d6b",
+  "sampleComplete": true,
+  "expectedRequests": 34950,
+  "requests": 34950,
+  "expectedWorkers": 30,
+  "workers": 30,
+  "successes": 34948,
+  "errors": 2,
+  "errorRatePercent": 0.005722460658082976,
+  "failures": {
+    "ExecutionException": 2
+  },
+  "transportFailureRoots": {
+    "SocketTimeoutException": 2
+  },
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 82.35160269543321,
+  "successP50Ms": 80.999,
+  "successP95Ms": 123.784,
+  "successP99Ms": 171.071,
+  "observedAllP95Ms": 123.813,
+  "sampleSpanSeconds": 97.84398706054688,
+  "sampleSuccessRps": 357.1808656813404,
+  "inputs": {
+    "0": 34950
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

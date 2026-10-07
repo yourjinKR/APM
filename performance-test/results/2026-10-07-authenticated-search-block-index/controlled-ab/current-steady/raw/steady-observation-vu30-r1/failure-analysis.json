@@ -1,0 +1,40 @@
+{
+  "testId": 551,
+  "failures": [
+    {
+      "source": "a0-p0-t5.csv",
+      "runId": "block-index-20261007-steady-observation-vu30-r1-test_551",
+      "profile": "search-frequent-authenticated",
+      "agent": "0",
+      "process": "0",
+      "thread": "5",
+      "iteration": "1000",
+      "inputIndex": "0",
+      "startedAtEpochMs": "1791369214349",
+      "elapsedMs": "5039.674",
+      "httpStatus": "0",
+      "success": "false",
+      "failure": "ExecutionException",
+      "failureRoot": "SocketTimeoutException",
+      "responseBytes": "0"
+    },
+    {
+      "source": "a0-p0-t9.csv",
+      "runId": "block-index-20261007-steady-observation-vu30-r1-test_551",
+      "profile": "search-frequent-authenticated",
+      "agent": "0",
+      "process": "0",
+      "thread": "9",
+      "iteration": "1000",
+      "inputIndex": "0",
+      "startedAtEpochMs": "1791369215741",
+      "elapsedMs": "5652.724",
+      "httpStatus": "0",
+      "success": "false",
+      "failure": "ExecutionException",
+      "failureRoot": "SocketTimeoutException",
+      "responseBytes": "0"
+    }
+  ],
+  "note": "Both timeout samples were iteration 1000 with HTTP status 0; exact timeout stage is not proved by Throwable cause names alone."
+}

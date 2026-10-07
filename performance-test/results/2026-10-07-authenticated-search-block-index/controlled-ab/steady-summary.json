@@ -1,0 +1,147 @@
+[
+  {
+    "variant": "current-steady",
+    "runs": [
+      {
+        "label": "smoke-warmup-vu1-r1",
+        "phase": "smoke-warmup",
+        "vu": 1,
+        "repeat": 1,
+        "testId": 549,
+        "requestsPerVu": 20,
+        "expectedRequests": 20,
+        "status": "FINISHED",
+        "controllerSuccesses": 20,
+        "controllerErrors": 0,
+        "controllerTps": 10.0,
+        "controllerMeanMs": 23.15,
+        "configRevision": 355,
+        "sampleAgents": [
+          "apm-ngrinder-agent-1"
+        ],
+        "historyBefore": {
+          "total": 1036,
+          "testMembersKeyword": 31
+        },
+        "historyAfter": {
+          "total": 1056,
+          "testMembersKeyword": 51
+        },
+        "historyDelta": 20,
+        "memberKeywordHistoryDelta": 20,
+        "requests": 20,
+        "successes": 20,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMs": 23.24875,
+        "p95Ms": 24.078,
+        "p99Ms": 82.258,
+        "sampleSpanSeconds": 0.48410888671875,
+        "sampleComplete": true,
+        "failures": {},
+        "transportFailureRoots": {},
+        "startTime": 1791369056212,
+        "finishTime": 1791369061849,
+        "accountingPassed": true,
+        "requestAccountingPassed": true,
+        "historyConsistentWithOutcomes": true,
+        "passed": true
+      },
+      {
+        "label": "jit-warmup-vu30-r1",
+        "phase": "jit-warmup",
+        "vu": 30,
+        "repeat": 1,
+        "testId": 550,
+        "requestsPerVu": 200,
+        "expectedRequests": 6000,
+        "status": "FINISHED",
+        "controllerSuccesses": 6000,
+        "controllerErrors": 0,
+        "controllerTps": 245.11,
+        "controllerMeanMs": 120.37,
+        "configRevision": 356,
+        "sampleAgents": [
+          "apm-ngrinder-agent-1"
+        ],
+        "historyBefore": {
+          "total": 1056,
+          "testMembersKeyword": 51
+        },
+        "historyAfter": {
+          "total": 7056,
+          "testMembersKeyword": 6051
+        },
+        "historyDelta": 6000,
+        "memberKeywordHistoryDelta": 6000,
+        "requests": 6000,
+        "successes": 6000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMs": 120.41530416666666,
+        "p95Ms": 249.008,
+        "p99Ms": 397.176,
+        "sampleSpanSeconds": 24.51231298828125,
+        "sampleComplete": true,
+        "failures": {},
+        "transportFailureRoots": {},
+        "startTime": 1791369074336,
+        "finishTime": 1791369101985,
+        "accountingPassed": true,
+        "requestAccountingPassed": true,
+        "historyConsistentWithOutcomes": true,
+        "passed": true
+      },
+      {
+        "label": "steady-observation-vu30-r1",
+        "phase": "steady-observation",
+        "vu": 30,
+        "repeat": 1,
+        "testId": 551,
+        "requestsPerVu": 1165,
+        "expectedRequests": 34950,
+        "status": "FINISHED",
+        "controllerSuccesses": 34948,
+        "controllerErrors": 2,
+        "controllerTps": 358.07,
+        "controllerMeanMs": 82.33,
+        "configRevision": 357,
+        "sampleAgents": [
+          "apm-ngrinder-agent-1"
+        ],
+        "historyBefore": {
+          "total": 7056,
+          "testMembersKeyword": 6051
+        },
+        "historyAfter": {
+          "total": 42004,
+          "testMembersKeyword": 40999
+        },
+        "historyDelta": 34948,
+        "memberKeywordHistoryDelta": 34948,
+        "requests": 34950,
+        "successes": 34948,
+        "errors": 2,
+        "errorRatePercent": 0.005722460658082976,
+        "meanMs": 82.35160269543321,
+        "p95Ms": 123.784,
+        "p99Ms": 171.071,
+        "sampleSpanSeconds": 97.84398706054688,
+        "sampleComplete": true,
+        "failures": {
+          "ExecutionException": 2
+        },
+        "transportFailureRoots": {
+          "SocketTimeoutException": 2
+        },
+        "startTime": 1791369127988,
+        "finishTime": 1791369229222,
+        "accountingPassed": false,
+        "requestAccountingPassed": true,
+        "historyConsistentWithOutcomes": true,
+        "passed": false
+      }
+    ],
+    "stoppedEarly": false
+  }
+]
