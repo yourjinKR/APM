@@ -1,0 +1,36 @@
+{
+  "verifiedAtKst": "2026-10-07T18:18:12.081656+09:00",
+  "variants": {
+    "before-count": {
+      "measuredLoadRuns": 6,
+      "fullThreeRepeats": true,
+      "plannedLoadRequests": 12000,
+      "actualLoadRequests": 12000,
+      "errors": 64,
+      "allStrictAccountingPassed": true,
+      "allRequestCsvAccountingPassed": true,
+      "allHistoryEqualsPlanned": true,
+      "searchHistoryDelta": 12000,
+      "contentExecutionsPer10Requests": 10,
+      "countExecutionsPer10Requests": 10,
+      "cleanupVerified": true
+    },
+    "after-slice": {
+      "measuredLoadRuns": 6,
+      "fullThreeRepeats": true,
+      "plannedLoadRequests": 12000,
+      "actualLoadRequests": 12000,
+      "errors": 1,
+      "allStrictAccountingPassed": false,
+      "allRequestCsvAccountingPassed": true,
+      "allHistoryEqualsPlanned": false,
+      "searchHistoryDelta": 11999,
+      "contentExecutionsPer10Requests": 10,
+      "countExecutionsPer10Requests": 0,
+      "cleanupVerified": true
+    }
+  },
+  "allPassed": false,
+  "measurementComplete": true,
+  "allPassedMeaning": "Every planned load run completed with zero HTTP/transport errors; before-count timeout errors are retained as measured outcomes"
+}

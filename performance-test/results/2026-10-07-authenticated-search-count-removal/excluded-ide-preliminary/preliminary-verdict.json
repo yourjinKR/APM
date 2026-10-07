@@ -1,0 +1,8 @@
+{
+  "comparisonEligible": false,
+  "completedTestIds": [
+    513,
+    514
+  ],
+  "reason": "IDE C1-only JIT and SQL output ON differ from the historical JAR runtime; preserved as current-development-server observation"
+}

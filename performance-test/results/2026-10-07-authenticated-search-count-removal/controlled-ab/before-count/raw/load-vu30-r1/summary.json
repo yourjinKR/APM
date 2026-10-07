@@ -1,0 +1,47 @@
+{
+  "label": "load-vu30-r1",
+  "phase": "load",
+  "vu": 30,
+  "repeat": 1,
+  "testId": 520,
+  "requestsPerVu": 100,
+  "expectedRequests": 3000,
+  "status": "FINISHED",
+  "controllerSuccesses": 2936,
+  "controllerErrors": 64,
+  "controllerTps": 8.17,
+  "controllerMeanMs": 3519.66,
+  "configRevision": 322,
+  "sampleAgents": [
+    "apm-ngrinder-agent-1"
+  ],
+  "historyBefore": {
+    "total": 2526,
+    "testMembersKeyword": 1521
+  },
+  "historyAfter": {
+    "total": 5526,
+    "testMembersKeyword": 4521
+  },
+  "historyDelta": 3000,
+  "memberKeywordHistoryDelta": 3000,
+  "requests": 3000,
+  "successes": 2936,
+  "errors": 64,
+  "errorRatePercent": 2.1333333333333333,
+  "meanMs": 3519.7097431880106,
+  "p95Ms": 4552.955,
+  "p99Ms": 5152.534,
+  "sampleSpanSeconds": 359.13697802734373,
+  "sampleComplete": true,
+  "failures": {
+    "RuntimeException": 64
+  },
+  "transportFailureRoots": {
+    "SocketTimeoutException": 64
+  },
+  "startTime": 1791362450994,
+  "finishTime": 1791362815601,
+  "accountingPassed": true,
+  "passed": false
+}

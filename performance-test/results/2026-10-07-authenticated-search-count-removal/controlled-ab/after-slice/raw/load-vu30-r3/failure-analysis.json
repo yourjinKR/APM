@@ -1,0 +1,25 @@
+{
+  "testId": 532,
+  "failureCount": 1,
+  "failureSamples": [
+    {
+      "source": "a0-p0-t4.csv",
+      "runId": "count-removal-20261007-load-vu30-r3-test_532",
+      "profile": "search-frequent-authenticated",
+      "agent": "0",
+      "process": "0",
+      "thread": "4",
+      "iteration": "0",
+      "inputIndex": "0",
+      "startedAtEpochMs": "1791364081926",
+      "elapsedMs": "5137.895",
+      "httpStatus": "0",
+      "success": "false",
+      "failure": "ExecutionException",
+      "failureRoot": "SocketTimeoutException",
+      "responseBytes": "0"
+    }
+  ],
+  "controllerLogStackTraces": [],
+  "note": "Controller worker log contained no detailed exception stack traces. failureRoot is from the script traversal of Throwable cause chains; request samples and history totals do not prove the exact timeout stage."
+}

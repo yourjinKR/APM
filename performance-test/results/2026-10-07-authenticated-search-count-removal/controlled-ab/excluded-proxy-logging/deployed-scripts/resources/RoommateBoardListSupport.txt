@@ -1,0 +1,207 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import java.nio.file.Files
+import java.security.MessageDigest
+import org.apache.hc.core5.http.message.BasicHeader
+import org.apache.hc.core5.http.message.BasicNameValuePair
+
+/** Shared resource, loaded once per JVM. No login or probe HTTP calls during measurement. */
+class RoommateBoardListSupport {
+    static final Set QUERY_KEYS = ['page', 'size', 'sort', 'regionIds', 'roomTypeIds',
+            'gender', 'minDeposit', 'maxDeposit', 'minMounthRent', 'maxMounthRent', 'likedOnly'] as Set
+    final Map settings
+    final def context
+    final List headers
+    final BufferedWriter samples
+    final int userSlot
+    long iteration = 0
+
+    static void require(boolean condition, String message) {
+        if (!condition) throw new IllegalArgumentException(message)
+    }
+
+    static Map loadSettings(boolean keywordMode, def context = null) {
+        File file = new File(System.getenv('ROOMMATE_BOARD_CONFIG') ?: 'resources/roommate-board-list.json')
+        Map config = new JsonSlurper().parse(file, 'UTF-8') as Map
+        String profileId = System.getenv('ROOMMATE_BOARD_PROFILE') ?:
+                config[keywordMode ? 'activeKeywordProfile' : 'activeReadProfile']
+        require(profileId ==~ /[A-Za-z0-9_-]+/, 'Use a safe, nonempty profile ID')
+        require(config.profiles[profileId] instanceof Map, 'Unknown profile ID')
+        Map profile = config.profiles[profileId]
+        require(profile.auth in ['anonymous', 'authenticated'], 'Invalid auth mode')
+        List inputs = profile.inputs
+        require(inputs && inputs.every { it instanceof Map }, 'Profile needs inputs')
+        inputs.each { input ->
+            require(input.query instanceof Map, 'Each input needs query')
+            Map query = input.query
+            require(QUERY_KEYS.containsAll(query.keySet()), 'Unsupported query parameter (check MounthRent spelling)')
+            require(query.page instanceof Integer && query.page >= 0, 'page must be nonnegative')
+            require(query.size instanceof Integer && query.size > 0, 'size must be positive')
+            require(query.sort ==~ /(createdAt|hits),(ASC|DESC)/, 'Unsupported sort')
+            ['regionIds', 'roomTypeIds'].each { key ->
+                if (query.containsKey(key)) require(query[key] instanceof List && query[key] &&
+                        query[key].every { it instanceof Number && it > 0 }, key + ' needs real fixture IDs')
+            }
+            if (query.containsKey('gender')) require(query.gender in ['MALE', 'FEMALE'], 'Invalid gender')
+            if (query.containsKey('likedOnly')) require(query.likedOnly instanceof Boolean, 'likedOnly must be boolean')
+            require(!query.likedOnly || profile.auth == 'authenticated', 'likedOnly requires authentication')
+            ['minDeposit', 'maxDeposit', 'minMounthRent', 'maxMounthRent'].each { key ->
+                if (query.containsKey(key)) require(query[key] instanceof Integer && query[key] >= 0, key + ' must be nonnegative')
+            }
+            [['minDeposit', 'maxDeposit'], ['minMounthRent', 'maxMounthRent']].each { pair ->
+                if (query.containsKey(pair[0]) && query.containsKey(pair[1]))
+                    require(query[pair[0]] <= query[pair[1]], 'Invalid budget range')
+            }
+            if (keywordMode) require(input.keyword instanceof String && input.keyword.trim() &&
+                    input.keyword.trim().length() <= 100, 'Search needs a nonblank keyword of at most 100 characters')
+            else require(!input.containsKey('keyword'), 'Use KeywordGetTest for keyword requests')
+        }
+        def expectedStatusCodes = profile.containsKey('expectedStatusCodes') ? profile.expectedStatusCodes :
+                (config.containsKey('expectedStatusCodes') ? config.expectedStatusCodes : [200])
+        require(expectedStatusCodes instanceof List && expectedStatusCodes &&
+                expectedStatusCodes.every { it instanceof Integer && it >= 100 && it <= 599 } &&
+                expectedStatusCodes.toSet().size() == expectedStatusCodes.size(), 'Set distinct expectedStatusCodes (100..599)')
+        def responseValidator = profile.containsKey('responseValidator') ? profile.responseValidator : config.responseValidator
+        Class validatorType = null
+        if (responseValidator != null) {
+            require(responseValidator instanceof String && responseValidator ==~ /resources\/[A-Za-z0-9_\/.-]+\.txt/ &&
+                    !responseValidator.contains('..'), 'Use a relative resources/*.txt responseValidator or null')
+            validatorType = new GroovyClassLoader(RoommateBoardListSupport.class.classLoader).parseClass(new File(responseValidator))
+            inputs.each { validatorType.validateInput(it as Map) }
+        }
+        String runId = System.getenv('ROOMMATE_BOARD_RUN_ID') ?: config.runId
+        require(runId ==~ /[A-Za-z0-9_-]+/ && runId != 'CHANGE-ME', 'Set a unique runId before each test')
+        boolean validationMode = context != null &&
+                context.properties.getProperty('grinder.script.validation', 'false').toBoolean()
+        if (validationMode) {
+            // UI Validate runs on the Controller without a performance test ID.
+            // Keep repeated validations separate from each other and Agent samples.
+            runId += '-validation-' + UUID.randomUUID().toString()
+        } else if (context != null) {
+            String testId = context.properties.getProperty('grinder.test.id')
+            require(testId ==~ /[A-Za-z0-9_-]+/, 'Controller test ID is required for unique sample directories')
+            runId += '-' + testId
+        }
+        require(config.baseUrl ==~ /https?:\/\/[^\s?#]+/, 'Set an Agent-accessible baseUrl')
+        require(config.connectTimeoutMs instanceof Integer && config.connectTimeoutMs > 0, 'Invalid connect timeout')
+        require(config.socketTimeoutMs instanceof Integer && config.socketTimeoutMs > 0, 'Invalid socket timeout')
+        require((System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir) instanceof String &&
+                (System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir).trim(), 'Set outputDir')
+        List tokens = []
+        if (profile.auth == 'authenticated') {
+            String supplied = System.getenv('ROOMMATE_BOARD_TOKENS')
+            if (supplied) tokens = supplied.split(',', -1).collect { it.trim() }
+            else {
+                String tokenFile = System.getenv('ROOMMATE_BOARD_TOKEN_FILE') ?: config.tokenFile
+                require(tokenFile?.trim() as boolean, 'Authentication requires ROOMMATE_BOARD_TOKENS, ROOMMATE_BOARD_TOKEN_FILE or config.tokenFile on the Controller (Validate) and Agents (load test)')
+                tokens = new File(tokenFile).readLines('UTF-8').collect { it.trim() }
+            }
+            require(tokens && tokens.every { it && !it.startsWith('Bearer ') && !it.startsWith('TOKEN_') }, 'Invalid token pool')
+            require(tokens.toSet().size() == tokens.size(), 'Use distinct tokens for distinct members')
+        }
+        String hash = MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString()
+        return [profileId: profileId, profile: profile, runId: runId, baseUrl: config.baseUrl.replaceAll('/+$', ''),
+                connectTimeoutMs: config.connectTimeoutMs, socketTimeoutMs: config.socketTimeoutMs,
+                outputDir: System.getenv('ROOMMATE_BOARD_RESULTS_DIR') ?: config.outputDir,
+                keywordMode: keywordMode, validationMode: validationMode, configSha256: hash, tokens: tokens,
+                expectedStatusCodes: expectedStatusCodes, responseValidator: responseValidator, validatorType: validatorType]
+    }
+
+    RoommateBoardListSupport(Map settings, def context) {
+        this.settings = settings
+        this.context = context
+        int agent = context.agentNumber
+        int processSlot = context.processNumber - context.firstProcessNumber
+        int processes = context.properties.getInt('grinder.processes', 1)
+        int threads = context.properties.getInt('grinder.threads', 1)
+        require(agent >= 0 && processSlot >= 0 && processSlot < processes, 'Run through a Controller without process ramp-up')
+        userSlot = (agent * processes + processSlot) * threads + context.threadNumber
+        headers = [new BasicHeader('Accept', 'application/json')]
+        if (settings.profile.auth == 'authenticated') {
+            require(settings.tokens.size() > userSlot, 'Token pool too small for Agent/process/thread slot; no token reuse')
+            headers.add(new BasicHeader('Authorization', 'Bearer ' + settings.tokens[userSlot]))
+        }
+        File directory = new File(settings.outputDir as String, settings.runId as String)
+        Files.createDirectories(directory.toPath())
+        String stem = "a${agent}-p${processSlot}-t${context.threadNumber}"
+        File sampleFile = new File(directory, stem + '.csv')
+        require(sampleFile.createNewFile(), 'Sample file already exists; use a new runId')
+        samples = sampleFile.newWriter('UTF-8')
+        samples.write('runId,profile,agent,process,thread,iteration,inputIndex,startedAtEpochMs,elapsedMs,httpStatus,success,failure,failureRoot,responseBytes\n')
+        samples.flush()
+        if (context.threadNumber == 0) {
+            Map metadata = settings.findAll { key, value -> !(key in ['tokens', 'validatorType']) }
+            metadata = metadata + [agent: agent, process: processSlot, processes: processes, threads: threads,
+                    startedAtEpochMs: System.currentTimeMillis(), sampleSchemaVersion: 2]
+            new File(directory, "a${agent}-p${processSlot}-manifest.json").setText(JsonOutput.prettyPrint(JsonOutput.toJson(metadata)), 'UTF-8')
+        }
+    }
+
+    void execute(def request) {
+        int index = ((iteration + userSlot) % settings.profile.inputs.size()) as int
+        Map input = settings.profile.inputs[index]
+        List params = []
+        input.query.each { key, value ->
+            (value instanceof List ? value : [value]).each { item ->
+                params.add(new BasicNameValuePair(key as String, item.toString()))
+            }
+        }
+        if (settings.keywordMode) params.add(new BasicNameValuePair('keyword', input.keyword))
+        long startedAt = System.currentTimeMillis()
+        long start = System.nanoTime()
+        double elapsedMs = 0
+        int status = 0
+        int bytes = 0
+        String failure = ''
+        String failureRoot = ''
+        boolean success = false
+        try {
+            def response = request.GET(settings.baseUrl + '/roommate/boards', params, headers)
+            elapsedMs = (System.nanoTime() - start) / 1_000_000d
+            status = response.statusCode
+            bytes = response.bodyBytes.length
+            if (!(status in (settings.expectedStatusCodes ?: [200]))) failure = 'http_' + status
+            else {
+                success = true
+                if (settings.validatorType != null) {
+                    try {
+                        settings.validatorType.validateResponse(response, input)
+                    } catch (Exception | AssertionError invalid) {
+                        success = false
+                        failure = 'contract_mismatch'
+                        Throwable cause = invalid
+                        for (int depth = 0; depth < 8 && cause.cause != null && cause.cause != cause; depth++) {
+                            cause = cause.cause
+                        }
+                        // Only fixed codes or class names; never record parser messages or response bodies.
+                        failureRoot = cause.message ==~ /[A-Z][A-Z0-9_]{0,79}/ ? cause.message : cause.class.simpleName
+                    }
+                }
+            }
+        } catch (Exception transport) {
+            elapsedMs = (System.nanoTime() - start) / 1_000_000d
+            failure = transport.class.simpleName
+            Throwable cause = transport
+            for (int depth = 0; depth < 8 && cause.cause != null && cause.cause != cause; depth++) {
+                cause = cause.cause
+            }
+            failureRoot = cause.class.simpleName
+        } finally {
+            context.statistics.forLastTest.success = success
+            samples.write([settings.runId, settings.profileId, context.agentNumber,
+                    context.processNumber - context.firstProcessNumber, context.threadNumber,
+                    iteration, index, startedAt, String.format(Locale.ROOT, '%.3f', elapsedMs),
+                    status, success, failure, failureRoot, bytes].join(',') + '\n')
+            iteration++
+            if (iteration % 100 == 0) samples.flush()
+        }
+        if (settings.validationMode) {
+            String category = failure == 'contract_mismatch' ? 'CONTRACT_MISMATCH' :
+                    (status == 0 ? 'TRANSPORT_FAILED' : 'HTTP_REQUEST_FAILED')
+            require(success, category + ': ' + failure +
+                    (failureRoot ? '/' + failureRoot : '') + ' (HTTP ' + status + ')')
+        }
+    }
+
+    void close() { samples.close() }
+}

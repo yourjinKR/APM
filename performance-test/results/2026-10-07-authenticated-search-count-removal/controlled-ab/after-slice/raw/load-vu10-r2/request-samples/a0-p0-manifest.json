@@ -1,0 +1,38 @@
+{
+    "profileId": "search-frequent-authenticated",
+    "profile": {
+        "auth": "authenticated",
+        "responseValidator": null,
+        "expectedStatusCodes": [
+            200
+        ],
+        "inputs": [
+            {
+                "query": {
+                    "page": 0,
+                    "size": 20,
+                    "sort": "createdAt,DESC"
+                },
+                "keyword": "\ubd80\ud558 \ud14c\uc2a4\ud2b8 \uac8c\uc2dc\uae00"
+            }
+        ]
+    },
+    "runId": "count-removal-20261007-load-vu10-r2-test_529",
+    "baseUrl": "http://host.docker.internal:18080",
+    "connectTimeoutMs": 5000,
+    "socketTimeoutMs": 15000,
+    "outputDir": "/tmp/knockin-roommate-board-results",
+    "keywordMode": true,
+    "validationMode": false,
+    "configSha256": "5882a5005887c950069ba57f976a8229a69f97895cba67f35aaa068f04d5862d",
+    "expectedStatusCodes": [
+        200
+    ],
+    "responseValidator": null,
+    "agent": 0,
+    "process": 0,
+    "processes": 1,
+    "threads": 10,
+    "startedAtEpochMs": 1791363842815,
+    "sampleSchemaVersion": 2
+}

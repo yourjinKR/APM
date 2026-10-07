@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "elapsedMs": 943.2933999923989,
+  "envelopeStatus": 200,
+  "responseDataKeys": [
+    "content",
+    "empty",
+    "first",
+    "last",
+    "number",
+    "numberOfElements",
+    "pageable",
+    "size",
+    "sort"
+  ],
+  "contentSize": 20,
+  "hasTotalElements": false,
+  "firstPage": true,
+  "lastPage": false,
+  "historyDelta": 1
+}

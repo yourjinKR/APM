@@ -1,0 +1,145 @@
+{
+  "startedAtKst": "2026-10-07T17:14:28.384034+09:00",
+  "backendHealth": {
+    "components": {
+      "db": {
+        "details": {
+          "database": "H2",
+          "validationQuery": "isValid()"
+        },
+        "status": "UP"
+      },
+      "diskSpace": {
+        "details": {
+          "total": 999604350976,
+          "free": 555886317568,
+          "threshold": 10485760,
+          "path": "C:\\dev\\workspace\\KnockIn\\back\\11th-1team-BE\\.",
+          "exists": true
+        },
+        "status": "UP"
+      },
+      "livenessState": {
+        "status": "UP"
+      },
+      "ping": {
+        "status": "UP"
+      },
+      "readinessState": {
+        "status": "UP"
+      },
+      "ssl": {
+        "details": {
+          "expiringChains": [],
+          "invalidChains": [],
+          "validChains": []
+        },
+        "status": "UP"
+      }
+    },
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "UP"
+  },
+  "backendLaunch": "Existing IDE Java 21 process, no backend restart/build",
+  "backendCommit": "92bbbb29a0100bd32b6ebad505d7007ae43b70ec",
+  "backendDirtyFiles": [
+    "M src/main/java/org/example/knockin/board/controller/RoomMateController.java",
+    " M src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java",
+    " M src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java",
+    " M src/main/java/org/example/knockin/board/service/RoommateBoardService.java",
+    " M src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java",
+    " M src/main/resources/application-test.properties"
+  ],
+  "apmCommit": "a7a09066fad65fddac8f3914c1906c5eb911926c",
+  "actualCounts": {
+    "MEMBER": 2004,
+    "ROOMMATE_BOARD": 1002,
+    "BLOCK": 1001,
+    "SEARCH": 1006,
+    "STATE": 2003
+  },
+  "memberIds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "agents": [
+    "apm-ngrinder-agent-2",
+    "apm-ngrinder-agent-5",
+    "apm-ngrinder-agent-1",
+    "apm-ngrinder-agent-3",
+    "apm-ngrinder-agent-4"
+  ],
+  "agentCountPerRun": 1,
+  "processesPerRun": 1,
+  "profile": "search-frequent-authenticated",
+  "keyword": "부하 테스트 게시글",
+  "query": {
+    "page": 0,
+    "size": 20,
+    "sort": "createdAt,DESC"
+  },
+  "vusers": [
+    10,
+    30
+  ],
+  "requestsPerVu": 100,
+  "repetitions": 3,
+  "smokeWarmupRequests": 20,
+  "cooldownSeconds": 15,
+  "connectTimeoutMs": 5000,
+  "socketTimeoutMs": 15000,
+  "connectionReset": false,
+  "rampUp": false,
+  "responseValidator": null,
+  "expectedStatusCodes": [
+    200
+  ],
+  "sqlOutputSetting": true,
+  "sqlOutputEvidence": "Source application-test.properties has spring.jpa.show-sql=true; IDE argument-file resource path captured separately",
+  "tokenExpiresAt": "2026-10-07T19:14:28+09:00",
+  "tokenFile": "/tmp/knockin-count-removal-20261007-1791360865.txt",
+  "historyPolicy": "Append-only; preserve pre-existing rows and record before/after member+keyword counts",
+  "comparison": "Historical 2026-10-04 tests 389/390; different backend commit and SQL output settings, observational comparison",
+  "sourceHashes": {
+    "RoommateBoardListKeywordGetTest.groovy": "579e59ae79eacb29f419df9a4d5b068c91fcc453ad2028ab036e688dbc66e8b1",
+    "resources/RoommateBoardListSupport.txt": "bcdc8b41876617e4011ab2ede43b727f16004f77eff250aa8fb4f74f80d9f4df"
+  },
+  "backendSourceHashes": {
+    "src/main/java/org/example/knockin/board/controller/RoomMateController.java": "82fc0d34d04a85dd320b2b6fcf8fb5bb937e54909bcc50840892c58c07f2cc49",
+    "src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java": "527a316d580f27e0a891fe35b7a4e8b53ae445f1516768544c3c20bded2ea62b",
+    "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "80693f87de62026aff306defed4d33acdd93b9693fdfca27b833a0bb3312c7b0",
+    "src/main/java/org/example/knockin/board/service/RoommateBoardService.java": "db82c1dd2c8ed58b5f8a6e3f3e460092721ef24446aef1541ab19dab6d50c144",
+    "src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java": "992fd4b78d112fd8671c54f26abc382fb6ed144f2d763a7fe453ec37294e61cf"
+  }
+}

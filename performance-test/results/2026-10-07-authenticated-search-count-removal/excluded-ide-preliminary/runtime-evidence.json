@@ -1,0 +1,17 @@
+{
+  "Pid": 28780,
+  "Executable": "C:\\Program Files\\Java\\jdk-21\\bin\\java.exe",
+  "StartedAt": "2026-10-07T16:52:32.310179+09:00",
+  "Launch": "IDE argument file",
+  "ClasspathRoots": [
+    "C:\\dev\\workspace\\KnockIn\\back\\11th-1team-BE\\build\\classes\\java\\main",
+    "C:\\dev\\workspace\\KnockIn\\back\\11th-1team-BE\\build\\resources\\main"
+  ],
+  "SafeOverrides": [],
+  "RepositoryClassHash": "03011B79D799908C22974F8995D58D0071CB1688FB1B61D2FD999B71683B05B4",
+  "CompiledTestSqlOutput": "spring.jpa.show-sql=true",
+  "JvmOptions": [
+    "-XX:TieredStopAtLevel=1"
+  ],
+  "DebugAgentEnabled": false
+}

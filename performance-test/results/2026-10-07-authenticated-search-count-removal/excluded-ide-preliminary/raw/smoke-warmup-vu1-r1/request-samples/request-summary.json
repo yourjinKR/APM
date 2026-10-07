@@ -1,0 +1,32 @@
+{
+  "runId": "count-removal-20261007-smoke-warmup-vu1-r1-test_513",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "c610fc92608c881982c2ec59a211bdb44c79642611629deea4bcc7243eac9db1",
+  "sampleComplete": true,
+  "expectedRequests": 20,
+  "requests": 20,
+  "expectedWorkers": 1,
+  "workers": 1,
+  "successes": 20,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 865.6933999999999,
+  "successP50Ms": 768.845,
+  "successP95Ms": 1315.399,
+  "successP99Ms": 2100.523,
+  "observedAllP95Ms": 1315.399,
+  "sampleSpanSeconds": 17.352299072265627,
+  "sampleSuccessRps": 1.1525850215413949,
+  "inputs": {
+    "0": 20
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

@@ -1,0 +1,350 @@
+[
+  {
+    "label": "smoke-warmup-vu1-r1",
+    "phase": "smoke-warmup",
+    "vu": 1,
+    "repeat": 1,
+    "testId": 517,
+    "requestsPerVu": 20,
+    "expectedRequests": 20,
+    "status": "FINISHED",
+    "controllerSuccesses": 20,
+    "controllerErrors": 0,
+    "controllerTps": 1.41,
+    "controllerMeanMs": 712.9,
+    "configRevision": 319,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 1006,
+      "testMembersKeyword": 1
+    },
+    "historyAfter": {
+      "total": 1026,
+      "testMembersKeyword": 21
+    },
+    "historyDelta": 20,
+    "memberKeywordHistoryDelta": 20,
+    "requests": 20,
+    "successes": 20,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 713.2455,
+    "p95Ms": 889.319,
+    "p99Ms": 1406.342,
+    "sampleSpanSeconds": 14.2933798828125,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791362182097,
+    "finishTime": 1791362200720,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "jit-warmup-vu10-r1",
+    "phase": "jit-warmup",
+    "vu": 10,
+    "repeat": 1,
+    "testId": 518,
+    "requestsPerVu": 50,
+    "expectedRequests": 500,
+    "status": "FINISHED",
+    "controllerSuccesses": 500,
+    "controllerErrors": 0,
+    "controllerTps": 8.02,
+    "controllerMeanMs": 1239.02,
+    "configRevision": 320,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 1026,
+      "testMembersKeyword": 21
+    },
+    "historyAfter": {
+      "total": 1526,
+      "testMembersKeyword": 521
+    },
+    "historyDelta": 500,
+    "memberKeywordHistoryDelta": 500,
+    "requests": 500,
+    "successes": 500,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 1239.085178,
+    "p95Ms": 1823.284,
+    "p99Ms": 2106.666,
+    "sampleSpanSeconds": 62.65223510742187,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791362213418,
+    "finishTime": 1791362281989,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "load-vu10-r1",
+    "phase": "load",
+    "vu": 10,
+    "repeat": 1,
+    "testId": 519,
+    "requestsPerVu": 100,
+    "expectedRequests": 1000,
+    "status": "FINISHED",
+    "controllerSuccesses": 1000,
+    "controllerErrors": 0,
+    "controllerTps": 8.85,
+    "controllerMeanMs": 1124.4,
+    "configRevision": 321,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 1526,
+      "testMembersKeyword": 521
+    },
+    "historyAfter": {
+      "total": 2526,
+      "testMembersKeyword": 1521
+    },
+    "historyDelta": 1000,
+    "memberKeywordHistoryDelta": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 1124.523197,
+    "p95Ms": 1361.294,
+    "p99Ms": 1437.383,
+    "sampleSpanSeconds": 112.60636596679687,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791362307807,
+    "finishTime": 1791362425183,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "load-vu30-r1",
+    "phase": "load",
+    "vu": 30,
+    "repeat": 1,
+    "testId": 520,
+    "requestsPerVu": 100,
+    "expectedRequests": 3000,
+    "status": "FINISHED",
+    "controllerSuccesses": 2936,
+    "controllerErrors": 64,
+    "controllerTps": 8.17,
+    "controllerMeanMs": 3519.66,
+    "configRevision": 322,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 2526,
+      "testMembersKeyword": 1521
+    },
+    "historyAfter": {
+      "total": 5526,
+      "testMembersKeyword": 4521
+    },
+    "historyDelta": 3000,
+    "memberKeywordHistoryDelta": 3000,
+    "requests": 3000,
+    "successes": 2936,
+    "errors": 64,
+    "errorRatePercent": 2.1333333333333333,
+    "meanMs": 3519.7097431880106,
+    "p95Ms": 4552.955,
+    "p99Ms": 5152.534,
+    "sampleSpanSeconds": 359.13697802734373,
+    "sampleComplete": true,
+    "failures": {
+      "RuntimeException": 64
+    },
+    "transportFailureRoots": {
+      "SocketTimeoutException": 64
+    },
+    "startTime": 1791362450994,
+    "finishTime": 1791362815601,
+    "accountingPassed": true,
+    "passed": false
+  },
+  {
+    "label": "load-vu10-r2",
+    "phase": "load",
+    "vu": 10,
+    "repeat": 2,
+    "testId": 521,
+    "requestsPerVu": 100,
+    "expectedRequests": 1000,
+    "status": "FINISHED",
+    "controllerSuccesses": 1000,
+    "controllerErrors": 0,
+    "controllerTps": 12.89,
+    "controllerMeanMs": 751.56,
+    "configRevision": 323,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 5526,
+      "testMembersKeyword": 4521
+    },
+    "historyAfter": {
+      "total": 6526,
+      "testMembersKeyword": 5521
+    },
+    "historyDelta": 1000,
+    "memberKeywordHistoryDelta": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 751.621758,
+    "p95Ms": 1082.749,
+    "p99Ms": 1304.588,
+    "sampleSpanSeconds": 77.67262890625,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791362846770,
+    "finishTime": 1791362927779,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "load-vu30-r2",
+    "phase": "load",
+    "vu": 30,
+    "repeat": 2,
+    "testId": 522,
+    "requestsPerVu": 100,
+    "expectedRequests": 3000,
+    "status": "FINISHED",
+    "controllerSuccesses": 3000,
+    "controllerErrors": 0,
+    "controllerTps": 13.72,
+    "controllerMeanMs": 2140.87,
+    "configRevision": 324,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 6526,
+      "testMembersKeyword": 5521
+    },
+    "historyAfter": {
+      "total": 9526,
+      "testMembersKeyword": 8521
+    },
+    "historyDelta": 3000,
+    "memberKeywordHistoryDelta": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 2141.0042223333335,
+    "p95Ms": 3498.414,
+    "p99Ms": 4036.187,
+    "sampleSpanSeconds": 218.719248046875,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791362952493,
+    "finishTime": 1791363175122,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "load-vu10-r3",
+    "phase": "load",
+    "vu": 10,
+    "repeat": 3,
+    "testId": 523,
+    "requestsPerVu": 100,
+    "expectedRequests": 1000,
+    "status": "FINISHED",
+    "controllerSuccesses": 1000,
+    "controllerErrors": 0,
+    "controllerTps": 13.93,
+    "controllerMeanMs": 714.56,
+    "configRevision": 325,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 9526,
+      "testMembersKeyword": 8521
+    },
+    "historyAfter": {
+      "total": 10526,
+      "testMembersKeyword": 9521
+    },
+    "historyDelta": 1000,
+    "memberKeywordHistoryDelta": 1000,
+    "requests": 1000,
+    "successes": 1000,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 714.7481339999999,
+    "p95Ms": 979.388,
+    "p99Ms": 1150.682,
+    "sampleSpanSeconds": 72.59728295898438,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791363200268,
+    "finishTime": 1791363276522,
+    "accountingPassed": true,
+    "passed": true
+  },
+  {
+    "label": "load-vu30-r3",
+    "phase": "load",
+    "vu": 30,
+    "repeat": 3,
+    "testId": 524,
+    "requestsPerVu": 100,
+    "expectedRequests": 3000,
+    "status": "FINISHED",
+    "controllerSuccesses": 3000,
+    "controllerErrors": 0,
+    "controllerTps": 13.54,
+    "controllerMeanMs": 2168.22,
+    "configRevision": 326,
+    "sampleAgents": [
+      "apm-ngrinder-agent-1"
+    ],
+    "historyBefore": {
+      "total": 10526,
+      "testMembersKeyword": 9521
+    },
+    "historyAfter": {
+      "total": 13526,
+      "testMembersKeyword": 12521
+    },
+    "historyDelta": 3000,
+    "memberKeywordHistoryDelta": 3000,
+    "requests": 3000,
+    "successes": 3000,
+    "errors": 0,
+    "errorRatePercent": 0.0,
+    "meanMs": 2168.3098099999997,
+    "p95Ms": 3423.342,
+    "p99Ms": 4054.725,
+    "sampleSpanSeconds": 221.09714697265625,
+    "sampleComplete": true,
+    "failures": {},
+    "transportFailureRoots": {},
+    "startTime": 1791363302592,
+    "finishTime": 1791363527966,
+    "accountingPassed": true,
+    "passed": true
+  }
+]

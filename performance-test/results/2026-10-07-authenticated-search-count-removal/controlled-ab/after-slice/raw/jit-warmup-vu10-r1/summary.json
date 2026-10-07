@@ -1,0 +1,43 @@
+{
+  "label": "jit-warmup-vu10-r1",
+  "phase": "jit-warmup",
+  "vu": 10,
+  "repeat": 1,
+  "testId": 526,
+  "requestsPerVu": 50,
+  "expectedRequests": 500,
+  "status": "FINISHED",
+  "controllerSuccesses": 500,
+  "controllerErrors": 0,
+  "controllerTps": 23.96,
+  "controllerMeanMs": 408.27,
+  "configRevision": 329,
+  "sampleAgents": [
+    "apm-ngrinder-agent-1"
+  ],
+  "historyBefore": {
+    "total": 1026,
+    "testMembersKeyword": 21
+  },
+  "historyAfter": {
+    "total": 1526,
+    "testMembersKeyword": 521
+  },
+  "historyDelta": 500,
+  "memberKeywordHistoryDelta": 500,
+  "requests": 500,
+  "successes": 500,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "meanMs": 408.38527799999997,
+  "p95Ms": 595.786,
+  "p99Ms": 682.314,
+  "sampleSpanSeconds": 20.778951904296875,
+  "sampleComplete": true,
+  "failures": {},
+  "transportFailureRoots": {},
+  "startTime": 1791363605210,
+  "finishTime": 1791363629113,
+  "accountingPassed": true,
+  "passed": true
+}

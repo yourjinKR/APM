@@ -1,0 +1,328 @@
+{
+  "runId": "count-removal-20261007-load-vu10-r2",
+  "baseUrl": "http://host.docker.internal:18080",
+  "connectTimeoutMs": 5000,
+  "socketTimeoutMs": 15000,
+  "outputDir": "/tmp/knockin-roommate-board-results",
+  "activeReadProfile": "list-anonymous",
+  "activeKeywordProfile": "search-frequent-authenticated",
+  "profiles": {
+    "list-anonymous": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "list-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "filter-region": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              null
+            ]
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              null
+            ]
+          }
+        }
+      ]
+    },
+    "filter-room-type": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "roomTypeIds": [
+              null
+            ]
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "roomTypeNames": [
+              null
+            ]
+          }
+        }
+      ]
+    },
+    "filter-budget": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "minDeposit": 300,
+            "maxDeposit": 600,
+            "minMounthRent": 30,
+            "maxMounthRent": 50
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "filter-gender": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "gender": "MALE"
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "filter-combined": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              null
+            ],
+            "roomTypeIds": [
+              null
+            ],
+            "gender": "MALE",
+            "minDeposit": 300,
+            "maxDeposit": 600,
+            "minMounthRent": 30,
+            "maxMounthRent": 50
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              null
+            ],
+            "roomTypeNames": [
+              null
+            ]
+          }
+        }
+      ]
+    },
+    "liked-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "likedOnly": true
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "page-1": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 1,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 21
+          }
+        }
+      ]
+    },
+    "page-deep": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 40,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 801
+          }
+        }
+      ]
+    },
+    "size-100": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 100,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 100
+          }
+        }
+      ]
+    },
+    "sort-hits": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "hits,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "search-frequent-anonymous": {
+      "auth": "anonymous",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1
+          }
+        }
+      ]
+    },
+    "search-frequent-authenticated": {
+      "auth": "authenticated",
+      "responseValidator": null,
+      "expectedStatusCodes": [
+        200
+      ],
+      "inputs": [
+        {
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "keyword": "부하 테스트 게시글"
+        }
+      ]
+    },
+    "search-rare-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글 999",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "totalElements": 1
+          }
+        }
+      ]
+    },
+    "search-zero-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "__knockin_perf_no_match_20260930__",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC"
+          },
+          "expect": {
+            "minTotalElements": 0,
+            "totalElements": 0
+          }
+        }
+      ]
+    },
+    "search-combined-authenticated": {
+      "auth": "authenticated",
+      "inputs": [
+        {
+          "keyword": "부하 테스트 게시글",
+          "query": {
+            "page": 0,
+            "size": 20,
+            "sort": "createdAt,DESC",
+            "regionIds": [
+              null
+            ],
+            "roomTypeIds": [
+              null
+            ],
+            "minDeposit": 300,
+            "maxDeposit": 600
+          },
+          "expect": {
+            "minTotalElements": 1,
+            "regionFragments": [
+              null
+            ],
+            "roomTypeNames": [
+              null
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "tokenFile": "/tmp/knockin-count-ab-before-count-1791362169.txt",
+  "expectedStatusCodes": [
+    200
+  ],
+  "responseValidator": null
+}

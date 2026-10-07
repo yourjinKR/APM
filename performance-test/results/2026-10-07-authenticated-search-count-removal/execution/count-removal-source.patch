@@ -1,0 +1,143 @@
+diff --git a/src/main/java/org/example/knockin/board/controller/RoomMateController.java b/src/main/java/org/example/knockin/board/controller/RoomMateController.java
+index baf4dd2..b6f24e5 100644
+--- a/src/main/java/org/example/knockin/board/controller/RoomMateController.java
++++ b/src/main/java/org/example/knockin/board/controller/RoomMateController.java
+@@ -57,13 +57,13 @@ public class RoomMateController {
+             summary = "게시글 목록 조회",
+             description = "likedOnly=true는 로그인 사용자만 사용할 수 있습니다."
+     )
+-    public CommonResponse<Page<BoardListDto.Response>> findBoardList(
++    public CommonResponse<Slice<BoardListDto.Response>> findBoardList(
+             @AuthenticationPrincipal PrincipalDetails details,
+             @ParameterObject @Validated @ModelAttribute BoardListDto.Request request,
+             @ParameterObject @PageableDefault(size = 20, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
+ 
+         Long memberId = details == null || details.getMember() == null ? null : details.getMember().getId();
+-        Page<BoardListDto.Response> responses = roommateBoardService.getBoardList(request, pageable, memberId);
++        Slice<BoardListDto.Response> responses = roommateBoardService.getBoardList(request, pageable, memberId);
+         return CommonResponse.status(HttpStatus.OK).body(responses);
+     }
+ 
+diff --git a/src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java b/src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java
+index 9177556..c924d71 100644
+--- a/src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java
++++ b/src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java
+@@ -14,14 +14,10 @@ import org.example.knockin.member.entity.Member;
+ import org.jspecify.annotations.Nullable;
+ import org.springframework.data.domain.Page;
+ import org.springframework.data.domain.Pageable;
++import org.springframework.data.domain.Slice;
+ 
+ public interface RoommateBoardRepositoryCustom {
+-    Page<BoardBaseRow> search(
+-            BoardListDto.Request request,
+-            Pageable pageable,
+-            LocalDateTime endDate,
+-            @Nullable Long requesterId
+-    );
++    Slice<BoardBaseRow> search(BoardListDto.Request request, Pageable pageable, LocalDateTime endDate, @Nullable Long requesterId);
+     Optional<BasicInfoRow> getBasicInfo(Long boardId);
+     Page<MyRoommateBoardRow> findMyBoardList(Pageable page, Member member);
+     Optional<EditFormRow> getEditRow(Long boardId);
+diff --git a/src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java b/src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java
+index d7a21a4..45f3eb6 100644
+--- a/src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java
++++ b/src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java
+@@ -44,6 +44,8 @@ import org.jspecify.annotations.Nullable;
+ import org.springframework.data.domain.Page;
+ import org.springframework.data.domain.PageImpl;
+ import org.springframework.data.domain.Pageable;
++import org.springframework.data.domain.Slice;
++import org.springframework.data.domain.SliceImpl;
+ import org.springframework.data.domain.Sort;
+ import org.springframework.stereotype.Repository;
+ import org.springframework.util.StringUtils;
+@@ -54,7 +56,7 @@ public class RoommateBoardRepositoryImpl implements RoommateBoardRepositoryCusto
+     private final JPAQueryFactory jpaQueryFactory;
+ 
+     @Override
+-    public Page<BoardBaseRow> search(BoardListDto.Request request, Pageable pageable, LocalDateTime endDate, @Nullable Long requesterId) {
++    public Slice<BoardBaseRow> search(BoardListDto.Request request, Pageable pageable, LocalDateTime endDate, @Nullable Long requesterId) {
+         QRegion boardRegion = new QRegion("searchBoardRegion");
+         QRegion parentRegion = new QRegion("searchParentRegion");
+         QRegion grandParentRegion = new QRegion("searchGrandParentRegion");
+@@ -117,20 +119,16 @@ public class RoommateBoardRepositoryImpl implements RoommateBoardRepositoryCusto
+                 .where(searchCondition)
+                 .orderBy(toBoardOrderSpecifiers(pageable.getSort()))
+                 .offset(pageable.getOffset())
+-                .limit(pageable.getPageSize())
++                .limit(pageable.getPageSize() + 1)
+                 .fetch();
+ 
+-        Long total = jpaQueryFactory
+-                .select(roommateBoard.count())
+-                .from(roommateBoard)
+-                .join(roommateBoard.roomType, roomType)
+-                .join(roommateBoard.region, boardRegion)
+-                .leftJoin(boardRegion.parent, parentRegion)
+-                .leftJoin(parentRegion.parent, grandParentRegion)
+-                .where(searchCondition)
+-                .fetchOne();
++        boolean hasNext = content.size() > pageable.getPageSize();
++
++        if (hasNext) {
++            content.remove(pageable.getPageSize());
++        }
+ 
+-        return new PageImpl<>(content, pageable, total == null ? 0 : total);
++        return new SliceImpl<>(content, pageable, hasNext);
+     }
+ 
+     private BooleanExpression likedOnly(Boolean likedOnly, Long requesterId) {
+diff --git a/src/main/java/org/example/knockin/board/service/RoommateBoardService.java b/src/main/java/org/example/knockin/board/service/RoommateBoardService.java
+index be6029e..c05b181 100644
+--- a/src/main/java/org/example/knockin/board/service/RoommateBoardService.java
++++ b/src/main/java/org/example/knockin/board/service/RoommateBoardService.java
+@@ -18,12 +18,13 @@ import org.jspecify.annotations.Nullable;
+ import org.example.knockin.member.entity.Member;
+ import org.springframework.data.domain.Page;
+ import org.springframework.data.domain.Pageable;
++import org.springframework.data.domain.Slice;
+ import org.springframework.transaction.annotation.Transactional;
+ import org.springframework.web.multipart.MultipartFile;
+ 
+ public interface RoommateBoardService {
+     BoardDto.Response save(BoardDto.Request request, Long memberId, @Nullable List<MultipartFile> files);
+-    Page<Response> getBoardList(BoardListDto.Request request, Pageable pageable, @Nullable Long requesterId);
++    Slice<Response> getBoardList(BoardListDto.Request request, Pageable pageable, @Nullable Long requesterId);
+     BoardDetailDto.Response getBoardDetail(Long boardId, Long memberId);
+     Page<MyBoardListDto.Response.BoardItem> getMyBoardList(Pageable page, Member member);
+     BoardEditDto.Response getEditForm(Long memberId, Long boardId);
+diff --git a/src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java b/src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java
+index 16d41e8..c43ac46 100644
+--- a/src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java
++++ b/src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java
+@@ -79,6 +79,8 @@ import org.jspecify.annotations.Nullable;
+ import org.springframework.data.domain.Page;
+ import org.springframework.data.domain.PageImpl;
+ import org.springframework.data.domain.Pageable;
++import org.springframework.data.domain.Slice;
++import org.springframework.data.domain.SliceImpl;
+ import org.springframework.stereotype.Service;
+ import org.springframework.transaction.annotation.Transactional;
+ import org.springframework.web.multipart.MultipartFile;
+@@ -179,16 +181,16 @@ public class RoommateBoardServiceImpl implements RoommateBoardService {
+ 
+     @Override
+     @Transactional
+-    public Page<BoardListDto.Response> getBoardList(BoardListDto.Request request, Pageable pageable, @Nullable Long requesterId) {
++    public Slice<BoardListDto.Response> getBoardList(BoardListDto.Request request, Pageable pageable, @Nullable Long requesterId) {
+         validateLikedOnlyRequest(request.getLikedOnly(), requesterId);
+         saveSearchKeyword(requesterId, request.getKeyword());
+ 
+         LocalDateTime endDate = LocalDateTime.now()
+                 .minusDays(roommateBoardPolicy.getComeableDateVisibleGraceDays());
+-        Page<BoardBaseRow> baseRows = roommateBoardRepository.search(request, pageable, endDate, requesterId);
++        Slice<BoardBaseRow> baseRows = roommateBoardRepository.search(request, pageable, endDate, requesterId);
+ 
+         if (baseRows.isEmpty()) {
+-            return new PageImpl<>(List.of(), pageable, baseRows.getTotalElements());
++            return new SliceImpl<>(List.of(), pageable, baseRows.hasNext());
+         }
+ 
+         List<Long> boardIds = baseRows.stream()

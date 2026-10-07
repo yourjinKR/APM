@@ -1,0 +1,32 @@
+{
+  "runId": "count-removal-20261007-load-vu10-r3-test_523",
+  "profile": "search-frequent-authenticated",
+  "configSha256": "716dbb36445d898c59f0ae9a441fdb7dc8e1ae2b74e8775fa3fc7173fa2ca012",
+  "sampleComplete": true,
+  "expectedRequests": 1000,
+  "requests": 1000,
+  "expectedWorkers": 10,
+  "workers": 10,
+  "successes": 1000,
+  "errors": 0,
+  "errorRatePercent": 0.0,
+  "failures": {},
+  "transportFailureRoots": {},
+  "transportFailuresWithoutRoot": 0,
+  "successMeanMs": 714.7481339999999,
+  "successP50Ms": 675.499,
+  "successP95Ms": 979.388,
+  "successP99Ms": 1150.682,
+  "observedAllP95Ms": 979.388,
+  "sampleSpanSeconds": 72.59728295898438,
+  "sampleSuccessRps": 13.774620195703118,
+  "inputs": {
+    "0": 1000
+  },
+  "notes": [
+    "Nearest-rank quantiles of individual GET durations; response validation and CSV I/O excluded.",
+    "Timeout durations are censored observations, not completed server response times.",
+    "RPS uses the sample time span; compare separately with Controller TPS. Synchronize Agent clocks.",
+    "Incomplete or error-containing runs do not establish safe capacity; inspect Controller status/logs."
+  ]
+}

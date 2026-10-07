@@ -1,0 +1,14 @@
+{
+  "controllerConfigRestored": true,
+  "tokensRemoved": {
+    "ngrinder-controller": true,
+    "apm-ngrinder-agent-2": true,
+    "apm-ngrinder-agent-5": true,
+    "apm-ngrinder-agent-1": true,
+    "apm-ngrinder-agent-3": true,
+    "apm-ngrinder-agent-4": true
+  },
+  "controllerIdle": true,
+  "originalConfigRecoveredFromRevision": 312,
+  "reason": "Completed IDE preliminary run; switched to controlled A/B after detecting TieredStopAtLevel=1"
+}

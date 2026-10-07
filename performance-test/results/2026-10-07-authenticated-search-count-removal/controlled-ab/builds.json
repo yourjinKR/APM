@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "before-count",
+    "jarPath": "C:\\dev\\workspace\\KnockIn\\tmp\\auth-search-count-measurement\\before-count\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+    "jarSha256": "b6993241421c9dc311c9e98765a01ee8a6c4783d8c8da89b406eaacd4d9f4665",
+    "sourceHashes": {
+      "src/main/java/org/example/knockin/board/controller/RoomMateController.java": "ec7983b1ef1c6b52ceceaa6baf8b97eb461fe0c561182115498151f65b9b5848",
+      "src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java": "417665314478d0b95c096cc0f3519ac17354747c2cb3cba89488eb575eb49c04",
+      "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "9384077aa665b39ae200aa254c3d45a9ded32f443d58f19184da9d51a8325590",
+      "src/main/java/org/example/knockin/board/service/RoommateBoardService.java": "c609ea9dbc95489b16e51071b54402aaee827c0461b88805bab2ebe5ee9bd909",
+      "src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java": "3226aa7191cd83ee96b257891dc3720117e02e630bdf90e0d188be1e1bd3020e"
+    }
+  },
+  {
+    "variant": "after-slice",
+    "jarPath": "C:\\dev\\workspace\\KnockIn\\tmp\\auth-search-count-measurement\\after-slice\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+    "jarSha256": "a3db15e49e0df8a92c4bccc065d66f4790dd8996967d7823bf779ee32e931ca7",
+    "sourceHashes": {
+      "src/main/java/org/example/knockin/board/controller/RoomMateController.java": "82fc0d34d04a85dd320b2b6fcf8fb5bb937e54909bcc50840892c58c07f2cc49",
+      "src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java": "527a316d580f27e0a891fe35b7a4e8b53ae445f1516768544c3c20bded2ea62b",
+      "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": "80693f87de62026aff306defed4d33acdd93b9693fdfca27b833a0bb3312c7b0",
+      "src/main/java/org/example/knockin/board/service/RoommateBoardService.java": "db82c1dd2c8ed58b5f8a6e3f3e460092721ef24446aef1541ab19dab6d50c144",
+      "src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java": "992fd4b78d112fd8671c54f26abc382fb6ed144f2d763a7fe453ec37294e61cf"
+    }
+  }
+]

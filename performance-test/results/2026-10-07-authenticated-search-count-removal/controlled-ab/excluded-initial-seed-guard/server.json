@@ -1,0 +1,20 @@
+{
+  "pid": 16360,
+  "startedAtKst": "2026-10-07T17:32:36.605384+09:00",
+  "args": [
+    "C:\\Program Files\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms512m",
+    "-Xmx2g",
+    "-jar",
+    "C:\\dev\\workspace\\KnockIn\\tmp\\auth-search-count-measurement\\before-count\\build\\libs\\KnockIn-0.0.1-SNAPSHOT.jar",
+    "--server.port=18080",
+    "--spring.profiles.active=test",
+    "--spring.jpa.show-sql=false",
+    "--logging.level.org.hibernate.SQL=OFF",
+    "--logging.level.org.hibernate.orm.jdbc.bind=OFF",
+    "--logging.level.org.example.knockin.query=OFF",
+    "--logging.level.org.example.knockin.global.aspect.MethodExecuteAspect=OFF"
+  ],
+  "jarSha256": "b6993241421c9dc311c9e98765a01ee8a6c4783d8c8da89b406eaacd4d9f4665",
+  "noTieredStopAtLevelOverride": true
+}

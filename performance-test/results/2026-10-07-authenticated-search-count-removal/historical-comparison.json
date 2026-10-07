@@ -1,0 +1,35 @@
+{
+  "causalComparison": false,
+  "source": "../2026-10-04-entire-test/summary.csv",
+  "reason": "Different date, backend artifact/version, heap/runtime, validation mode and warmup; reference only",
+  "groups": [
+    {
+      "vu": 10,
+      "historicalTestId": 389,
+      "historicalMeanMs": 1179.261,
+      "historicalP95Ms": 1375.174,
+      "historicalTps": 8.48,
+      "historicalErrorRatePercent": 0.0,
+      "currentMeanMsMedian": 318.317125,
+      "currentP95MsMedian": 441.34,
+      "currentTpsMedian": 30.31,
+      "meanReductionPercent": 73.00706756180354,
+      "p95ReductionPercent": 67.90660672758501,
+      "tpsIncreasePercent": 257.4292452830188
+    },
+    {
+      "vu": 30,
+      "historicalTestId": 390,
+      "historicalMeanMs": 3341.595,
+      "historicalP95Ms": 4528.111,
+      "historicalTps": 8.54,
+      "historicalErrorRatePercent": 2.3333333333333335,
+      "currentMeanMsMedian": 885.2442240746915,
+      "currentP95MsMedian": 1453.297,
+      "currentTpsMedian": 31.37,
+      "meanReductionPercent": 73.50833287472925,
+      "p95ReductionPercent": 67.90500497889738,
+      "tpsIncreasePercent": 267.33021077283377
+    }
+  ]
+}

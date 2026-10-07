@@ -1,0 +1,4 @@
+{
+  "excludedFromComparison": true,
+  "reason": "Preparation guard expected SEARCH=1000 but the seed contains 1005 (five base rows plus 1000 load rows); no measured load was started."
+}

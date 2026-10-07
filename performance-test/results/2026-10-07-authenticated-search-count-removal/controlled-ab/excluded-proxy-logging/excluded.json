@@ -1,0 +1,8 @@
+{
+  "excludedFromComparison": true,
+  "testIds": [
+    515,
+    516
+  ],
+  "reason": "Datasource proxy INFO SQL logger found during startup/warmup; measurement server was stopped to disable it. Test 516 interruption is not an API regression."
+}

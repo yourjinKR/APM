@@ -1,0 +1,40 @@
+{
+  "verifiedAtKst": "2026-10-07T18:17:15.030832+09:00",
+  "controllerIdle": true,
+  "controllerOriginalContentRestored": {
+    "RoommateBoardListKeywordGetTest.groovy": true,
+    "resources/RoommateBoardListSupport.txt": true,
+    "resources/roommate-board-list.json": true
+  },
+  "ownedTokenFilesAbsent": {
+    "before-count": {
+      "ngrinder-controller": true,
+      "apm-ngrinder-agent-2": true,
+      "apm-ngrinder-agent-5": true,
+      "apm-ngrinder-agent-1": true,
+      "apm-ngrinder-agent-3": true,
+      "apm-ngrinder-agent-4": true
+    },
+    "after-slice": {
+      "ngrinder-controller": true,
+      "apm-ngrinder-agent-2": true,
+      "apm-ngrinder-agent-5": true,
+      "apm-ngrinder-agent-1": true,
+      "apm-ngrinder-agent-3": true,
+      "apm-ngrinder-agent-4": true
+    }
+  },
+  "existingBackend8080Listening": true,
+  "measurementBackend18080Stopped": true,
+  "userSliceSourceUnchanged": {
+    "src/main/java/org/example/knockin/board/controller/RoomMateController.java": true,
+    "src/main/java/org/example/knockin/board/repository/RoommateBoardRepositoryCustom.java": true,
+    "src/main/java/org/example/knockin/board/repository/impl/RoommateBoardRepositoryImpl.java": true,
+    "src/main/java/org/example/knockin/board/service/RoommateBoardService.java": true,
+    "src/main/java/org/example/knockin/board/service/impl/RoommateBoardServiceImpl.java": true
+  },
+  "brokenReportLinks": [],
+  "jwtBearingResultFiles": [],
+  "controlledLoadRequestsVerified": true,
+  "passed": true
+}

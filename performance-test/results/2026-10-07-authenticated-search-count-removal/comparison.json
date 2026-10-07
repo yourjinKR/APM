@@ -1,0 +1,159 @@
+{
+  "comparisonBasis": "Same-code count/Page vs Slice, identical seeded DB/runtime; medians of per-run metrics",
+  "conditionsMatched": [
+    "actualCounts",
+    "memberIds",
+    "profile",
+    "keyword",
+    "query",
+    "agentCount",
+    "processes",
+    "vusers",
+    "requestsPerVu",
+    "repetitions",
+    "cooldownSeconds",
+    "connectTimeoutMs",
+    "socketTimeoutMs",
+    "connectionReset",
+    "rampUp",
+    "responseValidator",
+    "sqlLogging",
+    "javaOptions",
+    "defaultTieredCompilation",
+    "executionTimeAspectLogger",
+    "warmup"
+  ],
+  "firstPageIdsMatched": true,
+  "groups": [
+    {
+      "vu": 10,
+      "before": {
+        "repetitions": 3,
+        "requests": 3000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 751.621758,
+        "p95MsMedian": 1082.749,
+        "p99MsMedian": 1304.588,
+        "controllerTpsMedian": 12.89,
+        "meanMsRange": [
+          714.7481339999999,
+          1124.523197
+        ],
+        "p95MsRange": [
+          979.388,
+          1361.294
+        ],
+        "sampleSpanSecondsRange": [
+          72.59728295898438,
+          112.60636596679687
+        ],
+        "historyDelta": 3000,
+        "testIds": [
+          519,
+          521,
+          523
+        ],
+        "accountingPassed": true
+      },
+      "after": {
+        "repetitions": 3,
+        "requests": 3000,
+        "errors": 0,
+        "errorRatePercent": 0.0,
+        "meanMsMedian": 318.317125,
+        "p95MsMedian": 441.34,
+        "p99MsMedian": 597.474,
+        "controllerTpsMedian": 30.31,
+        "meanMsRange": [
+          300.667564,
+          324.371907
+        ],
+        "p95MsRange": [
+          424.223,
+          463.951
+        ],
+        "sampleSpanSecondsRange": [
+          30.37155810546875,
+          32.86810107421875
+        ],
+        "historyDelta": 3000,
+        "testIds": [
+          527,
+          529,
+          531
+        ],
+        "accountingPassed": true
+      },
+      "meanReductionPercent": 57.649293462843055,
+      "p95ReductionPercent": 59.23893718673487,
+      "p99ReductionPercent": 54.20209292129009,
+      "tpsIncreasePercent": 135.1435221101629
+    },
+    {
+      "vu": 30,
+      "before": {
+        "repetitions": 3,
+        "requests": 9000,
+        "errors": 64,
+        "errorRatePercent": 0.7111111111111111,
+        "meanMsMedian": 2168.3098099999997,
+        "p95MsMedian": 3498.414,
+        "p99MsMedian": 4054.725,
+        "controllerTpsMedian": 13.54,
+        "meanMsRange": [
+          2141.0042223333335,
+          3519.7097431880106
+        ],
+        "p95MsRange": [
+          3423.342,
+          4552.955
+        ],
+        "sampleSpanSecondsRange": [
+          218.719248046875,
+          359.13697802734373
+        ],
+        "historyDelta": 9000,
+        "testIds": [
+          520,
+          522,
+          524
+        ],
+        "accountingPassed": true
+      },
+      "after": {
+        "repetitions": 3,
+        "requests": 9000,
+        "errors": 1,
+        "errorRatePercent": 0.011111111111111112,
+        "meanMsMedian": 885.2442240746915,
+        "p95MsMedian": 1453.297,
+        "p99MsMedian": 2040.05,
+        "controllerTpsMedian": 31.37,
+        "meanMsRange": [
+          872.0405303333333,
+          927.7526496666667
+        ],
+        "p95MsRange": [
+          1352.238,
+          1518.654
+        ],
+        "sampleSpanSecondsRange": [
+          89.85644189453124,
+          97.133291015625
+        ],
+        "historyDelta": 8999,
+        "testIds": [
+          528,
+          530,
+          532
+        ],
+        "accountingPassed": false
+      },
+      "meanReductionPercent": 59.173535996007345,
+      "p95ReductionPercent": 58.45840429406011,
+      "p99ReductionPercent": 49.687093452700246,
+      "tpsIncreasePercent": 131.68389955686854
+    }
+  ]
+}
